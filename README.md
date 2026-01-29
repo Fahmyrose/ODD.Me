@@ -1,5 +1,5 @@
 <div align="center">
-<img src="assets/img/favicon.png" width="300"/>
+<img src="assets/img/favicon.png" width="150"/>
 
 # ODD.Me
 An empathetic Twine Game on social differences from the point of view of different people.

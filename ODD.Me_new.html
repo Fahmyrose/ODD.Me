@@ -104,9 +104,16 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="ODD.Me_new" startnode="1" creator="Twine" creator-version="2.11.1" format="SugarCube" format-version="2.37.3" ifid="C6FF98E4-D592-41F5-A665-66023F767B96" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* ===== RISVEGLIO – STILE BASE ===== */
+	<tw-storydata name="ODD.Me_new" startnode="1" creator="Twine" creator-version="2.11.1" format="SugarCube" format-version="2.37.3" ifid="C6FF98E4-D592-41F5-A665-66023F767B96" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* ======================================
+   PASSAGGI CON IMMAGINE FULLSCREEN
+   ====================================== */
 
-.risveglio .bus .poste .supermercato .imprevisto .zero {
+.risveglio,
+.bus,
+.poste,
+.supermercato,
+.imprevisto,
+.zero {
     width: 100%;
     min-height: 100vh;
     padding: 2rem;
@@ -114,7 +121,6 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-
 
     color: #ffffff;
 
@@ -126,26 +132,50 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
     position: relative;
 }
 
-/* Overlay per leggibilità del testo */
-.risveglio::before {
+/* ======================================
+   OVERLAY PER LEGGIBILITÀ
+   ====================================== */
+
+.risveglio::before,
+.bus::before,
+.poste::before,
+.supermercato::before,
+.imprevisto::before,
+.zero::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4); /* leggermente più scuro */
+    background: rgba(0, 0, 0, 0.4);
     z-index: 0;
 }
 
-/* Testo sopra l’overlay */
-.risveglio > * {
+/* ======================================
+   TESTO SOPRA L’OVERLAY
+   ====================================== */
+
+.risveglio > *,
+.bus > *,
+.poste > *,
+.supermercato > *,
+.imprevisto > *,
+.zero > * {
     position: relative;
     z-index: 1;
 }
 
-/* Spazio tra paragrafi */
-.risveglio p {
+/* ======================================
+   TESTO LEGGIBILE
+   ====================================== */
+
+.risveglio p,
+.bus p,
+.poste p,
+.supermercato p,
+.imprevisto p,
+.zero p {
     margin-bottom: 1em;
     line-height: 1.4;
-    max-width: 60ch; /* 👈 testo più leggibile */
+    max-width: 60ch;
 }
 </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="500,200" size="100,100">&lt;&lt;set $loop = 1&gt;&gt;
 

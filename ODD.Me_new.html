@@ -105,21 +105,17 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
 	<tw-storydata name="ODD.Me_new" startnode="1" creator="Twine" creator-version="2.11.1" format="SugarCube" format-version="2.37.3" ifid="C6FF98E4-D592-41F5-A665-66023F767B96" options="" tags="" zoom="1" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* ======================================
-   PASSAGGI CON IMMAGINE FULLSCREEN
+   PASSAGGI FULLSCREEN
    ====================================== */
 
-.risveglio,
-.bus,
-.poste,
-.supermercato,
-.imprevisto,
-.zero {
+.fullscreen {
     width: 100%;
-    min-height: 100vh;
+    height: 100vh; /* altezza esatta dello schermo */
+    margin: 0;
     padding: 2rem;
 
-    background-size: cover;
-    background-position: center;
+    background-size: cover;       /* l'immagine riempie tutto lo schermo */
+    background-position: center;  /* centrata */
     background-repeat: no-repeat;
 
     color: #ffffff;
@@ -130,22 +126,19 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 
     box-sizing: border-box;
     position: relative;
+
+    overflow: hidden; /* niente scroll */
 }
 
 /* ======================================
    OVERLAY PER LEGGIBILITÀ
    ====================================== */
 
-.risveglio::before,
-.bus::before,
-.poste::before,
-.supermercato::before,
-.imprevisto::before,
-.zero::before {
+.fullscreen::before {
     content: "";
     position: absolute;
     inset: 0;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.4); /* overlay leggermente scuro */
     z-index: 0;
 }
 
@@ -153,12 +146,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
    TESTO SOPRA L’OVERLAY
    ====================================== */
 
-.risveglio > *,
-.bus > *,
-.poste > *,
-.supermercato > *,
-.imprevisto > *,
-.zero > * {
+.fullscreen > * {
     position: relative;
     z-index: 1;
 }
@@ -167,15 +155,10 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
    TESTO LEGGIBILE
    ====================================== */
 
-.risveglio p,
-.bus p,
-.poste p,
-.supermercato p,
-.imprevisto p,
-.zero p {
+.fullscreen p {
     margin-bottom: 1em;
     line-height: 1.4;
-    max-width: 60ch;
+    max-width: 60ch; /* testo più leggibile */
 }
 </style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="500,200" size="100,100">&lt;&lt;set $loop = 1&gt;&gt;
 
@@ -184,7 +167,7 @@ Benvenuto nel gioco!
 [[Inizia-&gt;Risveglio]]
 
 </tw-passagedata><tw-passagedata pid="2" name="Risveglio" tags="" position="700,200" size="100,100">&lt;&lt;if $loop == 1&gt;&gt;
-&lt;div class=&quot;risveglio&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_1.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_1.jpg&#39;)&quot;&gt;
 
 I. La Turista
 
@@ -194,7 +177,7 @@ Suona l&#39;allarme, sono le 7:00. Ti svegli in una camera d&#39;albergo dell&#3
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 2&gt;&gt;
-&lt;div class=&quot;risveglio&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_1.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_1.jpg&#39;)&quot;&gt;
 II. Lo Studente Lavoratore
 
 La sveglia delle 7.00 sembra averti beccata mentre ti sei addormentata sopra gli appunti per l&#39;esame di oggi. Sullo schermo dello smartphone compaiono il promemoria per l&#39;esame assieme ad una richiesta di partecipazione ad una videochiamata di lavoro che coprirà tutta l&#39;ora prima dell&#39;esame. Hai assolutamente bisogno di passare questo esame per raggiungere i crediti necessari per ricevere la prossima rata delle borsa di studio, ma ti hanno chiamato per lavoro dopo quasi un mese e se rifiuti perderai un&#39;ora di paga e forse anche nuove possibilità di essere ricontattata nei prossimi giorni. Il tempo è tiranno: vorresti ripassare un po’ dato che dopo non riuscirai ma forse è meglio cercare un luogo vicino alla sede dell&#39;esame dove lavorare.
@@ -203,7 +186,7 @@ La sveglia delle 7.00 sembra averti beccata mentre ti sei addormentata sopra gli
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 3&gt;&gt;
-&lt;div class=&quot;risveglio&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_1.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_1.jpg&#39;)&quot;&gt;
 III. L&#39; Anziano
 
 Il corpo è rigido e i farmaci sul comodino ricordano la routine: devono essere presi alle sette in punto, in modo tale da poter fare colazione un&#39;ora esatta dopo. Senti il corpo pesante e non hai le forze di tenerti su in piedi. Tiri su lo sguardo e il cerchio rosso sul calendario segna che oggi è il giorno in cui bisogna andare a ritirare la pensione. Sbuffi, scocciato.
@@ -212,7 +195,7 @@ Il corpo è rigido e i farmaci sul comodino ricordano la routine: devono essere 
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 4&gt;&gt;
-&lt;div class=&quot;risveglio&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_1.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_1.jpg&#39;)&quot;&gt;
 IV. Il Lavoratore Precario
 
 La sveglia suona a fatica tra messaggi di lavoro. Controlli il telefono e scopri che devi prepararti per un turno lungo e avresti la possibilità di svolgere un altro impegno extra in quanto un collega ha avvisato di stare male e ci sarebbe il suo turno scoperto. Riesci a malapena a coprire le spese dell&#39;affitto e comprare beni di prima necessità, degli straordinari non farebbero male. 
@@ -223,7 +206,7 @@ Sei rientrato a casa da lavoro la mattina presto e hai deciso di approfittarne p
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 5&gt;&gt;
-&lt;div class=&quot;risveglio&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_1.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_1.jpg&#39;)&quot;&gt;
 V. La Migrante
 
 Lo spazio condiviso è piccolo e i pochi oggetti sono ordinati con cura. La responsabile del Centro Assistenza Stranieri, in cui risiedi, ti ha chiesto di raggiungerla alle Poste per richiedere insieme la carta prepagata Postepay; ora che sei stata finalmente assunta come &quot;cameriera ai piani&quot;, ne hai bisogno per ricevere lo stipendio. 
@@ -234,7 +217,7 @@ Cresciuta in povertà, non hai mai avuto la possibilità di andare a scuola e st
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 6&gt;&gt;
-&lt;div class=&quot;risveglio&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_1.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_1.jpg&#39;)&quot;&gt;
 VI. Il Senzatetto
 
 La moto che passa sfrecciando, il conducente impaziente che suona il clacson e le porte dell&#39;autobus che si aprono fischiando... Come sempre sei bruscamente svegliato dai suoni della città che corre sin dal primo mattino. Ricordi quando anche tu correvi come loro e ora sei sdraiato al freddo per terra con addosso un cartone sottile trovato vicino all&#39;immondizia. Le giornate si fanno sempre più fredde. Non sai che mese o giorno è ma sei sicuro che sia inverno. Non hai più nulla da perdere ma il tuo istinto di sopravvivenza ti dice che forse è meglio trovare un posto più coperto nel caso inizi a nevicare.
@@ -243,7 +226,7 @@ La moto che passa sfrecciando, il conducente impaziente che suona il clacson e l
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata><tw-passagedata pid="3" name="Bus" tags="" position="900,200" size="100,100">&lt;&lt;if $loop == 1&gt;&gt;
-&lt;div class=&quot;bus&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_2.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_2.jpg&#39;)&quot;&gt;
 I. Turista
 
 Alla fermata c’è già qualcuno.
@@ -253,7 +236,7 @@ Il bus arriva puntuale, come sempre.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 2&gt;&gt;
-&lt;div class=&quot;bus&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_2.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_2.jpg&#39;)&quot;&gt;
 II. Studente Lavoratore
 
 Alla fermata c’è già qualcuno.
@@ -263,7 +246,7 @@ Il bus arriva puntuale, come sempre.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 3&gt;&gt;
-&lt;div class=&quot;bus&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_2.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_2.jpg&#39;)&quot;&gt;
 III. L&#39; Anziano
 
 Alla fermata c’è già qualcuno.
@@ -273,7 +256,7 @@ Il bus arriva puntuale, come sempre.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 4&gt;&gt;
-&lt;div class=&quot;bus&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_2.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_2.jpg&#39;)&quot;&gt;
 IV. Il Lavoratore Precario
 
 Alla fermata c’è già qualcuno.
@@ -283,7 +266,7 @@ Il bus arriva puntuale, come sempre.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 5&gt;&gt;
-&lt;div class=&quot;bus&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_2.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_2.jpg&#39;)&quot;&gt;
 V. La Migrante
 
 Alla fermata c’è già qualcuno.
@@ -293,7 +276,7 @@ Il bus arriva puntuale, come sempre.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 6&gt;&gt;
-&lt;div class=&quot;bus&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_2.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_2.jpg&#39;)&quot;&gt;
 VI. Il Senzatetto
 
 Alla fermata c’è già qualcuno.
@@ -303,7 +286,7 @@ Il bus arriva puntuale, come sempre.
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata><tw-passagedata pid="4" name="Poste" tags="" position="1100,200" size="100,100">&lt;&lt;if $loop == 1&gt;&gt;
-&lt;div class=&quot;poste&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_3.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_3.jpg&#39;)&quot;&gt;
 I. Turista
 
 Alle poste l’aria è ferma.
@@ -313,7 +296,7 @@ Aspetti il tuo turno senza sapere perché sei lì.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 2&gt;&gt;
-&lt;div class=&quot;poste&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_3.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_3.jpg&#39;)&quot;&gt;
 II. Studente Lavoratore
 
 Alle poste l’aria è ferma.
@@ -323,7 +306,7 @@ Aspetti il tuo turno senza sapere perché sei lì.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 3&gt;&gt;
-&lt;div class=&quot;poste&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_3.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_3.jpg&#39;)&quot;&gt;
 III. L&#39; Anziano
 
 Alle poste l’aria è ferma.
@@ -333,7 +316,7 @@ Aspetti il tuo turno senza sapere perché sei lì.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 4&gt;&gt;
-&lt;div class=&quot;poste&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_3.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_3.jpg&#39;)&quot;&gt;
 IV. Il Lavoratore Precario
 
 Alle poste l’aria è ferma.
@@ -343,7 +326,7 @@ Aspetti il tuo turno senza sapere perché sei lì.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 5&gt;&gt;
-&lt;div class=&quot;poste&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_3.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_3.jpg&#39;)&quot;&gt;
 V. La Migrante
 
 Alle poste l’aria è ferma.
@@ -353,7 +336,7 @@ Aspetti il tuo turno senza sapere perché sei lì.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 6&gt;&gt;
-&lt;div class=&quot;poste&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_3.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_3.jpg&#39;)&quot;&gt;
 VI. Il Senzatetto
 
 Alle poste l’aria è ferma.
@@ -363,7 +346,7 @@ Aspetti il tuo turno senza sapere perché sei lì.
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata><tw-passagedata pid="5" name="Supermercato" tags="" position="1300,200" size="100,100">&lt;&lt;if $loop == 1&gt;&gt;
-&lt;div class=&quot;supermercato&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_4.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_4.jpg&#39;)&quot;&gt;
 I. Turista
 
 Le corsie sono illuminate troppo forte.
@@ -373,7 +356,7 @@ Prendi le stesse cose di sempre.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 2&gt;&gt;
-&lt;div class=&quot;supermercato&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_4.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_4.jpg&#39;)&quot;&gt;
 II. Studente Lavoratore
 
 Le corsie sono illuminate troppo forte.
@@ -383,7 +366,7 @@ Prendi le stesse cose di sempre.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 3&gt;&gt;
-&lt;div class=&quot;supermercato&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_4.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_4.jpg&#39;)&quot;&gt;
 III. L&#39; Anziano
 
 Le corsie sono illuminate troppo forte.
@@ -393,7 +376,7 @@ Prendi le stesse cose di sempre.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 4&gt;&gt;
-&lt;div class=&quot;supermercato&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_4.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_4.jpg&#39;)&quot;&gt;
 IV. Il Lavoratore Precario
 
 Le corsie sono illuminate troppo forte.
@@ -403,7 +386,7 @@ Prendi le stesse cose di sempre.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 5&gt;&gt;
-&lt;div class=&quot;supermercato&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_4.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_4.jpg&#39;)&quot;&gt;
 V. La Migrante
 
 Le corsie sono illuminate troppo forte.
@@ -413,7 +396,7 @@ Prendi le stesse cose di sempre.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 6&gt;&gt;
-&lt;div class=&quot;supermercato&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_4.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_4.jpg&#39;)&quot;&gt;
 VI. Il Senzatetto
 
 Le corsie sono illuminate troppo forte.
@@ -423,7 +406,7 @@ Prendi le stesse cose di sempre.
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata><tw-passagedata pid="6" name="StradaChiusa" tags="" position="1500,200" size="100,100">&lt;&lt;if $loop == 1&gt;&gt;
-&lt;div class=&quot;imprevisto&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_5.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_5.jpg&#39;)&quot;&gt;
 I. Turista
 
 La strada è bloccata.
@@ -435,7 +418,7 @@ Ti fermi un istante di troppo.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 2&gt;&gt;
-&lt;div class=&quot;imprevisto&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_5.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_5.jpg&#39;)&quot;&gt;
 II. Studente Lavoratore
 
 La strada è bloccata.
@@ -447,7 +430,7 @@ Ti fermi un istante di troppo.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 3&gt;&gt;
-&lt;div class=&quot;imprevisto&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_5.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_5.jpg&#39;)&quot;&gt;
 III. L&#39; Anziano
 
 La strada è bloccata.
@@ -459,7 +442,7 @@ Ti fermi un istante di troppo.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 4&gt;&gt;
-&lt;div class=&quot;imprevisto&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_5.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_5.jpg&#39;)&quot;&gt;
 IV. Il Lavoratore Precario
 
 La strada è bloccata.
@@ -471,7 +454,7 @@ Ti fermi un istante di troppo.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 5&gt;&gt;
-&lt;div class=&quot;imprevisto&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_5.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_5.jpg&#39;)&quot;&gt;
 V. La Migrante
 
 La strada è bloccata.
@@ -483,7 +466,7 @@ Ti fermi un istante di troppo.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 6&gt;&gt;
-&lt;div class=&quot;imprevisto&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_5.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_5.jpg&#39;)&quot;&gt;
 VI. Il Senzatetto
 
 La strada è bloccata.
@@ -495,7 +478,7 @@ Ti fermi un istante di troppo.
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata><tw-passagedata pid="7" name="FineLoop" tags="" position="1400,400" size="100,100">&lt;&lt;if $loop == 1&gt;&gt;
-&lt;div class=&quot;zero&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_0.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_0.jpg&#39;)&quot;&gt;
 I. Turista
 
 La giornata si chiude senza un vero finale.
@@ -505,7 +488,7 @@ Domani ricomincerà tutto.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 2&gt;&gt;
-&lt;div class=&quot;zero&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_0.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_0.jpg&#39;)&quot;&gt;
 II. Studente Lavoratore
 
 La giornata si chiude senza un vero finale.
@@ -515,7 +498,7 @@ Domani ricomincerà tutto.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 3&gt;&gt;
-&lt;div class=&quot;zero&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_0.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_0.jpg&#39;)&quot;&gt;
 III. L&#39; Anziano
 
 La giornata si chiude senza un vero finale.
@@ -525,7 +508,7 @@ Domani ricomincerà tutto.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 4&gt;&gt;
-&lt;div class=&quot;zero&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_0.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_0.jpg&#39;)&quot;&gt;
 IV. Il Lavoratore Precario
 
 La giornata si chiude senza un vero finale.
@@ -535,7 +518,7 @@ Domani ricomincerà tutto.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 5&gt;&gt;
-&lt;div class=&quot;zero&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_0.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_0.jpg&#39;)&quot;&gt;
 V. La Migrante
 
 La giornata si chiude senza un vero finale.
@@ -545,7 +528,7 @@ Domani ricomincerà tutto.
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 6&gt;&gt;
-&lt;div class=&quot;zero&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_0.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_0.jpg&#39;)&quot;&gt;
 VI. Il Senzatetto
 
 La giornata si chiude senza un vero finale.

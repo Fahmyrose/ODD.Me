@@ -110,8 +110,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
   background-repeat: no-repeat;
   transition: background-image 0.5s ease;
 }
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="325,150" size="100,100">[[Inizia-&gt;InitChapter]]
-</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="" position="675,50" size="100,100">&lt;&lt;set $chapter = 1&gt;&gt;
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="storyinit" color="purple"></tw-tag><tw-passagedata pid="1" name="Start" tags="" position="325,150" size="100,100">[[Inizia-&gt;InitChapter]]</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="storyinit" position="675,50" size="100,100">&lt;&lt;set $chapter = 1&gt;&gt;
 &lt;&lt;set $loop = 1&gt;&gt;
 
 &lt;&lt;set $energy = 0&gt;&gt;
@@ -122,6 +121,49 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 
 &lt;&lt;set $identity = &quot;&quot;&gt;&gt;
 &lt;&lt;set $bg = &quot;&quot;&gt;&gt;
+
+&lt;&lt;set $bgMap = {
+&quot;Risveglio&quot;: {
+    &quot;turista&quot;: &quot;assets/img/turista/turista_1.jpg&quot;,
+    &quot;studente&quot;: &quot;assets/img/studente_lavoratore/studente_lavoratore_1.jpg&quot;,
+    &quot;anziano&quot;: &quot;assets/img/anziano/anziano_1.jpg&quot;,
+    &quot;precario&quot;: &quot;assets/img/lavoratore_precario/lavoratore_precario_1.jpg&quot;,
+    &quot;migrante&quot;: &quot;assets/img/migrante/migrante_1.jpg&quot;,
+    &quot;senzatetto&quot;: &quot;assets/img/senzatetto/senzatetto_1.jpg&quot;
+},
+&quot;Bus&quot;: {
+    &quot;turista&quot;: &quot;assets/img/turista/turista_2.jpg&quot;,
+    &quot;studente&quot;: &quot;assets/img/studente_lavoratore/studente_lavoratore_2.jpg&quot;,
+    &quot;anziano&quot;: &quot;assets/img/anziano/anziano_2.jpg&quot;,
+    &quot;precario&quot;: &quot;assets/img/lavoratore_precario/lavoratore_precario_2.jpg&quot;,
+    &quot;migrante&quot;: &quot;assets/img/migrante/migrante_2.jpg&quot;,
+    &quot;senzatetto&quot;: &quot;assets/img/senzatetto/senzatetto_2.jpg&quot;
+},
+&quot;Poste&quot;: {
+    &quot;turista&quot;: &quot;assets/img/turista/turista_3.jpg&quot;,
+    &quot;studente&quot;: &quot;assets/img/studente_lavoratore/studente_lavoratore_3.jpg&quot;,
+    &quot;anziano&quot;: &quot;assets/img/anziano/anziano_3.jpg&quot;,
+    &quot;precario&quot;: &quot;assets/img/lavoratore_precario/lavoratore_precario_3.jpg&quot;,
+    &quot;migrante&quot;: &quot;assets/img/migrante/migrante_3.jpg&quot;,
+    &quot;senzatetto&quot;: &quot;assets/img/senzatetto/senzatetto_3.jpg&quot;
+},
+&quot;Supermercato&quot;: {
+    &quot;turista&quot;: &quot;assets/img/turista/turista_4.jpg&quot;,
+    &quot;studente&quot;: &quot;assets/img/studente_lavoratore/studente_lavoratore_4.jpg&quot;,
+    &quot;anziano&quot;: &quot;assets/img/anziano/anziano_4.jpg&quot;,
+    &quot;precario&quot;: &quot;assets/img/lavoratore_precario/lavoratore_precario_4.jpg&quot;,
+    &quot;migrante&quot;: &quot;assets/img/migrante/migrante_4.jpg&quot;,
+    &quot;senzatetto&quot;: &quot;assets/img/senzatetto/senzatetto_4.jpg&quot;
+},
+&quot;StradaChiusa&quot;: {
+    &quot;turista&quot;: &quot;assets/img/turista/turista_5.jpg&quot;,
+    &quot;studente&quot;: &quot;assets/img/studente_lavoratore/studente_lavoratore_5.jpg&quot;,
+    &quot;anziano&quot;: &quot;assets/img/anziano/anziano_5.jpg&quot;,
+    &quot;precario&quot;: &quot;assets/img/lavoratore_precario/lavoratore_precario_5.jpg&quot;,
+    &quot;migrante&quot;: &quot;assets/img/migrante/migrante_5.jpg&quot;,
+    &quot;senzatetto&quot;: &quot;assets/img/senzatetto/senzatetto_5.jpg&quot;
+}
+}&gt; 
 </tw-passagedata><tw-passagedata pid="3" name="InitChapter" tags="" position="525,50" size="100,100">&lt;&lt;if $chapter is 1&gt;&gt;
 	&lt;&lt;set $identity = &quot;turista&quot;&gt;&gt;
 	&lt;&lt;set $energy = 80&gt;&gt;
@@ -173,48 +215,6 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 
 &lt;&lt;set $loop = 1&gt;&gt;
 
-&lt;&lt;set $bgMap = {
-&quot;Risveglio&quot;: {
-    &quot;turista&quot;: &quot;assets/img/turista/turista_1.jpg&quot;,
-    &quot;studente&quot;: &quot;assets/img/studente_lavoratore/studente_lavoratore_1.jpg&quot;,
-    &quot;anziano&quot;: &quot;assets/img/anziano/anziano_1.jpg&quot;,
-    &quot;precario&quot;: &quot;assets/img/lavoratore_precario/lavoratore_precario_1.jpg&quot;,
-    &quot;migrante&quot;: &quot;assets/img/migrante/migrante_1.jpg&quot;,
-    &quot;senzatetto&quot;: &quot;assets/img/senzatetto/senzatetto_1.jpg&quot;
-},
-&quot;Bus&quot;: {
-    &quot;turista&quot;: &quot;assets/img/turista/turista_2.jpg&quot;,
-    &quot;studente&quot;: &quot;assets/img/studente_lavoratore/studente_lavoratore_2.jpg&quot;,
-    &quot;anziano&quot;: &quot;assets/img/anziano/anziano_2.jpg&quot;,
-    &quot;precario&quot;: &quot;assets/img/lavoratore_precario/lavoratore_precario_2.jpg&quot;,
-    &quot;migrante&quot;: &quot;assets/img/migrante/migrante_2.jpg&quot;,
-    &quot;senzatetto&quot;: &quot;assets/img/senzatetto/senzatetto_2.jpg&quot;
-},
-&quot;Poste&quot;: {
-    &quot;turista&quot;: &quot;assets/img/turista/turista_3.jpg&quot;,
-    &quot;studente&quot;: &quot;assets/img/studente_lavoratore/studente_lavoratore_3.jpg&quot;,
-    &quot;anziano&quot;: &quot;assets/img/anziano/anziano_3.jpg&quot;,
-    &quot;precario&quot;: &quot;assets/img/lavoratore_precario/lavoratore_precario_3.jpg&quot;,
-    &quot;migrante&quot;: &quot;assets/img/migrante/migrante_3.jpg&quot;,
-    &quot;senzatetto&quot;: &quot;assets/img/senzatetto/senzatetto_3.jpg&quot;
-},
-&quot;Supermercato&quot;: {
-    &quot;turista&quot;: &quot;assets/img/turista/turista_4.jpg&quot;,
-    &quot;studente&quot;: &quot;assets/img/studente_lavoratore/studente_lavoratore_4.jpg&quot;,
-    &quot;anziano&quot;: &quot;assets/img/anziano/anziano_4.jpg&quot;,
-    &quot;precario&quot;: &quot;assets/img/lavoratore_precario/lavoratore_precario_4.jpg&quot;,
-    &quot;migrante&quot;: &quot;assets/img/migrante/migrante_4.jpg&quot;,
-    &quot;senzatetto&quot;: &quot;assets/img/senzatetto/senzatetto_4.jpg&quot;
-},
-&quot;StradaChiusa&quot;: {
-    &quot;turista&quot;: &quot;assets/img/turista/turista_5.jpg&quot;,
-    &quot;studente&quot;: &quot;assets/img/studente_lavoratore/studente_lavoratore_5.jpg&quot;,
-    &quot;anziano&quot;: &quot;assets/img/anziano/anziano_5.jpg&quot;,
-    &quot;precario&quot;: &quot;assets/img/lavoratore_precario/lavoratore_precario_5.jpg&quot;,
-    &quot;migrante&quot;: &quot;assets/img/migrante/migrante_5.jpg&quot;,
-    &quot;senzatetto&quot;: &quot;assets/img/senzatetto/senzatetto_5.jpg&quot;
-}
-}&gt; 
 
 &lt;&lt;set $textMap = {
 &quot;Risveglio&quot;: {
@@ -239,11 +239,10 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 }
 }&gt;
 
-[[Inizia la giornata-&gt;Risveglio]]
-</tw-passagedata><tw-passagedata pid="4" name="Risveglio" tags="" position="525,200" size="100,100">&lt;&lt;set $bg = $bgMap[&quot;Risveglio&quot;][$identity]&gt;&gt;
-
-&lt;&lt;run document.getElementById(&quot;story&quot;).style.backgroundImage =
-&quot;url(&quot; + $bg + &quot;)&quot; &gt;&gt;
+[[Inizia la giornata-&gt;Risveglio]]</tw-passagedata><tw-passagedata pid="4" name="Risveglio" tags="" position="525,200" size="100,100">&lt;&lt;set $bg = $bgMap[&quot;Risveglio&quot;][$identity]&gt;&gt;
+&lt;&lt;script&gt;&gt;
+document.getElementById(&quot;story&quot;).style.backgroundImage = &quot;url(&quot; + SugarCube.State.variables.$bg + &quot;)&quot;;
+&lt;&lt;/script&gt;&gt;
 
 
 Sono le 7:00.

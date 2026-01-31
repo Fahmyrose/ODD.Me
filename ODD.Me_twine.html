@@ -110,31 +110,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
   background-repeat: no-repeat;
   transition: background-image 0.5s ease;
 }
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">// Macro per cambiare il background in sicurezza
-Macro.add('bg', {
-    handler: function () {
-        const event = this.args[0];
-        const identity = State.variables.$identity;
-        const bgMap = State.variables.$bgMap;
-
-        if (bgMap[event] && bgMap[event][identity]) {
-            State.variables.$bg = bgMap[event][identity];
-
-            // Posticipa di 50ms per assicurarti che #story esista
-            setTimeout(() => {
-                const storyDiv = document.getElementById("story");
-                if (storyDiv) {
-                    storyDiv.style.backgroundImage = `url(${State.variables.$bg})`;
-                } else {
-                    console.warn("Div #story non trovato");
-                }
-            }, 50);
-        } else {
-            console.warn("Background non trovato per", event, identity);
-        }
-    }
-});
-</script><tw-tag name="storyinit" color="purple"></tw-tag><tw-passagedata pid="1" name="Start" tags="" position="325,150" size="100,100">[[Inizia-&gt;InitChapter]]</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="storyinit" position="675,50" size="100,100">&lt;&lt;set $chapter = 1&gt;&gt;
+</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="storyinit" color="purple"></tw-tag><tw-passagedata pid="1" name="Start" tags="" position="325,150" size="100,100">[[Inizia-&gt;InitChapter]]</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="storyinit" position="675,50" size="100,100">&lt;&lt;set $chapter = 1&gt;&gt;
 &lt;&lt;set $loop = 1&gt;&gt;
 
 &lt;&lt;set $energy = 0&gt;&gt;
@@ -188,7 +164,25 @@ Macro.add('bg', {
     &quot;senzatetto&quot;: &quot;assets/img/senzatetto/senzatetto_5.jpg&quot;
 }
 }&gt; 
-</tw-passagedata><tw-passagedata pid="3" name="InitChapter" tags="" position="525,50" size="100,100">&lt;&lt;set $textMap = {
+</tw-passagedata><tw-passagedata pid="3" name="InitChapter" tags="" position="525,50" size="100,100">&lt;&lt;if $chapter is 1&gt;&gt;
+    &lt;&lt;set $identity = &quot;turista&quot;&gt;&gt;
+    &lt;&lt;set $energy = 80&gt;&gt;
+    &lt;&lt;set $time = 80&gt;&gt;
+    &lt;&lt;set $money = 100&gt;&gt;
+    &lt;&lt;set $attention = 70&gt;&gt;
+    &lt;&lt;set $control = 80&gt;&gt;
+&lt;&lt;elseif $chapter is 2&gt;&gt;
+    &lt;&lt;set $identity = &quot;studente&quot;&gt;&gt;
+    &lt;&lt;set $energy = 60&gt;&gt;
+    &lt;&lt;set $time = 60&gt;&gt;
+    &lt;&lt;set $money = 40&gt;&gt;
+    &lt;&lt;set $attention = 60&gt;&gt;
+    &lt;&lt;set $control = 60&gt;&gt;
+&lt;&lt;endif&gt;&gt;
+
+&lt;&lt;set $loop = 1&gt;&gt;
+
+&lt;&lt;set $textMap = {
 &quot;Risveglio&quot;: {
     &quot;turista&quot;: &quot;Suona l&#39;allarme, sono le 7:00. Ti svegli in una camera d&#39;albergo dell&#39;Hotel Corona D&#39;oro 1890, a Bologna. Intravedi le Due Torri dalla finestra, la valigia è aperta e sul telefono compare la notifica: ultimo giorno di viaggio in Italia. Il sole filtra dalle tende e ti chiedi se restare un po’ a letto o alzarti subito per goderti le ultime ore in città prima di avviarti verso l&#39;aeroporto, stasera.&quot;,
     &quot;studente&quot;: &quot;La sveglia delle 7.00 sembra averti beccata mentre ti sei addormentata sopra gli appunti per l&#39;esame di oggi. Sullo schermo dello smartphone compaiono il promemoria per l&#39;esame assieme ad una richiesta di partecipazione ad una videochiamata di lavoro che coprirà tutta l&#39;ora prima dell&#39;esame. Hai assolutamente bisogno di passare questo esame per raggiungere i crediti per ricevere la prossima rata delle borsa di studio ma ti hanno chiamato per lavoro dopo quasi un mese e se rifiuti perderai un&#39;ora di paga e forse anche nuove possibilità di essere ricontattata nei prossimi giorni. Il tempo è tiranno: vorresti ripassare un po’ dato che dopo non riuscirai ma forse è meglio cercare un luogo vicino alla sede dell&#39;esame dove lavorare.&quot;,
@@ -211,33 +205,13 @@ Macro.add('bg', {
 }
 }&gt;
 
-&lt;&lt;if $chapter is 1&gt;&gt;
-    &lt;&lt;set $identity = &quot;turista&quot;&gt;&gt;
-    &lt;&lt;set $energy = 80&gt;&gt;
-    &lt;&lt;set $time = 80&gt;&gt;
-    &lt;&lt;set $money = 100&gt;&gt;
-    &lt;&lt;set $attention = 70&gt;&gt;
-    &lt;&lt;set $control = 80&gt;&gt;
-&lt;&lt;elseif $chapter is 2&gt;&gt;
-    &lt;&lt;set $identity = &quot;studente&quot;&gt;&gt;
-    &lt;&lt;set $energy = 60&gt;&gt;
-    &lt;&lt;set $time = 60&gt;&gt;
-    &lt;&lt;set $money = 40&gt;&gt;
-    &lt;&lt;set $attention = 60&gt;&gt;
-    &lt;&lt;set $control = 60&gt;&gt;
-&lt;&lt;endif&gt;&gt;
-
-&lt;&lt;set $loop = 1&gt;&gt;
-
-[[Inizia la giornata-&gt;Risveglio]]</tw-passagedata><tw-passagedata pid="4" name="Risveglio" tags="" position="525,200" size="100,100">&lt;&lt;bg &quot;Risveglio&quot;&gt;&gt;
+[[Inizia la giornata-&gt;Risveglio]]</tw-passagedata><tw-passagedata pid="4" name="Risveglio" tags="" position="525,200" size="100,100">
 
 Sono le 7:00.
 
 * [[Alzarsi-&gt;Bus]]
 * [[Restare ancora un po’-&gt;Bus]]
-</tw-passagedata><tw-passagedata pid="5" name="Bus" tags="" position="525,325" size="100,100">&lt;&lt;bg &quot;Bus&quot;&gt;&gt;
-
-Ora sei sul bus.
+</tw-passagedata><tw-passagedata pid="5" name="Bus" tags="" position="525,325" size="100,100">Ora sei sul bus.
 
 * [[Prossima tappa-&gt;Poste]]
 </tw-passagedata><tw-passagedata pid="6" name="Poste" tags="" position="525,450" size="100,100"></tw-passagedata></tw-storydata>

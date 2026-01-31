@@ -110,7 +110,23 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
   background-repeat: no-repeat;
   transition: background-image 0.5s ease;
 }
-</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-tag name="storyinit" color="purple"></tw-tag><tw-passagedata pid="1" name="Start" tags="" position="325,150" size="100,100">[[Inizia-&gt;InitChapter]]</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="storyinit" position="675,50" size="100,100">&lt;&lt;set $chapter = 1&gt;&gt;
+</style><script role="script" id="twine-user-script" type="text/twine-javascript">// Macro per cambiare il background in base a evento e identità
+Macro.add('bg', {
+    handler: function () {
+        const event = this.args[0]; // passaggio come "Risveglio"
+        const identity = State.variables.$identity;
+        const bgMap = State.variables.$bgMap;
+
+        if (bgMap[event] && bgMap[event][identity]) {
+            State.variables.$bg = bgMap[event][identity];
+            document.getElementById("story").style.backgroundImage = 
+                `url(${State.variables.$bg})`;
+        } else {
+            console.warn("Background non trovato per", event, identity);
+        }
+    }
+});
+</script><tw-tag name="storyinit" color="purple"></tw-tag><tw-passagedata pid="1" name="Start" tags="" position="325,150" size="100,100">[[Inizia-&gt;InitChapter]]</tw-passagedata><tw-passagedata pid="2" name="StoryInit" tags="storyinit" position="675,50" size="100,100">&lt;&lt;set $chapter = 1&gt;&gt;
 &lt;&lt;set $loop = 1&gt;&gt;
 
 &lt;&lt;set $energy = 0&gt;&gt;
@@ -239,11 +255,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 }
 }&gt;
 
-[[Inizia la giornata-&gt;Risveglio]]</tw-passagedata><tw-passagedata pid="4" name="Risveglio" tags="" position="525,200" size="100,100">&lt;&lt;set $bg = $bgMap[&quot;Risveglio&quot;][$identity]&gt;&gt;
-&lt;&lt;script&gt;&gt;
-document.getElementById(&quot;story&quot;).style.backgroundImage = &quot;url(&quot; + SugarCube.State.variables.$bg + &quot;)&quot;;
-&lt;&lt;/script&gt;&gt;
-
+[[Inizia la giornata-&gt;Risveglio]]</tw-passagedata><tw-passagedata pid="4" name="Risveglio" tags="" position="525,200" size="100,100">&lt;&lt;bg &quot;Risveglio&quot;&gt;&gt;
 
 Sono le 7:00.
 

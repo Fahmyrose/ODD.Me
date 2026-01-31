@@ -104,89 +104,124 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="ODD.Me_new" startnode="1" creator="Twine" creator-version="2.11.1" format="SugarCube" format-version="2.37.3" ifid="C6FF98E4-D592-41F5-A665-66023F767B96" options="" tags="" zoom="0.3" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">.tw-passage {
+	<tw-storydata name="ODD.Me_new" startnode="1" creator="Twine" creator-version="2.11.1" format="SugarCube" format-version="2.37.3" ifid="C6FF98E4-D592-41F5-A665-66023F767B96" options="" tags="" zoom="0.3" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css"></style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="500,200" size="100,100">&lt;&lt;set $loop = 1&gt;&gt;
+
+Benvenuto nel gioco!
+
+[[Inizia-&gt;Risveglio]]
+
+</tw-passagedata><tw-passagedata pid="2" name="Risveglio" tags="" position="700,200" size="100,100">&lt;&lt;if $loop == 1&gt;&gt;
+&lt;div style=&quot;
+    background-image: url(&#39;assets/img/turista/turista_1.jpg&#39;);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    transition: background 0.5s ease;
-    padding: 20px;       /* opzionale, regola il testo */
-    color: #fff;          /* opzionale, se l'immagine è scura */
-}
-
-.tw-passage p {
-    margin-bottom: 0.8em;
-    line-height: 1.4em;
-}
-</style><script role="script" id="twine-user-script" type="text/twine-javascript">// Eseguito dopo il render di ogni passaggio
-$(document).on(':passagerender', function (ev) {
-    const p = ev.passage;
-    const passageElement = document.querySelector('.tw-passage');
-    
-    if(p.title === "Risveglio") {
-        switch (State.variables.loop) {
-            case 1:
-                passageElement.style.backgroundImage = "url('assets/img/turista/turista_1.jpg')";
-                break;
-            case 2:
-                passageElement.style.backgroundImage = "url('assets/img/studente_lavoratore/studente_lavoratore_1.jpg')";
-                break;
-            case 3:
-                passageElement.style.backgroundImage = "url('assets/img/anziano/anziano_1.jpg')";
-                break;
-            case 4:
-                passageElement.style.backgroundImage = "url('assets/img/lavoratore_precario/lavoratore_precario_1.jpg')";
-                break;
-            case 5:
-                passageElement.style.backgroundImage = "url('assets/img/migrante/migrante_1.jpg')";
-                break;
-            case 6:
-                passageElement.style.backgroundImage = "url('assets/img/senzatetto/senzatetto_1.jpg')";
-                break;
-        }
-    } else {
-        // reset background negli altri passaggi
-        passageElement.style.backgroundImage = "none";
-    }
-});
-</script><tw-passagedata pid="1" name="Start" tags="" position="500,200" size="100,100">&lt;&lt;set $loop = 1&gt;&gt;
-
-[[Inizia-&gt;Risveglio]]
-</tw-passagedata><tw-passagedata pid="2" name="Risveglio" tags="" position="700,200" size="100,100">&lt;&lt;if $loop == 1&gt;&gt;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    color: #fff;
+&quot;&gt;
 I. La Turista
 
 Suona l&#39;allarme, sono le 7:00. Ti svegli in una camera d&#39;albergo dell&#39; &quot;Hotel Corona D&#39;oro 1890&quot;, a Bologna. Intravedi le Due Torri dalla finestra, la valigia è aperta e sul telefono compare la notifica: &quot;ultimo giorno di viaggio in Italia&quot;. Il sole filtra dalle tende e ti chiedi se restare un po’ a letto o alzarti subito per goderti le ultime ore in città prima di avviarti verso l&#39;aeroporto, stasera.
 
+[[Uscire-&gt;Bus]]
+&lt;/div&gt;
+
 &lt;&lt;elseif $loop == 2&gt;&gt;
+&lt;div style=&quot;
+    background-image: url(&#39;assets/img/studente_lavoratore/studente_lavoratore_1.jpg&#39;);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    color: #fff;
+&quot;&gt;
 II. Lo Studente Lavoratore
 
 La sveglia delle 7.00 sembra averti beccata mentre ti sei addormentata sopra gli appunti per l&#39;esame di oggi. Sullo schermo dello smartphone compaiono il promemoria per l&#39;esame assieme ad una richiesta di partecipazione ad una videochiamata di lavoro che coprirà tutta l&#39;ora prima dell&#39;esame. Hai assolutamente bisogno di passare questo esame per raggiungere i crediti necessari per ricevere la prossima rata delle borsa di studio, ma ti hanno chiamato per lavoro dopo quasi un mese e se rifiuti perderai un&#39;ora di paga e forse anche nuove possibilità di essere ricontattata nei prossimi giorni. Il tempo è tiranno: vorresti ripassare un po’ dato che dopo non riuscirai ma forse è meglio cercare un luogo vicino alla sede dell&#39;esame dove lavorare.
 
+[[Uscire-&gt;Bus]]
+&lt;/div&gt;
+
 &lt;&lt;elseif $loop == 3&gt;&gt;
+&lt;div style=&quot;
+    background-image: url(&#39;assets/img/anziano/anziano_1.jpg&#39;);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    color: #fff;
+&quot;&gt;
 III. L&#39; Anziano
 
 Il corpo è rigido e i farmaci sul comodino ricordano la routine: devono essere presi alle sette in punto, in modo tale da poter fare colazione un&#39;ora esatta dopo. Senti il corpo pesante e non hai le forze di tenerti su in piedi. Tiri su lo sguardo e il cerchio rosso sul calendario segna che oggi è il giorno in cui bisogna andare a ritirare la pensione. Sbuffi, scocciato.
 
+[[Uscire-&gt;Bus]]
+&lt;/div&gt;
+
 &lt;&lt;elseif $loop == 4&gt;&gt;
+&lt;div style=&quot;
+    background-image: url(&#39;assets/img/lavoratore_precario/lavoratore_precario_1.jpg&#39;);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    color: #fff;
+&quot;&gt;
 IV. Il Lavoratore Precario
 
 La sveglia suona a fatica tra messaggi di lavoro. Controlli il telefono e scopri che devi prepararti per un turno lungo e avresti la possibilità di svolgere un altro impegno extra in quanto un collega ha avvisato di stare male e ci sarebbe il suo turno scoperto. Riesci a malapena a coprire le spese dell&#39;affitto e comprare beni di prima necessità, degli straordinari non farebbero male. 
 
 Sei rientrato a casa da lavoro la mattina presto e hai deciso di approfittarne per dormire un paio di ore. Sei assonnato e gli occhi diventano sempre più pesanti ma se non scrivi il tuo nome ora, nel turno che si è liberato, qualcun altro lo farà.
 
+[[Uscire-&gt;Bus]]
+&lt;/div&gt;
+
 &lt;&lt;elseif $loop == 5&gt;&gt;
+&lt;div style=&quot;
+    background-image: url(&#39;assets/img/migrante/migrante_1.jpg&#39;);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    color: #fff;
+&quot;&gt;
 V. La Migrante
 
 Lo spazio condiviso è piccolo e i pochi oggetti sono ordinati con cura. La responsabile del Centro Assistenza Stranieri, in cui risiedi, ti ha chiesto di raggiungerla alle Poste per richiedere insieme la carta prepagata Postepay; ora che sei stata finalmente assunta come &quot;cameriera ai piani&quot;, ne hai bisogno per ricevere lo stipendio. 
 
 Cresciuta in povertà, non hai mai avuto la possibilità di andare a scuola e studiare quindi anche se sei al Centro da ormai diversi mesi e ti stanno insegnando l&#39;italiano, ci stai mettendo di più delle tue nuove compagne ad impararlo e trovare un lavoro stabile. La responsabile del Cas ti ha chiesto se saresti riuscita a raggiungere le Poste da sola perchè lei deve accompagnare una tua compagna dal dottore. Le hai detto di sì per non darle altro disturbo, ma forse te ne stai pentendo.
 
+[[Uscire-&gt;Bus]]
+&lt;/div&gt;
+
 &lt;&lt;elseif $loop == 6&gt;&gt;
+&lt;div style=&quot;
+    background-image: url(&#39;assets/img/senzatetto/senzatetto_1.jpg&#39;);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 100%;
+    height: 100vh;
+    padding: 20px;
+    color: #fff;
+&quot;&gt;
 VI. Il Senzatetto
 
 La moto che passa sfrecciando, il conducente impaziente che suona il clacson e le porte dell&#39;autobus che si aprono fischiando... Come sempre sei bruscamente svegliato dai suoni della città che corre sin dal primo mattino. Ricordi quando anche tu correvi come loro e ora sei sdraiato al freddo per terra con addosso un cartone sottile trovato vicino all&#39;immondizia. Le giornate si fanno sempre più fredde. Non sai che mese o giorno è ma sei sicuro che sia inverno. Non hai più nulla da perdere ma il tuo istinto di sopravvivenza ti dice che forse è meglio trovare un posto più coperto nel caso inizi a nevicare.
 &lt;&lt;/if&gt;&gt;
 
-[[Uscire-&gt;Bus]]</tw-passagedata><tw-passagedata pid="3" name="Bus" tags="" position="900,200" size="100,100">Alla fermata c’è già qualcuno.
+[[Uscire-&gt;Bus]]
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="3" name="Bus" tags="" position="900,200" size="100,100">Alla fermata c’è già qualcuno.
 Il bus arriva puntuale, come sempre.
 
 [[Salire-&gt;Poste]]

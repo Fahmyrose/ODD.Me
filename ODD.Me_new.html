@@ -112,22 +112,20 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
     width: 100%;
     height: 100vh; /* altezza esatta dello schermo */
     margin: 0;
-    padding: 2rem;
+    position: relative;
 
     background-size: cover;       /* l'immagine riempie tutto lo schermo */
     background-position: center;  /* centrata */
     background-repeat: no-repeat;
-
-    color: #ffffff;
 
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
 
     box-sizing: border-box;
-    position: relative;
 
-    overflow: hidden; /* niente scroll */
+    overflow: hidden; /* niente scroll globale */
+    color: #ffffff;
 }
 
 /* ======================================
@@ -143,19 +141,22 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 }
 
 /* ======================================
-   TESTO SOPRA L’OVERLAY
+   CONTENITORE TESTO SCROLLABILE
    ====================================== */
 
-.fullscreen > * {
+.fullscreen .content {
     position: relative;
     z-index: 1;
+    padding: 2rem;
+    max-height: 100%;    /* massimo altezza disponibile */
+    overflow-y: auto;    /* scroll solo testo se troppo lungo */
 }
 
 /* ======================================
    TESTO LEGGIBILE
    ====================================== */
 
-.fullscreen p {
+.fullscreen .content p {
     margin-bottom: 1em;
     line-height: 1.4;
     max-width: 60ch; /* testo più leggibile */
@@ -168,121 +169,144 @@ Benvenuto nel gioco!
 
 </tw-passagedata><tw-passagedata pid="2" name="Risveglio" tags="" position="700,200" size="100,100">&lt;&lt;if $loop == 1&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_1.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;content&quot;&gt;
+&lt;p&gt;I. La Turista&lt;/p&gt;
 
-I. La Turista
-
-Suona l&#39;allarme, sono le 7:00. Ti svegli in una camera d&#39;albergo dell&#39; &quot;Hotel Corona D&#39;oro 1890&quot;, a Bologna. Intravedi le Due Torri dalla finestra, la valigia è aperta e sul telefono compare la notifica: &quot;ultimo giorno di viaggio in Italia&quot;. Il sole filtra dalle tende e ti chiedi se restare un po’ a letto o alzarti subito per goderti le ultime ore in città prima di avviarti verso l&#39;aeroporto, stasera.
+&lt;p&gt;Suona l&#39;allarme, sono le 7:00. Ti svegli in una camera d&#39;albergo dell&#39; &quot;Hotel Corona D&#39;oro 1890&quot;, a Bologna. Intravedi le Due Torri dalla finestra, la valigia è aperta e sul telefono compare la notifica: &quot;ultimo giorno di viaggio in Italia&quot;. Il sole filtra dalle tende e ti chiedi se restare un po’ a letto o alzarti subito per goderti le ultime ore in città prima di avviarti verso l&#39;aeroporto, stasera.&lt;/p&gt;
 
 [[Uscire-&gt;Bus]]
+&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 2&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_1.jpg&#39;)&quot;&gt;
-II. Lo Studente Lavoratore
+&lt;div class=&quot;content&quot;&gt;
+&lt;p&gt;II. Lo Studente Lavoratore&lt;/p&gt;
 
-La sveglia delle 7.00 sembra averti beccata mentre ti sei addormentata sopra gli appunti per l&#39;esame di oggi. Sullo schermo dello smartphone compaiono il promemoria per l&#39;esame assieme ad una richiesta di partecipazione ad una videochiamata di lavoro che coprirà tutta l&#39;ora prima dell&#39;esame. Hai assolutamente bisogno di passare questo esame per raggiungere i crediti necessari per ricevere la prossima rata delle borsa di studio, ma ti hanno chiamato per lavoro dopo quasi un mese e se rifiuti perderai un&#39;ora di paga e forse anche nuove possibilità di essere ricontattata nei prossimi giorni. Il tempo è tiranno: vorresti ripassare un po’ dato che dopo non riuscirai ma forse è meglio cercare un luogo vicino alla sede dell&#39;esame dove lavorare.
+&lt;p&gt;La sveglia delle 7.00 sembra averti beccata mentre ti sei addormentata sopra gli appunti per l&#39;esame di oggi. Sullo schermo dello smartphone compaiono il promemoria per l&#39;esame assieme ad una richiesta di partecipazione ad una videochiamata di lavoro che coprirà tutta l&#39;ora prima dell&#39;esame. Hai assolutamente bisogno di passare questo esame per raggiungere i crediti necessari per ricevere la prossima rata delle borsa di studio, ma ti hanno chiamato per lavoro dopo quasi un mese e se rifiuti perderai un&#39;ora di paga e forse anche nuove possibilità di essere ricontattata nei prossimi giorni. Il tempo è tiranno: vorresti ripassare un po’ dato che dopo non riuscirai ma forse è meglio cercare un luogo vicino alla sede dell&#39;esame dove lavorare.&lt;/p&gt;
 
 [[Uscire-&gt;Bus]]
+&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 3&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_1.jpg&#39;)&quot;&gt;
-III. L&#39; Anziano
+&lt;div class=&quot;content&quot;&gt;
+&lt;p&gt;III. L&#39; Anziano&lt;/p&gt;
 
-Il corpo è rigido e i farmaci sul comodino ricordano la routine: devono essere presi alle sette in punto, in modo tale da poter fare colazione un&#39;ora esatta dopo. Senti il corpo pesante e non hai le forze di tenerti su in piedi. Tiri su lo sguardo e il cerchio rosso sul calendario segna che oggi è il giorno in cui bisogna andare a ritirare la pensione. Sbuffi, scocciato.
+&lt;p&gt;Il corpo è rigido e i farmaci sul comodino ricordano la routine: devono essere presi alle sette in punto, in modo tale da poter fare colazione un&#39;ora esatta dopo. Senti il corpo pesante e non hai le forze di tenerti su in piedi. Tiri su lo sguardo e il cerchio rosso sul calendario segna che oggi è il giorno in cui bisogna andare a ritirare la pensione. Sbuffi, scocciato.&lt;/p&gt;
 
 [[Uscire-&gt;Bus]]
+&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 4&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_1.jpg&#39;)&quot;&gt;
-IV. Il Lavoratore Precario
+&lt;div class=&quot;content&quot;&gt;
+&lt;p&gt;IV. Il Lavoratore Precario&lt;/p&gt;
 
-La sveglia suona a fatica tra messaggi di lavoro. Controlli il telefono e scopri che devi prepararti per un turno lungo e avresti la possibilità di svolgere un altro impegno extra in quanto un collega ha avvisato di stare male e ci sarebbe il suo turno scoperto. Riesci a malapena a coprire le spese dell&#39;affitto e comprare beni di prima necessità, degli straordinari non farebbero male. 
+&lt;p&gt;La sveglia suona a fatica tra messaggi di lavoro. Controlli il telefono e scopri che devi prepararti per un turno lungo e avresti la possibilità di svolgere un altro impegno extra in quanto un collega ha avvisato di stare male e ci sarebbe il suo turno scoperto. Riesci a malapena a coprire le spese dell&#39;affitto e comprare beni di prima necessità, degli straordinari non farebbero male. &lt;/p&gt;
 
-Sei rientrato a casa da lavoro la mattina presto e hai deciso di approfittarne per dormire un paio di ore. Sei assonnato e gli occhi diventano sempre più pesanti ma se non scrivi il tuo nome ora, nel turno che si è liberato, qualcun altro lo farà.
+&lt;p&gt;Sei rientrato a casa da lavoro la mattina presto e hai deciso di approfittarne per dormire un paio di ore. Sei assonnato e gli occhi diventano sempre più pesanti ma se non scrivi il tuo nome ora, nel turno che si è liberato, qualcun altro lo farà.&lt;/p&gt;
 
 [[Uscire-&gt;Bus]]
+&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 5&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_1.jpg&#39;)&quot;&gt;
-V. La Migrante
+&lt;div class=&quot;content&quot;&gt;
+&lt;p&gt;V. La Migrante&lt;/p&gt;
 
-Lo spazio condiviso è piccolo e i pochi oggetti sono ordinati con cura. La responsabile del Centro Assistenza Stranieri, in cui risiedi, ti ha chiesto di raggiungerla alle Poste per richiedere insieme la carta prepagata Postepay; ora che sei stata finalmente assunta come &quot;cameriera ai piani&quot;, ne hai bisogno per ricevere lo stipendio. 
+&lt;p&gt;Lo spazio condiviso è piccolo e i pochi oggetti sono ordinati con cura. La responsabile del Centro Assistenza Stranieri, in cui risiedi, ti ha chiesto di raggiungerla alle Poste per richiedere insieme la carta prepagata Postepay; ora che sei stata finalmente assunta come &quot;cameriera ai piani&quot;, ne hai bisogno per ricevere lo stipendio.&lt;/p&gt; 
 
-Cresciuta in povertà, non hai mai avuto la possibilità di andare a scuola e studiare quindi anche se sei al Centro da ormai diversi mesi e ti stanno insegnando l&#39;italiano, ci stai mettendo di più delle tue nuove compagne ad impararlo e trovare un lavoro stabile. La responsabile del Cas ti ha chiesto se saresti riuscita a raggiungere le Poste da sola perchè lei deve accompagnare una tua compagna dal dottore. Le hai detto di sì per non darle altro disturbo, ma forse te ne stai pentendo.
+&lt;p&gt;Cresciuta in povertà, non hai mai avuto la possibilità di andare a scuola e studiare quindi anche se sei al Centro da ormai diversi mesi e ti stanno insegnando l&#39;italiano, ci stai mettendo di più delle tue nuove compagne ad impararlo e trovare un lavoro stabile. La responsabile del Cas ti ha chiesto se saresti riuscita a raggiungere le Poste da sola perchè lei deve accompagnare una tua compagna dal dottore. Le hai detto di sì per non darle altro disturbo, ma forse te ne stai pentendo.&lt;/p&gt;
 
 [[Uscire-&gt;Bus]]
+&lt;7div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 6&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_1.jpg&#39;)&quot;&gt;
-VI. Il Senzatetto
+&lt;div class=&quot;content&quot;&gt;
+&lt;p&gt;VI. Il Senzatetto&lt;/p&gt;
 
-La moto che passa sfrecciando, il conducente impaziente che suona il clacson e le porte dell&#39;autobus che si aprono fischiando... Come sempre sei bruscamente svegliato dai suoni della città che corre sin dal primo mattino. Ricordi quando anche tu correvi come loro e ora sei sdraiato al freddo per terra con addosso un cartone sottile trovato vicino all&#39;immondizia. Le giornate si fanno sempre più fredde. Non sai che mese o giorno è ma sei sicuro che sia inverno. Non hai più nulla da perdere ma il tuo istinto di sopravvivenza ti dice che forse è meglio trovare un posto più coperto nel caso inizi a nevicare.
+&lt;p&gt;La moto che passa sfrecciando, il conducente impaziente che suona il clacson e le porte dell&#39;autobus che si aprono fischiando... Come sempre sei bruscamente svegliato dai suoni della città che corre sin dal primo mattino. Ricordi quando anche tu correvi come loro e ora sei sdraiato al freddo per terra con addosso un cartone sottile trovato vicino all&#39;immondizia. Le giornate si fanno sempre più fredde. Non sai che mese o giorno è ma sei sicuro che sia inverno. Non hai più nulla da perdere ma il tuo istinto di sopravvivenza ti dice che forse è meglio trovare un posto più coperto nel caso inizi a nevicare.&lt;/p&gt;
 
 [[Uscire-&gt;Bus]]
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata><tw-passagedata pid="3" name="Bus" tags="" position="900,200" size="100,100">&lt;&lt;if $loop == 1&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_2.jpg&#39;)&quot;&gt;
-I. Turista
+&lt;div class=&quot;content&quot;&gt;
+&lt;p&gt;I. Turista&lt;/p&gt;
 
-Alla fermata c’è già qualcuno.
-Il bus arriva puntuale, come sempre.
+&lt;p&gt;Alla fermata c’è già qualcuno.
+Il bus arriva puntuale, come sempre.&lt;/p&gt;
 
 [[Salire-&gt;Poste]]
+&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 2&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_2.jpg&#39;)&quot;&gt;
-II. Studente Lavoratore
+&lt;div class=&quot;content&quot;&gt;
+&lt;p&gt;II. Studente Lavoratore&lt;/p&gt;
 
-Alla fermata c’è già qualcuno.
-Il bus arriva puntuale, come sempre.
+&lt;p&gt;Alla fermata c’è già qualcuno.
+Il bus arriva puntuale, come sempre.&lt;/p&gt;
 
 [[Salire-&gt;Poste]]
+&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 3&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_2.jpg&#39;)&quot;&gt;
-III. L&#39; Anziano
+&lt;div class=&quot;content&quot;&gt;
+&lt;p&gt;III. L&#39; Anziano&lt;/p&gt;
 
-Alla fermata c’è già qualcuno.
-Il bus arriva puntuale, come sempre.
+&lt;p&gt;Alla fermata c’è già qualcuno.
+Il bus arriva puntuale, come sempre.&lt;/p&gt;
 
 [[Salire-&gt;Poste]]
+&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 4&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_2.jpg&#39;)&quot;&gt;
-IV. Il Lavoratore Precario
+&lt;div class=&quot;content&quot;&gt;
+&lt;p&gt;IV. Il Lavoratore Precario&lt;/p&gt;
 
-Alla fermata c’è già qualcuno.
-Il bus arriva puntuale, come sempre.
+&lt;p&gt;Alla fermata c’è già qualcuno.
+Il bus arriva puntuale, come sempre.&lt;/p&gt;
 
 [[Salire-&gt;Poste]]
+&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 5&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_2.jpg&#39;)&quot;&gt;
-V. La Migrante
+&lt;div class=&quot;content&quot;&gt;
+&lt;p&gt;V. La Migrante&lt;/p&gt;
 
-Alla fermata c’è già qualcuno.
-Il bus arriva puntuale, come sempre.
+&lt;p&gt;Alla fermata c’è già qualcuno.
+Il bus arriva puntuale, come sempre.&lt;/p&gt;
 
 [[Salire-&gt;Poste]]
+&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 6&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_2.jpg&#39;)&quot;&gt;
-VI. Il Senzatetto
+&lt;div class=&quot;content&quot;&gt;
+&lt;p&gt;VI. Il Senzatetto&lt;/p&gt;
 
-Alla fermata c’è già qualcuno.
-Il bus arriva puntuale, come sempre.
+&lt;p&gt;Alla fermata c’è già qualcuno.
+Il bus arriva puntuale, come sempre.&lt;/p&gt;
 
 [[Salire-&gt;Poste]]
+&lt;/div&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata><tw-passagedata pid="4" name="Poste" tags="" position="1100,200" size="100,100">&lt;&lt;if $loop == 1&gt;&gt;

@@ -290,26 +290,29 @@ Benvenuto nel gioco!
 
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/bus/bus.jpg&#39;)&quot;&gt;
   &lt;div class=&quot;text-box&quot;&gt;
-    &lt;p&gt;I. La Turista&lt;/p&gt;
-
-    &lt;p&gt;Alla fermata c’è già qualcuno.&lt;/p&gt;
-    &lt;p&gt;Il bus arriva puntuale, come sempre.&lt;/p&gt;
-
+ 
     &lt;&lt;if $attention &lt; 70&gt;&gt;
-      &lt;p&gt;
-      Quando sali, l’autobus è più affollato di quanto ti aspettassi.
-      Qualcuno ti urta passando e per un attimo ti senti spaesata.
-      Tieni stretto il pacco tra le braccia, ma percepisci di avere poco controllo sulla situazione.
-      &lt;/p&gt;
-      &lt;&lt;set $control -= 5&gt;&gt;
-    &lt;&lt;else&gt;&gt;
-      &lt;p&gt;
-      Sali con calma e trovi subito un appiglio.
-      Controlli il percorso sul telefono e segui le fermate.
-      Ti senti sicura e padronə della situazione.
-      &lt;/p&gt;
-      &lt;&lt;set $control += 2&gt;&gt;
-    &lt;&lt;/if&gt;&gt;
+  &lt;p&gt;
+  Sali sull’autobus e subito ti accorgi che è più affollato di quanto immaginassi. 
+  Alcune persone ti guardano di traverso, come a dire “eccola, la turista distratta”. 
+  Ti stringi al pacco che devi spedire e cerchi di farti strada tra i passeggeri, 
+  continuando a sbirciare Google Maps sul telefono, ma le indicazioni sembrano confuse 
+  e non sei sicura di dove scendere. Qualcuno ti urta passando e per un attimo ti senti 
+  spaesata. L’ansia cresce leggermente: ti rendi conto che non hai il pieno controllo 
+  della situazione e che ogni passo richiede più attenzione di quanto avresti voluto.
+  &lt;/p&gt;
+  &lt;&lt;set $control -= 5&gt;&gt;
+&lt;&lt;else&gt;&gt;
+  &lt;p&gt;
+  Dato che devi spedire un pacco ti prepari, fai colazione e ti incammini verso la fermata dell&#39;autobus. Sali sull’autobus con calma e trovi subito un appiglio vicino alla porta. 
+  Controlli il percorso sul telefono e individui la fermata giusta, mentre scivoli 
+  tra i passeggeri senza problemi. Anche se alcuni ti osservano con curiosità, 
+  non perdi la concentrazione: il pacco è saldo tra le braccia e riesci a pianificare 
+  mentalmente il percorso fino alle Poste. Ti senti sicura, organizzata e padrona 
+  della situazione, pronta ad affrontare eventuali imprevisti della giornata.
+  &lt;/p&gt;
+  &lt;&lt;set $control += 2&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
     [[Scendi alla fermata successiva-&gt;Poste]]
   &lt;/div&gt;

@@ -133,12 +133,13 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
    ====================================== */
 
 .fullscreen .text-box {
-    background: rgba(0, 0, 0, 0.5); /* nero semi-trasparente */
+    background: rgba(0, 0, 0, 0.8); /* nero semi-trasparente */
     padding: 1.5rem 2rem;
     border-radius: 8px;             /* angoli smussati */
-    max-width: 800px;               /* larghezza massima del box */
+    max-width: 750px;               /* larghezza massima box */
     width: 100%;                     /* scala fino al max-width */
     color: #ffffff;
+  	font-size: 14px;
 
     position: relative;             /* sopra l'immagine */
     z-index: 1;
@@ -216,314 +217,308 @@ Benvenuto nel gioco!
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata><tw-passagedata pid="3" name="Bus" tags="" position="900,200" size="100,100">&lt;&lt;if $loop == 1&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_2.jpg&#39;)&quot;&gt;
-I. Turista
-
-Alla fermata c’è già qualcuno.
-Il bus arriva puntuale, come sempre.
-
-[[Salire-&gt;Poste]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;I. Turista&lt;/p&gt;
+    &lt;p&gt;Alla fermata c’è già qualcuno.&lt;/p&gt;
+    &lt;p&gt;Il bus arriva puntuale, come sempre.&lt;/p&gt;
+    [[Salire-&gt;Poste]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 2&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_2.jpg&#39;)&quot;&gt;
-II. Studente Lavoratore
-
-Alla fermata c’è già qualcuno.
-Il bus arriva puntuale, come sempre.
-
-[[Salire-&gt;Poste]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;II. Studente Lavoratore&lt;/p&gt;
+    &lt;p&gt;Alla fermata c’è già qualcuno.&lt;/p&gt;
+    &lt;p&gt;Il bus arriva puntuale, come sempre.&lt;/p&gt;
+    [[Salire-&gt;Poste]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 3&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_2.jpg&#39;)&quot;&gt;
-III. L&#39; Anziano
-
-Alla fermata c’è già qualcuno.
-Il bus arriva puntuale, come sempre.
-
-[[Salire-&gt;Poste]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;III. L&#39; Anziano&lt;/p&gt;
+    &lt;p&gt;Alla fermata c’è già qualcuno.&lt;/p&gt;
+    &lt;p&gt;Il bus arriva puntuale, come sempre.&lt;/p&gt;
+    [[Salire-&gt;Poste]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 4&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_2.jpg&#39;)&quot;&gt;
-IV. Il Lavoratore Precario
-
-Alla fermata c’è già qualcuno.
-Il bus arriva puntuale, come sempre.
-
-[[Salire-&gt;Poste]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;IV. Il Lavoratore Precario&lt;/p&gt;
+    &lt;p&gt;Alla fermata c’è già qualcuno.&lt;/p&gt;
+    &lt;p&gt;Il bus arriva puntuale, come sempre.&lt;/p&gt;
+    [[Salire-&gt;Poste]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 5&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_2.jpg&#39;)&quot;&gt;
-V. La Migrante
-
-Alla fermata c’è già qualcuno.
-Il bus arriva puntuale, come sempre.
-
-[[Salire-&gt;Poste]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;V. La Migrante&lt;/p&gt;
+    &lt;p&gt;Alla fermata c’è già qualcuno.&lt;/p&gt;
+    &lt;p&gt;Il bus arriva puntuale, come sempre.&lt;/p&gt;
+    [[Salire-&gt;Poste]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 6&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_2.jpg&#39;)&quot;&gt;
-VI. Il Senzatetto
-
-Alla fermata c’è già qualcuno.
-Il bus arriva puntuale, come sempre.
-
-[[Salire-&gt;Poste]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;VI. Il Senzatetto&lt;/p&gt;
+    &lt;p&gt;Alla fermata c’è già qualcuno.&lt;/p&gt;
+    &lt;p&gt;Il bus arriva puntuale, come sempre.&lt;/p&gt;
+    [[Salire-&gt;Poste]]
+  &lt;/div&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata><tw-passagedata pid="4" name="Poste" tags="" position="1100,200" size="100,100">&lt;&lt;if $loop == 1&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_3.jpg&#39;)&quot;&gt;
-I. Turista
-
-Alle poste l’aria è ferma.
-Aspetti il tuo turno senza sapere perché sei lì.
-
-[[Uscire-&gt;Supermercato]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;I. Turista&lt;/p&gt;
+    &lt;p&gt;Alle poste l’aria è ferma.&lt;/p&gt;
+    &lt;p&gt;Aspetti il tuo turno senza sapere perché sei lì.&lt;/p&gt;
+    [[Uscire-&gt;Supermercato]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 2&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_3.jpg&#39;)&quot;&gt;
-II. Studente Lavoratore
-
-Alle poste l’aria è ferma.
-Aspetti il tuo turno senza sapere perché sei lì.
-
-[[Uscire-&gt;Supermercato]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;II. Studente Lavoratore&lt;/p&gt;
+    &lt;p&gt;Alle poste l’aria è ferma.&lt;/p&gt;
+    &lt;p&gt;Aspetti il tuo turno senza sapere perché sei lì.&lt;/p&gt;
+    [[Uscire-&gt;Supermercato]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 3&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_3.jpg&#39;)&quot;&gt;
-III. L&#39; Anziano
-
-Alle poste l’aria è ferma.
-Aspetti il tuo turno senza sapere perché sei lì.
-
-[[Uscire-&gt;Supermercato]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;III. L&#39; Anziano&lt;/p&gt;
+    &lt;p&gt;Alle poste l’aria è ferma.&lt;/p&gt;
+    &lt;p&gt;Aspetti il tuo turno senza sapere perché sei lì.&lt;/p&gt;
+    [[Uscire-&gt;Supermercato]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 4&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_3.jpg&#39;)&quot;&gt;
-IV. Il Lavoratore Precario
-
-Alle poste l’aria è ferma.
-Aspetti il tuo turno senza sapere perché sei lì.
-
-[[Uscire-&gt;Supermercato]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;IV. Il Lavoratore Precario&lt;/p&gt;
+    &lt;p&gt;Alle poste l’aria è ferma.&lt;/p&gt;
+    &lt;p&gt;Aspetti il tuo turno senza sapere perché sei lì.&lt;/p&gt;
+    [[Uscire-&gt;Supermercato]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 5&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_3.jpg&#39;)&quot;&gt;
-V. La Migrante
-
-Alle poste l’aria è ferma.
-Aspetti il tuo turno senza sapere perché sei lì.
-
-[[Uscire-&gt;Supermercato]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;V. La Migrante&lt;/p&gt;
+    &lt;p&gt;Alle poste l’aria è ferma.&lt;/p&gt;
+    &lt;p&gt;Aspetti il tuo turno senza sapere perché sei lì.&lt;/p&gt;
+    [[Uscire-&gt;Supermercato]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 6&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_3.jpg&#39;)&quot;&gt;
-VI. Il Senzatetto
-
-Alle poste l’aria è ferma.
-Aspetti il tuo turno senza sapere perché sei lì.
-
-[[Uscire-&gt;Supermercato]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;VI. Il Senzatetto&lt;/p&gt;
+    &lt;p&gt;Alle poste l’aria è ferma.&lt;/p&gt;
+    &lt;p&gt;Aspetti il tuo turno senza sapere perché sei lì.&lt;/p&gt;
+    [[Uscire-&gt;Supermercato]]
+  &lt;/div&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata><tw-passagedata pid="5" name="Supermercato" tags="" position="1300,200" size="100,100">&lt;&lt;if $loop == 1&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_4.jpg&#39;)&quot;&gt;
-I. Turista
-
-Le corsie sono illuminate troppo forte.
-Prendi le stesse cose di sempre.
-
-[[Pagare e uscire-&gt;StradaChiusa]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;I. Turista&lt;/p&gt;
+    &lt;p&gt;Le corsie sono illuminate troppo forte.&lt;/p&gt;
+    &lt;p&gt;Prendi le stesse cose di sempre.&lt;/p&gt;
+    [[Pagare e uscire-&gt;StradaChiusa]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 2&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_4.jpg&#39;)&quot;&gt;
-II. Studente Lavoratore
-
-Le corsie sono illuminate troppo forte.
-Prendi le stesse cose di sempre.
-
-[[Pagare e uscire-&gt;StradaChiusa]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;II. Studente Lavoratore&lt;/p&gt;
+    &lt;p&gt;Le corsie sono illuminate troppo forte.&lt;/p&gt;
+    &lt;p&gt;Prendi le stesse cose di sempre.&lt;/p&gt;
+    [[Pagare e uscire-&gt;StradaChiusa]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 3&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_4.jpg&#39;)&quot;&gt;
-III. L&#39; Anziano
-
-Le corsie sono illuminate troppo forte.
-Prendi le stesse cose di sempre.
-
-[[Pagare e uscire-&gt;StradaChiusa]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;III. L&#39; Anziano&lt;/p&gt;
+    &lt;p&gt;Le corsie sono illuminate troppo forte.&lt;/p&gt;
+    &lt;p&gt;Prendi le stesse cose di sempre.&lt;/p&gt;
+    [[Pagare e uscire-&gt;StradaChiusa]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 4&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_4.jpg&#39;)&quot;&gt;
-IV. Il Lavoratore Precario
-
-Le corsie sono illuminate troppo forte.
-Prendi le stesse cose di sempre.
-
-[[Pagare e uscire-&gt;StradaChiusa]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;IV. Il Lavoratore Precario&lt;/p&gt;
+    &lt;p&gt;Le corsie sono illuminate troppo forte.&lt;/p&gt;
+    &lt;p&gt;Prendi le stesse cose di sempre.&lt;/p&gt;
+    [[Pagare e uscire-&gt;StradaChiusa]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 5&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_4.jpg&#39;)&quot;&gt;
-V. La Migrante
-
-Le corsie sono illuminate troppo forte.
-Prendi le stesse cose di sempre.
-
-[[Pagare e uscire-&gt;StradaChiusa]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;V. La Migrante&lt;/p&gt;
+    &lt;p&gt;Le corsie sono illuminate troppo forte.&lt;/p&gt;
+    &lt;p&gt;Prendi le stesse cose di sempre.&lt;/p&gt;
+    [[Pagare e uscire-&gt;StradaChiusa]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 6&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_4.jpg&#39;)&quot;&gt;
-VI. Il Senzatetto
-
-Le corsie sono illuminate troppo forte.
-Prendi le stesse cose di sempre.
-
-[[Pagare e uscire-&gt;StradaChiusa]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;VI. Il Senzatetto&lt;/p&gt;
+    &lt;p&gt;Le corsie sono illuminate troppo forte.&lt;/p&gt;
+    &lt;p&gt;Prendi le stesse cose di sempre.&lt;/p&gt;
+    [[Pagare e uscire-&gt;StradaChiusa]]
+  &lt;/div&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata><tw-passagedata pid="6" name="StradaChiusa" tags="" position="1500,200" size="100,100">&lt;&lt;if $loop == 1&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_5.jpg&#39;)&quot;&gt;
-I. Turista
-
-La strada è bloccata.
-Un cartello improvvisato devia il traffico.
-
-Ti fermi un istante di troppo.
-
-[[Tornare indietro-&gt;FineLoop]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;I. Turista&lt;/p&gt;
+    &lt;p&gt;La strada è bloccata.&lt;/p&gt;
+    &lt;p&gt;Un cartello improvvisato devia il traffico.&lt;/p&gt;
+    &lt;p&gt;Ti fermi un istante di troppo.&lt;/p&gt;
+    [[Tornare indietro-&gt;FineLoop]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 2&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_5.jpg&#39;)&quot;&gt;
-II. Studente Lavoratore
-
-La strada è bloccata.
-Un cartello improvvisato devia il traffico.
-
-Ti fermi un istante di troppo.
-
-[[Tornare indietro-&gt;FineLoop]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;II. Studente Lavoratore&lt;/p&gt;
+    &lt;p&gt;La strada è bloccata.&lt;/p&gt;
+    &lt;p&gt;Un cartello improvvisato devia il traffico.&lt;/p&gt;
+    &lt;p&gt;Ti fermi un istante di troppo.&lt;/p&gt;
+    [[Tornare indietro-&gt;FineLoop]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 3&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_5.jpg&#39;)&quot;&gt;
-III. L&#39; Anziano
-
-La strada è bloccata.
-Un cartello improvvisato devia il traffico.
-
-Ti fermi un istante di troppo.
-
-[[Tornare indietro-&gt;FineLoop]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;III. L&#39; Anziano&lt;/p&gt;
+    &lt;p&gt;La strada è bloccata.&lt;/p&gt;
+    &lt;p&gt;Un cartello improvvisato devia il traffico.&lt;/p&gt;
+    &lt;p&gt;Ti fermi un istante di troppo.&lt;/p&gt;
+    [[Tornare indietro-&gt;FineLoop]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 4&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_5.jpg&#39;)&quot;&gt;
-IV. Il Lavoratore Precario
-
-La strada è bloccata.
-Un cartello improvvisato devia il traffico.
-
-Ti fermi un istante di troppo.
-
-[[Tornare indietro-&gt;FineLoop]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;IV. Il Lavoratore Precario&lt;/p&gt;
+    &lt;p&gt;La strada è bloccata.&lt;/p&gt;
+    &lt;p&gt;Un cartello improvvisato devia il traffico.&lt;/p&gt;
+    &lt;p&gt;Ti fermi un istante di troppo.&lt;/p&gt;
+    [[Tornare indietro-&gt;FineLoop]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 5&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_5.jpg&#39;)&quot;&gt;
-V. La Migrante
-
-La strada è bloccata.
-Un cartello improvvisato devia il traffico.
-
-Ti fermi un istante di troppo.
-
-[[Tornare indietro-&gt;FineLoop]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;V. La Migrante&lt;/p&gt;
+    &lt;p&gt;La strada è bloccata.&lt;/p&gt;
+    &lt;p&gt;Un cartello improvvisato devia il traffico.&lt;/p&gt;
+    &lt;p&gt;Ti fermi un istante di troppo.&lt;/p&gt;
+    [[Tornare indietro-&gt;FineLoop]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 6&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_5.jpg&#39;)&quot;&gt;
-VI. Il Senzatetto
-
-La strada è bloccata.
-Un cartello improvvisato devia il traffico.
-
-Ti fermi un istante di troppo.
-
-[[Tornare indietro-&gt;FineLoop]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;VI. Il Senzatetto&lt;/p&gt;
+    &lt;p&gt;La strada è bloccata.&lt;/p&gt;
+    &lt;p&gt;Un cartello improvvisato devia il traffico.&lt;/p&gt;
+    &lt;p&gt;Ti fermi un istante di troppo.&lt;/p&gt;
+    [[Tornare indietro-&gt;FineLoop]]
+  &lt;/div&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata><tw-passagedata pid="7" name="FineLoop" tags="" position="1400,400" size="100,100">&lt;&lt;if $loop == 1&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_0.jpg&#39;)&quot;&gt;
-I. Turista
-
-La giornata si chiude senza un vero finale.
-Domani ricomincerà tutto.
-
-[[Continuare-&gt;Intermezzo]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;I. Turista&lt;/p&gt;
+    &lt;p&gt;La giornata si chiude senza un vero finale.&lt;/p&gt;
+    &lt;p&gt;Domani ricomincerà tutto.&lt;/p&gt;
+    [[Continuare-&gt;Intermezzo]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 2&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_0.jpg&#39;)&quot;&gt;
-II. Studente Lavoratore
-
-La giornata si chiude senza un vero finale.
-Domani ricomincerà tutto.
-
-[[Continuare-&gt;Intermezzo]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;II. Studente Lavoratore&lt;/p&gt;
+    &lt;p&gt;La giornata si chiude senza un vero finale.&lt;/p&gt;
+    &lt;p&gt;Domani ricomincerà tutto.&lt;/p&gt;
+    [[Continuare-&gt;Intermezzo]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 3&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_0.jpg&#39;)&quot;&gt;
-III. L&#39; Anziano
-
-La giornata si chiude senza un vero finale.
-Domani ricomincerà tutto.
-
-[[Continuare-&gt;Intermezzo]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;III. L&#39; Anziano&lt;/p&gt;
+    &lt;p&gt;La giornata si chiude senza un vero finale.&lt;/p&gt;
+    &lt;p&gt;Domani ricomincerà tutto.&lt;/p&gt;
+    [[Continuare-&gt;Intermezzo]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 4&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_0.jpg&#39;)&quot;&gt;
-IV. Il Lavoratore Precario
-
-La giornata si chiude senza un vero finale.
-Domani ricomincerà tutto.
-
-[[Continuare-&gt;Intermezzo]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;IV. Il Lavoratore Precario&lt;/p&gt;
+    &lt;p&gt;La giornata si chiude senza un vero finale.&lt;/p&gt;
+    &lt;p&gt;Domani ricomincerà tutto.&lt;/p&gt;
+    [[Continuare-&gt;Intermezzo]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 5&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_0.jpg&#39;)&quot;&gt;
-V. La Migrante
-
-La giornata si chiude senza un vero finale.
-Domani ricomincerà tutto.
-
-[[Continuare-&gt;Intermezzo]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;V. La Migrante&lt;/p&gt;
+    &lt;p&gt;La giornata si chiude senza un vero finale.&lt;/p&gt;
+    &lt;p&gt;Domani ricomincerà tutto.&lt;/p&gt;
+    [[Continuare-&gt;Intermezzo]]
+  &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop == 6&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_0.jpg&#39;)&quot;&gt;
-VI. Il Senzatetto
-
-La giornata si chiude senza un vero finale.
-Domani ricomincerà tutto.
-
-[[Continuare-&gt;Intermezzo]]
+  &lt;div class=&quot;text-box&quot;&gt;
+    &lt;p&gt;VI. Il Senzatetto&lt;/p&gt;
+    &lt;p&gt;La giornata si chiude senza un vero finale.&lt;/p&gt;
+    &lt;p&gt;Domani ricomincerà tutto.&lt;/p&gt;
+    [[Continuare-&gt;Intermezzo]]
+  &lt;/div&gt;
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata><tw-passagedata pid="8" name="Intermezzo" tags="" position="1100,475" size="100,100">&lt;&lt;if $loop == 1&gt;&gt;

@@ -238,9 +238,9 @@ Benvenuto nel gioco!
   &lt;div class=&quot;text-box&quot;&gt;
     &lt;p&gt;III. L&#39; Anziano&lt;/p&gt;
     &lt;p&gt;Il corpo è rigido e i farmaci sul comodino ricordano la routine: devono essere presi alle sette in punto, in modo tale da poter fare colazione un&#39;ora esatta dopo. Senti il corpo pesante e non hai le forze di tenerti su in piedi. Tiri su lo sguardo e il cerchio rosso sul calendario segna che oggi è il giorno in cui bisogna andare a ritirare la pensione. Sbuffi, scocciato.&lt;/p&gt;
-    
-[[Muoversi lentamente-&gt;AnzianoLento]]
+
 [[Forzarsi a uscire-&gt;Bus]]
+[[Muoversi lentamente-&gt;AnzianoLento]]
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -265,8 +265,8 @@ Benvenuto nel gioco!
     &lt;p&gt;Lo spazio condiviso è piccolo e i pochi oggetti sono ordinati con cura. La responsabile del Centro Assistenza Stranieri, in cui risiedi, ti ha chiesto di raggiungerla alle Poste per richiedere insieme la carta prepagata Postepay; ora che sei stata finalmente assunta come &quot;cameriera ai piani&quot;, ne hai bisogno per ricevere lo stipendio.&lt;/p&gt;
     &lt;p&gt;Cresciuta in povertà, non hai mai avuto la possibilità di andare a scuola e studiare quindi anche se sei al Centro da ormai diversi mesi e ti stanno insegnando l&#39;italiano, ci stai mettendo di più delle tue nuove compagne ad impararlo e trovare un lavoro stabile. La responsabile del Cas ti ha chiesto se saresti riuscita a raggiungere le Poste da sola perchè lei deve accompagnare una tua compagna dal dottore. Le hai detto di sì per non darle altro disturbo, ma forse te ne stai pentendo.&lt;/p&gt;
     
-[[Prepararsi subito-&gt;Bus]]
 [[Aspettare qualche minuto-&gt;MigranteAttesa]]
+[[Prepararsi subito-&gt;Bus]]
 
   &lt;/div&gt;
 &lt;/div&gt;
@@ -283,12 +283,35 @@ Benvenuto nel gioco!
 &lt;/div&gt;
 &lt;&lt;/if&gt;&gt;
 </tw-passagedata><tw-passagedata pid="3" name="Bus" tags="" position="1950,625" size="100,100">&lt;&lt;if $loop == 1&gt;&gt;
-&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_2.jpg&#39;)&quot;&gt;
+
+&lt;&lt;set $time -= 5&gt;&gt;
+&lt;&lt;set $energy -= 2&gt;&gt;
+&lt;&lt;set $money -= 2&gt;&gt; &lt;!-- piccolo costo del trasporto --&gt;
+
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/bus/bus.jpg&#39;)&quot;&gt;
   &lt;div class=&quot;text-box&quot;&gt;
-    &lt;p&gt;I. Turista&lt;/p&gt;
+    &lt;p&gt;I. La Turista&lt;/p&gt;
+
     &lt;p&gt;Alla fermata c’è già qualcuno.&lt;/p&gt;
     &lt;p&gt;Il bus arriva puntuale, come sempre.&lt;/p&gt;
-    [[Salire-&gt;Poste]]
+
+    &lt;&lt;if $attention &lt; 70&gt;&gt;
+      &lt;p&gt;
+      Quando sali, l’autobus è più affollato di quanto ti aspettassi.
+      Qualcuno ti urta passando e per un attimo ti senti spaesata.
+      Tieni stretto il pacco tra le braccia, ma percepisci di avere poco controllo sulla situazione.
+      &lt;/p&gt;
+      &lt;&lt;set $control -= 5&gt;&gt;
+    &lt;&lt;else&gt;&gt;
+      &lt;p&gt;
+      Sali con calma e trovi subito un appiglio.
+      Controlli il percorso sul telefono e segui le fermate.
+      Ti senti sicura e padronə della situazione.
+      &lt;/p&gt;
+      &lt;&lt;set $control += 2&gt;&gt;
+    &lt;&lt;/if&gt;&gt;
+
+    [[Scendi alla fermata successiva-&gt;Poste]]
   &lt;/div&gt;
 &lt;/div&gt;
 
@@ -621,9 +644,11 @@ Il percorso ti lascia un insegnamento silenzioso.
 &lt;&lt;set $attention -= 5&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_1.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
-&lt;p&gt;Il letto è comodo. Ti alzi con calma, ma controlli l’orologio troppo tardi.&lt;/p&gt;
+&lt;p&gt;Il letto è comodo. Ti alzi con calma, ma senti che ti sei dimenticata qualcosa. Controlli l&#39;ora e ti accorgi che non hai più tempo di fare colazione o brunch in albergo. Prima di partire hai cercato un albergo che offrisse il pasto la mattina e hai pagato anche extra per ciò. Ti penti di aver buttato soldi e tempo per pigrizia. Davanti a te vedi un pacco e salti giù dal letto perchè ricordi di dover andare in posta per spedire a casa alcune cose che non puoi portare in valigia. Ti arrabbi con te stessa per avere procrastinato fino all&#39;ultimo.&lt;/p&gt;
 
-[[Uscire in fretta-&gt;Bus]]
+&lt;p&gt;L&#39;ora della partenza si avvicina.&lt;/p&gt;
+
+[[Esci in fretta-&gt;Bus]]
   &lt;/div&gt;
 &lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="StudenteRipassare" tags="" position="950,650" size="100,100">&lt;&lt;set $energy -= 5&gt;&gt;
 &lt;&lt;set $attention += 10&gt;&gt;
@@ -634,7 +659,7 @@ Il percorso ti lascia un insegnamento silenzioso.
 
 [[Chiudi tutto e vai-&gt;Bus]]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="AnzianoLento" tags="" position="875,475" size="100,100">&lt;&lt;set $energy -= 5&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="AnzianoLento" tags="" position="900,450" size="100,100">&lt;&lt;set $energy -= 5&gt;&gt;
 &lt;&lt;set $time -= 10&gt;&gt;
 &lt;&lt;set $attention += 5&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_1.jpg&#39;)&quot;&gt;
@@ -661,7 +686,7 @@ Il percorso ti lascia un insegnamento silenzioso.
 
 [[Decidi di uscire-&gt;Bus]]
   &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="SenzatettoRestare" tags="" position="1425,225" size="100,100">&lt;&lt;set $energy += 5&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="SenzatettoRestare" tags="" position="1425,200" size="100,100">&lt;&lt;set $energy += 5&gt;&gt;
 &lt;&lt;set $attention -= 10&gt;&gt;
 &lt;&lt;set $time -= 5&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_1.jpg&#39;)&quot;&gt;

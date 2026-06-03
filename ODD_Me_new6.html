@@ -397,9 +397,9 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Bus" tags="" position="2300,575" size="200,200">&lt;&lt;if $loop is 1&gt;&gt;
 
-&lt;&lt;update &quot;time&quot; -5&gt;&gt;
-&lt;&lt;update &quot;energy&quot; -2&gt;&gt;
-&lt;&lt;update &quot;money&quot; -2&gt;&gt;
+&lt;&lt;update &quot;time&quot; -8&gt;&gt;
+&lt;&lt;update &quot;energy&quot; -5&gt;&gt;
+&lt;&lt;update &quot;money&quot; -5&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/bus/bus.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
@@ -411,13 +411,13 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 Gli sguardi degli altri ti fanno dubitare del tuo spazio nel bus.
 Ti muovi con cautela.
 &lt;/p&gt;
-&lt;&lt;update &quot;control&quot; -5&gt;&gt;
+&lt;&lt;update &quot;control&quot; -8&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 Trovi subito un punto stabile.
 Il bus diventa leggibile.
 &lt;/p&gt;
-&lt;&lt;update &quot;control&quot; 2&gt;&gt;
+&lt;&lt;update &quot;control&quot; 5&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;Non è una scelta di percorso, ma di atteggiamento.&lt;/p&gt;
@@ -445,12 +445,12 @@ Il bus diventa leggibile.
 I pensieri si interrompono continuamente.
 Il tempo sembra insufficiente.
 &lt;/p&gt;
-&lt;&lt;update &quot;time&quot; -5&gt;&gt;
+&lt;&lt;update &quot;time&quot; -8&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 Riesci a mettere ordine nella giornata per qualche istante.
 &lt;/p&gt;
-&lt;&lt;update &quot;control&quot; 1&gt;&gt;
+&lt;&lt;update &quot;control&quot; 5&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;Decidi come usare il tempo mentale.&lt;/p&gt;
@@ -475,7 +475,8 @@ Riesci a mettere ordine nella giornata per qualche istante.
 &lt;p&gt;
 Devi restare attento per non perdere i riferimenti.
 &lt;/p&gt;
-&lt;&lt;update &quot;attention&quot; -5&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
+&lt;&lt;update &quot;money&quot; -8&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 Il viaggio segue un ritmo familiare.
@@ -501,7 +502,7 @@ Il viaggio segue un ritmo familiare.
 &lt;p&gt;
 Ogni minuto è già occupato da ciò che verrà dopo.
 &lt;/p&gt;
-&lt;&lt;update &quot;attention&quot; -5&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 Per un momento non ci sono richieste immediate.
@@ -530,7 +531,7 @@ Per un momento non ci sono richieste immediate.
 &lt;p&gt;
 Ti affidi agli altri per orientarti.
 &lt;/p&gt;
-&lt;&lt;update &quot;control&quot; -5&gt;&gt;
+&lt;&lt;update &quot;control&quot; -8&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 Osservi il percorso con attenzione.
@@ -550,7 +551,7 @@ Osservi il percorso con attenzione.
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_2.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
-&lt;&lt;update &quot;energy&quot; -10&gt;&gt;
+&lt;&lt;update &quot;energy&quot; -12&gt;&gt;
 &lt;&lt;update &quot;attention&quot; 10&gt;&gt;
 
 &lt;p&gt;
@@ -582,7 +583,8 @@ Ti muovi poco, osservi molto, senza un ruolo preciso nello spazio.
 
 &lt;p&gt;Il tempo scorre senza chiederti nulla.&lt;/p&gt;
 
-&lt;&lt;update &quot;time&quot; -1&gt;&gt;
+&lt;&lt;update &quot;time&quot; -5&gt;&gt;
+&lt;&lt;update &quot;money&quot; -5&gt;&gt;
 
 &lt;p&gt;Il tempo passa anche quando non succede nulla.&lt;/p&gt;
 
@@ -605,7 +607,8 @@ Ti muovi poco, osservi molto, senza un ruolo preciso nello spazio.
 Ogni minuto qui sembra sottratto alla giornata.
 Il pensiero del tempo domina lo spazio.
 &lt;/p&gt;
-&lt;&lt;update &quot;attention&quot; -5&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
+&lt;&lt;update &quot;money&quot; -8&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 Cerchi di usare l’attesa per riorganizzare mentalmente ciò che devi fare.
@@ -637,7 +640,7 @@ Cerchi di usare l’attesa per riorganizzare mentalmente ciò che devi fare.
 Ti affidi a ciò che fanno gli altri per capire quando è il tuo turno.
 L’ambiente richiede attenzione continua.
 &lt;/p&gt;
-&lt;&lt;update &quot;attention&quot; -5&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 Aspetti con pazienza. Il ritmo del luogo è lento ma leggibile.
@@ -669,7 +672,8 @@ Aspetti con pazienza. Il ritmo del luogo è lento ma leggibile.
 Il pensiero del lavoro resta attivo anche qui.
 Ogni minuto sembra costoso.
 &lt;/p&gt;
-&lt;&lt;update &quot;attention&quot; -5&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
+&lt;&lt;update &quot;money&quot; -10&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 Provi a restare in attesa senza perdere il controllo mentale della giornata.
@@ -704,7 +708,8 @@ Provi a restare in attesa senza perdere il controllo mentale della giornata.
 Osservi gli altri per capire come funziona il sistema.
 La comunicazione non è immediata.
 &lt;/p&gt;
-&lt;&lt;update &quot;control&quot; -5&gt;&gt;
+&lt;&lt;update &quot;control&quot; -8&gt;&gt;
+&lt;&lt;update &quot;money&quot; -5&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 Ti concentri sulle persone e sul flusso della fila per orientarti.
@@ -736,7 +741,7 @@ Ti concentri sulle persone e sul flusso della fila per orientarti.
 Resti fermo cercando di non attirare attenzione.
 Il contesto resta instabile.
 &lt;/p&gt;
-&lt;&lt;update &quot;attention&quot; -5&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 Osservi attentamente l’ambiente, pronto a muoverti quando serve.
@@ -766,7 +771,8 @@ Osservi attentamente l’ambiente, pronto a muoverti quando serve.
 Le luci bianche del supermercato sembrano troppo forti dopo una giornata passata a orientarti in una città non tua.
 Ti ritrovi a percorrere le corsie quasi automaticamente, osservando prodotti che non comprerai e persone che sembrano sapere esattamente dove andare.
 &lt;/p&gt;
-&lt;&lt;update &quot;attention&quot; -3&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
+&lt;&lt;update &quot;money&quot; -10&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 Le corsie ordinate hanno qualcosa di rassicurante.
@@ -794,7 +800,8 @@ Per qualche minuto smetti di pensare alla partenza e ti concentri soltanto sulle
 Ogni minuto trascorso tra gli scaffali sembra sottratto all&#39;esame, al lavoro o al riposo.
 Ti muovi velocemente senza soffermarti troppo.
 &lt;/p&gt;
-&lt;&lt;update &quot;energy&quot; -2&gt;&gt;
+&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
+&lt;&lt;update &quot;money&quot; -15&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 Per una volta non stai correndo.
@@ -823,7 +830,8 @@ Attraversi le corsie cercando di organizzare mentalmente il resto della giornata
 Le gambe si fanno sentire più del solito.
 Ogni corsia sembra un po&#39; più lunga e ogni scelta richiede qualche secondo in più.
 &lt;/p&gt;
-&lt;&lt;update &quot;energy&quot; -3&gt;&gt;
+&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
+&lt;&lt;update &quot;money&quot; -10&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 Conosci bene il negozio.
@@ -852,8 +860,9 @@ Controlli i prezzi più volte.
 Ogni prodotto nel carrello significa rinunciare a qualcos’altro.
 Il calcolo non è più solo economico, ma temporale e mentale.
 &lt;/p&gt;
-&lt;&lt;update &quot;control&quot; -5&gt;&gt;
-&lt;&lt;update &quot;attention&quot; -2&gt;&gt;
+&lt;&lt;update &quot;control&quot; -8&gt;&gt;
+&lt;&lt;update &quot;money&quot; -18&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 Hai imparato a fare la spesa in modo efficiente.
@@ -882,7 +891,8 @@ Sai già cosa prendere e cosa lasciare sugli scaffali.
 Le etichette non sono sempre facili da capire.
 Ti ritrovi spesso a osservare ciò che fanno gli altri clienti.
 &lt;/p&gt;
-&lt;&lt;update &quot;control&quot; -5&gt;&gt;
+&lt;&lt;update &quot;control&quot; -8&gt;&gt;
+&lt;&lt;update &quot;money&quot; -12&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 Leggi con attenzione ogni informazione che riesci a comprendere.
@@ -912,7 +922,7 @@ Per qualche istante dimentichi il freddo della strada.
 &lt;/p&gt;
 
 &lt;&lt;update &quot;attention&quot; -5&gt;&gt;
-&lt;&lt;update &quot;money&quot; -1&gt;&gt;
+&lt;&lt;update &quot;money&quot; -5&gt;&gt;
 
 &lt;p&gt;Come vivi questo momento?&lt;/p&gt;
 
@@ -939,16 +949,16 @@ Per un attimo guardi il telefono, poi la strada, poi le persone che ti passano a
 &lt;p&gt;
 Non sei completamente sicura di aver capito dove andare.
 &lt;/p&gt;
-&lt;&lt;update &quot;control&quot; -3&gt;&gt;
-&lt;&lt;update &quot;attention&quot; -1&gt;&gt;
+&lt;&lt;update &quot;control&quot; -8&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 Individui rapidamente il percorso alternativo.
 &lt;/p&gt;
-&lt;&lt;update &quot;control&quot; 1&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;update &quot;time&quot; -2&gt;&gt;
+&lt;&lt;update &quot;time&quot; -8&gt;&gt;
 
 &lt;p&gt;Come reagisci?&lt;/p&gt;
 
@@ -974,16 +984,16 @@ Un altro imprevisto si aggiunge a una giornata già piena.
 &lt;p&gt;
 La deviazione ti sembra più pesante di quanto dovrebbe.
 &lt;/p&gt;
-&lt;&lt;update &quot;attention&quot; -3&gt;&gt;
-&lt;&lt;update &quot;energy&quot; -2&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
+&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 Ricalcoli rapidamente il percorso senza fermarti troppo.
 &lt;/p&gt;
-&lt;&lt;update &quot;control&quot; 1&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;update &quot;time&quot; -3&gt;&gt;
+&lt;&lt;update &quot;time&quot; -8&gt;&gt;
 
 &lt;p&gt;Come reagisci?&lt;/p&gt;
 
@@ -1009,16 +1019,16 @@ Devi cambiare percorso.
 &lt;p&gt;
 Ti concedi qualche secondo per capire la situazione.
 &lt;/p&gt;
-&lt;&lt;update &quot;energy&quot; -2&gt;&gt;
-&lt;&lt;update &quot;attention&quot; -1&gt;&gt;
+&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -5&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 Osservi il cartello e cambi direzione lentamente.
 &lt;/p&gt;
-&lt;&lt;update &quot;control&quot; 1&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;update &quot;time&quot; -2&gt;&gt;
+&lt;&lt;update &quot;time&quot; -8&gt;&gt;
 
 &lt;p&gt;Come procedi?&lt;/p&gt;
 
@@ -1044,16 +1054,17 @@ Altro tempo significa altri vincoli.
 &lt;p&gt;
 Non puoi permetterti molti imprevisti.
 &lt;/p&gt;
-&lt;&lt;update &quot;control&quot; -3&gt;&gt;
-&lt;&lt;update &quot;attention&quot; -1&gt;&gt;
+&lt;&lt;update &quot;control&quot; -8&gt;&gt;
+&lt;&lt;update &quot;money&quot; -8&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 Accetti la deviazione senza alternative.
 &lt;/p&gt;
-&lt;&lt;update &quot;control&quot; 1&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;update &quot;time&quot; -3&gt;&gt;
+&lt;&lt;update &quot;time&quot; -8&gt;&gt;
 
 &lt;p&gt;Come reagisci?&lt;/p&gt;
 
@@ -1079,16 +1090,17 @@ Le indicazioni sul cartello richiedono attenzione.
 &lt;p&gt;
 Osservi gli altri per capire quale direzione prendere.
 &lt;/p&gt;
-&lt;&lt;update &quot;control&quot; -3&gt;&gt;
-&lt;&lt;update &quot;attention&quot; -2&gt;&gt;
+&lt;&lt;update &quot;control&quot; -10&gt;&gt;
+&lt;&lt;update &quot;money&quot; -5&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 Ti concentri sulle indicazioni per orientarti.
 &lt;/p&gt;
-&lt;&lt;update &quot;control&quot; 1&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;update &quot;time&quot; -2&gt;&gt;
+&lt;&lt;update &quot;time&quot; -8&gt;&gt;
 
 &lt;p&gt;Come reagisci?&lt;/p&gt;
 
@@ -1115,10 +1127,10 @@ Un altro percorso da modificare.
 Non è la prima volta che succede.
 &lt;/p&gt;
 
-&lt;&lt;update &quot;attention&quot; -2&gt;&gt;
-&lt;&lt;update &quot;control&quot; -1&gt;&gt;
-&lt;&lt;update &quot;energy&quot; -2&gt;&gt;
-&lt;&lt;update &quot;time&quot; -2&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
+&lt;&lt;update &quot;control&quot; -8&gt;&gt;
+&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
+&lt;&lt;update &quot;time&quot; -8&gt;&gt;
 
 &lt;p&gt;Come reagisci?&lt;/p&gt;
 
@@ -1211,7 +1223,7 @@ Anche le azioni più semplici hanno richiesto sforzo.
 Il corpo ha definito i limiti del movimento.
 &lt;/p&gt;
 &lt;&lt;else&gt;&gt;
-&lt;&lt;update &quot;control&quot; -1&gt;&gt;
+&lt;&lt;update &quot;control&quot; -5&gt;&gt;
 &lt;p&gt;
 Hai seguito un ritmo conosciuto.
 Ogni passaggio era già in parte previsto.
@@ -1245,13 +1257,13 @@ Tempo, energia, denaro: tutto continua a pesare.
 Ogni scelta ha avuto un costo diretto o indiretto.
 Il denaro non è stato solo una risorsa, ma un vincolo costante.
 &lt;/p&gt;
-&lt;&lt;update &quot;energy&quot; -1&gt;&gt;
+&lt;&lt;update &quot;energy&quot; -5&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 Hai mantenuto un equilibrio fragile tra spese e necessità.
 Ma ogni equilibrio ha richiesto attenzione continua.
 &lt;/p&gt;
-&lt;&lt;update &quot;attention&quot; -1&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -5&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;
@@ -1312,7 +1324,7 @@ La giornata si chiude senza una vera struttura di inizio o fine.
 Hai attraversato la città reagendo più che scegliendo.
 Le decisioni non si sono consolidate in un percorso stabile.
 &lt;/p&gt;
-&lt;&lt;update &quot;attention&quot; -1&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 Hai cercato di mantenere una direzione anche con poche risorse disponibili.
@@ -1438,9 +1450,9 @@ Esistono condizioni diverse che rendono la stessa strada un’esperienza disegua
 &lt;a href=&quot;https://www.tuosito.com&quot; target=&quot;_blank&quot;&gt;Visita il sito&lt;/a&gt;
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="TuristaDormire" tags="" position="1400,575" size="100,100">&lt;&lt;update &quot;energy&quot; 10&gt;&gt;
-&lt;&lt;update &quot;time&quot; -10&gt;&gt;
-&lt;&lt;update &quot;attention&quot; -5&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="10" name="TuristaDormire" tags="" position="1400,575" size="100,100">&lt;&lt;update &quot;energy&quot; 15&gt;&gt;
+&lt;&lt;update &quot;time&quot; -15&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_1.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
@@ -1462,10 +1474,10 @@ Hai consumato parte della mattina senza attraversarla.
 [[Esci in fretta-&gt;Bus]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="StudenteRipassare" tags="" position="1425,450" size="100,100">&lt;&lt;update &quot;energy&quot; -5&gt;&gt;
-&lt;&lt;update &quot;attention&quot; 10&gt;&gt;
-&lt;&lt;update &quot;time&quot; -5&gt;&gt;
-&lt;&lt;update &quot;control&quot; 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="StudenteRipassare" tags="" position="1425,450" size="100,100">&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
+&lt;&lt;update &quot;attention&quot; 12&gt;&gt;
+&lt;&lt;update &quot;time&quot; -8&gt;&gt;
+&lt;&lt;update &quot;control&quot; 5&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_1.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
@@ -1486,9 +1498,9 @@ Il pensiero dell’esame rimane attivo anche mentre cerchi di chiudere tutto.
 [[Chiudi tutto e vai-&gt;Bus]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="AnzianoLento" tags="" position="1550,350" size="100,100">&lt;&lt;update &quot;energy&quot; -5&gt;&gt;
-&lt;&lt;update &quot;time&quot; -10&gt;&gt;
-&lt;&lt;update &quot;attention&quot; 5&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="AnzianoLento" tags="" position="1550,350" size="100,100">&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
+&lt;&lt;update &quot;time&quot; -12&gt;&gt;
+&lt;&lt;update &quot;attention&quot; 8&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_1.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
@@ -1508,10 +1520,10 @@ La percezione del tempo si allinea al corpo più che alla giornata.
 [[Esci di casa-&gt;Bus]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="PrecarioRiposo" tags="" position="1675,275" size="100,100">&lt;&lt;update &quot;energy&quot; 2&gt;&gt;
-&lt;&lt;update &quot;time&quot; -10&gt;&gt;
-&lt;&lt;update &quot;attention&quot; -5&gt;&gt;
-&lt;&lt;update &quot;control&quot; -2&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="PrecarioRiposo" tags="" position="1675,275" size="100,100">&lt;&lt;update &quot;energy&quot; 5&gt;&gt;
+&lt;&lt;update &quot;time&quot; -12&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
+&lt;&lt;update &quot;control&quot; -8&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_1.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
@@ -1531,10 +1543,10 @@ Quando ti rialzi, il tempo sembra già più corto di prima.
 [[Corri fuori-&gt;Bus]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="MigranteAttesa" tags="" position="1850,225" size="100,100">&lt;&lt;update &quot;energy&quot; 1&gt;&gt;
-&lt;&lt;update &quot;time&quot; -5&gt;&gt;
-&lt;&lt;update &quot;attention&quot; -5&gt;&gt;
-&lt;&lt;update &quot;control&quot; -1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="14" name="MigranteAttesa" tags="" position="1850,225" size="100,100">&lt;&lt;update &quot;energy&quot; 5&gt;&gt;
+&lt;&lt;update &quot;time&quot; -8&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
+&lt;&lt;update &quot;control&quot; -8&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_1.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
@@ -1555,10 +1567,10 @@ Riparti senza una certezza piena, ma senza alternative reali.
 [[Decidi di uscire-&gt;Bus]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="SenzatettoRestare" tags="" position="2000,200" size="100,100">&lt;&lt;update &quot;energy&quot; 1&gt;&gt;
-&lt;&lt;update &quot;attention&quot; -10&gt;&gt;
-&lt;&lt;update &quot;time&quot; -5&gt;&gt;
-&lt;&lt;update &quot;control&quot; -2&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="15" name="SenzatettoRestare" tags="" position="2000,200" size="100,100">&lt;&lt;update &quot;energy&quot; 5&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -12&gt;&gt;
+&lt;&lt;update &quot;time&quot; -8&gt;&gt;
+&lt;&lt;update &quot;control&quot; -8&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_1.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
@@ -1755,9 +1767,9 @@ Dopo un po’, l’immobilità diventa solo una condizione temporanea prima di r
 
 &lt;&lt;goto &quot;Risveglio&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="BusAdattivo" tags="" position="2275,250" size="100,100">&lt;p&gt;Ti adatti al ritmo del bus senza opporre resistenza.&lt;/p&gt;
 
-&lt;&lt;update &quot;control&quot; -2&gt;&gt;
-&lt;&lt;update &quot;attention&quot; 1&gt;&gt;
-&lt;&lt;update &quot;energy&quot; 1&gt;&gt;
+&lt;&lt;update &quot;control&quot; -8&gt;&gt;
+&lt;&lt;update &quot;attention&quot; 5&gt;&gt;
+&lt;&lt;update &quot;energy&quot; 5&gt;&gt;
 
 &lt;p&gt;
 Non è una scelta attiva, ma una forma di riduzione dello sforzo.
@@ -1776,9 +1788,9 @@ Il viaggio continua senza che tu debba definirlo.
 
 [[Continuare-&gt;Poste]]</tw-passagedata><tw-passagedata pid="19" name="BusControllo" tags="" position="2425,200" size="100,100">&lt;p&gt;Cerchi di mantenere una direzione chiara nonostante il movimento del bus.&lt;/p&gt;
 
-&lt;&lt;update &quot;control&quot; 3&gt;&gt;
-&lt;&lt;update &quot;energy&quot; -2&gt;&gt;
-&lt;&lt;update &quot;attention&quot; -1&gt;&gt;
+&lt;&lt;update &quot;control&quot; 8&gt;&gt;
+&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -5&gt;&gt;
 
 &lt;p&gt;
 La scelta richiede sforzo.
@@ -1787,15 +1799,15 @@ Ogni fermata diventa una verifica del percorso.
 
 &lt;&lt;if $loop is 4&gt;&gt;
 &lt;p&gt;Il controllo mentale ha un costo costante.&lt;/p&gt;
-&lt;&lt;update &quot;time&quot; -2&gt;&gt;
+&lt;&lt;update &quot;time&quot; -5&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 [[Continuare-&gt;Poste]]</tw-passagedata><tw-passagedata pid="20" name="BusStudio" tags="" position="2575,175" size="100,100">&lt;&lt;if $time &gt;= 55&gt;&gt;
 
 &lt;p&gt;Usi il tempo per ricostruire mentalmente la giornata.&lt;/p&gt;
 
-&lt;&lt;update &quot;control&quot; 1&gt;&gt;
-&lt;&lt;update &quot;attention&quot; -1&gt;&gt;
+&lt;&lt;update &quot;control&quot; 5&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -5&gt;&gt;
 
 &lt;p&gt;
 Lo studio diventa una forma di organizzazione mentale,
@@ -1808,13 +1820,13 @@ non solo un’attività.
 
 &lt;p&gt;Non hai abbastanza spazio mentale per concentrarti davvero.&lt;/p&gt;
 
-&lt;&lt;update &quot;attention&quot; -2&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -3&gt;&gt;
 
 [[Passi a pensare al lavoro-&gt;BusLavoro]]
 &lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="BusLavoro" tags="" position="2725,200" size="100,100">&lt;p&gt;La mente si sposta immediatamente sugli obblighi e sulle entrate.&lt;/p&gt;
 
-&lt;&lt;update &quot;attention&quot; -2&gt;&gt;
-&lt;&lt;update &quot;control&quot; -1&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
+&lt;&lt;update &quot;control&quot; -5&gt;&gt;
 
 &lt;p&gt;
 Il tempo del bus non è vuoto:
@@ -1823,9 +1835,9 @@ Il tempo del bus non è vuoto:
 
 [[Continuare-&gt;Poste]]</tw-passagedata><tw-passagedata pid="22" name="BusDisconnessione" tags="" position="2875,250" size="100,100">&lt;p&gt;Provi a staccarti mentalmente dal contesto.&lt;/p&gt;
 
-&lt;&lt;update &quot;energy&quot; 2&gt;&gt;
-&lt;&lt;update &quot;attention&quot; -3&gt;&gt;
-&lt;&lt;update &quot;time&quot; -1&gt;&gt;
+&lt;&lt;update &quot;energy&quot; 8&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
+&lt;&lt;update &quot;time&quot; -5&gt;&gt;
 
 &lt;p&gt;
 Per pochi istanti il bus smette di essere un sistema da interpretare.
@@ -1834,8 +1846,8 @@ Ma la distanza è fragile.
 
 [[Continuare-&gt;Poste]]</tw-passagedata><tw-passagedata pid="23" name="PosteAdattivo" tags="" position="3150,200" size="100,100">&lt;p&gt;Ti adatti al ritmo del luogo senza cercare di interpretarlo completamente.&lt;/p&gt;
 
-&lt;&lt;update &quot;control&quot; -1&gt;&gt;
-&lt;&lt;update &quot;attention&quot; 1&gt;&gt;
+&lt;&lt;update &quot;control&quot; -5&gt;&gt;
+&lt;&lt;update &quot;attention&quot; 5&gt;&gt;
 
 &lt;p&gt;
 Non è una scelta attiva: è una riduzione della complessità.
@@ -1846,8 +1858,8 @@ Osservare gli altri diventa la tua guida principale.
 &lt;p&gt;Ti affidi ai segnali sociali più che alle regole scritte.&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;update &quot;time&quot; 1&gt;&gt;
-&lt;&lt;update &quot;energy&quot; -1&gt;&gt;
+&lt;&lt;update &quot;time&quot; 5&gt;&gt;
+&lt;&lt;update &quot;energy&quot; -5&gt;&gt;
 
 &lt;p&gt;
 L’attesa sembra più breve, ma qualcosa viene consumato senza che tu lo noti.
@@ -1855,9 +1867,9 @@ L’attesa sembra più breve, ma qualcosa viene consumato senza che tu lo noti.
 
 [[Continuare-&gt;Supermercato]]</tw-passagedata><tw-passagedata pid="24" name="PosteControllo" tags="" position="3300,250" size="100,100">&lt;p&gt;Cerchi di capire il funzionamento del sistema invece di subirlo.&lt;/p&gt;
 
-&lt;&lt;update &quot;control&quot; 3&gt;&gt;
-&lt;&lt;update &quot;energy&quot; -2&gt;&gt;
-&lt;&lt;update &quot;attention&quot; -2&gt;&gt;
+&lt;&lt;update &quot;control&quot; 8&gt;&gt;
+&lt;&lt;update &quot;energy&quot; -6&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -5&gt;&gt;
 
 &lt;p&gt;
 Ogni informazione richiede interpretazione.
@@ -1869,17 +1881,17 @@ Il sistema è leggibile, ma solo a costo di sforzo.
 Il tempo di attesa diventa parte del costo decisionale.
 Non stai solo aspettando: stai consumando risorse per capire cosa sta succedendo.
 &lt;/p&gt;
-&lt;&lt;update &quot;attention&quot; -1&gt;&gt;
-&lt;&lt;update &quot;energy&quot; -1&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -3&gt;&gt;
+&lt;&lt;update &quot;energy&quot; -2&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;
 La comprensione non accelera il processo — lo rende più costoso.
 &lt;/p&gt;
 
-[[Continuare-&gt;Supermercato]]</tw-passagedata><tw-passagedata pid="25" name="PosteTempo" tags="" position="3450,300" size="100,100">&lt;&lt;update &quot;time&quot; -5&gt;&gt;
-&lt;&lt;update &quot;attention&quot; -3&gt;&gt;
-&lt;&lt;update &quot;energy&quot; -1&gt;&gt;
+[[Continuare-&gt;Supermercato]]</tw-passagedata><tw-passagedata pid="25" name="PosteTempo" tags="" position="3450,300" size="100,100">&lt;&lt;update &quot;time&quot; -10&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
+&lt;&lt;update &quot;energy&quot; -5&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
@@ -1901,9 +1913,9 @@ Rimanere qui significa continuare a consumare attenzione senza muoversi.
 [[Terminare e uscire-&gt;Supermercato]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="PosteAttesa" tags="" position="3575,350" size="100,100">&lt;&lt;update &quot;attention&quot; -3&gt;&gt;
-&lt;&lt;update &quot;control&quot; 2&gt;&gt;
-&lt;&lt;update &quot;energy&quot; -1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="PosteAttesa" tags="" position="3575,350" size="100,100">&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
+&lt;&lt;update &quot;control&quot; 5&gt;&gt;
+&lt;&lt;update &quot;energy&quot; -5&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
@@ -1925,9 +1937,9 @@ Quando finalmente arriva il tuo turno, ti accorgi di aver ripassato la giornata 
 [[Terminare e uscire-&gt;Supermercato]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="PosteAllerta" tags="" position="3675,475" size="100,100">&lt;&lt;update &quot;energy&quot; -3&gt;&gt;
-&lt;&lt;update &quot;attention&quot; 4&gt;&gt;
-&lt;&lt;update &quot;control&quot; -1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="PosteAllerta" tags="" position="3675,475" size="100,100">&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
+&lt;&lt;update &quot;attention&quot; 8&gt;&gt;
+&lt;&lt;update &quot;control&quot; -5&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
@@ -1949,10 +1961,10 @@ L’attenzione cresce, ma non ti rende più sicuro: ti rende più esposto a ciò
 [[Terminare e uscire-&gt;Supermercato]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="SupermercatoRisparmio" tags="" position="3575,925" size="100,100">&lt;&lt;update &quot;money&quot; -1&gt;&gt;
-&lt;&lt;update &quot;control&quot; 2&gt;&gt;
-&lt;&lt;update &quot;energy&quot; -3&gt;&gt;
-&lt;&lt;update &quot;attention&quot; 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="SupermercatoRisparmio" tags="" position="3575,925" size="100,100">&lt;&lt;update &quot;money&quot; -8&gt;&gt;
+&lt;&lt;update &quot;control&quot; 5&gt;&gt;
+&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
+&lt;&lt;update &quot;attention&quot; 5&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
@@ -1980,9 +1992,9 @@ Non è una forma di libertà.
 [[Andare verso l’uscita-&gt;StradaChiusa]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="SupermercatoAdattivo" tags="" position="3600,800" size="100,100">&lt;&lt;update &quot;control&quot; -3&gt;&gt;
-&lt;&lt;update &quot;attention&quot; -2&gt;&gt;
-&lt;&lt;update &quot;energy&quot; 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="SupermercatoAdattivo" tags="" position="3600,800" size="100,100">&lt;&lt;update &quot;control&quot; -8&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
+&lt;&lt;update &quot;energy&quot; 5&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
@@ -2004,9 +2016,9 @@ Per un momento smetti di analizzare ogni cosa.
 [[Andare verso l’uscita-&gt;StradaChiusa]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="SupermercatoControllo" tags="" position="3575,675" size="100,100">&lt;&lt;update &quot;control&quot; 5&gt;&gt;
-&lt;&lt;update &quot;attention&quot; 2&gt;&gt;
-&lt;&lt;update &quot;energy&quot; -3&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="SupermercatoControllo" tags="" position="3575,675" size="100,100">&lt;&lt;update &quot;control&quot; 8&gt;&gt;
+&lt;&lt;update &quot;attention&quot; 8&gt;&gt;
+&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
@@ -2030,10 +2042,10 @@ Ma il costo è invisibile mentre lo stai pagando.
 [[Andare verso l’uscita-&gt;StradaChiusa]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="StradaAdattiva" tags="" position="2950,1175" size="100,100">&lt;&lt;update &quot;control&quot; -3&gt;&gt;
-&lt;&lt;update &quot;energy&quot; 1&gt;&gt;
-&lt;&lt;update &quot;attention&quot; -1&gt;&gt;
-&lt;&lt;update &quot;time&quot; 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="StradaAdattiva" tags="" position="2950,1175" size="100,100">&lt;&lt;update &quot;control&quot; -8&gt;&gt;
+&lt;&lt;update &quot;energy&quot; 5&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -5&gt;&gt;
+&lt;&lt;update &quot;time&quot; 5&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
@@ -2052,7 +2064,7 @@ A volte adattarsi significa rinunciare a una parte del controllo. Altre volte è
 &lt;p&gt;
 Ti rendi conto solo dopo di aver seguito il flusso senza averlo davvero interpretato.
 &lt;/p&gt;
-&lt;&lt;update &quot;control&quot; -1&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;
@@ -2062,10 +2074,10 @@ Quando la strada torna a essere familiare, quasi non ti accorgi di aver cambiato
 [[Continuare-&gt;FineLoop]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="StradaControllo" tags="" position="3150,1175" size="100,100">&lt;&lt;update &quot;control&quot; 4&gt;&gt;
-&lt;&lt;update &quot;attention&quot; 1&gt;&gt;
-&lt;&lt;update &quot;energy&quot; -3&gt;&gt;
-&lt;&lt;update &quot;time&quot; -1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="StradaControllo" tags="" position="3150,1175" size="100,100">&lt;&lt;update &quot;control&quot; 10&gt;&gt;
+&lt;&lt;update &quot;attention&quot; 5&gt;&gt;
+&lt;&lt;update &quot;energy&quot; -5&gt;&gt;
+&lt;&lt;update &quot;time&quot; -5&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
@@ -2084,7 +2096,7 @@ Ogni scelta richiede più attenzione e più energia, ma ti permette di conservar
 &lt;p&gt;
 La chiarezza ha un costo: il percorso è leggibile, ma ti richiede uno sforzo continuo per mantenerlo tale.
 &lt;/p&gt;
-&lt;&lt;update &quot;energy&quot; -1&gt;&gt;
+&lt;&lt;update &quot;energy&quot; -3&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
 La comprensione resta parziale, ma sufficiente per continuare senza fermarti troppo a lungo.

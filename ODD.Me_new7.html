@@ -226,176 +226,284 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 
 .odd-shake {
   animation: odd-shake 0.45s ease;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="1625,850" size="100,100">Benvenuto nel gioco!
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="1625,850" size="100,100">&lt;p&gt;
+Fuori le strade si stanno già riempiendo.
+&lt;/p&gt;
 
-[[Inizia-&gt;InitLoop]]</tw-passagedata><tw-passagedata pid="2" name="Risveglio" tags="" position="1825,575" size="200,200">&lt;&lt;if $loop is 1&gt;&gt;
+&lt;p&gt;
+C&#39;è chi corre verso il lavoro, chi sta tornando a casa, chi cerca semplicemente di arrivare a fine giornata.
+&lt;/p&gt;
+
+&lt;p&gt;
+È mattina. È il momento di iniziare.
+&lt;/p&gt;
+
+[[Inizia-&gt;InitLoop]]
+</tw-passagedata><tw-passagedata pid="2" name="Risveglio" tags="" position="1825,575" size="200,200">&lt;&lt;if $loop is 1&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_1.jpg&#39;)&quot;&gt;
-  &lt;div class=&quot;text-box&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
 
-    &lt;p&gt;I. La Turista&lt;/p&gt;
+&lt;p&gt;I. La Turista&lt;/p&gt;
 
-    &lt;p&gt;
-    La sveglia suona alle 7:00.
-    Sei in una camera d’albergo a Bologna. Fuori, le Due Torri emergono tra i tetti della città.
-    La valigia è già pronta.
-    Sul telefono compare una notifica: “ultimo giorno di viaggio in Italia”.
-    &lt;/p&gt;
+&lt;p&gt;
+La sveglia suona alle 7:00.
+Per un attimo non ricordi dove sei.
+Poi riconosci il soffitto della camera d&#39;albergo e le Due Torri che spuntano dalla finestra.
+&lt;/p&gt;
 
-    &lt;p&gt;
-    Per qualche secondo resti immobile.
-    Non devi fare nulla, ma tutto dipende da come inizi questa giornata.
-    &lt;/p&gt;
+&lt;p&gt;
+La valigia è aperta sul pavimento.
+Alcuni souvenir sono ancora sparsi sulla scrivania.
+Sul telefono compare una notifica: ultimo giorno di viaggio in Italia.
+&lt;/p&gt;
 
-    [[Restare a letto ancora un po’-&gt;TuristaDormire]]
-    [[Alzarsi subito-&gt;Bus]]
+&lt;p&gt;
+Nei giorni scorsi hai camminato per ore sotto i portici, fotografato edifici di cui non ricordavi il nome, seguito itinerari suggeriti da guide e social network.
+Hai la sensazione di conoscere già la città.
+&lt;/p&gt;
 
-  &lt;/div&gt;
+&lt;p&gt;
+Eppure basta guardare dalla finestra per accorgerti che Bologna sta iniziando una giornata che non ha nulla a che fare con la tua.
+&lt;/p&gt;
+
+&lt;p&gt;
+Resti sdraiata ancora qualche secondo.
+Hai davanti un&#39;intera giornata.
+Ma è anche l&#39;ultima.
+&lt;/p&gt;
+
+[[Restare a letto ancora un po&#39;-&gt;TuristaDormire]]
+[[Alzarsi subito-&gt;Bus]]
+
+&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop is 2&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_1.jpg&#39;)&quot;&gt;
-  &lt;div class=&quot;text-box&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
 
-    &lt;p&gt;II. Lo Studente Lavoratore&lt;/p&gt;
+&lt;p&gt;II. Lo Studente Lavoratore&lt;/p&gt;
 
-    &lt;p&gt;
-    La sveglia delle 7:00 interrompe il sonno sugli appunti dell’esame.
-    Sul telefono: promemoria dell’esame e una richiesta di lavoro arrivata poche ore prima.
-    &lt;/p&gt;
+&lt;p&gt;
+La sveglia delle 7:00 interrompe un sonno leggero e frammentato.
+Ti eri addormentata sugli appunti.
+Le pagine sono ancora aperte accanto al letto.
+&lt;/p&gt;
 
-    &lt;p&gt;
-    Hai bisogno di passare l’esame per i crediti.
-    Hai bisogno anche di quei soldi.
-    Le due cose occupano lo stesso spazio nella giornata.
-    &lt;/p&gt;
+&lt;p&gt;
+Sul telefono trovi due notifiche.
+La prima ti ricorda l&#39;esame di questa mattina.
+La seconda è una richiesta di disponibilità per un turno di lavoro arrivata durante la notte.
+&lt;/p&gt;
 
-    &lt;p&gt;
-    Non c’è una scelta giusta immediata.
-    Solo una direzione da prendere prima che il tempo si riduca.
-    &lt;/p&gt;
+&lt;p&gt;
+Hai bisogno di superare l&#39;esame.
+Ti servono quei crediti per mantenere la borsa di studio.
+&lt;/p&gt;
 
-    [[Ripassare-&gt;StudenteRipassare]]
-    [[Cercare di lavorare subito-&gt;Bus]]
+&lt;p&gt;
+Hai bisogno anche di lavorare.
+L&#39;affitto, i trasporti e le spese quotidiane non aspettano la sessione d&#39;esami.
+&lt;/p&gt;
 
-  &lt;/div&gt;
+&lt;p&gt;
+Da settimane le giornate sembrano troppo corte.
+Ogni ora dedicata a una cosa viene sottratta a qualcos&#39;altro.
+&lt;/p&gt;
+
+&lt;p&gt;
+Qualunque scelta farai oggi, qualcosa resterà indietro.
+&lt;/p&gt;
+
+[[Ripassare-&gt;StudenteRipassare]]
+[[Cercare di lavorare subito-&gt;Bus]]
+
+&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop is 3&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_1.jpg&#39;)&quot;&gt;
-  &lt;div class=&quot;text-box&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
 
-    &lt;p&gt;III. L’Anziano&lt;/p&gt;
+&lt;p&gt;III. L&#39;Anziano&lt;/p&gt;
 
-    &lt;p&gt;
-    Sono le sette.
-    Il corpo è pesante, lento a rispondere.
-    Sul comodino: farmaci, routine, abitudini ripetute.
-    &lt;/p&gt;
+&lt;p&gt;
+Sono le sette.
+Prima di aprire completamente gli occhi ascolti il silenzio dell&#39;appartamento.
+&lt;/p&gt;
 
-    &lt;p&gt;
-    Oggi devi uscire per ritirare la pensione.
-    Non è una novità, ma ogni gesto richiede comunque energia.
-    &lt;/p&gt;
+&lt;p&gt;
+La casa è la stessa da anni.
+Conosci ogni mobile, ogni rumore, ogni oggetto.
+&lt;/p&gt;
 
-    &lt;p&gt;
-    Anche alzarsi dal letto è già una decisione.
-    &lt;/p&gt;
+&lt;p&gt;
+Sul comodino ci sono i farmaci della mattina.
+Accanto, un bicchiere d&#39;acqua preparato la sera prima.
+&lt;/p&gt;
 
-    [[Forzarsi a uscire-&gt;Bus]]
-    [[Muoversi lentamente-&gt;AnzianoLento]]
+&lt;p&gt;
+Ti metti seduto lentamente sul bordo del letto.
+Le gambe rispondono con ritardo.
+La schiena protesta.
+&lt;/p&gt;
 
-  &lt;/div&gt;
+&lt;p&gt;
+Sul calendario appeso alla parete un cerchio rosso ricorda che oggi devi ritirare la pensione.
+&lt;/p&gt;
+
+&lt;p&gt;
+Fuori la città è già in movimento.
+Tu stai ancora cercando il ritmo giusto per iniziare.
+&lt;/p&gt;
+
+[[Forzarsi a uscire-&gt;Bus]]
+[[Muoversi lentamente-&gt;AnzianoLento]]
+
+&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop is 4&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_1.jpg&#39;)&quot;&gt;
-  &lt;div class=&quot;text-box&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
 
-    &lt;p&gt;IV. Il Lavoratore Precario&lt;/p&gt;
+&lt;p&gt;IV. Il Lavoratore Precario&lt;/p&gt;
 
-    &lt;p&gt;
-    La sveglia arriva insieme ai messaggi di lavoro.
-    Un turno lungo da coprire. Un collega assente. Un’ora extra possibile.
-    &lt;/p&gt;
+&lt;p&gt;
+Il telefono vibra ancora prima che suoni la sveglia.
+Apri gli occhi con fatica.
+&lt;/p&gt;
 
-    &lt;p&gt;
-    Il tempo non è mai neutro: ogni ora è lavoro, o perdita.
-    &lt;/p&gt;
+&lt;p&gt;
+Sei rientrato poche ore fa da un turno notturno e hai dormito appena abbastanza per smettere di sentirti in piedi.
+&lt;/p&gt;
 
-    &lt;p&gt;
-    Sei stanco, ma se non rispondi ora qualcun altro prenderà il posto.
-    &lt;/p&gt;
+&lt;p&gt;
+Sul telefono si accumulano messaggi del lavoro.
+Un collega si è dato malato.
+Serve qualcuno che copra il turno.
+&lt;/p&gt;
 
-    [[Alzarsi subito-&gt;Bus]]
-    [[Restare a letto qualche minuto-&gt;PrecarioRiposo]]
+&lt;p&gt;
+Se accetti lavorerai più ore del previsto.
+Se rifiuti non succederà nulla.
+Almeno ufficialmente.
+&lt;/p&gt;
 
-  &lt;/div&gt;
+&lt;p&gt;
+Sai come funziona.
+Le persone che si rendono disponibili vengono richiamate.
+Le altre, un po&#39; meno.
+&lt;/p&gt;
+
+&lt;p&gt;
+Richiudi gli occhi per qualche secondo.
+Il sonno ti tira da una parte.
+Le necessità dall&#39;altra.
+&lt;/p&gt;
+
+[[Alzarsi subito-&gt;Bus]]
+[[Restare a letto qualche minuto-&gt;PrecarioRiposo]]
+
+&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop is 5&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_1.jpg&#39;)&quot;&gt;
-  &lt;div class=&quot;text-box&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
 
-    &lt;p&gt;V. La Migrante&lt;/p&gt;
+&lt;p&gt;V. La Migrante&lt;/p&gt;
 
-    &lt;p&gt;
-    La stanza è piccola, ordinata.
-    Al Centro Assistenza Stranieri ti hanno chiesto di andare alle Poste per la Postepay.
-    Ora che hai un lavoro, serve per ricevere lo stipendio.
-    &lt;/p&gt;
+&lt;p&gt;
+La stanza è piccola, ma ordinata.
+Condividi lo spazio con altre persone.
+Ognuna ha pochi oggetti.
+Ognuna cerca di costruire una normalità dentro una situazione provvisoria.
+&lt;/p&gt;
 
-    &lt;p&gt;
-    Non conosci bene la città.
-    E oggi dovresti arrivarci da sola.
-    &lt;/p&gt;
+&lt;p&gt;
+Oggi dovresti andare alle Poste per richiedere una carta prepagata.
+Ti servirà per ricevere il primo stipendio del lavoro che hai trovato da poco.
+&lt;/p&gt;
 
-    &lt;p&gt;
-    Non è una richiesta urgente.
-    Ma rifiutarla non sembra un’opzione semplice.
-    &lt;/p&gt;
+&lt;p&gt;
+La responsabile del centro ti aveva detto che vi sareste andate insieme.
+Poi ha dovuto accompagnare un&#39;altra ragazza dal medico.
+&lt;/p&gt;
 
-    [[Aspettare ancora un attimo-&gt;MigranteAttesa]]
-    [[Prepararsi subito-&gt;Bus]]
+&lt;p&gt;
+Ti ha chiesto se riuscirai ad andarci da sola.
+Hai risposto di sì quasi senza pensarci.
+&lt;/p&gt;
 
-  &lt;/div&gt;
+&lt;p&gt;
+Ora non ne sei più così sicura.
+Controlli più volte l&#39;indirizzo sul telefono.
+Speri di riuscire a trovare la strada giusta.
+&lt;/p&gt;
+
+[[Aspettare ancora un attimo-&gt;MigranteAttesa]]
+[[Prepararsi subito-&gt;Bus]]
+
+&lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop is 6&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_1.jpg&#39;)&quot;&gt;
-  &lt;div class=&quot;text-box&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
 
-    &lt;p&gt;VI. Il Senzatetto&lt;/p&gt;
+&lt;p&gt;VI. Il Senzatetto&lt;/p&gt;
 
-    &lt;p&gt;
-    I rumori della città arrivano da ogni direzione.
-    Moto, clacson, autobus.
-    &lt;/p&gt;
+&lt;p&gt;
+A svegliarti non è una sveglia.
+È il rumore della città.
+&lt;/p&gt;
 
-    &lt;p&gt;
-    Sei sveglio per abitudine, più che per scelta.
-    Il freddo è costante.
-    Il tempo è difficile da collocare.
-    &lt;/p&gt;
+&lt;p&gt;
+Un autobus che frena.
+Una moto che accelera.
+Qualcuno che apre una serranda metallica.
+&lt;/p&gt;
 
-    &lt;p&gt;
-    Qualcuno ti aveva parlato di un dormitorio.
-    Prima, però, servivano i documenti.
-    Le Poste non sono lontane.
-    &lt;/p&gt;
+&lt;p&gt;
+Apri gli occhi.
+Il cartone sotto di te è umido.
+L&#39;aria del mattino è fredda.
+&lt;/p&gt;
 
-    [[Alzarsi-&gt;Bus]]
-    [[Restare fermo-&gt;SenzatettoRestare]]
+&lt;p&gt;
+Osservi le persone passare senza guardarti.
+Molti hanno una destinazione.
+Un appuntamento.
+Un posto dove tornare.
+&lt;/p&gt;
 
-  &lt;/div&gt;
+&lt;p&gt;
+Tu stai ancora decidendo come affrontare la giornata.
+Non sai esattamente che giorno sia.
+Sai però che l&#39;inverno si avvicina.
+&lt;/p&gt;
+
+&lt;p&gt;
+L&#39;anno scorso alcuni volontari ti avevano parlato di un dormitorio.
+Per accedervi servivano dei documenti.
+Ricordi vagamente che le Poste non sono lontane.
+&lt;/p&gt;
+
+[[Alzarsi-&gt;Bus]]
+[[Restare fermo-&gt;SenzatettoRestare]]
+
+&lt;/div&gt;
 &lt;/div&gt;
 
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="3" name="Bus" tags="" position="2300,575" size="200,200">&lt;&lt;if $loop is 1&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+</tw-passagedata><tw-passagedata pid="3" name="Bus" tags="" position="2300,575" size="200,200">&lt;&lt;if $loop is 1&gt;&gt;
 
 &lt;&lt;update &quot;time&quot; -8&gt;&gt;
 &lt;&lt;update &quot;energy&quot; -5&gt;&gt;
@@ -404,31 +512,42 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/bus/bus.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
-&lt;p&gt;Sali sull’autobus. Il movimento della città continua senza fermarsi per te.&lt;/p&gt;
+&lt;p&gt;
+L’autobus arriva già affollato.
+Stringi il pacco che vuoi spedire e sali insieme a molte altre persone che stanno andando al lavoro.
+&lt;/p&gt;
 
 &lt;&lt;if $attention &lt; 70&gt;&gt;
+
 &lt;p&gt;
-Gli sguardi degli altri ti fanno dubitare del tuo spazio nel bus.
-Ti muovi con cautela.
+Tiri fuori il telefono per controllare il percorso.
+Una persona sbuffa mentre occupi per qualche secondo il passaggio.
+Qualcun altro ti supera senza guardarti.
 &lt;/p&gt;
+
+&lt;p&gt;
+Per la prima volta da quando sei arrivata ti senti meno ospite e più intrusa.
+&lt;/p&gt;
+
 &lt;&lt;update &quot;control&quot; -8&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
+
 &lt;p&gt;
-Trovi subito un punto stabile.
-Il bus diventa leggibile.
+Trovi posto vicino alla porta e controlli il tragitto sul telefono.
+Le fermate iniziano ad avere un senso.
 &lt;/p&gt;
+
 &lt;&lt;update &quot;control&quot; 5&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;
 
-&lt;p&gt;Non è una scelta di percorso, ma di atteggiamento.&lt;/p&gt;
+&lt;p&gt;
+Devi capire come raggiungere le Poste.
+&lt;/p&gt;
 
-&lt;&lt;if $control &gt;= 50&gt;&gt;
-[[Mantenere controllo e direzione-&gt;BusControllo]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $control &lt; 50&gt;&gt;
-[[Lasciarti guidare dal flusso-&gt;BusAdattivo]]
-&lt;&lt;/if&gt;&gt;
+[[Chiedere informazioni a qualcuno-&gt;BusAdattivo]]
+[[Controllare il percorso da sola-&gt;BusControllo]]
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -438,28 +557,44 @@ Il bus diventa leggibile.
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_2.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
-&lt;p&gt;Il bus è pieno. La mente è già occupata da troppe cose insieme.&lt;/p&gt;
+&lt;p&gt;
+Controlli l&#39;orario appena sali sul bus.
+Hai già fatto il calcolo tre volte.
+&lt;/p&gt;
+
+&lt;p&gt;
+Se il traffico aumenta rischi di collegarti tardi al lavoro.
+Se il lavoro si prolunga rischi di arrivare stanco all’esame.
+&lt;/p&gt;
 
 &lt;&lt;if $attention &lt; 70&gt;&gt;
+
 &lt;p&gt;
-I pensieri si interrompono continuamente.
-Il tempo sembra insufficiente.
+Apri gli appunti ma continui a controllare l&#39;ora.
+Non riesci a concentrarti davvero su nulla.
 &lt;/p&gt;
+
 &lt;&lt;update &quot;time&quot; -8&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
+
 &lt;p&gt;
-Riesci a mettere ordine nella giornata per qualche istante.
+Per qualche fermata riesci a ignorare tutto il resto e concentrarti su una sola cosa alla volta.
 &lt;/p&gt;
+
 &lt;&lt;update &quot;control&quot; 5&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;
 
-&lt;p&gt;Decidi come usare il tempo mentale.&lt;/p&gt;
+&lt;p&gt;
+Come usi questo tragitto?
+&lt;/p&gt;
 
 &lt;&lt;if $time &gt;= 55&gt;&gt;
-[[Studiare e ripassare-&gt;BusStudio]]
+[[Ripassare per l’esame-&gt;BusStudio]]
 &lt;&lt;/if&gt;&gt;
 
-[[Pensare agli obblighi di lavoro-&gt;BusLavoro]]
+[[Controllare il lavoro e le scadenze-&gt;BusLavoro]]
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -469,24 +604,38 @@ Riesci a mettere ordine nella giornata per qualche istante.
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_2.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
-&lt;p&gt;Il bus è rumoroso, ma il ritmo è riconoscibile.&lt;/p&gt;
+&lt;p&gt;
+L’autobus frena bruscamente mentre stai ancora cercando di sederti.
+&lt;/p&gt;
 
 &lt;&lt;if $control &lt; 50&gt;&gt;
+
 &lt;p&gt;
-Devi restare attento per non perdere i riferimenti.
+I posti sono quasi tutti occupati.
+Ti guardi intorno senza sapere se chiedere aiuto o restare in piedi.
 &lt;/p&gt;
+
+&lt;p&gt;
+Nessuno sembra accorgersi della tua esitazione.
+&lt;/p&gt;
+
 &lt;&lt;update &quot;attention&quot; -8&gt;&gt;
 &lt;&lt;update &quot;money&quot; -8&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
+
 &lt;p&gt;
-Il viaggio segue un ritmo familiare.
+Trovi un posto libero e il viaggio diventa più semplice.
 &lt;/p&gt;
+
 &lt;&lt;/if&gt;&gt;
 
-&lt;p&gt;Come attraversi questo momento?&lt;/p&gt;
+&lt;p&gt;
+Come affronti il tragitto?
+&lt;/p&gt;
 
-[[Seguire il flusso senza resistenza-&gt;BusAdattivo]]
-[[Controllare ogni dettaglio-&gt;BusControllo]]
+[[Aspettare che qualcuno ti aiuti-&gt;BusAdattivo]]
+[[Gestire tutto da solo-&gt;BusControllo]]
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -496,25 +645,38 @@ Il viaggio segue un ritmo familiare.
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_2.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
-&lt;p&gt;Il bus è una pausa che non viene percepita come pausa.&lt;/p&gt;
+&lt;p&gt;
+Controlli i messaggi di lavoro appena sali.
+Nessuna nuova comunicazione.
+Per ora.
+&lt;/p&gt;
 
 &lt;&lt;if $time &lt; 60&gt;&gt;
+
 &lt;p&gt;
-Ogni minuto è già occupato da ciò che verrà dopo.
+Sai che ogni ritardo potrebbe trasformarsi in un problema.
+Ogni minuto sembra già appartenere a qualcun altro.
 &lt;/p&gt;
+
 &lt;&lt;update &quot;attention&quot; -8&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
+
 &lt;p&gt;
-Per un momento non ci sono richieste immediate.
+Per qualche fermata il telefono resta silenzioso.
+Non abbastanza da rilassarti davvero.
 &lt;/p&gt;
+
 &lt;&lt;/if&gt;&gt;
 
-&lt;p&gt;Come occupi questo spazio?&lt;/p&gt;
+&lt;p&gt;
+Come usi questo tempo?
+&lt;/p&gt;
 
 &lt;&lt;if $money &lt; 40&gt;&gt;
-[[Rimani connesso al lavoro-&gt;BusLavoro]]
+[[Controllare continuamente il lavoro-&gt;BusLavoro]]
 &lt;&lt;else&gt;&gt;
-[[Ti disconnetti mentalmente-&gt;BusDisconnessione]]
+[[Provare a staccare la mente per qualche minuto-&gt;BusDisconnessione]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
@@ -525,23 +687,35 @@ Per un momento non ci sono richieste immediate.
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_2.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
-&lt;p&gt;Il bus è uno spazio che osservi più di quanto lo vivi.&lt;/p&gt;
+&lt;p&gt;
+I nomi delle fermate scorrono veloci.
+Molti cartelli sono ancora difficili da leggere.
+&lt;/p&gt;
 
 &lt;&lt;if $attention &lt; 40&gt;&gt;
+
 &lt;p&gt;
-Ti affidi agli altri per orientarti.
+Osservi attentamente le persone intorno a te.
+Forse qualcuno sta andando nella tua stessa direzione.
 &lt;/p&gt;
+
 &lt;&lt;update &quot;control&quot; -8&gt;&gt;
+
 &lt;&lt;else&gt;&gt;
+
 &lt;p&gt;
-Osservi il percorso con attenzione.
+Confronti le fermate con il foglio che ti hanno dato al centro.
+Cerchi punti di riferimento che possano confermare il percorso.
 &lt;/p&gt;
+
 &lt;&lt;/if&gt;&gt;
 
-&lt;p&gt;Come ti orienti?&lt;/p&gt;
+&lt;p&gt;
+Come scegli di orientarti?
+&lt;/p&gt;
 
-[[Ti affidi agli altri-&gt;BusAdattivo]]
-[[Ti affidi solo al percorso e alle fermate-&gt;BusControllo]]
+[[Seguire gli altri-&gt;BusAdattivo]]
+[[Controllare ogni fermata personalmente-&gt;BusControllo]]
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -555,212 +729,74 @@ Osservi il percorso con attenzione.
 &lt;&lt;update &quot;attention&quot; 10&gt;&gt;
 
 &lt;p&gt;
-Il corpo è stanco, ma la mente resta vigile.
+Quando sali alcune persone evitano il contatto visivo.
+Altre controllano rapidamente dove ti siedi.
 &lt;/p&gt;
 
-&lt;p&gt;Come reagisci?&lt;/p&gt;
+&lt;p&gt;
+Fingi di non accorgertene.
+Non è la prima volta.
+&lt;/p&gt;
+
+&lt;p&gt;
+Hai bisogno di arrivare alle Poste prima che sia troppo tardi.
+&lt;/p&gt;
 
 &lt;&lt;if $energy &lt; 40&gt;&gt;
-[[Osservi in silenzio-&gt;BusAdattivo]]
+[[Restare in silenzio e osservare-&gt;BusAdattivo]]
 &lt;&lt;else&gt;&gt;
-[[Rimani in stato di allerta-&gt;BusControllo]]
+[[Rimanere vigile e pronto a reagire-&gt;BusControllo]]
 &lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="4" name="Poste" tags="" position="2750,575" size="200,200">&lt;&lt;if $loop is 1&gt;&gt;
-
-&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_3.jpg&#39;)&quot;&gt;
-&lt;div class=&quot;text-box&quot;&gt;
-
-&lt;p&gt;Alle poste l’aria è ferma.&lt;/p&gt;
-
-&lt;p&gt;
-L’attesa non ha direzione né urgenza.
-Ti muovi poco, osservi molto, senza un ruolo preciso nello spazio.
-&lt;/p&gt;
-
-&lt;p&gt;Il tempo scorre senza chiederti nulla.&lt;/p&gt;
-
-&lt;&lt;update &quot;time&quot; -5&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+</tw-passagedata><tw-passagedata pid="4" name="Poste" tags="" position="2750,575" size="200,200">&lt;&lt;update &quot;time&quot; -5&gt;&gt;
 &lt;&lt;update &quot;money&quot; -5&gt;&gt;
 
-&lt;p&gt;Il tempo passa anche quando non succede nulla.&lt;/p&gt;
-
-[[Restare in attesa senza pensieri-&gt;PosteAdattivo]]
-[[Organizzarti e tenere il controllo della situazione-&gt;PosteControllo]]
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;&lt;elseif $loop is 2&gt;&gt;
-
-&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_3.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
-&lt;p&gt;L’attesa pesa più del previsto.&lt;/p&gt;
-
-&lt;&lt;if $time &lt; 55&gt;&gt;
 &lt;p&gt;
-Ogni minuto qui sembra sottratto alla giornata.
-Il pensiero del tempo domina lo spazio.
+Alle poste vuoi spedire un piccolo pacco.
+Qualche souvenir, alcune cartoline e gli oggetti che non entrano più in valigia.
 &lt;/p&gt;
-&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
-&lt;&lt;update &quot;money&quot; -8&gt;&gt;
-&lt;&lt;else&gt;&gt;
+
 &lt;p&gt;
-Cerchi di usare l’attesa per riorganizzare mentalmente ciò che devi fare.
+Prendi il numero e ti siedi.
+Attorno a te ci sono persone che sembrano avere fretta di tornare al lavoro, fare una commissione o risolvere un problema.
 &lt;/p&gt;
-&lt;&lt;/if&gt;&gt;
 
-&lt;p&gt;Come usi questo tempo?&lt;/p&gt;
+&lt;p&gt;
+Per te questa è una delle ultime attività del viaggio.
+Per altri è semplicemente una mattina qualunque.
+&lt;/p&gt;
 
-&lt;&lt;if $time &lt; 50&gt;&gt;
-[[L’attesa ti consuma mentalmente-&gt;PosteTempo]]
-&lt;&lt;/if&gt;&gt;
+&lt;p&gt;
+Una persona sbuffa quando chiedi informazioni allo sportello automatico.
+Un’altra ti indica rapidamente il pulsante da premere senza fermarsi davvero.
+&lt;/p&gt;
 
-[[Riorganizzare i pensieri-&gt;PosteControllo]]
-[[Pensare agli obblighi e al lavoro-&gt;PosteAdattivo]]
+&lt;p&gt;
+L’attesa inizia.
+&lt;/p&gt;
+
+&lt;p&gt;
+Non è solo tempo che passa: è un modo diverso di stare dentro lo stesso spazio.
+&lt;/p&gt;
+
+&lt;p&gt;
+Come vivi questo momento?
+&lt;/p&gt;
+
+[[Lasciarti andare all’attesa-&gt;PosteAdattivo]]
+[[Provare a mantenere il controllo della situazione-&gt;PosteControllo]]
+[[Farti assorbire completamente dall’attesa-&gt;PosteTempo]]
+[[Restare in osservazione e leggere le persone-&gt;PosteAllerta]]
 
 &lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;&lt;elseif $loop is 3&gt;&gt;
-
-&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_3.jpg&#39;)&quot;&gt;
-&lt;div class=&quot;text-box&quot;&gt;
-
-&lt;p&gt;L’attesa è lunga ma familiare.&lt;/p&gt;
-
-&lt;&lt;if $control &lt; 50&gt;&gt;
-&lt;p&gt;
-Ti affidi a ciò che fanno gli altri per capire quando è il tuo turno.
-L’ambiente richiede attenzione continua.
-&lt;/p&gt;
-&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;p&gt;
-Aspetti con pazienza. Il ritmo del luogo è lento ma leggibile.
-&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;p&gt;Come attraversi l’attesa?&lt;/p&gt;
-
-&lt;&lt;if $attention &lt; 40&gt;&gt;
-[[Ti lasci guidare dagli altri per orientarti-&gt;PosteAllerta]]
-&lt;&lt;/if&gt;&gt;
-
-[[Seguire il flusso della fila-&gt;PosteAdattivo]]
-[[Controllare attivamente il sistema e il tuo turno-&gt;PosteControllo]]
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;&lt;elseif $loop is 4&gt;&gt;
-
-&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_3.jpg&#39;)&quot;&gt;
-&lt;div class=&quot;text-box&quot;&gt;
-
-&lt;p&gt;L’attesa alle poste è tempo sottratto ad altro.&lt;/p&gt;
-
-&lt;&lt;if $time &lt; 50&gt;&gt;
-&lt;p&gt;
-Il pensiero del lavoro resta attivo anche qui.
-Ogni minuto sembra costoso.
-&lt;/p&gt;
-&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
-&lt;&lt;update &quot;money&quot; -10&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;p&gt;
-Provi a restare in attesa senza perdere il controllo mentale della giornata.
-&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;p&gt;Come reagisci?&lt;/p&gt;
-
-&lt;&lt;if $money &lt; 40&gt;&gt;
-[[Restare connesso alle responsabilità-&gt;PosteControllo]]
-&lt;&lt;else&gt;&gt;
-[[Staccare mentalmente per un momento-&gt;PosteAdattivo]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;if $time &lt; 45&gt;&gt;
-[[L’attesa ti assorbe completamente-&gt;PosteAttesa]]
-&lt;&lt;/if&gt;&gt;
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;&lt;elseif $loop is 5&gt;&gt;
-
-&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_3.jpg&#39;)&quot;&gt;
-&lt;div class=&quot;text-box&quot;&gt;
-
-&lt;p&gt;L’attesa richiede osservazione più che azione.&lt;/p&gt;
-
-&lt;&lt;if $attention &lt; 40&gt;&gt;
-&lt;p&gt;
-Osservi gli altri per capire come funziona il sistema.
-La comunicazione non è immediata.
-&lt;/p&gt;
-&lt;&lt;update &quot;control&quot; -8&gt;&gt;
-&lt;&lt;update &quot;money&quot; -5&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;p&gt;
-Ti concentri sulle persone e sul flusso della fila per orientarti.
-&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;p&gt;Come ti orienti?&lt;/p&gt;
-
-&lt;&lt;if $attention &lt; 35&gt;&gt;
-[[Ti affidi completamente agli altri per capire il sistema-&gt;PosteAllerta]]
-&lt;&lt;/if&gt;&gt;
-
-[[Seguire gli altri come riferimento-&gt;PosteAdattivo]]
-[[Osservare e capire il sistema da sola-&gt;PosteControllo]]
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-
-&lt;&lt;elseif $loop is 6&gt;&gt;
-
-&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_3.jpg&#39;)&quot;&gt;
-&lt;div class=&quot;text-box&quot;&gt;
-
-&lt;p&gt;L’attesa è uno stato di sospensione.&lt;/p&gt;
-
-&lt;&lt;if $control &lt; 40&gt;&gt;
-&lt;p&gt;
-Resti fermo cercando di non attirare attenzione.
-Il contesto resta instabile.
-&lt;/p&gt;
-&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;p&gt;
-Osservi attentamente l’ambiente, pronto a muoverti quando serve.
-&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;p&gt;Come vivi questo momento?&lt;/p&gt;
-
-&lt;&lt;if $energy &lt; 35&gt;&gt;
-[[La stanchezza guida le tue scelte-&gt;PosteTempo]]
-&lt;&lt;/if&gt;&gt;
-
-[[Osservare in silenzio-&gt;PosteAdattivo]]
-[[Restare in controllo e pronto all’azione-&gt;PosteControllo]]
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="5" name="Supermercato" tags="" position="3200,600" size="200,200">&lt;&lt;if $loop == 1&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="Supermercato" tags="" position="3200,600" size="200,200">&lt;&lt;if $loop == 1&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_4.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
@@ -1458,23 +1494,31 @@ Esistono condizioni diverse che rendono la stessa strada un’esperienza disegua
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
-Rimani ancora a letto.
-Il tempo della stanza non sembra avere urgenza.
+Ti rigiri dall&#39;altra parte e chiudi gli occhi.
+Per una volta non hai appuntamenti, orari di lavoro o scadenze che ti obbligano ad alzarti.
 &lt;/p&gt;
 
 &lt;p&gt;
-Quando ti rialzi, la luce è cambiata.
-Fuori, la città continua come prima.
+Da qualche parte, sotto la finestra dell&#39;albergo, senti il rumore di una serranda che si apre e il passaggio distante di un autobus.
+La città è già sveglia.
 &lt;/p&gt;
 
 &lt;p&gt;
-Hai consumato parte della mattina senza attraversarla.
+Quando riapri gli occhi, la luce nella stanza è diversa.
+Perdi qualche minuto a osservare il soffitto, poi il profilo delle Due Torri oltre il vetro.
+&lt;/p&gt;
+
+&lt;p&gt;
+Hai consumato una parte della mattina senza accorgertene.
+Per te è tempo di vacanza.
+Per qualcun altro la giornata è iniziata da un pezzo.
 &lt;/p&gt;
 
 [[Esci in fretta-&gt;Bus]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="11" name="StudenteRipassare" tags="" position="1425,450" size="100,100">&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="11" name="StudenteRipassare" tags="" position="1425,450" size="100,100">&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
 &lt;&lt;update &quot;attention&quot; 12&gt;&gt;
 &lt;&lt;update &quot;time&quot; -8&gt;&gt;
 &lt;&lt;update &quot;control&quot; 5&gt;&gt;
@@ -1483,22 +1527,29 @@ Hai consumato parte della mattina senza attraversarla.
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
-Rivedi gli appunti mentre la mente è ancora appesantita.
+Rivedi gli appunti mentre la mente è ancora appesantita dal sonno.
 &lt;/p&gt;
 
 &lt;p&gt;
-Alcuni passaggi risultano immediati.
-Altri richiedono di essere riletti più volte.
+Le frasi ti risultano familiari, ma non tutte si agganciano subito.
+Alcune scorrono con naturalezza, altre restano sospese, come se non appartenessero del tutto a questa mattina.
 &lt;/p&gt;
 
 &lt;p&gt;
-Il pensiero dell’esame rimane attivo anche mentre cerchi di chiudere tutto.
+L’orologio è presente anche quando non lo guardi.
+Ogni minuto sottratto allo studio è un minuto che si sposta verso l’esame senza di te.
+&lt;/p&gt;
+
+&lt;p&gt;
+Il pensiero dell’esame non si spegne.
+Resta sullo sfondo anche quando provi a chiudere tutto e andare via.
 &lt;/p&gt;
 
 [[Chiudi tutto e vai-&gt;Bus]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="12" name="AnzianoLento" tags="" position="1550,350" size="100,100">&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="12" name="AnzianoLento" tags="" position="1550,350" size="100,100">&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
 &lt;&lt;update &quot;time&quot; -12&gt;&gt;
 &lt;&lt;update &quot;attention&quot; 8&gt;&gt;
 
@@ -1506,21 +1557,30 @@ Il pensiero dell’esame rimane attivo anche mentre cerchi di chiudere tutto.
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
-Ogni gesto richiede tempo. Ogni movimento segue una sequenza precisa.
+Il corpo si sveglia prima della volontà.
+Ogni movimento arriva con un ritardo minimo, come se dovesse essere negoziato.
 &lt;/p&gt;
 
 &lt;p&gt;
-Ti prepari lentamente, adattandoti a un ritmo che non è completamente sotto il tuo controllo.
+Ti alzi senza fretta, non per scelta ma perché accelerare non è un’opzione reale.
+Le abitudini guidano i gesti uno dopo l’altro: sedersi, attendere, controllare, ricordare.
 &lt;/p&gt;
 
 &lt;p&gt;
-La percezione del tempo si allinea al corpo più che alla giornata.
+Il tempo non è uniforme.
+Si addensa nei movimenti più semplici, si dilata tra una cosa e l’altra.
+&lt;/p&gt;
+
+&lt;p&gt;
+Fuori, la giornata ha già iniziato a correre.
+Dentro, tutto procede a un ritmo diverso.
 &lt;/p&gt;
 
 [[Esci di casa-&gt;Bus]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="13" name="PrecarioRiposo" tags="" position="1675,275" size="100,100">&lt;&lt;update &quot;energy&quot; 5&gt;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="13" name="PrecarioRiposo" tags="" position="1675,275" size="100,100">&lt;&lt;update &quot;energy&quot; 5&gt;&gt;
 &lt;&lt;update &quot;time&quot; -12&gt;&gt;
 &lt;&lt;update &quot;attention&quot; -8&gt;&gt;
 &lt;&lt;update &quot;control&quot; -8&gt;&gt;
@@ -1529,15 +1589,21 @@ La percezione del tempo si allinea al corpo più che alla giornata.
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
-Ti concedi pochi minuti, ma non è un vero riposo.
+Ti concedi pochi minuti di pausa, ma il corpo non riconosce davvero il riposo.
 &lt;/p&gt;
 
 &lt;p&gt;
-Anche a occhi chiusi, la giornata continua a occupare spazio nella mente.
+Anche a occhi chiusi, la giornata resta attiva da qualche parte nella mente:
+scadenze, messaggi, possibilità che svaniscono se non rispondi in tempo.
 &lt;/p&gt;
 
 &lt;p&gt;
-Quando ti rialzi, il tempo sembra già più corto di prima.
+Non è quiete.
+È una sospensione breve tra due richieste.
+&lt;/p&gt;
+
+&lt;p&gt;
+Quando ti rialzi, il tempo sembra già essersi spostato più avanti senza aspettarti.
 &lt;/p&gt;
 
 [[Corri fuori-&gt;Bus]]
@@ -1556,12 +1622,18 @@ Resti ferma un momento, cercando di capire se hai fatto la scelta giusta.
 &lt;/p&gt;
 
 &lt;p&gt;
-Il silenzio non offre riferimenti chiari.
-Ogni decisione resta sospesa per qualche secondo in più.
+Il silenzio non aiuta a orientarsi.
+Non ci sono segnali chiari, solo indicazioni frammentate che devi ricomporre da sola.
 &lt;/p&gt;
 
 &lt;p&gt;
-Riparti senza una certezza piena, ma senza alternative reali.
+La decisione resta sospesa per qualche secondo in più del necessario.
+Poi il tempo riprende senza chiedere conferma.
+&lt;/p&gt;
+
+&lt;p&gt;
+Riparti senza una certezza piena.
+Solo con ciò che sei riuscita a trattenere nella memoria del percorso.
 &lt;/p&gt;
 
 [[Decidi di uscire-&gt;Bus]]
@@ -1576,15 +1648,17 @@ Riparti senza una certezza piena, ma senza alternative reali.
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
-Resti fermo. Il freddo si stabilizza nel corpo invece di sparire.
+Resti fermo.
+Il freddo non cala: si stabilizza nel corpo, diventando una condizione invece che una sensazione momentanea.
 &lt;/p&gt;
 
 &lt;p&gt;
-La città continua a muoversi senza considerarti parte del suo ritmo.
+La città continua a muoversi a pochi metri da te, con un ritmo che non prevede interruzioni.
 &lt;/p&gt;
 
 &lt;p&gt;
-Dopo un po’, l’immobilità diventa solo una condizione temporanea prima di rimettersi in movimento.
+Per un po’ non succede nulla.
+Poi anche l’immobilità smette di essere una scelta e diventa solo uno stato tra due movimenti.
 &lt;/p&gt;
 
 [[Alzati più tardi-&gt;Bus]]
@@ -1765,128 +1839,344 @@ Dopo un po’, l’immobilità diventa solo una condizione temporanea prima di r
 
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;goto &quot;Risveglio&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="BusAdattivo" tags="" position="2275,250" size="100,100">&lt;p&gt;Ti adatti al ritmo del bus senza opporre resistenza.&lt;/p&gt;
-
-&lt;&lt;update &quot;control&quot; -8&gt;&gt;
+&lt;&lt;goto &quot;Risveglio&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="BusAdattivo" tags="" position="2275,250" size="100,100">&lt;&lt;update &quot;control&quot; -8&gt;&gt;
 &lt;&lt;update &quot;attention&quot; 5&gt;&gt;
 &lt;&lt;update &quot;energy&quot; 5&gt;&gt;
 
 &lt;p&gt;
-Non è una scelta attiva, ma una forma di riduzione dello sforzo.
-Osservare gli altri diventa il modo più semplice per orientarti.
+Smetti di cercare di controllare ogni dettaglio.
 &lt;/p&gt;
 
-&lt;&lt;if $loop is 5&gt;&gt;
 &lt;p&gt;
-Impari a leggere gli altri prima del contesto.
+Lasci che siano il movimento del bus, le fermate e le persone intorno a te a suggerirti come comportarti.
+Per qualche minuto non devi prendere decisioni continue.
+&lt;/p&gt;
+
+&lt;&lt;if $loop is 1&gt;&gt;
+&lt;p&gt;
+Osservi gli altri passeggeri senza attirare l&#39;attenzione.
+Cerchi di capire le abitudini della città imitandone il ritmo.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 2&gt;&gt;
+&lt;p&gt;
+Metti da parte per un momento scadenze, esami e notifiche.
+Non scompaiono, ma smettono di occupare ogni pensiero.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 3&gt;&gt;
+&lt;p&gt;
+Ti lasci guidare dall&#39;esperienza accumulata negli anni.
+Non serve controllare tutto per sapere come muoversi.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 4&gt;&gt;
+&lt;p&gt;
+Per una volta non provi a ottimizzare ogni minuto.
+Lasci semplicemente che il tragitto faccia il suo corso.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 5&gt;&gt;
+&lt;p&gt;
+Osservi attentamente chi ti sta intorno.
+A volte le persone sono più facili da comprendere dei cartelli e delle indicazioni.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 6&gt;&gt;
+&lt;p&gt;
+Resti in disparte e studi l&#39;ambiente.
+Capire gli altri è spesso il modo più sicuro per capire cosa sta succedendo.
 &lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;
-Il viaggio continua senza che tu debba definirlo.
+Quando il bus rallenta alla fermata successiva, ti senti leggermente meno teso di prima.
 &lt;/p&gt;
 
-[[Continuare-&gt;Poste]]</tw-passagedata><tw-passagedata pid="19" name="BusControllo" tags="" position="2425,200" size="100,100">&lt;p&gt;Cerchi di mantenere una direzione chiara nonostante il movimento del bus.&lt;/p&gt;
-
-&lt;&lt;update &quot;control&quot; 8&gt;&gt;
+[[Continuare-&gt;Poste]]</tw-passagedata><tw-passagedata pid="19" name="BusControllo" tags="" position="2425,200" size="100,100">&lt;&lt;update &quot;control&quot; 8&gt;&gt;
 &lt;&lt;update &quot;energy&quot; -8&gt;&gt;
 &lt;&lt;update &quot;attention&quot; -5&gt;&gt;
 
 &lt;p&gt;
-La scelta richiede sforzo.
-Ogni fermata diventa una verifica del percorso.
+Decidi di restare concentrato sul tuo obiettivo.
 &lt;/p&gt;
 
-&lt;&lt;if $loop is 4&gt;&gt;
-&lt;p&gt;Il controllo mentale ha un costo costante.&lt;/p&gt;
+&lt;p&gt;
+Controlli fermate, orari, persone che salgono e scendono.
+Cerchi continuamente conferme di essere sulla strada giusta.
+&lt;/p&gt;
+
+&lt;&lt;if $loop is 1&gt;&gt;
+&lt;p&gt;
+Controlli più volte il percorso sul telefono.
+Non vuoi perdere tempo nell&#39;ultimo giorno di viaggio.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 2&gt;&gt;
+&lt;p&gt;
+Ripassi mentalmente gli impegni della giornata.
+Esame, lavoro, orari.
+Ogni cosa deve incastrarsi perfettamente.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 3&gt;&gt;
+&lt;p&gt;
+Segui con attenzione ogni fermata.
+Perdere il punto di riferimento significherebbe dover ricominciare da capo.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 4&gt;&gt;
+&lt;p&gt;
+Calcoli continuamente quanto tempo ti resta.
+Un ritardo qui potrebbe trasformarsi in un problema più avanti.
+&lt;/p&gt;
 &lt;&lt;update &quot;time&quot; -5&gt;&gt;
+
+&lt;&lt;elseif $loop is 5&gt;&gt;
+&lt;p&gt;
+Confronti il nome delle fermate con gli appunti che hai preparato.
+Ogni dettaglio diventa importante quando hai paura di sbagliare strada.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 6&gt;&gt;
+&lt;p&gt;
+Resti vigile.
+Sai che abbassare la guardia può avere conseguenze immediate.
+&lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
+
+&lt;p&gt;
+Quando il bus rallenta, hai la sensazione di avere ancora il controllo della situazione.
+Anche se mantenere quel controllo richiede energia.
+&lt;/p&gt;
 
 [[Continuare-&gt;Poste]]</tw-passagedata><tw-passagedata pid="20" name="BusStudio" tags="" position="2575,175" size="100,100">&lt;&lt;if $time &gt;= 55&gt;&gt;
 
-&lt;p&gt;Usi il tempo per ricostruire mentalmente la giornata.&lt;/p&gt;
+&lt;div class=&quot;text-box&quot;&gt;
+
+&lt;p&gt;
+Tiri fuori gli appunti e provi a rileggere gli ultimi argomenti.
+&lt;/p&gt;
+
+&lt;p&gt;
+Il bus sobbalza ad ogni fermata.
+Le parole scorrono davanti agli occhi più lentamente del previsto.
+Alcuni concetti tornano subito alla mente, altri sembrano spariti durante la notte.
+&lt;/p&gt;
+
+&lt;p&gt;
+Intorno a te le persone stanno andando al lavoro, a fare commissioni, a iniziare la propria giornata.
+Tu stai cercando di preparare un esame e lavorare nello stesso momento.
+&lt;/p&gt;
+
+&lt;p&gt;
+Per qualche minuto riesci a concentrarti davvero.
+Non abbastanza da sentirti preparata, ma abbastanza da convincerti di non aver sprecato il viaggio.
+&lt;/p&gt;
 
 &lt;&lt;update &quot;control&quot; 5&gt;&gt;
 &lt;&lt;update &quot;attention&quot; -5&gt;&gt;
 
-&lt;p&gt;
-Lo studio diventa una forma di organizzazione mentale,
-non solo un’attività.
-&lt;/p&gt;
+[[Chiudi gli appunti e continui il viaggio-&gt;Poste]]
 
-[[Continuare-&gt;Poste]]
+&lt;/div&gt;
 
 &lt;&lt;else&gt;&gt;
 
-&lt;p&gt;Non hai abbastanza spazio mentale per concentrarti davvero.&lt;/p&gt;
+&lt;div class=&quot;text-box&quot;&gt;
+
+&lt;p&gt;
+Apri gli appunti ma le righe si confondono tra loro.
+&lt;/p&gt;
+
+&lt;p&gt;
+Continui a leggere la stessa pagina senza riuscire a ricordare cosa hai appena visto.
+La mente torna continuamente alla videochiamata, al lavoro, agli orari, alle cose che potrebbero andare storte.
+&lt;/p&gt;
+
+&lt;p&gt;
+Dopo qualche tentativo rimetti via tutto.
+In questo momento la preoccupazione occupa più spazio dello studio.
+&lt;/p&gt;
 
 &lt;&lt;update &quot;attention&quot; -3&gt;&gt;
 
 [[Passi a pensare al lavoro-&gt;BusLavoro]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="BusLavoro" tags="" position="2725,200" size="100,100">&lt;p&gt;La mente si sposta immediatamente sugli obblighi e sulle entrate.&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="BusLavoro" tags="" position="2725,200" size="100,100">&lt;p&gt;
+Appena trovi un momento di silenzio, la mente torna al lavoro.
+&lt;/p&gt;
 
 &lt;&lt;update &quot;attention&quot; -8&gt;&gt;
 &lt;&lt;update &quot;control&quot; -5&gt;&gt;
 
 &lt;p&gt;
-Il tempo del bus non è vuoto:
-è già occupato da ciò che devi recuperare dopo.
+Controlli notifiche, orari, possibili imprevisti.
+Cerchi di calcolare quanto tempo rimane, quanto denaro entrerà, cosa rischi di perdere se qualcosa va storto.
 &lt;/p&gt;
 
-[[Continuare-&gt;Poste]]</tw-passagedata><tw-passagedata pid="22" name="BusDisconnessione" tags="" position="2875,250" size="100,100">&lt;p&gt;Provi a staccarti mentalmente dal contesto.&lt;/p&gt;
+&lt;p&gt;
+Attorno a te le persone scorrono video, ascoltano musica o guardano fuori dal finestrino.
+Per loro il viaggio sembra una pausa.
+Per te è solo un altro spazio da riempire con preoccupazioni e decisioni.
+&lt;/p&gt;
 
-&lt;&lt;update &quot;energy&quot; 8&gt;&gt;
+&lt;&lt;if $loop is 2&gt;&gt;
+
+&lt;p&gt;
+L&#39;esame continua a occupare un angolo della mente.
+Ogni minuto dedicato al lavoro sembra sottratto allo studio.
+Ogni minuto dedicato allo studio sembra sottratto al lavoro.
+&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $loop is 4&gt;&gt;
+
+&lt;p&gt;
+Ti chiedi se il turno extra verrà confermato.
+Se il responsabile si ricorderà di te.
+Se la prossima settimana avrai abbastanza ore per coprire tutte le spese.
+&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;p&gt;
+Quando alzi lo sguardo, il tragitto è quasi finito.
+Ma la sensazione di essere in ritardo è rimasta.
+&lt;/p&gt;
+
+[[Continuare-&gt;Poste]]
+</tw-passagedata><tw-passagedata pid="22" name="BusDisconnessione" tags="" position="2875,250" size="100,100">&lt;&lt;update &quot;energy&quot; 8&gt;&gt;
 &lt;&lt;update &quot;attention&quot; -8&gt;&gt;
 &lt;&lt;update &quot;time&quot; -5&gt;&gt;
 
 &lt;p&gt;
-Per pochi istanti il bus smette di essere un sistema da interpretare.
-Ma la distanza è fragile.
+Decidi di smettere, almeno per qualche minuto, di pensare a ciò che ti aspetta dopo.
 &lt;/p&gt;
 
-[[Continuare-&gt;Poste]]</tw-passagedata><tw-passagedata pid="23" name="PosteAdattivo" tags="" position="3150,200" size="100,100">&lt;p&gt;Ti adatti al ritmo del luogo senza cercare di interpretarlo completamente.&lt;/p&gt;
+&lt;p&gt;
+Metti via il telefono.
+Non controlli gli orari.
+Non fai calcoli.
+Non provi a risolvere problemi che ancora non esistono.
+&lt;/p&gt;
+
+&lt;p&gt;
+Guardi fuori dal finestrino.
+Le persone attraversano la strada, aspettano al semaforo, entrano nei negozi.
+Per qualche fermata la giornata sembra appartenere a qualcun altro.
+&lt;/p&gt;
+
+&lt;p&gt;
+La sensazione di sollievo dura poco.
+Le responsabilità restano dove le hai lasciate e continuano ad aspettarti.
+&lt;/p&gt;
+
+&lt;p&gt;
+Ma per un breve momento hai smesso di rincorrerle.
+&lt;/p&gt;
+
+[[Continuare-&gt;Poste]]</tw-passagedata><tw-passagedata pid="23" name="PosteAdattivo" tags="" position="3150,200" size="100,100">&lt;p&gt;
+Smetti di cercare di capire ogni dettaglio.
+Per il momento basta seguire il ritmo della fila.
+&lt;/p&gt;
 
 &lt;&lt;update &quot;control&quot; -5&gt;&gt;
 &lt;&lt;update &quot;attention&quot; 5&gt;&gt;
 
 &lt;p&gt;
-Non è una scelta attiva: è una riduzione della complessità.
-Osservare gli altri diventa la tua guida principale.
+Osservi chi ti sta davanti, chi si alza, chi prende un numero, chi si avvicina agli sportelli.
+Le persone diventano più facili da leggere delle procedure.
 &lt;/p&gt;
 
-&lt;&lt;if $loop is 5&gt;&gt;
-&lt;p&gt;Ti affidi ai segnali sociali più che alle regole scritte.&lt;/p&gt;
+&lt;&lt;if $loop is 1&gt;&gt;
+
+&lt;p&gt;
+Non conosci bene le regole del luogo.
+Quando qualcuno si sposta, lo segui con lo sguardo per capire cosa fare dopo.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 2&gt;&gt;
+
+&lt;p&gt;
+Per qualche minuto smetti di controllare l&#39;orologio.
+L&#39;esame e il lavoro restano sullo sfondo, ma non riescono a occupare tutto lo spazio mentale.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 3&gt;&gt;
+
+&lt;p&gt;
+Ti affidi ai movimenti degli altri clienti.
+Quando qualcuno si alza con decisione, controlli che non sia arrivato anche il tuo turno.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 4&gt;&gt;
+
+&lt;p&gt;
+Continui a pensare al lavoro, ma senza cercare soluzioni immediate.
+Almeno per qualche minuto non puoi fare altro che aspettare.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 5&gt;&gt;
+
+&lt;p&gt;
+Le parole sui cartelli non sono sempre chiare.
+Osservare gli altri diventa il modo più semplice per capire come funziona il sistema.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 6&gt;&gt;
+
+&lt;p&gt;
+Cerchi di passare inosservato.
+Restare tranquillo e non attirare attenzione sembra la scelta più sicura.
+&lt;/p&gt;
+
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;update &quot;time&quot; 5&gt;&gt;
 &lt;&lt;update &quot;energy&quot; -5&gt;&gt;
 
 &lt;p&gt;
-L’attesa sembra più breve, ma qualcosa viene consumato senza che tu lo noti.
+L&#39;attesa sembra scorrere più velocemente.
+Quando finalmente la fila avanza, ti accorgi di aver consumato meno energie mentali del previsto.
 &lt;/p&gt;
 
-[[Continuare-&gt;Supermercato]]</tw-passagedata><tw-passagedata pid="24" name="PosteControllo" tags="" position="3300,250" size="100,100">&lt;p&gt;Cerchi di capire il funzionamento del sistema invece di subirlo.&lt;/p&gt;
+[[Continuare-&gt;Supermercato]]</tw-passagedata><tw-passagedata pid="24" name="PosteControllo" tags="" position="3300,250" size="100,100">&lt;p&gt;Cerchi di capire come funziona il sistema invece di subirlo.&lt;/p&gt;
 
 &lt;&lt;update &quot;control&quot; 8&gt;&gt;
 &lt;&lt;update &quot;energy&quot; -6&gt;&gt;
 &lt;&lt;update &quot;attention&quot; -5&gt;&gt;
 
 &lt;p&gt;
-Ogni informazione richiede interpretazione.
-Il sistema è leggibile, ma solo a costo di sforzo.
+Osservi lo schermo dei numeri, gli sportelli, i movimenti degli altri.
+Provi a ricostruire delle regole a partire da ciò che succede davanti a te.
+&lt;/p&gt;
+
+&lt;p&gt;
+Ogni informazione deve essere interpretata al volo.
+Nulla viene spiegato davvero, ma tutto sembra avere una logica implicita.
 &lt;/p&gt;
 
 &lt;&lt;if $time &lt; 50&gt;&gt;
+
 &lt;p&gt;
-Il tempo di attesa diventa parte del costo decisionale.
-Non stai solo aspettando: stai consumando risorse per capire cosa sta succedendo.
+Il tempo di attesa non è più solo attesa.
+Diventa parte del problema da risolvere.
 &lt;/p&gt;
+
+&lt;p&gt;
+Ogni minuto in più aumenta la sensazione di dover “capire in fretta” prima di sbagliare qualcosa.
+&lt;/p&gt;
+
 &lt;&lt;update &quot;attention&quot; -3&gt;&gt;
 &lt;&lt;update &quot;energy&quot; -2&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;
-La comprensione non accelera il processo — lo rende più costoso.
+Capire non accelera il processo.
+Ma rende impossibile smettere di provarci.
 &lt;/p&gt;
 
 [[Continuare-&gt;Supermercato]]</tw-passagedata><tw-passagedata pid="25" name="PosteTempo" tags="" position="3450,300" size="100,100">&lt;&lt;update &quot;time&quot; -10&gt;&gt;
@@ -1897,47 +2187,28 @@ La comprensione non accelera il processo — lo rende più costoso.
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
-L&#39;attesa sembra più lunga del previsto.
-Ogni persona davanti a te diventa un promemoria di tutto quello che dovrai fare dopo.
+L’attesa si allunga più di quanto avresti previsto.
+Le persone davanti a te avanzano lentamente, una alla volta, senza che il ritmo possa essere influenzato.
 &lt;/p&gt;
 
 &lt;p&gt;
-Controlli l&#39;orologio più volte.
-Il tempo non è solo qualcosa che passa: è qualcosa che ti sottrae spazio mentale.
+Ogni numero chiamato sembra ricordarti che non è ancora il tuo turno.
+Ogni movimento nello spazio rende più reale il tempo che passa.
 &lt;/p&gt;
 
 &lt;p&gt;
-Rimanere qui significa continuare a consumare attenzione senza muoversi.
+Controlli l’orologio sul telefono, poi lo ricontrolli poco dopo.
+Non cambia quasi nulla, ma lo fai comunque.
+&lt;/p&gt;
+
+&lt;p&gt;
+Rimanere qui significa restare dentro un tempo che non puoi accelerare, ma che ti consuma comunque attenzione.
 &lt;/p&gt;
 
 [[Terminare e uscire-&gt;Supermercato]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="PosteAttesa" tags="" position="3575,350" size="100,100">&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
-&lt;&lt;update &quot;control&quot; 5&gt;&gt;
-&lt;&lt;update &quot;energy&quot; -5&gt;&gt;
-
-&lt;div class=&quot;fullscreen&quot;&gt;
-&lt;div class=&quot;text-box&quot;&gt;
-
-&lt;p&gt;
-Mentre aspetti continui a pensare agli impegni che ti attendono.
-Messaggi, scadenze, chiamate.
-&lt;/p&gt;
-
-&lt;p&gt;
-La mente è già altrove.
-L’attesa non è vuota: viene riempita da ciò che devi ancora fare.
-&lt;/p&gt;
-
-&lt;p&gt;
-Quando finalmente arriva il tuo turno, ti accorgi di aver ripassato la giornata più volte senza mai viverla davvero.
-&lt;/p&gt;
-
-[[Terminare e uscire-&gt;Supermercato]]
-
-&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="PosteAllerta" tags="" position="3675,475" size="100,100">&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="PosteAllerta" tags="" position="3575,400" size="100,100">&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
 &lt;&lt;update &quot;attention&quot; 8&gt;&gt;
 &lt;&lt;update &quot;control&quot; -5&gt;&gt;
 
@@ -1945,23 +2216,32 @@ Quando finalmente arriva il tuo turno, ti accorgi di aver ripassato la giornata 
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
-Resti in silenzio osservando chi entra e chi esce.
-Cerchi di occupare meno spazio possibile.
+Resti in silenzio, osservando chi entra e chi esce, come si muove, dove si ferma.
+Cerchi di occupare meno spazio possibile nella fila.
 &lt;/p&gt;
 
 &lt;p&gt;
-Ogni persona sembra sapere esattamente cosa fare.
-Tu aspetti il momento giusto per muoverti, calibrando ogni gesto.
+Ogni persona sembra muoversi con una sicurezza che tu non hai.
+Osservi i loro gesti per capire quando intervenire, quando avanzare, quando restare fermo.
 &lt;/p&gt;
 
 &lt;p&gt;
-L’attenzione cresce, ma non ti rende più sicuro: ti rende più esposto a ciò che succede intorno.
+Più guardi, più dettagli emergono: un richiamo allo sportello, un numero chiamato, una porta che si apre troppo in fretta.
+&lt;/p&gt;
+
+&lt;p&gt;
+L’attenzione aumenta, ma non ti stabilizza.
+Ti tiene agganciato a tutto ciò che potrebbe richiedere una tua reazione immediata.
+&lt;/p&gt;
+
+&lt;p&gt;
+Non stai aspettando soltanto: stai monitorando.
 &lt;/p&gt;
 
 [[Terminare e uscire-&gt;Supermercato]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="SupermercatoRisparmio" tags="" position="3575,925" size="100,100">&lt;&lt;update &quot;money&quot; -8&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="SupermercatoRisparmio" tags="" position="3575,925" size="100,100">&lt;&lt;update &quot;money&quot; -8&gt;&gt;
 &lt;&lt;update &quot;control&quot; 5&gt;&gt;
 &lt;&lt;update &quot;energy&quot; -8&gt;&gt;
 &lt;&lt;update &quot;attention&quot; 5&gt;&gt;
@@ -1992,7 +2272,7 @@ Non è una forma di libertà.
 [[Andare verso l’uscita-&gt;StradaChiusa]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="SupermercatoAdattivo" tags="" position="3600,800" size="100,100">&lt;&lt;update &quot;control&quot; -8&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="SupermercatoAdattivo" tags="" position="3600,800" size="100,100">&lt;&lt;update &quot;control&quot; -8&gt;&gt;
 &lt;&lt;update &quot;attention&quot; -8&gt;&gt;
 &lt;&lt;update &quot;energy&quot; 5&gt;&gt;
 
@@ -2016,7 +2296,7 @@ Per un momento smetti di analizzare ogni cosa.
 [[Andare verso l’uscita-&gt;StradaChiusa]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="SupermercatoControllo" tags="" position="3575,675" size="100,100">&lt;&lt;update &quot;control&quot; 8&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="SupermercatoControllo" tags="" position="3575,675" size="100,100">&lt;&lt;update &quot;control&quot; 8&gt;&gt;
 &lt;&lt;update &quot;attention&quot; 8&gt;&gt;
 &lt;&lt;update &quot;energy&quot; -8&gt;&gt;
 
@@ -2042,7 +2322,7 @@ Ma il costo è invisibile mentre lo stai pagando.
 [[Andare verso l’uscita-&gt;StradaChiusa]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="StradaAdattiva" tags="" position="2950,1175" size="100,100">&lt;&lt;update &quot;control&quot; -8&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="StradaAdattiva" tags="" position="2950,1175" size="100,100">&lt;&lt;update &quot;control&quot; -8&gt;&gt;
 &lt;&lt;update &quot;energy&quot; 5&gt;&gt;
 &lt;&lt;update &quot;attention&quot; -5&gt;&gt;
 &lt;&lt;update &quot;time&quot; 5&gt;&gt;
@@ -2074,7 +2354,7 @@ Quando la strada torna a essere familiare, quasi non ti accorgi di aver cambiato
 [[Continuare-&gt;FineLoop]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="StradaControllo" tags="" position="3150,1175" size="100,100">&lt;&lt;update &quot;control&quot; 10&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="StradaControllo" tags="" position="3150,1175" size="100,100">&lt;&lt;update &quot;control&quot; 10&gt;&gt;
 &lt;&lt;update &quot;attention&quot; 5&gt;&gt;
 &lt;&lt;update &quot;energy&quot; -5&gt;&gt;
 &lt;&lt;update &quot;time&quot; -5&gt;&gt;

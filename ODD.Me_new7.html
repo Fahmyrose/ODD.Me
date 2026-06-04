@@ -752,260 +752,447 @@ Hai bisogno di arrivare alle Poste prima che sia troppo tardi.
 &lt;/div&gt;
 
 &lt;&lt;/if&gt;&gt;
-</tw-passagedata><tw-passagedata pid="4" name="Poste" tags="" position="2750,575" size="200,200">&lt;&lt;update &quot;time&quot; -5&gt;&gt;
+</tw-passagedata><tw-passagedata pid="4" name="Poste" tags="" position="2750,575" size="200,200">&lt;&lt;if $loop is 1&gt;&gt;
+
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_3.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
+
+&lt;&lt;update &quot;time&quot; -5&gt;&gt;
 &lt;&lt;update &quot;money&quot; -5&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot;&gt;
-&lt;div class=&quot;text-box&quot;&gt;
-
 &lt;p&gt;
-Alle poste vuoi spedire un piccolo pacco.
-Qualche souvenir, alcune cartoline e gli oggetti che non entrano più in valigia.
+Vuoi spedire un piccolo pacco prima della partenza.
+Cartoline, souvenir e alcuni oggetti che non entrano più in valigia.
 &lt;/p&gt;
 
 &lt;p&gt;
-Prendi il numero e ti siedi.
-Attorno a te ci sono persone che sembrano avere fretta di tornare al lavoro, fare una commissione o risolvere un problema.
+Davanti allo sportello automatico esiti per qualche secondo.
+Le opzioni sullo schermo non sono immediate e la fila dietro di te continua a crescere.
 &lt;/p&gt;
 
 &lt;p&gt;
-Per te questa è una delle ultime attività del viaggio.
-Per altri è semplicemente una mattina qualunque.
+Quando chiedi informazioni, una persona sbuffa e guarda l&#39;orologio.
+Un&#39;altra ti indica rapidamente il pulsante da premere prima di allontanarsi.
 &lt;/p&gt;
 
 &lt;p&gt;
-Una persona sbuffa quando chiedi informazioni allo sportello automatico.
-Un’altra ti indica rapidamente il pulsante da premere senza fermarsi davvero.
+Per te è una delle ultime attività del viaggio.
+Per gli altri sembra soltanto una mattina qualsiasi.
 &lt;/p&gt;
 
-&lt;p&gt;
-L’attesa inizia.
-&lt;/p&gt;
+[[Insistere e cercare di capire tutto-&gt;PosteControllo]]
+[[Ringraziare e seguire le indicazioni ricevute-&gt;PosteAdattivo]]
 
-&lt;p&gt;
-Non è solo tempo che passa: è un modo diverso di stare dentro lo stesso spazio.
-&lt;/p&gt;
-
-&lt;p&gt;
-Come vivi questo momento?
-&lt;/p&gt;
-
-[[Lasciarti andare all’attesa-&gt;PosteAdattivo]]
-[[Provare a mantenere il controllo della situazione-&gt;PosteControllo]]
-[[Farti assorbire completamente dall’attesa-&gt;PosteTempo]]
-[[Restare in osservazione e leggere le persone-&gt;PosteAllerta]]
-
-&lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="5" name="Supermercato" tags="" position="3200,600" size="200,200">&lt;&lt;if $loop == 1&gt;&gt;
-&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_4.jpg&#39;)&quot;&gt;
-&lt;div class=&quot;text-box&quot;&gt;
-
-&lt;p&gt;I. La Turista&lt;/p&gt;
-
-&lt;&lt;if $attention &lt; 60&gt;&gt;
-&lt;p&gt;
-Le luci bianche del supermercato sembrano troppo forti dopo una giornata passata a orientarti in una città non tua.
-Ti ritrovi a percorrere le corsie quasi automaticamente, osservando prodotti che non comprerai e persone che sembrano sapere esattamente dove andare.
-&lt;/p&gt;
-&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
-&lt;&lt;update &quot;money&quot; -10&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;p&gt;
-Le corsie ordinate hanno qualcosa di rassicurante.
-Per qualche minuto smetti di pensare alla partenza e ti concentri soltanto sulle piccole cose da comprare prima del viaggio.
-&lt;/p&gt;
+&lt;&lt;if $attention &lt; 50&gt;&gt;
+[[Osservare le persone prima di muoverti-&gt;PosteAllerta]]
 &lt;&lt;/if&gt;&gt;
-
-&lt;p&gt;Come affronti questo momento?&lt;/p&gt;
-
-[[Seguire ciò che ti sembra familiare-&gt;SupermercatoAdattivo]]
-[[Controllare attentamente ogni scelta-&gt;SupermercatoControllo]]
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;&lt;elseif $loop == 2&gt;&gt;
-
-&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_4.jpg&#39;)&quot;&gt;
-&lt;div class=&quot;text-box&quot;&gt;
-
-&lt;p&gt;II. Lo Studente Lavoratore&lt;/p&gt;
-
-&lt;&lt;if $time &lt; 50&gt;&gt;
-&lt;p&gt;
-Ogni minuto trascorso tra gli scaffali sembra sottratto all&#39;esame, al lavoro o al riposo.
-Ti muovi velocemente senza soffermarti troppo.
-&lt;/p&gt;
-&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
-&lt;&lt;update &quot;money&quot; -15&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;p&gt;
-Per una volta non stai correndo.
-Attraversi le corsie cercando di organizzare mentalmente il resto della giornata.
-&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;p&gt;Come utilizzi questo tempo?&lt;/p&gt;
-
-[[Fare tutto rapidamente e andare avanti-&gt;SupermercatoAdattivo]]
-[[Pianificare attentamente ciò che ti serve-&gt;SupermercatoControllo]]
-[[Calcolare la spesa minima possibile-&gt;SupermercatoRisparmio]]
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;&lt;elseif $loop == 3&gt;&gt;
-
-&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_4.jpg&#39;)&quot;&gt;
-&lt;div class=&quot;text-box&quot;&gt;
-
-&lt;p&gt;III. L&#39; Anziano&lt;/p&gt;
-
-&lt;&lt;if $energy &lt; 50&gt;&gt;
-&lt;p&gt;
-Le gambe si fanno sentire più del solito.
-Ogni corsia sembra un po&#39; più lunga e ogni scelta richiede qualche secondo in più.
-&lt;/p&gt;
-&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
-&lt;&lt;update &quot;money&quot; -10&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;p&gt;
-Conosci bene il negozio.
-Sai già dove trovare ciò che ti serve e il percorso sembra quasi una routine.
-&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;p&gt;Come procedi?&lt;/p&gt;
-
-[[Lasciarti guidare dall&#39;abitudine-&gt;SupermercatoAdattivo]]
-[[Controllare con attenzione ogni acquisto-&gt;SupermercatoControllo]]
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;&lt;elseif $loop == 4&gt;&gt;
-
-&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_4.jpg&#39;)&quot;&gt;
-&lt;div class=&quot;text-box&quot;&gt;
-
-&lt;p&gt;IV. Il Lavoratore Precario&lt;/p&gt;
-
-&lt;&lt;if $money &lt; 40&gt;&gt;
-&lt;p&gt;
-Controlli i prezzi più volte.
-Ogni prodotto nel carrello significa rinunciare a qualcos’altro.
-Il calcolo non è più solo economico, ma temporale e mentale.
-&lt;/p&gt;
-&lt;&lt;update &quot;control&quot; -8&gt;&gt;
-&lt;&lt;update &quot;money&quot; -18&gt;&gt;
-&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;p&gt;
-Hai imparato a fare la spesa in modo efficiente.
-Sai già cosa prendere e cosa lasciare sugli scaffali.
-&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;p&gt;Come affronti la spesa?&lt;/p&gt;
-
-[[Prendere ciò che serve e andare avanti-&gt;SupermercatoAdattivo]]
-[[Valutare attentamente ogni acquisto-&gt;SupermercatoControllo]]
-[[Ridurre tutto all’essenziale possibile-&gt;SupermercatoRisparmio]]
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;&lt;elseif $loop == 5&gt;&gt;
-
-&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_4.jpg&#39;)&quot;&gt;
-&lt;div class=&quot;text-box&quot;&gt;
-
-&lt;p&gt;V. La Migrante&lt;/p&gt;
-
-&lt;&lt;if $attention &lt; 40&gt;&gt;
-&lt;p&gt;
-Le etichette non sono sempre facili da capire.
-Ti ritrovi spesso a osservare ciò che fanno gli altri clienti.
-&lt;/p&gt;
-&lt;&lt;update &quot;control&quot; -8&gt;&gt;
-&lt;&lt;update &quot;money&quot; -12&gt;&gt;
-&lt;&lt;else&gt;&gt;
-&lt;p&gt;
-Leggi con attenzione ogni informazione che riesci a comprendere.
-Ogni acquisto è anche un piccolo esercizio di orientamento.
-&lt;/p&gt;
-&lt;&lt;/if&gt;&gt;
-
-&lt;p&gt;Come scegli cosa fare?&lt;/p&gt;
-
-[[Osservare gli altri e seguirne l&#39;esempio-&gt;SupermercatoAdattivo]]
-[[Affidarti solo a ciò che riesci a capire da sola-&gt;SupermercatoControllo]]
-[[Comprare soltanto ciò che è indispensabile-&gt;SupermercatoRisparmio]]
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;&lt;elseif $loop == 6&gt;&gt;
-
-&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_4.jpg&#39;)&quot;&gt;
-&lt;div class=&quot;text-box&quot;&gt;
-
-&lt;p&gt;VI. Il Senzatetto&lt;/p&gt;
-
-&lt;p&gt;
-Le luci sono troppo forti e il calore del supermercato sembra quasi irreale.
-Per qualche istante dimentichi il freddo della strada.
-&lt;/p&gt;
-
-&lt;&lt;update &quot;attention&quot; -5&gt;&gt;
-&lt;&lt;update &quot;money&quot; -5&gt;&gt;
-
-&lt;p&gt;Come vivi questo momento?&lt;/p&gt;
-
-[[Confonderti tra le persone senza attirare attenzione-&gt;SupermercatoAdattivo]]
-[[Restare vigile e osservare tutto-&gt;SupermercatoControllo]]
-[[Pensare solo a ciò che è necessario per oggi-&gt;SupermercatoRisparmio]]
-
-&lt;/div&gt;
-&lt;/div&gt;
-
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="6" name="StradaChiusa" tags="" position="3200,900" size="200,200">&lt;&lt;if $loop is 1&gt;&gt;
-&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_5.jpg&#39;)&quot;&gt;
-&lt;div class=&quot;text-box&quot;&gt;
-
-&lt;p&gt;I. La Turista&lt;/p&gt;
-
-&lt;p&gt;
-La strada che avevi seguito fino a quel momento termina davanti a una barriera temporanea.
-Un cartello indica una deviazione.
-Per un attimo guardi il telefono, poi la strada, poi le persone che ti passano accanto.
-&lt;/p&gt;
-
-&lt;&lt;if $attention &lt; 60&gt;&gt;
-&lt;p&gt;
-Non sei completamente sicura di aver capito dove andare.
-&lt;/p&gt;
-&lt;&lt;update &quot;control&quot; -8&gt;&gt;
-
-&lt;&lt;else&gt;&gt;
-&lt;p&gt;
-Individui rapidamente il percorso alternativo.
-&lt;/p&gt;
-
-&lt;&lt;/if&gt;&gt;
-
-&lt;&lt;update &quot;time&quot; -8&gt;&gt;
-
-&lt;p&gt;Come reagisci?&lt;/p&gt;
-
-[[Seguire il nuovo flusso senza opporre resistenza-&gt;StradaAdattiva]]
-[[Fermarti e verificare il percorso-&gt;StradaControllo]]
 
 &lt;/div&gt;
 &lt;/div&gt;
 
 &lt;&lt;elseif $loop is 2&gt;&gt;
 
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_3.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
+
+&lt;&lt;update &quot;time&quot; -8&gt;&gt;
+
+&lt;p&gt;
+Manca meno di un&#39;ora all&#39;esame.
+Prima di entrare in aula devi risolvere un problema con una carta prepagata necessaria per ricevere il pagamento del lavoro.
+&lt;/p&gt;
+
+&lt;p&gt;
+Il numero che hai preso è molto distante da quello visualizzato sul monitor.
+Ogni persona davanti a te sembra sottrarre minuti alla giornata.
+&lt;/p&gt;
+
+&lt;p&gt;
+Continui a controllare l&#39;orologio.
+L&#39;esame si avvicina.
+L&#39;attesa continua.
+&lt;/p&gt;
+
+[[Aspettare il proprio turno-&gt;PosteTempo]]
+[[Andarsene rischiando di non ricevere il pagamento-&gt;PosteControllo]]
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;&lt;elseif $loop is 3&gt;&gt;
+
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_3.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
+
+&lt;&lt;update &quot;time&quot; -5&gt;&gt;
+
+&lt;p&gt;
+Sei venuto per ritirare la pensione.
+&lt;/p&gt;
+
+&lt;p&gt;
+Le procedure sono cambiate rispetto a qualche anno fa.
+Numeri elettronici, schermi, notifiche e indicazioni poco chiare si sovrappongono.
+&lt;/p&gt;
+
+&lt;p&gt;
+Per qualche istante non sei sicuro di aver preso il numero corretto.
+Le persone intorno a te sembrano sapere esattamente cosa fare.
+&lt;/p&gt;
+
+[[Chiedere aiuto a qualcuno-&gt;PosteAdattivo]]
+[[Provare a capire tutto da solo-&gt;PosteControllo]]
+
+&lt;&lt;if $attention &lt; 50&gt;&gt;
+[[Osservare gli altri prima di agire-&gt;PosteAllerta]]
+&lt;&lt;/if&gt;&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;&lt;elseif $loop is 4&gt;&gt;
+
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_3.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
+
+&lt;&lt;update &quot;time&quot; -8&gt;&gt;
+
+&lt;p&gt;
+Hai finito un turno da poco e devi risolvere una pratica prima che l&#39;ufficio chiuda.
+&lt;/p&gt;
+
+&lt;p&gt;
+Ogni minuto trascorso in fila aumenta il rischio di arrivare in ritardo al lavoro successivo.
+&lt;/p&gt;
+
+&lt;p&gt;
+Controlli continuamente telefono, orario e notifiche.
+L&#39;attesa sembra trasformarsi in una perdita economica.
+&lt;/p&gt;
+
+[[Accettare la situazione e aspettare-&gt;PosteAdattivo]]
+[[Protestare e cercare una soluzione-&gt;PosteControllo]]
+[[Continuare a controllare il tempo che passa-&gt;PosteTempo]]
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;&lt;elseif $loop is 5&gt;&gt;
+
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_3.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
+
+&lt;&lt;update &quot;time&quot; -5&gt;&gt;
+
+&lt;p&gt;
+Hai bisogno di completare una pratica importante.
+&lt;/p&gt;
+
+&lt;p&gt;
+Le spiegazioni sono rapide e alcune parole ti sfuggono.
+Le persone dietro lo sportello parlano velocemente e la fila continua a muoversi.
+&lt;/p&gt;
+
+&lt;p&gt;
+Per qualche secondo non sei sicura di aver capito cosa ti viene richiesto.
+&lt;/p&gt;
+
+[[Fidarti delle indicazioni ricevute-&gt;PosteAdattivo]]
+[[Mostrare i documenti e chiedere ulteriori spiegazioni-&gt;PosteControllo]]
+[[Osservare gli altri per capire come comportarti-&gt;PosteAllerta]]
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;&lt;elseif $loop is 6&gt;&gt;
+
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_3.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
+
+&lt;&lt;update &quot;time&quot; -5&gt;&gt;
+
+&lt;p&gt;
+Devi recuperare una comunicazione necessaria per confermare il posto al dormitorio.
+&lt;/p&gt;
+
+&lt;p&gt;
+Resti in disparte mentre osservi le persone entrare e uscire.
+Cerchi di attirare meno attenzione possibile.
+&lt;/p&gt;
+
+&lt;p&gt;
+Non sai se riuscirai a risolvere tutto in tempo.
+Se qualcosa va storto, questa sera potresti non avere un posto dove dormire.
+&lt;/p&gt;
+
+[[Restare fermo e aspettare-&gt;PosteTempo]]
+[[Affrontare la situazione direttamente-&gt;PosteControllo]]
+[[Osservare l&#39;ambiente prima di muoverti-&gt;PosteAllerta]]
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;&lt;/if&gt;&gt;
+</tw-passagedata><tw-passagedata pid="5" name="Supermercato" tags="" position="3200,600" size="200,200">&lt;&lt;if $loop is 1&gt;&gt;
+
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_4.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
+
+&lt;p&gt;
+Entri nel supermercato per comprare qualcosa da portare a casa.
+&lt;/p&gt;
+
+&lt;p&gt;
+Davanti agli scaffali resti ferma più del previsto.
+Ci sono snack locali, biscotti, conserve e piccoli souvenir alimentari che potrebbero diventare un ricordo del viaggio.
+&lt;/p&gt;
+
+&lt;p&gt;
+Attorno a te le persone fanno la spesa con sicurezza, prendendo prodotti senza nemmeno leggere le etichette.
+Per loro è una routine. Per te è una delle ultime esperienze in una città che stai per lasciare.
+&lt;/p&gt;
+
+&lt;&lt;update &quot;time&quot; -5&gt;&gt;
+&lt;&lt;update &quot;money&quot; -5&gt;&gt;
+
+&lt;p&gt;
+Più osservi gli scaffali, meno riesci a capire cosa valga davvero la pena portare con te.
+&lt;/p&gt;
+
+&lt;p&gt;
+Come scegli?
+&lt;/p&gt;
+
+[[Comprare qualcosa per ricordare il viaggio-&gt;SupermercatoControllo]]
+[[Scegliere rapidamente ciò che ti ispira-&gt;SupermercatoAdattivo]]
+[[Rinunciare al ricordo e conservare i soldi-&gt;SupermercatoRisparmio]]
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;&lt;elseif $loop is 2&gt;&gt;
+
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_4.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
+
+&lt;p&gt;
+Hai fame.
+Non mangi da diverse ore e l&#39;esame continua ad avvicinarsi.
+&lt;/p&gt;
+
+&lt;p&gt;
+Passi davanti ai panini pronti, agli snack e alle bevande energetiche.
+Ogni scelta sembra sottrarre qualcosa a qualcos&#39;altro: denaro, tempo o concentrazione.
+&lt;/p&gt;
+
+&lt;&lt;if $money &lt; 45&gt;&gt;
+
+&lt;p&gt;
+Controlli più volte il saldo disponibile.
+Anche una spesa piccola sembra richiedere una giustificazione.
+&lt;/p&gt;
+&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;update &quot;time&quot; -5&gt;&gt;
+
+&lt;p&gt;
+Come affronti questo momento?
+&lt;/p&gt;
+
+[[Mangiare velocemente e andare avanti-&gt;SupermercatoAdattivo]]
+[[Valutare attentamente cosa comprare-&gt;SupermercatoControllo]]
+[[Spendere il meno possibile-&gt;SupermercatoRisparmio]]
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;&lt;elseif $loop is 3&gt;&gt;
+
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_4.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
+
+&lt;p&gt;
+Conosci bene il supermercato.
+Sai già dove si trovano quasi tutti i prodotti che ti servono.
+&lt;/p&gt;
+
+&lt;p&gt;
+Oggi però il percorso sembra più lungo del solito.
+Il cestino pesa più di quanto ricordassi e le gambe iniziano a rallentare.
+&lt;/p&gt;
+
+&lt;&lt;if $energy &lt; 50&gt;&gt;
+
+&lt;p&gt;
+Ti fermi qualche secondo vicino a uno scaffale fingendo di osservare i prodotti.
+In realtà stai recuperando energie.
+&lt;/p&gt;
+&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;update &quot;time&quot; -5&gt;&gt;
+
+&lt;p&gt;
+Come procedi?
+&lt;/p&gt;
+
+[[Lasciarti guidare dall&#39;abitudine-&gt;SupermercatoAdattivo]]
+[[Controllare attentamente ogni acquisto-&gt;SupermercatoControllo]]
+[[Comprare meno del previsto-&gt;SupermercatoRisparmio]]
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;&lt;elseif $loop is 4&gt;&gt;
+
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_4.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
+
+&lt;p&gt;
+La spesa è un calcolo.
+Non stai scegliendo cosa desideri, ma cosa puoi permetterti.
+&lt;/p&gt;
+
+&lt;p&gt;
+Confronti prezzi, quantità e offerte.
+Ogni prodotto nel carrello significa rinunciare a qualcos&#39;altro.
+&lt;/p&gt;
+
+&lt;&lt;if $money &lt; 40&gt;&gt;
+
+&lt;p&gt;
+Controlli più volte il totale stimato.
+L&#39;errore di pochi euro potrebbe pesare per diversi giorni.
+&lt;/p&gt;
+
+&lt;&lt;update &quot;control&quot; -8&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;update &quot;time&quot; -5&gt;&gt;
+
+&lt;p&gt;
+Come affronti la spesa?
+&lt;/p&gt;
+
+[[Prendere ciò che serve e andare avanti-&gt;SupermercatoAdattivo]]
+[[Valutare attentamente ogni acquisto-&gt;SupermercatoControllo]]
+[[Ridurre tutto all&#39;essenziale-&gt;SupermercatoRisparmio]]
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;&lt;elseif $loop is 5&gt;&gt;
+
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_4.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
+
+&lt;p&gt;
+Le corsie sono piene di prodotti che non conosci.
+Molte etichette contengono parole che riesci a comprendere solo in parte.
+&lt;/p&gt;
+
+&lt;p&gt;
+Per scegliere devi osservare, confrontare e interpretare continuamente ciò che hai davanti.
+&lt;/p&gt;
+
+&lt;&lt;if $attention &lt; 40&gt;&gt;
+
+&lt;p&gt;
+Ti ritrovi spesso a guardare cosa mettono nel carrello gli altri clienti.
+A volte sembra il modo più semplice per orientarti.
+&lt;/p&gt;
+
+&lt;&lt;update &quot;control&quot; -8&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;update &quot;time&quot; -5&gt;&gt;
+
+&lt;p&gt;
+Come decidi cosa comprare?
+&lt;/p&gt;
+
+[[Seguire l&#39;esempio degli altri clienti-&gt;SupermercatoAdattivo]]
+[[Affidarti solo a ciò che riesci a capire-&gt;SupermercatoControllo]]
+[[Comprare soltanto l&#39;indispensabile-&gt;SupermercatoRisparmio]]
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;&lt;elseif $loop is 6&gt;&gt;
+
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_4.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
+
+&lt;p&gt;
+Il supermercato è caldo, illuminato e pieno di persone.
+Per qualche minuto puoi stare al chiuso senza che nessuno ti chieda nulla.
+&lt;/p&gt;
+
+&lt;p&gt;
+Cerchi di non attirare attenzione.
+Ti muovi lentamente tra le corsie osservando ciò che accade attorno a te.
+&lt;/p&gt;
+
+&lt;p&gt;
+Sai che la tua presenza qui è tollerata solo finché sembri un cliente come tutti gli altri.
+&lt;/p&gt;
+
+&lt;&lt;update &quot;attention&quot; -5&gt;&gt;
+&lt;&lt;update &quot;energy&quot; 5&gt;&gt;
+
+&lt;p&gt;
+Come vivi questo momento?
+&lt;/p&gt;
+
+[[Confonderti tra gli altri clienti-&gt;SupermercatoAdattivo]]
+[[Restare vigile e osservare tutto-&gt;SupermercatoControllo]]
+[[Pensare soltanto a ciò che serve per oggi-&gt;SupermercatoRisparmio]]
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;&lt;/if&gt;&gt;
+</tw-passagedata><tw-passagedata pid="6" name="StradaChiusa" tags="" position="3200,900" size="200,200">&lt;&lt;if $loop is 1&gt;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_5.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
+
+&lt;p&gt;I. La Turista&lt;/p&gt;
+
+&lt;p&gt;
+La strada che seguivi fino a questo momento è interrotta da una barriera temporanea.
+Un cartello indica una deviazione obbligata.
+Per un attimo resti ferma: telefono, strada, persone che passano senza esitazione.
+&lt;/p&gt;
+
+&lt;&lt;if $attention &lt; 60&gt;&gt;
+&lt;p&gt;
+L’incertezza ti rallenta.
+Non è la deviazione in sé, ma il rischio di sbagliare direzione.
+&lt;/p&gt;
+&lt;&lt;update &quot;control&quot; -6&gt;&gt;
+&lt;&lt;update &quot;attention&quot; 3&gt;&gt;
+&lt;&lt;else&gt;&gt;
+&lt;p&gt;
+Individui subito il percorso alternativo.
+La deviazione diventa solo un cambio di direzione.
+&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;update &quot;time&quot; -8&gt;&gt;
+
+&lt;p&gt;Come reagisci?&lt;/p&gt;
+
+[[Seguire il flusso senza opporre resistenza-&gt;StradaAdattiva]]
+[[Fermarti e verificare il percorso-&gt;StradaControllo]]
+[[Restare in stato di allerta e monitorare ogni segnale-&gt;StradaAllerta]]
+
+&lt;/div&gt;
+&lt;/div&gt;
+
+
+&lt;&lt;elseif $loop is 2&gt;&gt;
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_5.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
@@ -1013,141 +1200,145 @@ Individui rapidamente il percorso alternativo.
 
 &lt;p&gt;
 La strada è chiusa.
-Un altro imprevisto si aggiunge a una giornata già piena.
+Un altro imprevisto dentro una giornata già saturata.
 &lt;/p&gt;
 
 &lt;&lt;if $time &lt; 50&gt;&gt;
 &lt;p&gt;
-La deviazione ti sembra più pesante di quanto dovrebbe.
+Ogni deviazione sembra sottrarre spazio a ciò che devi ancora fare.
 &lt;/p&gt;
-&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -6&gt;&gt;
 &lt;&lt;update &quot;energy&quot; -8&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
-Ricalcoli rapidamente il percorso senza fermarti troppo.
+Ricalcoli il percorso senza fermarti troppo.
+Non puoi permetterti rallentamenti.
 &lt;/p&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;update &quot;time&quot; -8&gt;&gt;
 
 &lt;p&gt;Come reagisci?&lt;/p&gt;
 
-[[Accettare la deviazione e andare avanti-&gt;StradaAdattiva]]
-[[Ricalcolare attentamente il percorso-&gt;StradaControllo]]
+[[Accettare la deviazione-&gt;StradaAdattiva]]
+[[Ricalcolare il percorso-&gt;StradaControllo]]
+[[Tenere tutto sotto controllo per prevenire altri imprevisti-&gt;StradaAllerta]]
 
 &lt;/div&gt;
 &lt;/div&gt;
+
 
 &lt;&lt;elseif $loop is 3&gt;&gt;
-
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_5.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;III. L’Anziano&lt;/p&gt;
 
 &lt;p&gt;
-La strada che conoscevi è bloccata.
-Devi cambiare percorso.
+La strada è bloccata.
+Devi cambiare direzione.
 &lt;/p&gt;
 
 &lt;&lt;if $energy &lt; 50&gt;&gt;
 &lt;p&gt;
-Ti concedi qualche secondo per capire la situazione.
+Ti fermi un momento in più.
+Il corpo anticipa la necessità di rallentare.
 &lt;/p&gt;
-&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
+&lt;&lt;update &quot;energy&quot; -6&gt;&gt;
 &lt;&lt;update &quot;attention&quot; -5&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
-Osservi il cartello e cambi direzione lentamente.
+Osservi il cartello e cambi direzione con calma.
+Senza fretta, senza esitazione.
 &lt;/p&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;update &quot;time&quot; -8&gt;&gt;
 
 &lt;p&gt;Come procedi?&lt;/p&gt;
 
-[[Seguire lentamente il nuovo percorso-&gt;StradaAdattiva]]
-[[Controllare bene ogni indicazione-&gt;StradaControllo]]
+[[Seguire il nuovo percorso-&gt;StradaAdattiva]]
+[[Controllare ogni indicazione-&gt;StradaControllo]]
+[[Restare vigile per prevenire errori-&gt;StradaAllerta]]
 
 &lt;/div&gt;
 &lt;/div&gt;
+
 
 &lt;&lt;elseif $loop is 4&gt;&gt;
-
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_5.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;IV. Il Lavoratore Precario&lt;/p&gt;
 
 &lt;p&gt;
-La deviazione significa altro tempo.
-Altro tempo significa altri vincoli.
+La deviazione significa tempo in più.
+E il tempo in più ha sempre un costo.
 &lt;/p&gt;
 
 &lt;&lt;if $money &lt; 40&gt;&gt;
 &lt;p&gt;
-Non puoi permetterti molti imprevisti.
+Ogni deviazione è una perdita potenziale.
+Non hai margine per errori.
 &lt;/p&gt;
-&lt;&lt;update &quot;control&quot; -8&gt;&gt;
-&lt;&lt;update &quot;money&quot; -8&gt;&gt;
-
+&lt;&lt;update &quot;control&quot; -6&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -5&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
-Accetti la deviazione senza alternative.
+Accetti la deviazione come unica opzione disponibile.
 &lt;/p&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;update &quot;time&quot; -8&gt;&gt;
 
 &lt;p&gt;Come reagisci?&lt;/p&gt;
 
-[[Accettare la deviazione e continuare-&gt;StradaAdattiva]]
-[[Cercare di mantenere il controllo del tragitto-&gt;StradaControllo]]
+[[Accettare la deviazione-&gt;StradaAdattiva]]
+[[Mantenere il controllo del percorso-&gt;StradaControllo]]
+[[Monitorare tutto per evitare perdite-&gt;StradaAllerta]]
 
 &lt;/div&gt;
 &lt;/div&gt;
+
 
 &lt;&lt;elseif $loop is 5&gt;&gt;
-
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_5.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;V. La Migrante&lt;/p&gt;
 
 &lt;p&gt;
-Il percorso cambia all&#39;improvviso.
-Le indicazioni sul cartello richiedono attenzione.
+Il percorso cambia improvvisamente.
+Le indicazioni non sono immediatamente leggibili.
 &lt;/p&gt;
 
 &lt;&lt;if $attention &lt; 40&gt;&gt;
 &lt;p&gt;
-Osservi gli altri per capire quale direzione prendere.
+Osservi gli altri per capire la direzione.
+Il sistema si decifra attraverso i movimenti esterni.
 &lt;/p&gt;
-&lt;&lt;update &quot;control&quot; -10&gt;&gt;
-&lt;&lt;update &quot;money&quot; -5&gt;&gt;
-&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
+&lt;&lt;update &quot;control&quot; -8&gt;&gt;
+&lt;&lt;update &quot;attention&quot; -6&gt;&gt;
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
-Ti concentri sulle indicazioni per orientarti.
+Ti concentri sulle indicazioni.
+Cerchi un orientamento diretto.
 &lt;/p&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 &lt;&lt;update &quot;time&quot; -8&gt;&gt;
 
 &lt;p&gt;Come reagisci?&lt;/p&gt;
 
-[[Seguire il movimento delle altre persone-&gt;StradaAdattiva]]
-[[Affidarti alle indicazioni e controllare il percorso-&gt;StradaControllo]]
+[[Seguire il flusso delle persone-&gt;StradaAdattiva]]
+[[Interpretare le indicazioni-&gt;StradaControllo]]
+[[Restare in allerta e leggere ogni segnale sociale-&gt;StradaAllerta]]
 
 &lt;/div&gt;
 &lt;/div&gt;
+
 
 &lt;&lt;elseif $loop is 6&gt;&gt;
-
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_5.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
@@ -1155,12 +1346,8 @@ Ti concentri sulle indicazioni per orientarti.
 
 &lt;p&gt;
 La strada è chiusa.
-Un&#39;altra deviazione.
-Un altro percorso da modificare.
-&lt;/p&gt;
-
-&lt;p&gt;
-Non è la prima volta che succede.
+Non è un’eccezione.
+È una condizione che ritorna.
 &lt;/p&gt;
 
 &lt;&lt;update &quot;attention&quot; -8&gt;&gt;
@@ -1170,8 +1357,9 @@ Non è la prima volta che succede.
 
 &lt;p&gt;Come reagisci?&lt;/p&gt;
 
-[[Continuare seguendo ciò che accade intorno a te-&gt;StradaAdattiva]]
-[[Restare in allerta e valutare ogni possibilità-&gt;StradaControllo]]
+[[Continuare nel flusso-&gt;StradaAdattiva]]
+[[Mantenere il controllo-&gt;StradaControllo]]
+[[Restare in allerta continua-&gt;StradaAllerta]]
 
 &lt;/div&gt;
 &lt;/div&gt;
@@ -1187,15 +1375,22 @@ Non è la prima volta che succede.
 La giornata finisce così come era iniziata: tra luoghi nuovi, indicazioni da seguire e scelte prese senza piena familiarità con la città.
 &lt;/p&gt;
 
-&lt;&lt;if $control &gt;= 75&gt;&gt;
+&lt;&lt;if $control &gt;= 75 &amp;&amp; $control &gt;= $attention&gt;&gt;
 &lt;p&gt;
-Hai avuto la sensazione di orientarti con sicurezza.
-Ogni passaggio è sembrato leggibile, quasi naturale.
+Hai costruito un senso di orientamento stabile.
+Le situazioni ti sono sembrate leggibili, quasi prevedibili.
 &lt;/p&gt;
+
+&lt;&lt;elseif $attention &gt;= 75 &amp;&amp; $attention &gt; $control&gt;&gt;
+&lt;p&gt;
+Sei rimasta in uno stato di osservazione costante.
+Hai visto molto, ma senza mai ridurre la soglia di vigilanza.
+&lt;/p&gt;
+
 &lt;&lt;else&gt;&gt;
 &lt;p&gt;
-Alcuni momenti sono rimasti incerti.
-Hai seguito il percorso più che guidarlo.
+Hai attraversato la città seguendo più che guidando.
+Alcuni passaggi sono rimasti incerti.
 &lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
 
@@ -1209,6 +1404,7 @@ La città resterà la stessa — ma non per tutti allo stesso modo.
 &lt;/div&gt;
 &lt;/div&gt;
 
+
 &lt;&lt;elseif $loop == 2&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_0.jpg&#39;)&quot;&gt;
@@ -1221,15 +1417,26 @@ La giornata si chiude senza una vera separazione tra ciò che hai fatto e ciò c
 &lt;/p&gt;
 
 &lt;&lt;if $time &lt; 50&gt;&gt;
+
 &lt;p&gt;
 Hai inseguito il tempo per tutto il giorno.
 Ogni scelta sembrava dover compensare un ritardo.
 &lt;/p&gt;
+
+&lt;&lt;elseif $attention &gt;= 70 &amp;&amp; $attention &gt; $control&gt;&gt;
+
+&lt;p&gt;
+Sei rimasto in uno stato di tensione costante.
+Ogni imprevisto sembrava potenzialmente critico.
+&lt;/p&gt;
+
 &lt;&lt;else&gt;&gt;
+
 &lt;p&gt;
 Hai gestito i passaggi uno dopo l’altro.
 Ma senza mai davvero fermarti.
 &lt;/p&gt;
+
 &lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;
@@ -1242,6 +1449,7 @@ Studio, lavoro, spostamenti, attese.
 &lt;/div&gt;
 &lt;/div&gt;
 
+
 &lt;&lt;elseif $loop == 3&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_0.jpg&#39;)&quot;&gt;
@@ -1253,17 +1461,27 @@ Studio, lavoro, spostamenti, attese.
 La giornata si è sviluppata secondo un ritmo costante, fatto di pause e necessità.
 &lt;/p&gt;
 
-&lt;&lt;if $energy &lt; 55&gt;&gt;
+&lt;&lt;if $energy &lt; 45&gt;&gt;
+
 &lt;p&gt;
 Anche le azioni più semplici hanno richiesto sforzo.
 Il corpo ha definito i limiti del movimento.
 &lt;/p&gt;
+
+&lt;&lt;elseif $control &gt;= 70 &amp;&amp; $control &gt;= $attention&gt;&gt;
+
+&lt;p&gt;
+Hai mantenuto una struttura mentale stabile.
+Ogni passaggio è stato anticipato e controllato.
+&lt;/p&gt;
+
 &lt;&lt;else&gt;&gt;
-&lt;&lt;update &quot;control&quot; -5&gt;&gt;
+
 &lt;p&gt;
 Hai seguito un ritmo conosciuto.
 Ogni passaggio era già in parte previsto.
 &lt;/p&gt;
+
 &lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;
@@ -1275,6 +1493,7 @@ E proprio per questo richiederà ancora attenzione.
 
 &lt;/div&gt;
 &lt;/div&gt;
+
 
 &lt;&lt;elseif $loop == 4&gt;&gt;
 
@@ -1289,17 +1508,26 @@ Tempo, energia, denaro: tutto continua a pesare.
 &lt;/p&gt;
 
 &lt;&lt;if $money &lt; 40&gt;&gt;
+
 &lt;p&gt;
 Ogni scelta ha avuto un costo diretto o indiretto.
-Il denaro non è stato solo una risorsa, ma un vincolo costante.
+Il denaro è stato un vincolo continuo, non una risorsa stabile.
 &lt;/p&gt;
-&lt;&lt;update &quot;energy&quot; -5&gt;&gt;
+
+&lt;&lt;elseif $attention &gt;= 70 &amp;&amp; $attention &gt; $control&gt;&gt;
+
+&lt;p&gt;
+Hai monitorato costantemente ogni perdita possibile.
+Ogni scelta era anche una previsione del rischio successivo.
+&lt;/p&gt;
+
 &lt;&lt;else&gt;&gt;
+
 &lt;p&gt;
 Hai mantenuto un equilibrio fragile tra spese e necessità.
 Ma ogni equilibrio ha richiesto attenzione continua.
 &lt;/p&gt;
-&lt;&lt;update &quot;attention&quot; -5&gt;&gt;
+
 &lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;
@@ -1310,6 +1538,7 @@ Domani sarà una nuova combinazione degli stessi vincoli.
 
 &lt;/div&gt;
 &lt;/div&gt;
+
 
 &lt;&lt;elseif $loop == 5&gt;&gt;
 
@@ -1323,15 +1552,26 @@ La giornata è stata una sequenza di passaggi da interpretare.
 &lt;/p&gt;
 
 &lt;&lt;if $attention &lt; 40&gt;&gt;
+
 &lt;p&gt;
 Hai dovuto osservare prima di agire.
 Seguire prima di scegliere.
 &lt;/p&gt;
+
+&lt;&lt;elseif $control &gt;= 70 &amp;&amp; $control &gt;= $attention&gt;&gt;
+
+&lt;p&gt;
+Hai cercato di costruire un sistema stabile di riferimento.
+Ogni segnale è stato letto come parte di una struttura.
+&lt;/p&gt;
+
 &lt;&lt;else&gt;&gt;
+
 &lt;p&gt;
 Hai costruito riferimenti passo dopo passo.
 Ogni ambiente è diventato leggermente più leggibile.
 &lt;/p&gt;
+
 &lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;
@@ -1343,6 +1583,7 @@ Ma non completamente sconosciuti.
 
 &lt;/div&gt;
 &lt;/div&gt;
+
 
 &lt;&lt;elseif $loop == 6&gt;&gt;
 
@@ -1356,15 +1597,25 @@ La giornata si chiude senza una vera struttura di inizio o fine.
 &lt;/p&gt;
 
 &lt;&lt;if $control &lt; 30&gt;&gt;
+
 &lt;p&gt;
 Hai attraversato la città reagendo più che scegliendo.
 Le decisioni non si sono consolidate in un percorso stabile.
 &lt;/p&gt;
 
+&lt;&lt;elseif $attention &gt;= 70 &amp;&amp; $attention &gt; $control&gt;&gt;
+
+&lt;p&gt;
+Hai vissuto in uno stato di vigilanza continua.
+Ogni cambiamento poteva diventare immediatamente rilevante.
+&lt;/p&gt;
+
 &lt;&lt;else&gt;&gt;
+
 &lt;p&gt;
 Hai cercato di mantenere una direzione anche con poche risorse disponibili.
 &lt;/p&gt;
+
 &lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;
@@ -1377,63 +1628,150 @@ Indipendentemente da come finisce oggi.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="Intermezzo" tags="" position="2300,900" size="200,200">&lt;&lt;if $loop == 1&gt;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="Intermezzo" tags="" position="2300,900" size="200,200">&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/intermezzo.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
+
 &lt;p&gt;
-La città non cambia, ma il modo in cui la attraversi sì.
-&lt;/p&gt;
-&lt;p&gt;
-Ogni scelta sembrava semplice, ma piccole variazioni di attenzione e controllo hanno già iniziato a modificare il percorso.
+Le identità attraversate non sono eccezioni narrative.
+Sono configurazioni ricorrenti all’interno di dinamiche sociali misurabili.
 &lt;/p&gt;
 
-&lt;&lt;elseif $loop == 2&gt;&gt;
+&lt;hr&gt;
+
+&lt;p&gt;&lt;b&gt;I. La Turista&lt;/b&gt;&lt;/p&gt;
+
 &lt;p&gt;
-Il tempo non si distribuisce in modo equo durante la giornata.
-&lt;/p&gt;
-&lt;p&gt;
-Quando è limitato, ogni azione ne consuma una parte invisibile.
+Il turismo urbano è sempre più spesso percepito come fattore di pressione sulle città.
+In Italia, il 56% dei cittadini segnala criticità legate all’overtourism, con effetti su accessibilità, costi abitativi e qualità dello spazio urbano.
 &lt;/p&gt;
 
-&lt;&lt;elseif $loop == 3&gt;&gt;
 &lt;p&gt;
-Il corpo non è solo un mezzo, ma un vincolo che definisce ciò che è possibile fare.
-&lt;/p&gt;
-&lt;p&gt;
-L’energia disponibile cambia la forma della giornata più delle decisioni.
+Questi fenomeni producono una crescente distanza tra residenti e visitatori, con saturazione degli spazi pubblici e ridefinizione delle funzioni urbane.
 &lt;/p&gt;
 
-&lt;&lt;elseif $loop == 4&gt;&gt;
 &lt;p&gt;
-Le risorse non sono mai tutte visibili mentre vengono utilizzate.
-&lt;/p&gt;
-&lt;p&gt;
-Il denaro, il tempo e l’energia si consumano in modi diversi a seconda del contesto.
+Fonti:
+https://www.repubblica.it/economia/rapporti/osserva-italia/osserva-viaggi/2025/07/07/news/overtourism_per_il_56_degli_italiani_e_un_problema-424715697/
+https://www.assoutenti.it/come-lovertourism-sta-ridisegnando-il-rapporto-tra-turisti-e-residenti-in-italia/
 &lt;/p&gt;
 
-&lt;&lt;elseif $loop == 5&gt;&gt;
+&lt;hr&gt;
+
+&lt;p&gt;&lt;b&gt;II. Il Lavoratore Precario&lt;/b&gt;&lt;/p&gt;
+
 &lt;p&gt;
-Orientarsi non significa avere le stesse informazioni.
-&lt;/p&gt;
-&lt;p&gt;
-Significa avere accesso a livelli diversi di comprensione della stessa realtà.
+La precarietà lavorativa tra giovani adulti è una condizione strutturale diffusa nei mercati del lavoro contemporanei.
+Molti under-30 sperimentano contratti temporanei, instabilità di reddito e discontinuità occupazionale.
 &lt;/p&gt;
 
-&lt;&lt;elseif $loop == 6&gt;&gt;
 &lt;p&gt;
-Non esiste un unico modo di attraversare la stessa città.
-&lt;/p&gt;
-&lt;p&gt;
-Esistono condizioni diverse che rendono la stessa strada un’esperienza diseguale.
+Questa condizione riduce la capacità di pianificazione e aumenta la vulnerabilità economica agli imprevisti quotidiani.
 &lt;/p&gt;
 
+&lt;p&gt;
+Fonte:
+https://www.etuc.org/en/young-people-and-precarious-work
+&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;b&gt;III. Il Migrante&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;
+Studi internazionali indicano che una quota significativa delle popolazioni migranti vive condizioni di fragilità sociale multidimensionale.
+In alcuni casi osservati, fino al 70% delle persone presenta difficoltà legate a accesso ai servizi, lingua o stabilità abitativa.
+&lt;/p&gt;
+
+&lt;p&gt;
+La fragilità non è solo economica, ma anche relazionale e istituzionale,
+con impatto diretto sull’orientamento nei sistemi urbani.
+&lt;/p&gt;
+
+&lt;p&gt;
+Fonti:
+https://www.9colonne.it/39892/immigrati-73-in-condizione-di-fragilita-sociale
+https://www.sciencedirect.com/science/article/pii/S0147176722001663
+&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;b&gt;IV. Lo Studente Lavoratore&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;
+In Italia si stimano circa 400.000 studenti lavoratori.
+Molti non si trovano in una condizione di scelta pienamente libera, ma in una necessità economica strutturale.
+&lt;/p&gt;
+
+&lt;p&gt;
+La combinazione tra studio e lavoro genera livelli elevati di stress e sovrapposizione continua dei tempi di vita.
+&lt;/p&gt;
+
+&lt;p&gt;
+Fonti:
+https://www.ansa.it/sito/notizie/cronaca/2024/04/30/quasi-400mila-studenti-lavoratori-ma-non-e-una-libera-scelta_90aea494-7574-45ea-b9cf-973dcb92abc3.html
+https://www.cgil.it/ufficio-stampa/udu-cgil-e-fdv-presentano-indagine-su-studenti-lavoratori-spesso-scelta-obbligata
+&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;b&gt;V. La Persona Anziana&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;
+Circa il 14% degli over 65 in Italia è a rischio isolamento sociale.
+L’isolamento è associato a ridotta partecipazione comunitaria e maggiore fragilità sanitaria e cognitiva.
+&lt;/p&gt;
+
+&lt;p&gt;
+La quotidianità tende a ridursi a movimenti essenziali e ripetitivi, con progressiva contrazione della complessità sociale.
+&lt;/p&gt;
+
+&lt;p&gt;
+Fonti:
+https://www.iss.it/-/il-14-degli-over-65-in-italia-a-rischio-isolamento-e-meno-del-30-sono-una-risorsa-per-la-comunita
+https://www.pensionati.cisl.it/notizie/isolamento-e-partecipazione-sociale-degli-anziani-i-dati-di-passi-d_argento
+&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;&lt;b&gt;VI. Il Senzatetto&lt;/b&gt;&lt;/p&gt;
+
+&lt;p&gt;
+In Italia si stimano oltre 90.000–100.000 persone senza dimora.
+La condizione è associata a esclusione sociale, instabilità abitativa e ridotto accesso ai servizi essenziali.
+&lt;/p&gt;
+
+&lt;p&gt;
+La vita quotidiana è caratterizzata da incertezza strutturale,
+dove le decisioni non si basano su scelta ottimale ma su disponibilità immediata.
+&lt;/p&gt;
+
+&lt;p&gt;
+Fonti:
+https://www.9colonne.it/446780/more-than-96-000-homeless-people-in-italy
+https://www.ansa.it/english/news/2023/01/05/nearly-100000-homeless-in-italy-says-istat_a1baa637-9451-448d-9697-5b4811a9ae6e.html
+&lt;/p&gt;
+
+&lt;hr&gt;
+
+&lt;p&gt;
+Le traiettorie individuali osservate non rappresentano eccezioni.
+Rappresentano configurazioni ricorrenti di sistemi sociali sotto vincolo.
+&lt;/p&gt;
+
+&lt;p&gt;
+Il percorso non descrive persone.
+Descrive condizioni.
+&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;&lt;if $loop == 6&gt;&gt;
+    [[Continua-&gt;Epilogo]]
+&lt;&lt;else&gt;&gt;
+    [[Continua-&gt;Risveglio]]
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;set $loop += 1&gt;&gt;
-
-&lt;&lt;if $loop &lt;= 6&gt;&gt;
-[[Riprendere-&gt;Risveglio]]
-&lt;&lt;else&gt;&gt;
-[[Continuare-&gt;Epilogo]]
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="9" name="Epilogo" tags="" position="1825,900" size="200,200">&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/epilogo.jpg&#39;)&quot;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="9" name="Epilogo" tags="" position="1825,900" size="200,200">&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/epilogo.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;Hai attraversato la stessa città più volte.&lt;/p&gt;
@@ -2134,39 +2472,76 @@ Restare tranquillo e non attirare attenzione sembra la scelta più sicura.
 
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;update &quot;time&quot; 5&gt;&gt;
-&lt;&lt;update &quot;energy&quot; -5&gt;&gt;
+&lt;&lt;update &quot;time&quot; -5&gt;&gt;
+&lt;&lt;update &quot;energy&quot; -3&gt;&gt;
 
 &lt;p&gt;
-L&#39;attesa sembra scorrere più velocemente.
-Quando finalmente la fila avanza, ti accorgi di aver consumato meno energie mentali del previsto.
+Quando la fila finalmente avanza, ti accorgi che il tempo è passato comunque.
+Hai consumato meno attenzione nel cercare di controllare tutto, ma hai lasciato che fossero gli altri a guidare parte delle tue scelte.
 &lt;/p&gt;
 
-[[Continuare-&gt;Supermercato]]</tw-passagedata><tw-passagedata pid="24" name="PosteControllo" tags="" position="3300,250" size="100,100">&lt;p&gt;Cerchi di capire come funziona il sistema invece di subirlo.&lt;/p&gt;
+[[Continuare-&gt;Supermercato]]</tw-passagedata><tw-passagedata pid="24" name="PosteControllo" tags="" position="3325,225" size="100,100">&lt;p&gt;
+Cerchi di capire come funziona il sistema invece di limitarti ad aspettare.
+&lt;/p&gt;
 
 &lt;&lt;update &quot;control&quot; 8&gt;&gt;
 &lt;&lt;update &quot;energy&quot; -6&gt;&gt;
 &lt;&lt;update &quot;attention&quot; -5&gt;&gt;
 
 &lt;p&gt;
-Osservi lo schermo dei numeri, gli sportelli, i movimenti degli altri.
-Provi a ricostruire delle regole a partire da ciò che succede davanti a te.
+Osservi lo schermo dei numeri, gli sportelli, le procedure e i movimenti delle persone.
+Provi a ricostruire una logica a partire da dettagli che nessuno sembra spiegare.
 &lt;/p&gt;
 
+&lt;&lt;if $loop is 1&gt;&gt;
+
 &lt;p&gt;
-Ogni informazione deve essere interpretata al volo.
-Nulla viene spiegato davvero, ma tutto sembra avere una logica implicita.
+Controlli più volte le istruzioni per la spedizione.
+Non vuoi sbagliare proprio ora che il viaggio sta finendo.
 &lt;/p&gt;
+
+&lt;&lt;elseif $loop is 2&gt;&gt;
+
+&lt;p&gt;
+Continui a confrontare il numero sul display con l&#39;orario dell&#39;esame.
+Ogni passaggio della procedura sembra entrare in competizione con il resto della giornata.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 3&gt;&gt;
+
+&lt;p&gt;
+Leggi con attenzione i monitor e i cartelli.
+Perdere il turno significherebbe ricominciare da capo uno sforzo che senti già pesare.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 4&gt;&gt;
+
+&lt;p&gt;
+Calcoli continuamente quanto tempo manca al prossimo impegno.
+L&#39;attesa non è solo un disagio: può trasformarsi in una perdita concreta.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 5&gt;&gt;
+
+&lt;p&gt;
+Cerchi di capire le procedure senza dipendere dagli altri.
+Ogni informazione compresa da sola restituisce una piccola sensazione di autonomia.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 6&gt;&gt;
+
+&lt;p&gt;
+Osservi attentamente l&#39;ambiente.
+Capire come funziona il sistema significa ridurre il rischio di essere ignorato o rimandato.
+&lt;/p&gt;
+
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;if $time &lt; 50&gt;&gt;
 
 &lt;p&gt;
-Il tempo di attesa non è più solo attesa.
-Diventa parte del problema da risolvere.
-&lt;/p&gt;
-
-&lt;p&gt;
-Ogni minuto in più aumenta la sensazione di dover “capire in fretta” prima di sbagliare qualcosa.
+Il tempo di attesa smette di essere neutrale.
+Ogni minuto aggiunge pressione alla situazione.
 &lt;/p&gt;
 
 &lt;&lt;update &quot;attention&quot; -3&gt;&gt;
@@ -2175,11 +2550,12 @@ Ogni minuto in più aumenta la sensazione di dover “capire in fretta” prima 
 &lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;
-Capire non accelera il processo.
-Ma rende impossibile smettere di provarci.
+Capire cosa sta succedendo non accelera il processo.
+Ma ti permette di sentirti meno trascinato dagli eventi.
 &lt;/p&gt;
 
-[[Continuare-&gt;Supermercato]]</tw-passagedata><tw-passagedata pid="25" name="PosteTempo" tags="" position="3450,300" size="100,100">&lt;&lt;update &quot;time&quot; -10&gt;&gt;
+[[Continuare-&gt;Supermercato]]
+</tw-passagedata><tw-passagedata pid="25" name="PosteTempo" tags="" position="3475,300" size="100,100">&lt;&lt;update &quot;time&quot; -10&gt;&gt;
 &lt;&lt;update &quot;attention&quot; -8&gt;&gt;
 &lt;&lt;update &quot;energy&quot; -5&gt;&gt;
 
@@ -2196,19 +2572,63 @@ Ogni numero chiamato sembra ricordarti che non è ancora il tuo turno.
 Ogni movimento nello spazio rende più reale il tempo che passa.
 &lt;/p&gt;
 
+&lt;&lt;if $loop is 1&gt;&gt;
+
+&lt;p&gt;
+La spedizione del pacco è una piccola cosa, ma continua a occupare una parte della giornata.
+Ti chiedi quante altre ore ti restino prima della partenza.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 2&gt;&gt;
+
+&lt;p&gt;
+L&#39;orario dell&#39;esame si avvicina.
+Più aspetti, più diventa difficile smettere di fare calcoli mentali.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 3&gt;&gt;
+
+&lt;p&gt;
+Restare in piedi o seduto troppo a lungo finisce per farsi sentire.
+L&#39;attesa sembra pesare anche sul corpo.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 4&gt;&gt;
+
+&lt;p&gt;
+Ogni minuto trascorso qui è un minuto sottratto al lavoro, agli spostamenti o a qualcos&#39;altro che non puoi rimandare.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 5&gt;&gt;
+
+&lt;p&gt;
+Non sei sempre sicura di aver capito cosa succederà dopo.
+L&#39;incertezza rende l&#39;attesa ancora più lunga.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 6&gt;&gt;
+
+&lt;p&gt;
+Continui a pensare alla sera.
+Se qualcosa va storto, le conseguenze non finiranno quando uscirai da qui.
+&lt;/p&gt;
+
+&lt;&lt;/if&gt;&gt;
+
 &lt;p&gt;
 Controlli l’orologio sul telefono, poi lo ricontrolli poco dopo.
 Non cambia quasi nulla, ma lo fai comunque.
 &lt;/p&gt;
 
 &lt;p&gt;
-Rimanere qui significa restare dentro un tempo che non puoi accelerare, ma che ti consuma comunque attenzione.
+Rimanere qui significa restare dentro un tempo che non puoi accelerare, ma che continua comunque a consumare attenzione ed energie.
 &lt;/p&gt;
 
 [[Terminare e uscire-&gt;Supermercato]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="26" name="PosteAllerta" tags="" position="3575,400" size="100,100">&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="26" name="PosteAllerta" tags="" position="3575,425" size="100,100">&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
 &lt;&lt;update &quot;attention&quot; 8&gt;&gt;
 &lt;&lt;update &quot;control&quot; -5&gt;&gt;
 
@@ -2216,26 +2636,52 @@ Rimanere qui significa restare dentro un tempo che non puoi accelerare, ma che t
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
-Resti in silenzio, osservando chi entra e chi esce, come si muove, dove si ferma.
-Cerchi di occupare meno spazio possibile nella fila.
+Resti in silenzio osservando ciò che succede intorno a te.
+Ogni persona che si alza, cambia fila o si avvicina a uno sportello cattura immediatamente la tua attenzione.
 &lt;/p&gt;
 
 &lt;p&gt;
-Ogni persona sembra muoversi con una sicurezza che tu non hai.
-Osservi i loro gesti per capire quando intervenire, quando avanzare, quando restare fermo.
+Non stai cercando soltanto di aspettare il tuo turno.
+Stai cercando di capire se ti sei perso qualcosa.
+&lt;/p&gt;
+
+&lt;&lt;if $loop is 3&gt;&gt;
+
+&lt;p&gt;
+I numeri scorrono sullo schermo più velocemente di quanto riesci a seguirli.
+Per un attimo temi di non aver sentito la chiamata corretta.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 5&gt;&gt;
+
+&lt;p&gt;
+Le conversazioni attorno a te si intrecciano con parole che non sempre riesci a comprendere.
+Osservare gli altri diventa più affidabile che interpretare ogni informazione.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 6&gt;&gt;
+
+&lt;p&gt;
+Cerchi di attirare il meno possibile l&#39;attenzione.
+Ogni sguardo nella tua direzione ti fa domandare se qualcuno si stia chiedendo perché sei lì.
+&lt;/p&gt;
+
+&lt;&lt;else&gt;&gt;
+
+&lt;p&gt;
+Ogni piccolo cambiamento nell&#39;ambiente sembra importante.
+Continui a controllare dettagli che forse non hanno alcun significato.
+&lt;/p&gt;
+
+&lt;&lt;/if&gt;&gt;
+
+&lt;p&gt;
+L&#39;attenzione cresce.
+Ma invece di renderti più sicuro, moltiplica le cose che senti di dover controllare.
 &lt;/p&gt;
 
 &lt;p&gt;
-Più guardi, più dettagli emergono: un richiamo allo sportello, un numero chiamato, una porta che si apre troppo in fretta.
-&lt;/p&gt;
-
-&lt;p&gt;
-L’attenzione aumenta, ma non ti stabilizza.
-Ti tiene agganciato a tutto ciò che potrebbe richiedere una tua reazione immediata.
-&lt;/p&gt;
-
-&lt;p&gt;
-Non stai aspettando soltanto: stai monitorando.
+Quando finalmente arriva il tuo turno, hai la sensazione di aver trascorso più tempo a monitorare il contesto che a occuparti del motivo per cui sei venuto qui.
 &lt;/p&gt;
 
 [[Terminare e uscire-&gt;Supermercato]]
@@ -2255,9 +2701,50 @@ Non scegli solo cosa prendere, ma cosa puoi permetterti di lasciare.
 &lt;/p&gt;
 
 &lt;p&gt;
-Alcuni prodotti restano nel carrello per qualche secondo prima di essere rimessi sugli scaffali.
-Ogni rinuncia è silenziosa, quasi automatica, ma non per questo meno presente.
+Ti fermi più volte davanti agli scaffali.
+Alcuni prodotti restano nel carrello per qualche secondo prima di essere rimessi a posto.
+Ogni rinuncia è rapida, ma lascia comunque una traccia nel processo di scelta.
 &lt;/p&gt;
+
+&lt;&lt;if $loop is 1&gt;&gt;
+
+&lt;p&gt;
+Cerchi piccoli oggetti che possano diventare un ricordo del viaggio, ma il prezzo ti costringe a ridurre la scelta.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 2&gt;&gt;
+
+&lt;p&gt;
+Pensi soprattutto a ciò che ti serve per arrivare alla fine della giornata senza spendere troppo prima dell’esame o del lavoro.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 3&gt;&gt;
+
+&lt;p&gt;
+Valuti con attenzione ciò che è davvero necessario, cercando di evitare peso e fatica inutile.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 4&gt;&gt;
+
+&lt;p&gt;
+Ogni prodotto viene confrontato con le ore di lavoro necessarie per permettertelo.
+Il carrello diventa una traduzione diretta del tempo che stai vendendo.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 5&gt;&gt;
+
+&lt;p&gt;
+Non sempre è immediato capire cosa convenga davvero.
+Leggere prezzi e quantità richiede più attenzione del previsto.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 6&gt;&gt;
+
+&lt;p&gt;
+Ti concentri solo sull’essenziale, evitando qualsiasi cosa che non sia immediatamente necessaria.
+&lt;/p&gt;
+
+&lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;
 Alla fine spendi meno.
@@ -2265,14 +2752,14 @@ Non perché hai di più, ma perché hai escluso di più.
 &lt;/p&gt;
 
 &lt;p&gt;
-Non è una forma di libertà.
-È una gestione più stretta del margine disponibile.
+La sensazione non è di libertà, ma di selezione forzata.
 &lt;/p&gt;
 
 [[Andare verso l’uscita-&gt;StradaChiusa]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="28" name="SupermercatoAdattivo" tags="" position="3600,800" size="100,100">&lt;&lt;update &quot;control&quot; -8&gt;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="28" name="SupermercatoAdattivo" tags="" position="3600,800" size="100,100">&lt;&lt;update &quot;control&quot; -8&gt;&gt;
 &lt;&lt;update &quot;attention&quot; -8&gt;&gt;
 &lt;&lt;update &quot;energy&quot; 5&gt;&gt;
 
@@ -2280,23 +2767,63 @@ Non è una forma di libertà.
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
-Ti lasci guidare dal ritmo del luogo.
-Segui percorsi già tracciati, osservi ciò che fanno gli altri e prendi decisioni senza soffermarti troppo.
+Ti lasci guidare dal ritmo del supermercato.
+Segui il flusso delle persone tra le corsie e prendi decisioni rapide, senza soffermarti troppo su ogni scelta.
 &lt;/p&gt;
 
 &lt;p&gt;
 Riduci il numero di decisioni attive.
-Non è necessariamente la scelta migliore, ma è quella che richiede meno energia cognitiva in quel momento.
+Non cerchi di ottimizzare, ma di procedere.
 &lt;/p&gt;
+
+&lt;&lt;if $loop is 1&gt;&gt;
+
+&lt;p&gt;
+Scegli prodotti che attirano la tua attenzione senza pensarci troppo, come possibili ricordi del viaggio.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 2&gt;&gt;
+
+&lt;p&gt;
+Prendi qualcosa di veloce da mangiare, più per necessità immediata che per scelta ragionata.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 3&gt;&gt;
+
+&lt;p&gt;
+Segui il percorso più familiare tra gli scaffali, evitando sforzi inutili o deviazioni.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 4&gt;&gt;
+
+&lt;p&gt;
+Ti attieni a ciò che è più economico e immediato, evitando ogni decisione complessa.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 5&gt;&gt;
+
+&lt;p&gt;
+Osservi gli altri clienti e imiti le loro scelte per orientarti più facilmente.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 6&gt;&gt;
+
+&lt;p&gt;
+Cerchi di muoverti senza attirare attenzione, restando il più possibile “uno tra gli altri”.
+&lt;/p&gt;
+
+&lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;
 Per un momento smetti di analizzare ogni cosa.
+Il supermercato diventa solo un percorso da attraversare fino all’uscita.
 &lt;/p&gt;
 
 [[Andare verso l’uscita-&gt;StradaChiusa]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="29" name="SupermercatoControllo" tags="" position="3575,675" size="100,100">&lt;&lt;update &quot;control&quot; 8&gt;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="29" name="SupermercatoControllo" tags="" position="3575,675" size="100,100">&lt;&lt;update &quot;control&quot; 8&gt;&gt;
 &lt;&lt;update &quot;attention&quot; 8&gt;&gt;
 &lt;&lt;update &quot;energy&quot; -8&gt;&gt;
 
@@ -2304,25 +2831,67 @@ Per un momento smetti di analizzare ogni cosa.
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
-Controlli attentamente ciò che fai.
-Leggi le etichette, confronti i prezzi, ricalcoli mentalmente le scelte.
-Ogni decisione richiede una piccola sospensione prima di essere compiuta.
+Ti fermi qualche istante prima di prendere una decisione.
+Controlli prezzi, confezioni, quantità e dettagli che altre persone sembrano ignorare.
 &lt;/p&gt;
 
 &lt;p&gt;
-Non è solo attenzione: è uno sforzo continuo di mantenere il sistema leggibile.
-Più controlli, più ti accorgi di quante micro-decisioni stai sostenendo.
+Cerchi di ridurre l&#39;incertezza confrontando ogni alternativa.
+Più osservi, più emergono nuove informazioni da valutare.
 &lt;/p&gt;
 
+&lt;&lt;if $loop is 1&gt;&gt;
+
 &lt;p&gt;
-Per un momento hai la sensazione di avere ancora margine sulle cose piccole.
-Ma il costo è invisibile mentre lo stai pagando.
+Vuoi essere sicura che ciò che compri rappresenti davvero il viaggio che hai vissuto.
+Scegliere un semplice souvenir richiede più tempo del previsto.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 2&gt;&gt;
+
+&lt;p&gt;
+Controlli il costo di ogni prodotto cercando qualcosa che possa darti energia senza compromettere il budget della giornata.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 3&gt;&gt;
+
+&lt;p&gt;
+Verifichi più volte di non aver dimenticato nulla per evitare un altro viaggio nei prossimi giorni.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 4&gt;&gt;
+
+&lt;p&gt;
+Ogni euro speso viene confrontato mentalmente con le spese che arriveranno dopo.
+Nessun acquisto sembra davvero neutrale.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 5&gt;&gt;
+
+&lt;p&gt;
+Leggi attentamente etichette e indicazioni.
+Capire da sola cosa stai acquistando diventa parte della scelta.
+&lt;/p&gt;
+
+&lt;&lt;elseif $loop is 6&gt;&gt;
+
+&lt;p&gt;
+Controllare ciò che accade attorno a te ti aiuta a sentirti meno esposto.
+Sapere dove sono le persone e come si muovono richiede però attenzione continua.
+&lt;/p&gt;
+
+&lt;&lt;/if&gt;&gt;
+
+&lt;p&gt;
+Per un momento hai la sensazione di mantenere il controllo della situazione.
+Quando finalmente prendi una decisione, ti accorgi però che lo sforzo ha consumato più energie di quanto sembrasse.
 &lt;/p&gt;
 
 [[Andare verso l’uscita-&gt;StradaChiusa]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="30" name="StradaAdattiva" tags="" position="2950,1175" size="100,100">&lt;&lt;update &quot;control&quot; -8&gt;&gt;
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="30" name="StradaAdattiva" tags="" position="2825,1150" size="100,100">&lt;&lt;update &quot;control&quot; -8&gt;&gt;
 &lt;&lt;update &quot;energy&quot; 5&gt;&gt;
 &lt;&lt;update &quot;attention&quot; -5&gt;&gt;
 &lt;&lt;update &quot;time&quot; 5&gt;&gt;
@@ -2332,29 +2901,30 @@ Ma il costo è invisibile mentre lo stai pagando.
 
 &lt;p&gt;
 Non cerchi di opporre resistenza alla deviazione.
-Osservi il movimento delle persone, il flusso della città, e ti inserisci al suo interno.
+Ti lasci guidare dal flusso delle persone e della città, inserendoti nel movimento già in corso.
 &lt;/p&gt;
 
 &lt;p&gt;
-Il percorso non è quello che avevi immaginato all&#39;inizio della giornata, ma continui comunque ad avanzare.
-A volte adattarsi significa rinunciare a una parte del controllo. Altre volte è semplicemente il modo più immediato per proseguire.
+Il percorso non coincide con quello che avevi immaginato, ma continui comunque ad avanzare.
+Adattarsi significa ridurre il numero di decisioni attive, anche a costo di perdere parte della direzione personale.
 &lt;/p&gt;
 
 &lt;&lt;if $attention &lt; 50&gt;&gt;
 &lt;p&gt;
-Ti rendi conto solo dopo di aver seguito il flusso senza averlo davvero interpretato.
+Solo in un secondo momento ti accorgi di aver seguito il flusso senza averlo davvero interpretato.
+Le scelte si sono già stabilizzate mentre tu le attraversavi.
 &lt;/p&gt;
-
 &lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;
-Quando la strada torna a essere familiare, quasi non ti accorgi di aver cambiato direzione.
+Quando la strada torna a essere familiare, il cambiamento di direzione appare naturale.
+Non c’è un momento preciso in cui hai deciso: è semplicemente accaduto.
 &lt;/p&gt;
 
 [[Continuare-&gt;FineLoop]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="StradaControllo" tags="" position="3150,1175" size="100,100">&lt;&lt;update &quot;control&quot; 10&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="StradaControllo" tags="" position="3200,1150" size="100,100">&lt;&lt;update &quot;control&quot; 10&gt;&gt;
 &lt;&lt;update &quot;attention&quot; 5&gt;&gt;
 &lt;&lt;update &quot;energy&quot; -5&gt;&gt;
 &lt;&lt;update &quot;time&quot; -5&gt;&gt;
@@ -2363,29 +2933,94 @@ Quando la strada torna a essere familiare, quasi non ti accorgi di aver cambiato
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
-Ti fermi qualche istante prima di proseguire.
-Osservi i cartelli, controlli i riferimenti, ricostruisci mentalmente il percorso.
+Ti fermi un istante prima di proseguire.
+Osservi i cartelli, confronti le indicazioni, ricostruisci una mappa mentale del percorso.
 &lt;/p&gt;
 
 &lt;p&gt;
-La deviazione non scompare, ma riesci a darle una forma comprensibile.
-Ogni scelta richiede più attenzione e più energia, ma ti permette di conservare un senso di orientamento.
+La deviazione non scompare, ma viene tradotta in struttura.
+Ogni elemento serve a mantenere una direzione coerente mentre ti muovi.
 &lt;/p&gt;
 
 &lt;&lt;if $control &gt;= 70&gt;&gt;
 &lt;p&gt;
-La chiarezza ha un costo: il percorso è leggibile, ma ti richiede uno sforzo continuo per mantenerlo tale.
+La chiarezza non è stabile: va mantenuta.
+Ogni passo richiede un aggiornamento della mappa che stai usando per orientarti.
+&lt;/p&gt;
+
+&lt;p&gt;
+La comprensione diventa un lavoro continuo di verifica.
 &lt;/p&gt;
 &lt;&lt;update &quot;energy&quot; -3&gt;&gt;
-&lt;&lt;else&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $control &lt; 70&gt;&gt;
 &lt;p&gt;
-La comprensione resta parziale, ma sufficiente per continuare senza fermarti troppo a lungo.
+La mappa mentale funziona, ma è incompleta.
+Ogni nuova informazione può correggere o spostare la direzione.
+&lt;/p&gt;
+
+&lt;p&gt;
+Avanzi comunque, basandoti su una struttura provvisoria ma sufficiente.
 &lt;/p&gt;
 &lt;&lt;/if&gt;&gt;
 
 &lt;p&gt;
-Quando riprendi a camminare, la strada è diversa da prima.
-Tu però sai esattamente perché stai andando in quella direzione.
+Riprendi il cammino con un percorso definito, costruito mentre lo attraversi.
+Non segui la città: la stai continuamente ricalcolando.
+&lt;/p&gt;
+
+[[Continuare-&gt;FineLoop]]
+
+&lt;/div&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="StradaAllerta" tags="" position="3025,1150" size="100,100">&lt;&lt;update &quot;attention&quot; 10&gt;&gt;
+&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
+&lt;&lt;update &quot;control&quot; -5&gt;&gt;
+&lt;&lt;update &quot;time&quot; -5&gt;&gt;
+
+&lt;div class=&quot;fullscreen&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
+
+&lt;p&gt;
+Ti fermi, ma non c’è mai un vero arresto.
+Lo sguardo continua a muoversi tra cartelli, persone, deviazioni possibili.
+&lt;/p&gt;
+
+&lt;p&gt;
+Non stai solo cercando la direzione giusta.
+Stai cercando di anticipare l’errore prima che accada.
+&lt;/p&gt;
+
+&lt;p&gt;
+Ogni dettaglio può diventare rilevante: un passo che cambia ritmo, una persona che esita, un flusso che si interrompe.
+&lt;/p&gt;
+
+&lt;&lt;if $attention &gt;= 70&gt;&gt;
+&lt;p&gt;
+L’attenzione si espande fino a occupare tutto lo spazio disponibile.
+Più osservi, più aumentano gli elementi da monitorare.
+&lt;/p&gt;
+
+&lt;p&gt;
+Non esiste un punto fermo da cui orientarsi: solo variazioni continue da tenere sotto controllo.
+&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $attention &lt; 70&gt;&gt;
+&lt;p&gt;
+Cerchi di mantenere il controllo del contesto, ma gli stimoli superano la capacità di ordinamento.
+Alcuni segnali si amplificano, altri si perdono.
+&lt;/p&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;p&gt;
+La deviazione smette di essere un evento isolato.
+Diventa uno stato di vigilanza continua.
+&lt;/p&gt;
+
+&lt;p&gt;
+Quando riprendi a muoverti, non hai più certezze aggiuntive.
+Hai solo una maggiore consapevolezza del rischio di sbagliare.
 &lt;/p&gt;
 
 [[Continuare-&gt;FineLoop]]

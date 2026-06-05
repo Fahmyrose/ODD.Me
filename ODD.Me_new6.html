@@ -104,129 +104,111 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 		<div id="init-lacking"><p>Browser lacks capabilities required to play.</p><p>Upgrade or switch to another browser.</p></div>
 		<div id="init-loading"><div>Loading&hellip;</div></div>
 	</div>
-	<tw-storydata name="ODD.Me_new" startnode="1" creator="Twine" creator-version="2.11.1" format="SugarCube" format-version="2.37.3" ifid="C6FF98E4-D592-41F5-A665-66023F767B96" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">/* ======================================
-   PASSAGGI FULLSCREEN
+	<tw-storydata name="ODD.Me_new" startnode="1" creator="Twine" creator-version="2.11.1" format="SugarCube" format-version="2.37.3" ifid="C6FF98E4-D592-41F5-A665-66023F767B96" options="" tags="" zoom="0.6" hidden><style role="stylesheet" id="twine-user-stylesheet" type="text/twine-css">@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
+/* ======================================
+   RESET SUGARCUBE (SAFE VERSION)
+   ====================================== */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Handlee", cursive;
+}
+
+/* remove default SugarCube constraints */
+#passages, .passage {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+}
+
+/* ======================================
+   FULLSCREEN BACKGROUND SYSTEM
    ====================================== */
 
 .fullscreen {
-    width: 100%;
-    height: 100vh; /* altezza esatta dello schermo */
-    margin: 0;
-    padding: 2rem;
+    width: 100vw;
+    height: 100vh;
 
-    background-size: cover;       /* immagine fullscreen */
-    background-position: center;
-    background-repeat: no-repeat;
+    position: relative;
+    overflow: hidden;
 
     display: flex;
-    flex-direction: column;
-    justify-content: flex-end;
+    align-items: flex-end;
+    justify-content: center;
 
-    box-sizing: border-box;
-    position: relative;
+    background-color: black; /* important for letterboxing */
+}
 
-    overflow: hidden; /* niente scroll */
+/* TRUE BACKGROUND LAYER */
+.fullscreen::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background-size: contain;        /* 👈 KEY FIX (no cropping) */
+    background-repeat: no-repeat;
+    background-position: center;     /* centered image */
+
+    z-index: 0;
+
+    /* image is injected via inline style, so we "inherit" it */
+    background-image: inherit;
 }
 
 /* ======================================
-   BOX NERO TRASPARENTE PER IL TESTO
+   TEXT BOX (MAIN UI)
    ====================================== */
 
 .fullscreen .text-box {
-    background: rgba(0, 0, 0, 0.8); /* nero semi-trasparente */
-    padding: 1.5rem 2rem;
-    border-radius: 8px;             /* angoli smussati */
-    max-width: 750px;               /* larghezza massima box */
-    width: 100%;                     /* scala fino al max-width */
-    color: #ffffff;
-  	font-size: 14px;
-
-    position: relative;             /* sopra l'immagine */
+    position: relative;
     z-index: 1;
+
+    background: rgba(10, 12, 15, 0.85);
+    color: white;
+
+    padding: 1.2rem 1.6rem;
+    border-radius: 10px;
+
+    width: min(900px, 92vw);
+    max-height: 75vh;
+    overflow-y: auto;
+
+    font-size: 14px;
+    line-height: 1.6;
+
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(6px);
 }
 
 /* ======================================
-   TESTO LEGGIBILE
+   PARAGRAPHS (FIX SPACING ISSUE)
    ====================================== */
 
 .fullscreen .text-box p {
-    margin-bottom: 1em;
-    line-height: 1.4;
+    margin: 0.9em 0;
 }
 
 /* ======================================
-   interface Variabili
+   CHOICES (IMPORTANT FIX)
    ====================================== */
 
-#odd-hud {
-  position: fixed;
-  bottom: 18px;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 9999;
-  pointer-events: none;
-}
-
-#odd-hud-inner {
-  display: flex;
-  gap: 10px;
-  background: rgba(255,255,255,0.08);
-  backdrop-filter: blur(6px);
-  border-radius: 40px;
-  padding: 8px 16px;
-  border: 0.5px solid rgba(255,255,255,0.15);
-}
-
-.odd-cell {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 3px;
-  position: relative;
-  width: 44px;
-}
-
-.odd-lbl {
-  font-size: 9px;
-  color: rgba(255,255,255,0.45);
-  letter-spacing: 0.04em;
-  text-align: center;
-  font-family: sans-serif;
-}
-
-.odd-lbl-low {
-  color: #F09595;
-  font-weight: bold;
-}
-
-.odd-delta {
-  position: absolute;
-  top: -6px;
-  right: 0;
-  font-size: 11px;
-  font-weight: bold;
-  font-family: sans-serif;
-  animation: odd-pop 0.9s ease forwards;
-  pointer-events: none;
-}
-
-@keyframes odd-pop {
-  0%   { opacity: 0; transform: translateY(0) scale(0.7); }
-  40%  { opacity: 1; transform: translateY(-8px) scale(1.1); }
-  100% { opacity: 0; transform: translateY(-20px) scale(1); }
-}
-
-@keyframes odd-shake {
-  0%,100% { transform: translateX(0); }
-  20%     { transform: translateX(-4px); }
-  40%     { transform: translateX(4px); }
-  60%     { transform: translateX(-2px); }
-  80%     { transform: translateX(2px); }
-}
-
-.odd-shake {
-  animation: odd-shake 0.45s ease;
-}</style><script role="script" id="twine-user-script" type="text/twine-javascript"></script><tw-passagedata pid="1" name="Start" tags="" position="1625,850" size="100,100">&lt;p&gt;
+a.link-internal {
+    display: block;
+    margin: 0.6em 0;
+}</style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).on(':passageend', function () {
+    // OPTIONAL SAFE CLEANUP ONLY
+    // removes empty text nodes that sometimes appear
+    $("#passage").contents().filter(function () {
+        return this.nodeType === 3 && !this.nodeValue.trim();
+    }).remove();
+});</script><tw-passagedata pid="1" name="Start" tags="" position="1625,850" size="100,100">&lt;p&gt;
 Fuori le strade si stanno già riempiendo.
 &lt;/p&gt;
 
@@ -239,7 +221,7 @@ C&#39;è chi corre verso il lavoro, chi sta tornando a casa, chi cerca semplicem
 &lt;/p&gt;
 
 [[Inizia-&gt;InitLoop]]
-</tw-passagedata><tw-passagedata pid="2" name="Risveglio" tags="" position="1825,575" size="200,200">&lt;&lt;if $loop is 1&gt;&gt;
+</tw-passagedata><tw-passagedata pid="2" name="Risveglio" tags="" position="1800,600" size="200,200">&lt;&lt;if $loop is 1&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_1.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
@@ -2031,6 +2013,7 @@ Poi anche l’immobilità smette di essere una scelta e diventa solo uno stato t
 &lt;&lt;set $money = 0&gt;&gt;
 &lt;&lt;set $attention = 0&gt;&gt;
 &lt;&lt;set $control = 0&gt;&gt;
+
 
 &lt;&lt;widget &quot;update&quot;&gt;&gt;
   &lt;&lt;set _k = _args[0]&gt;&gt;

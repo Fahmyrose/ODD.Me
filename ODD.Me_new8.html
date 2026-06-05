@@ -322,6 +322,28 @@ a.link-internal {
 .intermezzo-cover .text-box p,
 .intermezzo-cover .text-box a {
     text-align: center;
+}
+
+/* ======================================
+   FLOATING TEXT BOX
+   ====================================== */
+
+@keyframes floatBox {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.fullscreen .text-box {
+    animation: floatBox 5s ease-in-out infinite;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).on(':passageend', function () {
     $(".fullscreen .text-box br").replaceWith(" ");
 
@@ -2336,7 +2358,7 @@ Poi anche l’immobilità smette di essere una scelta e diventa solo uno stato t
 &lt;&lt;update &quot;attention&quot; 5&gt;&gt;
 &lt;&lt;update &quot;energy&quot; 5&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; @style=&quot;&#39;background-image:url(&#39; + JSON.stringify(_bg) + &#39;)&#39;&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -2415,7 +2437,7 @@ Quando il bus rallenta alla fermata successiva, ti senti leggermente meno teso d
 &lt;&lt;update &quot;energy&quot; -8&gt;&gt;
 &lt;&lt;update &quot;attention&quot; -5&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; @style=&quot;&#39;background-image:url(&#39; + JSON.stringify(_bg) + &#39;)&#39;&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -2495,7 +2517,7 @@ Anche se mantenere quel controllo richiede energia.
 
 &lt;&lt;if $time &gt;= 55&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; @style=&quot;&#39;background-image:url(&#39; + JSON.stringify(_bg) + &#39;)&#39;&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -2571,7 +2593,7 @@ In questo momento la preoccupazione occupa più spazio dello studio.
 &lt;&lt;update &quot;attention&quot; -8&gt;&gt;
 &lt;&lt;update &quot;control&quot; -5&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; @style=&quot;&#39;background-image:url(&#39; + JSON.stringify(_bg) + &#39;)&#39;&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -2639,7 +2661,7 @@ Ma la sensazione di essere in ritardo è rimasta.
 &lt;&lt;update &quot;attention&quot; -8&gt;&gt;
 &lt;&lt;update &quot;time&quot; -5&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; @style=&quot;&#39;background-image:url(&#39; + JSON.stringify(_bg) + &#39;)&#39;&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -2693,7 +2715,7 @@ Ma per un breve momento hai smesso di rincorrerle.
 &lt;&lt;update &quot;control&quot; -5&gt;&gt;
 &lt;&lt;update &quot;attention&quot; 5&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; @style=&quot;&#39;background-image:url(&#39; + JSON.stringify(_bg) + &#39;)&#39;&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -2784,7 +2806,7 @@ Hai consumato meno attenzione nel cercare di controllare tutto, ma hai lasciato 
 &lt;&lt;update &quot;energy&quot; -6&gt;&gt;
 &lt;&lt;update &quot;attention&quot; -5&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; @style=&quot;&#39;background-image:url(&#39; + JSON.stringify(_bg) + &#39;)&#39;&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -2883,7 +2905,7 @@ Ma ti permette di sentirti meno trascinato dagli eventi.
 &lt;&lt;update &quot;attention&quot; -8&gt;&gt;
 &lt;&lt;update &quot;energy&quot; -5&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; @style=&quot;&#39;background-image:url(&#39; + JSON.stringify(_bg) + &#39;)&#39;&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -2975,7 +2997,7 @@ Rimanere qui significa restare dentro un tempo che non puoi accelerare, ma che c
 &lt;&lt;update &quot;attention&quot; 8&gt;&gt;
 &lt;&lt;update &quot;control&quot; -5&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; @style=&quot;&#39;background-image:url(&#39; + JSON.stringify(_bg) + &#39;)&#39;&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -3054,7 +3076,7 @@ Quando finalmente arriva il tuo turno, hai la sensazione di aver trascorso più 
 &lt;&lt;update &quot;energy&quot; -8&gt;&gt;
 &lt;&lt;update &quot;attention&quot; 5&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; @style=&quot;&#39;background-image:url(&#39; + JSON.stringify(_bg) + &#39;)&#39;&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -3144,7 +3166,7 @@ La sensazione non è di libertà, ma di selezione forzata.
 &lt;&lt;update &quot;attention&quot; -8&gt;&gt;
 &lt;&lt;update &quot;energy&quot; 5&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; @style=&quot;&#39;background-image:url(&#39; + JSON.stringify(_bg) + &#39;)&#39;&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -3227,7 +3249,7 @@ Il supermercato diventa solo un percorso da attraversare fino all’uscita.
 &lt;&lt;update &quot;attention&quot; 8&gt;&gt;
 &lt;&lt;update &quot;energy&quot; -8&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; @style=&quot;&#39;background-image:url(&#39; + JSON.stringify(_bg) + &#39;)&#39;&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -3315,7 +3337,7 @@ Quando finalmente prendi una decisione, ti accorgi però che lo sforzo ha consum
 &lt;&lt;update &quot;attention&quot; -5&gt;&gt;
 &lt;&lt;update &quot;time&quot; 5&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; @style=&quot;&#39;background-image:url(&#39; + JSON.stringify(_bg) + &#39;)&#39;&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -3367,7 +3389,7 @@ Non c’è un momento preciso in cui hai deciso: è semplicemente accaduto.
 &lt;&lt;update &quot;energy&quot; -5&gt;&gt;
 &lt;&lt;update &quot;time&quot; -5&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; @style=&quot;&#39;background-image:url(&#39; + JSON.stringify(_bg) + &#39;)&#39;&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -3435,7 +3457,7 @@ Non segui la città: la stai continuamente ricalcolando.
 &lt;&lt;update &quot;control&quot; -5&gt;&gt;
 &lt;&lt;update &quot;time&quot; -5&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; @style=&quot;&#39;background-image:url(&#39; + JSON.stringify(_bg) + &#39;)&#39;&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;

@@ -95,7 +95,7 @@ var LZString=function(){var r=String.fromCharCode,o="ABCDEFGHIJKLMNOPQRSTUVWXYZa
 <style id="style-ui-dialog-settings" type="text/css">#ui-dialog-body.settings [id|=setting-body]>div:first-child{display:table;width:100%}#ui-dialog-body.settings [id|=setting-label]{display:table-cell;padding:.4em 2em .4em 0}#ui-dialog-body.settings [id|=setting-label]+div{display:table-cell;min-width:8em;text-align:right;vertical-align:middle;white-space:nowrap}#ui-dialog-body.settings div[id|=header-body]{margin:1em 0}#ui-dialog-body.settings div[id|=header-body]:first-child{margin-top:0}#ui-dialog-body.settings div[id|=header-body]:not(:first-child){border-top:1px solid #444;padding-top:1em}#ui-dialog-body.settings div[id|=header-body]>*{margin:0}#ui-dialog-body.settings h2[id|=header-heading]{font-size:1.375em}#ui-dialog-body.settings p[id|=header-desc],#ui-dialog-body.settings p[id|=setting-desc]{font-size:87.5%;margin:0 0 0 .5em}#ui-dialog-body.settings div[id|=setting-body]+div[id|=setting-body]{margin:1em 0}#ui-dialog-body.settings [id|=setting-control]{white-space:nowrap}#ui-dialog-body.settings button[id|=setting-control]{color:#eee;background-color:transparent;border:1px solid #444;padding:.4em}#ui-dialog-body.settings button[id|=setting-control]:hover{background-color:#333;border-color:#eee}#ui-dialog-body.settings button[id|=setting-control].enabled{background-color:#282;border-color:#4a4}#ui-dialog-body.settings button[id|=setting-control].enabled:hover{background-color:#4a4;border-color:#6c6}#ui-dialog-body.settings input[type=range][id|=setting-control]{max-width:35vw}#ui-dialog-body.settings span[id|=setting-input]{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}#ui-dialog-body.settings button[id|=setting-control].enabled::after,#ui-dialog-body.settings button[id|=setting-control]::after{font-family:sc-icons!important;font-style:normal;font-weight:400;font-variant:normal;line-height:1;speak:never;text-rendering:auto;text-transform:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;margin-left:.35em}#ui-dialog-body.settings button[id|=setting-control]::after{content:"\f204"}#ui-dialog-body.settings button[id|=setting-control].enabled::after{content:"\f205"}</style>
 <style id="style-ui-dialog-legacy" type="text/css">#ui-dialog-body.list{padding:0}#ui-dialog-body.list ul{margin:0;padding:0;list-style:none;border:1px solid transparent}#ui-dialog-body.list li{margin:0}#ui-dialog-body.list li:not(:first-child){border-top:1px solid #444}#ui-dialog-body.list li a{display:block;padding:.25em .75em;border:1px solid transparent;color:#eee;text-decoration:none}#ui-dialog-body.list li a:hover{background-color:#333;border-color:#eee}#ui-dialog-body.list a{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}</style>
 <style id="style-ui-bar" type="text/css">#story{margin-left:20em;-webkit-transition:margin-left .2s ease-in;-o-transition:margin-left .2s ease-in;transition:margin-left .2s ease-in}#ui-bar.stowed~#story{margin-left:4.5em}@media screen and (max-width:1136px){#story{margin-left:19em}#ui-bar.stowed~#story{margin-left:3.5em}}@media screen and (max-width:768px){#story{margin-left:3.5em}}#ui-bar{background-color:#222;border-right:1px solid #444;height:100%;left:0;margin:0;padding:0;position:fixed;text-align:center;top:0;-webkit-transition:left .2s ease-in;-o-transition:left .2s ease-in;transition:left .2s ease-in;width:17.5em;z-index:50}#ui-bar.stowed{left:-15.5em}#ui-bar-tray{position:absolute;top:.2em;left:0;right:0}#ui-bar-body{height:calc(100% - 2.5em);line-height:1.5;margin:2.5em 0;overflow:auto;padding:0 1.5em}#ui-bar.stowed #ui-bar-body,#ui-bar.stowed #ui-bar-history{visibility:hidden;-webkit-transition:visibility .2s step-end;-o-transition:visibility .2s step-end;transition:visibility .2s step-end}#ui-bar a{text-decoration:none}#ui-bar hr{border-color:#444}#ui-bar-tray button{color:#eee;background-color:transparent;border:1px solid #444}#ui-bar-tray button:hover{background-color:#444;border-color:#eee}#ui-bar-tray button:disabled{color:#444;background-color:transparent;border-color:#444}button#ui-bar-toggle{border-right:none;position:absolute;right:0;top:0}#ui-bar-history{margin:0 auto}#ui-bar-history button:not(:first-child){margin-left:1.2em}#ui-bar-body>:not(:first-child){margin-top:2em}#story-title{margin:0;font-size:162.5%}#story-author{margin-top:2em;font-weight:700}#menu ul{margin:1em 0 0;padding:0;list-style:none;border:1px solid #444}#menu ul:empty{display:none}#menu li{margin:0}#menu li:not(:first-child){border-top:1px solid #444}#menu li a{display:block;padding:.25em .75em;border:1px solid transparent;color:#eee;text-transform:uppercase}#menu li a:hover{background-color:#444;border-color:#eee}#menu a,#ui-bar-tray button{-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none}#menu-core li[id|=menu-item] a::before,#ui-bar-tray button::before{font-family:sc-icons!important;font-style:normal;font-weight:400;font-variant:normal;line-height:1;speak:never;text-rendering:auto;text-transform:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}#ui-bar-tray button::before{display:block;font-size:1.1em;width:1em}#ui-bar-toggle::before{content:"\f053"}#ui-bar.stowed #ui-bar-toggle::before{content:"\f054"}#ui-bar-tray #history-backward::before{content:"\f060"}#ui-bar-tray #history-jumpto::before{content:"\f0e7"}#ui-bar-tray #history-forward::before{content:"\f061"}#menu-item-continue a::before,#menu-item-restart a::before,#menu-item-saves a::before,#menu-item-settings a::before,#menu-item-share a::before{margin-right:.35em}#menu-item-continue a::before{content:"\f04b"}#menu-item-saves a::before{content:"\f0c7"}#menu-item-settings a::before{content:"\f013"}#menu-item-restart a::before{content:"\f011"}#menu-item-share a::before{content:"\f1e0"}@media (prefers-reduced-motion:reduce){#story{-webkit-transition:margin-left 0s;-o-transition:margin-left 0s;transition:margin-left 0s}#ui-bar{-webkit-transition:left 0s;-o-transition:left 0s;transition:left 0s}}</style>
-<style id="style-ui-debug-bar" type="text/css">#debug-bar{background-color:#222;border-left:1px solid #444;border-top:1px solid #444;bottom:0;margin:0;max-height:95%;max-width:66em;min-width:300px;padding:.5em;position:fixed;right:0;z-index:99900}#debug-bar>div:not([id])+div{margin-top:.5em}#debug-bar>div>label{margin-right:.5em}#debug-bar>div>input[type=text]{min-width:8em;width:14em}#debug-bar>div>select{width:22em}#debug-bar-toggle{color:#eee;background-color:#222;border:1px solid #444;height:calc(100% + 1px);left:calc(-2em - 1px);position:absolute;top:-1px;width:2em}#debug-bar-toggle:hover{background-color:#333;border-color:#eee}#debug-bar-hint{bottom:.75em;font-size:4.5em;opacity:.33;pointer-events:none;position:fixed;right:.6em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;white-space:nowrap}#debug-bar-watch{background-color:#222;border-left:1px solid #444;border-top:1px solid #444;bottom:calc(100% + 1px);font-size:.9em;left:-1px;max-height:280%;max-height:calc(95vh - 100%);position:absolute;overflow-x:hidden;overflow-y:scroll;right:0;z-index:99800}#debug-bar-watch[hidden]{display:none}#debug-bar-watch div{color:#999;font-style:italic;margin:1em auto;text-align:center}#debug-bar-watch table{width:100%}#debug-bar-watch tr:nth-child(2n){background-color:rgba(127,127,127,.15)}#debug-bar-watch td{padding:.2em 0}#debug-bar-watch td:first-child+td{padding:.2em .3em .2em .1em}#debug-bar-watch .watch-delete{background-color:transparent;border:none;color:#c00}#debug-bar-watch-all,#debug-bar-watch-clear{margin-left:.5em}#debug-bar-views-toggle,#debug-bar-watch-toggle{color:#eee;background-color:transparent;border:1px solid #444;margin-right:1em;padding:.4em}#debug-bar-views-toggle:hover,#debug-bar-watch-toggle:hover{background-color:#333;border-color:#eee}#debug-bar-watch:not([hidden])~div #debug-bar-watch-toggle,html[data-debug-view] #debug-bar-views-toggle{background-color:#282;border-color:#4a4}#debug-bar-watch:not([hidden])~div #debug-bar-watch-toggle:hover,html[data-debug-view] #debug-bar-views-toggle:hover{background-color:#4a4;border-color:#6c6}#debug-bar-hint::after,#debug-bar-passage-play::before,#debug-bar-toggle::before,#debug-bar-views-toggle::after,#debug-bar-watch .watch-delete::before,#debug-bar-watch-add::before,#debug-bar-watch-all::before,#debug-bar-watch-clear::before,#debug-bar-watch-toggle::after{font-family:sc-icons!important;font-style:normal;font-weight:400;font-variant:normal;line-height:1;speak:never;text-rendering:auto;text-transform:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}#debug-bar-toggle::before{content:"\f188"}#debug-bar-hint::after{content:"\f188\202f\f061"}#debug-bar-watch .watch-delete::before{content:"\f00d"}#debug-bar-watch-add::before{content:"\f067"}#debug-bar-watch-all::before{content:"\f0d0"}#debug-bar-watch-clear::before{content:"\f2ed"}#debug-bar-views-toggle::after,#debug-bar-watch-toggle::after{content:"\f204";margin-left:.35em}#debug-bar-watch:not([hidden])~div #debug-bar-watch-toggle::after,html[data-debug-view] #debug-bar-views-toggle::after{content:"\f205"}#debug-bar-passage-play::before{content:"\f04b"}</style>
+<style id="style-ui-debug-bar" type="text/css">#debug-bar{background-color:#222;border:1px solid #444;border-radius:10px 0 0 10px;top:.75em;bottom:auto;box-shadow:0 10px 24px rgba(0,0,0,.45);left:auto;margin:0;max-height:calc(100vh - 1.25em);max-width:min(66em,calc(100vw - 1.25em));min-width:280px;overflow:auto;padding:.5em;position:fixed;right:.75em;z-index:2147483647;transform:translateZ(0)}#debug-bar>div:not([id])+div{margin-top:.5em}#debug-bar>div>label{margin-right:.5em}#debug-bar>div>input[type=text]{min-width:8em;width:14em}#debug-bar>div>select{width:22em}#debug-bar-toggle{color:#eee;background-color:#222;border:1px solid #444;height:calc(100% + 1px);left:calc(-2em - 1px);position:absolute;top:-1px;width:2em}#debug-bar-toggle:hover{background-color:#333;border-color:#eee}#debug-bar-hint{top:1em;bottom:auto;font-size:4.5em;opacity:.33;pointer-events:none;position:fixed;right:.9em;-webkit-user-select:none;-moz-user-select:none;-ms-user-select:none;user-select:none;white-space:nowrap}#debug-bar-watch{background-color:#222;border:1px solid #444;border-radius:10px 10px 0 0;top:calc(100% + .25em);bottom:auto;box-shadow:0 10px 24px rgba(0,0,0,.45);font-size:.9em;left:auto;max-height:280%;max-height:calc(95vh - 100%);overflow-x:hidden;overflow-y:scroll;position:absolute;right:0;z-index:99800}#debug-bar-watch[hidden]{display:none}#debug-bar-watch div{color:#999;font-style:italic;margin:1em auto;text-align:center}#debug-bar-watch table{width:100%}#debug-bar-watch tr:nth-child(2n){background-color:rgba(127,127,127,.15)}#debug-bar-watch td{padding:.2em 0}#debug-bar-watch td:first-child+td{padding:.2em .3em .2em .1em}#debug-bar-watch .watch-delete{background-color:transparent;border:none;color:#c00}#debug-bar-watch-all,#debug-bar-watch-clear{margin-left:.5em}#debug-bar-views-toggle,#debug-bar-watch-toggle{color:#eee;background-color:transparent;border:1px solid #444;margin-right:1em;padding:.4em}#debug-bar-views-toggle:hover,#debug-bar-watch-toggle:hover{background-color:#333;border-color:#eee}#debug-bar-watch:not([hidden])~div #debug-bar-watch-toggle,html[data-debug-view] #debug-bar-views-toggle{background-color:#282;border-color:#4a4}#debug-bar-watch:not([hidden])~div #debug-bar-watch-toggle:hover,html[data-debug-view] #debug-bar-views-toggle:hover{background-color:#4a4;border-color:#6c6}#debug-bar-hint::after,#debug-bar-passage-play::before,#debug-bar-toggle::before,#debug-bar-views-toggle::after,#debug-bar-watch .watch-delete::before,#debug-bar-watch-add::before,#debug-bar-watch-all::before,#debug-bar-watch-clear::before,#debug-bar-watch-toggle::after{font-family:sc-icons!important;font-style:normal;font-weight:400;font-variant:normal;line-height:1;speak:never;text-rendering:auto;text-transform:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}#debug-bar-toggle::before{content:"\f188"}#debug-bar-hint::after{content:"\f188\202f\f061"}#debug-bar-watch .watch-delete::before{content:"\f00d"}#debug-bar-watch-add::before{content:"\f067"}#debug-bar-watch-all::before{content:"\f0d0"}#debug-bar-watch-clear::before{content:"\f2ed"}#debug-bar-views-toggle::after,#debug-bar-watch-toggle::after{content:"\f204";margin-left:.35em}#debug-bar-watch:not([hidden])~div #debug-bar-watch-toggle::after,html[data-debug-view] #debug-bar-views-toggle::after{content:"\f205"}#debug-bar-passage-play::before{content:"\f04b"}</style>
 <style id="style-ui-debug-views" type="text/css">html[data-debug-view] .debug{padding:.25em;background-color:#234}html[data-debug-view] .debug[title]{cursor:help}html[data-debug-view] .debug.block{display:inline-block;vertical-align:middle}html[data-debug-view] .debug.invalid{text-decoration:line-through}html[data-debug-view] .debug.hidden,html[data-debug-view] .debug.hidden .debug{background-color:#555}html:not([data-debug-view]) .debug.hidden{display:none}html[data-debug-view] .debug[data-name][data-type].nonvoid::after,html[data-debug-view] .debug[data-name][data-type]::before{background-color:rgba(0,0,0,.25);font-family:monospace,monospace;white-space:pre}html[data-debug-view] .debug[data-name][data-type]::before{content:attr(data-name)}html[data-debug-view] .debug[data-name][data-type|=macro]::before{content:"<<" attr(data-name) ">>"}html[data-debug-view] .debug[data-name][data-type|=macro].nonvoid::after{content:"<</" attr(data-name) ">>"}html[data-debug-view] .debug[data-name][data-type|=html]::before{content:"<" attr(data-name) ">"}html[data-debug-view] .debug[data-name][data-type|=html].nonvoid::after{content:"</" attr(data-name) ">"}html[data-debug-view] .debug[data-name][data-type]:not(:empty)::before{margin-right:.25em}html[data-debug-view] .debug[data-name][data-type].nonvoid:not(:empty)::after{margin-left:.25em}html[data-debug-view] .debug[data-name][data-type|=special],html[data-debug-view] .debug[data-name][data-type|=special]::before{display:block}</style>
 </head>
 <body>
@@ -138,28 +138,41 @@ body {
 
     position: relative;
     overflow: hidden;
+    box-sizing: border-box;
+    padding: clamp(1rem, 3vw, 3rem);
 
     display: flex;
-    align-items: flex-end;
-    justify-content: center;
+    align-items: center;
+    justify-content: flex-start;
 
     background-color: black; /* important for letterboxing */
+    background-size: 0 0 !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
 }
 
 /* TRUE BACKGROUND LAYER */
 .fullscreen::before {
     content: "";
     position: absolute;
-    inset: 0;
+    inset: 0 0 0 clamp(430px, 42vw, 620px);
 
     background-size: contain;        /* 👈 KEY FIX (no cropping) */
+    background-color: black;
     background-repeat: no-repeat;
-    background-position: center;     /* centered image */
+    background-position: center center;     /* centered image */
 
     z-index: 0;
 
     /* image is injected via inline style, so we "inherit" it */
     background-image: inherit;
+}
+
+/* Hide SugarCube line breaks generated from passage formatting. */
+#passage > br,
+.passage > br,
+.fullscreen > br {
+    display: none;
 }
 
 /* ======================================
@@ -176,15 +189,32 @@ body {
     padding: 1.2rem 1.6rem;
     border-radius: 10px;
 
-    width: min(900px, 92vw);
-    max-height: 75vh;
+    width: min(560px, 44vw);
+    max-height: 86vh;
     overflow-y: auto;
 
-    font-size: 14px;
+    font-size: 24px;
     line-height: 1.6;
 
     border: 1px solid rgba(255,255,255,0.08);
     backdrop-filter: blur(6px);
+}
+
+@media screen and (max-width: 780px) {
+    .fullscreen {
+        align-items: flex-end;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .fullscreen::before {
+        inset: 0;
+    }
+
+    .fullscreen .text-box {
+        width: min(900px, 92vw);
+        max-height: 52vh;
+    }
 }
 
 /* ======================================
@@ -195,6 +225,10 @@ body {
     margin: 0.9em 0;
 }
 
+.fullscreen .identity-title {
+    font-size: 1.15em;
+}
+
 /* ======================================
    CHOICES (IMPORTANT FIX)
    ====================================== */
@@ -202,13 +236,106 @@ body {
 a.link-internal {
     display: block;
     margin: 0.6em 0;
+}
+
+.start-cover {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.start-cover::before {
+    inset: -10px;
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px) brightness(0.35) saturate(0.9);
+    transform: scale(1.04);
+}
+
+.start-cover .text-box {
+    width: min(760px, 92vw);
+    max-width: 760px;
+    text-align: center;
+    background: rgba(8, 10, 13, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.35);
+}
+
+.start-cover .text-box::before {
+    content: "";
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 1rem;
+    border-radius: 18px;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.18)),
+        url('assets/img/banner.jpg') center/cover no-repeat;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+.start-cover .start-cover-title {
+    margin-top: 0;
+    margin-bottom: 0.35em;
+    font-size: 1.2em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.start-cover .start-cover-link {
+    display: inline-block;
+    margin-top: 0.6em;
+    padding: 0.55em 0.9em;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.start-cover .start-cover-link:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.intermezzo-cover {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.intermezzo-cover::before {
+    inset: -10px;
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px) brightness(0.35) saturate(0.9);
+    transform: scale(1.04);
+}
+
+.intermezzo-cover .text-box {
+    width: min(860px, 92vw);
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+    background: rgba(8, 10, 13, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.35);
+}
+
+.intermezzo-cover .text-box p,
+.intermezzo-cover .text-box a {
+    text-align: center;
 }</style><script role="script" id="twine-user-script" type="text/twine-javascript">$(document).on(':passageend', function () {
+    $(".fullscreen .text-box br").replaceWith(" ");
+
     // OPTIONAL SAFE CLEANUP ONLY
     // removes empty text nodes that sometimes appear
     $("#passage").contents().filter(function () {
         return this.nodeType === 3 && !this.nodeValue.trim();
     }).remove();
-});</script><tw-passagedata pid="1" name="Start" tags="" position="1625,850" size="100,100">&lt;p&gt;
+});</script><tw-passagedata pid="1" name="Start" tags="" position="1625,850" size="100,100">&lt;div class=&quot;fullscreen start-cover&quot; style=&quot;background-image:url(&#39;assets/img/banner.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
+
+&lt;p class=&quot;start-cover-title&quot;&gt;&lt;strong&gt;ODD.Me&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;
 Fuori le strade si stanno già riempiendo.
 &lt;/p&gt;
 
@@ -220,13 +347,16 @@ C&#39;è chi corre verso il lavoro, chi sta tornando a casa, chi cerca semplicem
 È mattina, un nuovo giorno. Ancora.
 &lt;/p&gt;
 
-[[Inizia-&gt;InitLoop]]
+&lt;p class=&quot;start-cover-link&quot;&gt;[[Inizia-&gt;InitLoop]]&lt;/p&gt;
+
+&lt;/div&gt;
+&lt;/div&gt;
 </tw-passagedata><tw-passagedata pid="2" name="Risveglio" tags="" position="1800,600" size="200,200">&lt;&lt;if $loop is 1&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_1.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
-&lt;p&gt;I. La Turista&lt;/p&gt;
+&lt;p class=&quot;identity-title&quot;&gt;&lt;strong&gt;I. La Turista&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;
 La sveglia suona alle 7:00.
@@ -266,7 +396,7 @@ Ma è anche l&#39;ultima.
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/studente_lavoratore/studente_lavoratore_1.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
-&lt;p&gt;II. Lo Studente Lavoratore&lt;/p&gt;
+&lt;p class=&quot;identity-title&quot;&gt;&lt;strong&gt;II. Lo Studente Lavoratore&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;
 La sveglia delle 7:00 interrompe un sonno leggero e frammentato.
@@ -310,7 +440,7 @@ Qualunque scelta farai oggi, qualcosa resterà indietro.
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/anziano/anziano_1.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
-&lt;p&gt;III. L&#39;Anziano&lt;/p&gt;
+&lt;p class=&quot;identity-title&quot;&gt;&lt;strong&gt;III. L&#39;Anziano&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;
 Sono le sette.
@@ -353,7 +483,7 @@ Tu stai ancora cercando il ritmo giusto per iniziare.
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/lavoratore_precario/lavoratore_precario_1.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
-&lt;p&gt;IV. Il Lavoratore Precario&lt;/p&gt;
+&lt;p class=&quot;identity-title&quot;&gt;&lt;strong&gt;IV. Il Lavoratore Precario&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;
 Il telefono vibra ancora prima che suoni la sveglia.
@@ -399,7 +529,7 @@ Le necessità dall&#39;altra.
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/migrante/migrante_1.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
-&lt;p&gt;V. La Migrante&lt;/p&gt;
+&lt;p class=&quot;identity-title&quot;&gt;&lt;strong&gt;V. La Migrante&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;
 La stanza è piccola, ma ordinata.
@@ -440,7 +570,7 @@ Speri di riuscire a trovare la strada giusta.
 &lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/senzatetto/senzatetto_1.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
-&lt;p&gt;VI. Il Senzatetto&lt;/p&gt;
+&lt;p class=&quot;identity-title&quot;&gt;&lt;strong&gt;VI. Il Senzatetto&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;
 A svegliarti non è una sveglia.
@@ -491,7 +621,7 @@ Ricordi vagamente che le Poste non sono lontane.
 &lt;&lt;update &quot;energy&quot; -5&gt;&gt;
 &lt;&lt;update &quot;money&quot; -5&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/bus/bus.jpg&#39;)&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/turista/turista_2.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -1596,7 +1726,7 @@ Indipendentemente da come finisce oggi.
 &lt;/div&gt;
 &lt;/div&gt;
 
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="Intermezzo" tags="" position="2300,900" size="200,200">&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/intermezzo.jpg&#39;)&quot;&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="8" name="Intermezzo" tags="" position="2300,900" size="200,200">&lt;div class=&quot;fullscreen intermezzo-cover&quot; style=&quot;background-image:url(&#39;assets/img/banner.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;&lt;if $loop == 1&gt;&gt;
@@ -1691,8 +1821,6 @@ Bologna è una delle città con il maggior numero di persone in condizione di es
 
 &lt;&lt;/if&gt;&gt;
 
-&lt;/div&gt;
-
 &lt;&lt;if $loop &lt; 6&gt;&gt;
 &lt;&lt;set $loop += 1&gt;&gt;
 [[Continua-&gt;InitLoop]]
@@ -1701,7 +1829,9 @@ Bologna è una delle città con il maggior numero di persone in condizione di es
 &lt;&lt;/if&gt;&gt;
 
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="9" name="Epilogo" tags="" position="1800,1000" size="200,200">&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/epilogo.jpg&#39;)&quot;&gt;
+
+&lt;/div&gt;
+</tw-passagedata><tw-passagedata pid="9" name="Epilogo" tags="" position="1800,1000" size="200,200">&lt;div class=&quot;fullscreen&quot; style=&quot;background-image:url(&#39;assets/img/banner.jpg&#39;)&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -2035,6 +2165,12 @@ Poi anche l’immobilità smette di essere una scelta e diventa solo uno stato t
 
   function buildHUD(){
     if(document.getElementById(&#39;odd-hud&#39;)) return;
+    if(!document.getElementById(&#39;odd-hud-style&#39;)){
+      var style = document.createElement(&#39;style&#39;);
+      style.id = &#39;odd-hud-style&#39;;
+      style.textContent = &#39;#odd-hud{position:fixed;top:12px;right:12px;z-index:2147483647;pointer-events:none;}#odd-hud-inner{display:flex;flex-direction:row;align-items:center;gap:14px;padding:10px 18px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-radius:999px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 8px 30px rgba(0,0,0,0.25);} .odd-cell{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:48px;position:relative;} .odd-lbl{font-size:9px;color:rgba(255,255,255,0.55);letter-spacing:0.05em;text-align:center;} .odd-lbl-low{color:#ff8a8a;} .odd-delta{position:absolute;top:-10px;right:0;font-size:11px;font-weight:700;color:#fff;animation:odd-pop 0.9s ease forwards;}@keyframes odd-pop{0%{opacity:0;transform:translateY(0) scale(0.7)}40%{opacity:1;transform:translateY(-8px) scale(1.1)}100%{opacity:0;transform:translateY(-18px) scale(1)}}.odd-shake{animation:odd-shake 0.45s ease;}@keyframes odd-shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-4px)}40%{transform:translateX(4px)}60%{transform:translateX(-2px)}80%{transform:translateX(2px)}}&#39;;
+      document.head.appendChild(style);
+    }
     var hud = document.createElement(&#39;div&#39;);
     hud.id = &#39;odd-hud&#39;;
     var inner = document.createElement(&#39;div&#39;);
@@ -2183,7 +2319,9 @@ Poi anche l’immobilità smette di essere una scelta e diventa solo uno stato t
 
 &lt;&lt;/if&gt;&gt;
 
-&lt;&lt;goto &quot;Risveglio&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="BusAdattivo" tags="" position="2275,250" size="100,100">&lt;&lt;update &quot;control&quot; -8&gt;&gt;
+&lt;&lt;goto &quot;Risveglio&quot;&gt;&gt;</tw-passagedata><tw-passagedata pid="18" name="BusAdattivo" tags="" position="2275,250" size="100,100">
+
+&lt;&lt;update &quot;control&quot; -8&gt;&gt;
 &lt;&lt;update &quot;attention&quot; 5&gt;&gt;
 &lt;&lt;update &quot;energy&quot; 5&gt;&gt;
 
@@ -2237,7 +2375,14 @@ Capire gli altri è spesso il modo più sicuro per capire cosa sta succedendo.
 Quando il bus rallenta alla fermata successiva, ti senti leggermente meno teso di prima.
 &lt;/p&gt;
 
-[[Continuare-&gt;Poste]]</tw-passagedata><tw-passagedata pid="19" name="BusControllo" tags="" position="2425,200" size="100,100">&lt;&lt;update &quot;control&quot; 8&gt;&gt;
+[[Continuare-&gt;Poste]]
+
+&lt;/div&gt;
+&lt;aside class=&quot;image-placeholder&quotgt;Immagine del passaggio a destra&lt;/aside&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="19" name="BusControllo" tags="" position="2425,200" size="100,100">&lt;div class=&quot;fullscreen derived-scene&quot;&gt;
+&lt;div class=&quot;text-box&quotgt;
+
+&lt;&lt;update &quot;control&quot; 8&gt;&gt;
 &lt;&lt;update &quot;energy&quot; -8&gt;&gt;
 &lt;&lt;update &quot;attention&quot; -5&gt;&gt;
 
@@ -2294,7 +2439,11 @@ Quando il bus rallenta, hai la sensazione di avere ancora il controllo della sit
 Anche se mantenere quel controllo richiede energia.
 &lt;/p&gt;
 
-[[Continuare-&gt;Poste]]</tw-passagedata><tw-passagedata pid="20" name="BusStudio" tags="" position="2575,175" size="100,100">&lt;&lt;if $time &gt;= 55&gt;&gt;
+[[Continuare-&gt;Poste]]
+
+&lt;/div&gt;
+&lt;aside class=&quot;image-placeholder&quotgt;Immagine del passaggio a destra&lt;/aside&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="BusStudio" tags="" position="2575,175" size="100,100">&lt;&lt;if $time &gt;= 55&gt;&gt;
 
 &lt;div class=&quot;text-box&quot;&gt;
 
@@ -2349,7 +2498,10 @@ In questo momento la preoccupazione occupa più spazio dello studio.
 
 &lt;/div&gt;
 
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="BusLavoro" tags="" position="2725,200" size="100,100">&lt;p&gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="BusLavoro" tags="" position="2725,200" size="100,100">&lt;div class=&quot;fullscreen derived-scene&quot;&gt;
+&lt;div class=&quot;text-box&quotgt;
+
+&lt;p&gt;
 Appena trovi un momento di silenzio, la mente torna al lavoro.
 &lt;/p&gt;
 
@@ -2391,7 +2543,13 @@ Ma la sensazione di essere in ritardo è rimasta.
 &lt;/p&gt;
 
 [[Continuare-&gt;Poste]]
-</tw-passagedata><tw-passagedata pid="22" name="BusDisconnessione" tags="" position="2875,250" size="100,100">&lt;&lt;update &quot;energy&quot; 8&gt;&gt;
+
+&lt;/div&gt;
+&lt;aside class=&quot;image-placeholder&quot;&gt;Immagine del passaggio a destra&lt;/aside&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="BusDisconnessione" tags="" position="2875,250" size="100,100">&lt;div class=&quot;fullscreen derived-scene&quot;&gt;
+&lt;div class=&quot;text-box&quotgt;
+
+&lt;&lt;update &quot;energy&quot; 8&gt;&gt;
 &lt;&lt;update &quot;attention&quot; -8&gt;&gt;
 &lt;&lt;update &quot;time&quot; -5&gt;&gt;
 
@@ -2421,7 +2579,14 @@ Le responsabilità restano dove le hai lasciate e continuano ad aspettarti.
 Ma per un breve momento hai smesso di rincorrerle.
 &lt;/p&gt;
 
-[[Continuare-&gt;Poste]]</tw-passagedata><tw-passagedata pid="23" name="PosteAdattivo" tags="" position="3150,200" size="100,100">&lt;p&gt;
+[[Continuare-&gt;Poste]]
+
+&lt;/div&gt;
+&lt;aside class=&quot;image-placeholder&quotgt;Immagine del passaggio a destra&lt;/aside&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="23" name="PosteAdattivo" tags="" position="3150,200" size="100,100">&lt;div class=&quot;fullscreen derived-scene&quot;&gt;
+&lt;div class=&quot;text-box&quotgt;
+
+&lt;p&gt;
 Smetti di cercare di capire ogni dettaglio.
 Per il momento basta seguire il ritmo della fila.
 &lt;/p&gt;
@@ -2486,7 +2651,14 @@ Quando la fila finalmente avanza, ti accorgi che il tempo è passato comunque.
 Hai consumato meno attenzione nel cercare di controllare tutto, ma hai lasciato che fossero gli altri a guidare parte delle tue scelte.
 &lt;/p&gt;
 
-[[Continuare-&gt;Supermercato]]</tw-passagedata><tw-passagedata pid="24" name="PosteControllo" tags="" position="3325,225" size="100,100">&lt;p&gt;
+[[Continuare-&gt;Supermercato]]
+
+&lt;/div&gt;
+&lt;aside class=&quot;image-placeholder&quotgt;Immagine del passaggio a destra&lt;/aside&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="24" name="PosteControllo" tags="" position="3325,225" size="100,100">&lt;div class=&quot;fullscreen derived-scene&quot;&gt;
+&lt;div class=&quot;text-box&quotgt;
+
+&lt;p&gt;
 Cerchi di capire come funziona il sistema invece di limitarti ad aspettare.
 &lt;/p&gt;
 
@@ -2561,7 +2733,10 @@ Ma ti permette di sentirti meno trascinato dagli eventi.
 &lt;/p&gt;
 
 [[Continuare-&gt;Supermercato]]
-</tw-passagedata><tw-passagedata pid="25" name="PosteTempo" tags="" position="3475,300" size="100,100">&lt;&lt;update &quot;time&quot; -10&gt;&gt;
+
+&lt;/div&gt;
+&lt;aside class=&quot;image-placeholder&quot;&gt;Immagine del passaggio a destra&lt;/aside&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="PosteTempo" tags="" position="3475,300" size="100,100">&lt;&lt;update &quot;time&quot; -10&gt;&gt;
 &lt;&lt;update &quot;attention&quot; -8&gt;&gt;
 &lt;&lt;update &quot;energy&quot; -5&gt;&gt;
 

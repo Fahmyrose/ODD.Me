@@ -1,0 +1,3583 @@
+:: StoryTitle
+ODD.Me
+
+
+:: StoryData
+{
+  "ifid": "C6FF98E4-D592-41F5-A665-66023F767B96",
+  "format": "SugarCube",
+  "format-version": "2.37.3",
+  "start": "Start",
+  "zoom": 0.6
+}
+
+
+:: AnzianoLento {"position":"1550,350","size":"100,100"}
+<<update "energy" -8>>
+<<update "time" -12>>
+<<update "attention" 8>>
+
+<div class="fullscreen" style="background-image:url('assets/img/anziano/anziano_1.jpg')">
+<div class="text-box">
+
+<p>
+Il corpo si sveglia prima della volontà.
+Ogni movimento arriva con un ritardo minimo, come se dovesse essere negoziato.
+</p>
+
+<p>
+Ti alzi senza fretta, non per scelta ma perché accelerare non è un’opzione reale.
+Le abitudini guidano i gesti uno dopo l’altro: sedersi, attendere, controllare, ricordare.
+</p>
+
+<p>
+Il tempo non è uniforme.
+Si addensa nei movimenti più semplici, si dilata tra una cosa e l’altra.
+</p>
+
+<p>
+Fuori, la giornata ha già iniziato a correre.
+Dentro, tutto procede a un ritmo diverso.
+</p>
+
+[[Esci di casa->Bus]]
+
+</div>
+</div>
+
+
+
+:: Bus {"position":"2300,575","size":"200,200"}
+<<if $loop is 1>>
+
+<<update "time" -8>>
+<<update "energy" -5>>
+<<update "money" -5>>
+
+<div class="fullscreen" style="background-image:url('assets/img/turista/turista_2.jpg')">
+<div class="text-box">
+
+<p>
+L’autobus arriva già affollato.
+Stringi il pacco che vuoi spedire e sali insieme a molte altre persone che stanno andando al lavoro.
+</p>
+
+<<if $attention < 70>>
+
+<p>
+Tiri fuori il telefono per controllare il percorso.
+Una persona sbuffa mentre occupi per qualche secondo il passaggio.
+Qualcun altro ti supera senza guardarti.
+</p>
+
+<p>
+Per la prima volta da quando sei arrivata ti senti meno ospite e più intrusa.
+</p>
+
+<<update "control" -8>>
+
+<<else>>
+
+<p>
+Trovi posto vicino alla porta e controlli il tragitto sul telefono.
+Le fermate iniziano ad avere un senso.
+</p>
+
+<<update "control" 5>>
+
+<</if>>
+
+<p>
+Devi capire come raggiungere le Poste.
+</p>
+
+[[Chiedere informazioni a qualcuno->BusAdattivo]]
+[[Controllare il percorso da sola->BusControllo]]
+
+</div>
+</div>
+
+<<elseif $loop is 2>>
+
+<div class="fullscreen" style="background-image:url('assets/img/studente_lavoratore/studente_lavoratore_2.jpg')">
+<div class="text-box">
+
+<p>
+Controlli l'orario appena sali sul bus.
+Hai già fatto il calcolo tre volte.
+</p>
+
+<p>
+Se il traffico aumenta rischi di collegarti tardi al lavoro.
+Se il lavoro si prolunga rischi di arrivare stanco all’esame.
+</p>
+
+<<if $attention < 70>>
+
+<p>
+Apri gli appunti ma continui a controllare l'ora.
+Non riesci a concentrarti davvero su nulla.
+</p>
+
+<<update "time" -8>>
+
+<<else>>
+
+<p>
+Per qualche fermata riesci a ignorare tutto il resto e concentrarti su una sola cosa alla volta.
+</p>
+
+<<update "control" 5>>
+
+<</if>>
+
+<p>
+Come usi questo tragitto?
+</p>
+
+<<if $time >= 55>>
+[[Ripassare per l’esame->BusStudio]]
+<</if>>
+
+[[Controllare il lavoro e le scadenze->BusLavoro]]
+
+</div>
+</div>
+
+<<elseif $loop is 3>>
+
+<div class="fullscreen" style="background-image:url('assets/img/anziano/anziano_2.jpg')">
+<div class="text-box">
+
+<p>
+L’autobus frena bruscamente mentre stai ancora cercando di sederti.
+</p>
+
+<<if $control < 50>>
+
+<p>
+I posti sono quasi tutti occupati.
+Ti guardi intorno senza sapere se chiedere aiuto o restare in piedi.
+</p>
+
+<p>
+Nessuno sembra accorgersi della tua esitazione.
+</p>
+
+<<update "attention" -8>>
+<<update "money" -8>>
+
+<<else>>
+
+<p>
+Trovi un posto libero e il viaggio diventa più semplice.
+</p>
+
+<</if>>
+
+<p>
+Come affronti il tragitto?
+</p>
+
+[[Aspettare che qualcuno ti aiuti->BusAdattivo]]
+[[Gestire tutto da solo->BusControllo]]
+
+</div>
+</div>
+
+<<elseif $loop is 4>>
+
+<div class="fullscreen" style="background-image:url('assets/img/lavoratore_precario/lavoratore_precario_2.jpg')">
+<div class="text-box">
+
+<p>
+Controlli i messaggi di lavoro appena sali.
+Nessuna nuova comunicazione.
+Per ora.
+</p>
+
+<<if $time < 60>>
+
+<p>
+Sai che ogni ritardo potrebbe trasformarsi in un problema.
+Ogni minuto sembra già appartenere a qualcun altro.
+</p>
+
+<<update "attention" -8>>
+
+<<else>>
+
+<p>
+Per qualche fermata il telefono resta silenzioso.
+Non abbastanza da rilassarti davvero.
+</p>
+
+<</if>>
+
+<p>
+Come usi questo tempo?
+</p>
+
+<<if $money < 40>>
+[[Controllare continuamente il lavoro->BusLavoro]]
+<<else>>
+[[Provare a staccare la mente per qualche minuto->BusDisconnessione]]
+<</if>>
+
+</div>
+</div>
+
+<<elseif $loop is 5>>
+
+<div class="fullscreen" style="background-image:url('assets/img/migrante/migrante_2.jpg')">
+<div class="text-box">
+
+<p>
+I nomi delle fermate scorrono veloci.
+Molti cartelli sono ancora difficili da leggere.
+</p>
+
+<<if $attention < 40>>
+
+<p>
+Osservi attentamente le persone intorno a te.
+Forse qualcuno sta andando nella tua stessa direzione.
+</p>
+
+<<update "control" -8>>
+
+<<else>>
+
+<p>
+Confronti le fermate con il foglio che ti hanno dato al centro.
+Cerchi punti di riferimento che possano confermare il percorso.
+</p>
+
+<</if>>
+
+<p>
+Come scegli di orientarti?
+</p>
+
+[[Seguire gli altri->BusAdattivo]]
+[[Controllare ogni fermata personalmente->BusControllo]]
+
+</div>
+</div>
+
+<<elseif $loop is 6>>
+
+<div class="fullscreen" style="background-image:url('assets/img/senzatetto/senzatetto_2.jpg')">
+<div class="text-box">
+
+<<update "energy" -12>>
+<<update "attention" 10>>
+
+<p>
+Quando sali alcune persone evitano il contatto visivo.
+Altre controllano rapidamente dove ti siedi.
+</p>
+
+<p>
+Fingi di non accorgertene.
+Non è la prima volta.
+</p>
+
+<p>
+Hai bisogno di arrivare alle Poste prima che sia troppo tardi.
+</p>
+
+<<if $energy < 40>>
+[[Restare in silenzio e osservare->BusAdattivo]]
+<<else>>
+[[Rimanere vigile e pronto a reagire->BusControllo]]
+<</if>>
+
+</div>
+</div>
+
+<</if>>
+
+
+
+:: BusAdattivo {"position":"2275,250","size":"100,100"}
+<<if $loop is 1>>
+    <<set _bg = "assets/img/turista/turista_2.jpg">>
+
+<<elseif $loop is 2>>
+    <<set _bg = "assets/img/studente_lavoratore/studente_lavoratore_2.jpg">>
+
+<<elseif $loop is 3>>
+    <<set _bg = "assets/img/anziano/anziano_2.jpg">>
+
+<<elseif $loop is 4>>
+    <<set _bg = "assets/img/lavoratore_precario/lavoratore_precario_2.jpg">>
+
+<<elseif $loop is 5>>
+    <<set _bg = "assets/img/migrante/migrante_2.jpg">>
+
+<<elseif $loop is 6>>
+    <<set _bg = "assets/img/senzatetto/senzatetto_2.jpg">>
+<</if>>
+
+<<update "control" -8>>
+<<update "attention" 5>>
+<<update "energy" 5>>
+
+<div class="fullscreen" @style="'background-image:url(' + JSON.stringify(_bg) + ')'">
+<div class="text-box">
+
+<p>
+Smetti di cercare di controllare ogni dettaglio.
+</p>
+
+<p>
+Lasci che siano il movimento del bus, le fermate e le persone intorno a te a suggerirti come comportarti.
+Per qualche minuto non devi prendere decisioni continue.
+</p>
+
+<<if $loop is 1>>
+<p>
+Osservi gli altri passeggeri senza attirare l'attenzione.
+Cerchi di capire le abitudini della città imitandone il ritmo.
+</p>
+
+<<elseif $loop is 2>>
+<p>
+Metti da parte per un momento scadenze, esami e notifiche.
+Non scompaiono, ma smettono di occupare ogni pensiero.
+</p>
+
+<<elseif $loop is 3>>
+<p>
+Ti lasci guidare dall'esperienza accumulata negli anni.
+Non serve controllare tutto per sapere come muoversi.
+</p>
+
+<<elseif $loop is 4>>
+<p>
+Per una volta non provi a ottimizzare ogni minuto.
+Lasci semplicemente che il tragitto faccia il suo corso.
+</p>
+
+<<elseif $loop is 5>>
+<p>
+Osservi attentamente chi ti sta intorno.
+A volte le persone sono più facili da comprendere dei cartelli e delle indicazioni.
+</p>
+
+<<elseif $loop is 6>>
+<p>
+Resti in disparte e studi l'ambiente.
+Capire gli altri è spesso il modo più sicuro per capire cosa sta succedendo.
+</p>
+<</if>>
+
+<p>
+Quando il bus rallenta alla fermata successiva, ti senti leggermente meno teso di prima.
+</p>
+
+[[Continuare->Poste]]
+
+</div>
+</div>
+
+
+:: BusControllo {"position":"2425,200","size":"100,100"}
+<<if $loop is 1>>
+    <<set _bg = "assets/img/turista/turista_2.jpg">>
+
+<<elseif $loop is 2>>
+    <<set _bg = "assets/img/studente_lavoratore/studente_lavoratore_2.jpg">>
+
+<<elseif $loop is 3>>
+    <<set _bg = "assets/img/anziano/anziano_2.jpg">>
+
+<<elseif $loop is 4>>
+    <<set _bg = "assets/img/lavoratore_precario/lavoratore_precario_2.jpg">>
+
+<<elseif $loop is 5>>
+    <<set _bg = "assets/img/migrante/migrante_2.jpg">>
+
+<<elseif $loop is 6>>
+    <<set _bg = "assets/img/senzatetto/senzatetto_2.jpg">>
+<</if>>
+
+<<update "control" 8>>
+<<update "energy" -8>>
+<<update "attention" -5>>
+
+<div class="fullscreen" @style="'background-image:url(' + JSON.stringify(_bg) + ')'">
+<div class="text-box">
+
+<p>
+Decidi di restare concentrato sul tuo obiettivo.
+</p>
+
+<p>
+Controlli fermate, orari, persone che salgono e scendono.
+Cerchi continuamente conferme di essere sulla strada giusta.
+</p>
+
+<<if $loop is 1>>
+<p>
+Controlli più volte il percorso sul telefono.
+Non vuoi perdere tempo nell'ultimo giorno di viaggio.
+</p>
+
+<<elseif $loop is 2>>
+<p>
+Ripassi mentalmente gli impegni della giornata.
+Esame, lavoro, orari.
+Ogni cosa deve incastrarsi perfettamente.
+</p>
+
+<<elseif $loop is 3>>
+<p>
+Segui con attenzione ogni fermata.
+Perdere il punto di riferimento significherebbe dover ricominciare da capo.
+</p>
+
+<<elseif $loop is 4>>
+<p>
+Calcoli continuamente quanto tempo ti resta.
+Un ritardo qui potrebbe trasformarsi in un problema più avanti.
+</p>
+<<update "time" -5>>
+
+<<elseif $loop is 5>>
+<p>
+Confronti il nome delle fermate con gli appunti che hai preparato.
+Ogni dettaglio diventa importante quando hai paura di sbagliare strada.
+</p>
+
+<<elseif $loop is 6>>
+<p>
+Resti vigile.
+Sai che abbassare la guardia può avere conseguenze immediate.
+</p>
+<</if>>
+
+<p>
+Quando il bus rallenta, hai la sensazione di avere ancora il controllo della situazione.
+Anche se mantenere quel controllo richiede energia.
+</p>
+
+[[Continuare->Poste]]
+
+</div>
+</div>
+
+
+:: BusDisconnessione {"position":"2875,250","size":"100,100"}
+<<if $loop is 1>>
+    <<set _bg = "assets/img/turista/turista_2.jpg">>
+
+<<elseif $loop is 2>>
+    <<set _bg = "assets/img/studente_lavoratore/studente_lavoratore_2.jpg">>
+
+<<elseif $loop is 3>>
+    <<set _bg = "assets/img/anziano/anziano_2.jpg">>
+
+<<elseif $loop is 4>>
+    <<set _bg = "assets/img/lavoratore_precario/lavoratore_precario_2.jpg">>
+
+<<elseif $loop is 5>>
+    <<set _bg = "assets/img/migrante/migrante_2.jpg">>
+
+<<elseif $loop is 6>>
+    <<set _bg = "assets/img/senzatetto/senzatetto_2.jpg">>
+<</if>>
+
+<<update "energy" 8>>
+<<update "attention" -8>>
+<<update "time" -5>>
+
+<div class="fullscreen" @style="'background-image:url(' + JSON.stringify(_bg) + ')'">
+<div class="text-box">
+
+<p>
+Decidi di smettere, almeno per qualche minuto, di pensare a ciò che ti aspetta dopo.
+</p>
+
+<p>
+Metti via il telefono.
+Non controlli gli orari.
+Non fai calcoli.
+Non provi a risolvere problemi che ancora non esistono.
+</p>
+
+<p>
+Guardi fuori dal finestrino.
+Le persone attraversano la strada, aspettano al semaforo, entrano nei negozi.
+Per qualche fermata la giornata sembra appartenere a qualcun altro.
+</p>
+
+<p>
+La sensazione di sollievo dura poco.
+Le responsabilità restano dove le hai lasciate e continuano ad aspettarti.
+</p>
+
+<p>
+Ma per un breve momento hai smesso di rincorrerle.
+</p>
+
+[[Continuare->Poste]]
+
+</div>
+</div>
+
+
+:: BusLavoro {"position":"2725,200","size":"100,100"}
+<<if $loop is 1>>
+    <<set _bg = "assets/img/turista/turista_2.jpg">>
+
+<<elseif $loop is 2>>
+    <<set _bg = "assets/img/studente_lavoratore/studente_lavoratore_2.jpg">>
+
+<<elseif $loop is 3>>
+    <<set _bg = "assets/img/anziano/anziano_2.jpg">>
+
+<<elseif $loop is 4>>
+    <<set _bg = "assets/img/lavoratore_precario/lavoratore_precario_2.jpg">>
+
+<<elseif $loop is 5>>
+    <<set _bg = "assets/img/migrante/migrante_2.jpg">>
+
+<<elseif $loop is 6>>
+    <<set _bg = "assets/img/senzatetto/senzatetto_2.jpg">>
+<</if>>
+
+<<update "attention" -8>>
+<<update "control" -5>>
+
+<div class="fullscreen" @style="'background-image:url(' + JSON.stringify(_bg) + ')'">
+<div class="text-box">
+
+<p>
+Appena trovi un momento di silenzio, la mente torna al lavoro.
+</p>
+
+<p>
+Controlli notifiche, orari, possibili imprevisti.
+Cerchi di calcolare quanto tempo rimane, quanto denaro entrerà, cosa rischi di perdere se qualcosa va storto.
+</p>
+
+<p>
+Attorno a te le persone scorrono video, ascoltano musica o guardano fuori dal finestrino.
+Per loro il viaggio sembra una pausa.
+Per te è solo un altro spazio da riempire con preoccupazioni e decisioni.
+</p>
+
+<<if $loop is 2>>
+
+<p>
+L'esame continua a occupare un angolo della mente.
+Ogni minuto dedicato al lavoro sembra sottratto allo studio.
+Ogni minuto dedicato allo studio sembra sottratto al lavoro.
+</p>
+<</if>>
+
+<<if $loop is 4>>
+
+<p>
+Ti chiedi se il turno extra verrà confermato.
+Se il responsabile si ricorderà di te.
+Se la prossima settimana avrai abbastanza ore per coprire tutte le spese.
+</p>
+<</if>>
+
+<p>
+Quando alzi lo sguardo, il tragitto è quasi finito.
+Ma la sensazione di essere in ritardo è rimasta.
+</p>
+
+[[Continuare->Poste]]
+
+</div>
+<aside class="image-placeholder">Immagine del passaggio a destra</aside>
+</div>
+
+
+:: BusStudio {"position":"2575,175","size":"100,100"}
+<<if $loop is 1>>
+    <<set _bg = "assets/img/turista/turista_2.jpg">>
+
+<<elseif $loop is 2>>
+    <<set _bg = "assets/img/studente_lavoratore/studente_lavoratore_2.jpg">>
+
+<<elseif $loop is 3>>
+    <<set _bg = "assets/img/anziano/anziano_2.jpg">>
+
+<<elseif $loop is 4>>
+    <<set _bg = "assets/img/lavoratore_precario/lavoratore_precario_2.jpg">>
+
+<<elseif $loop is 5>>
+    <<set _bg = "assets/img/migrante/migrante_2.jpg">>
+
+<<elseif $loop is 6>>
+    <<set _bg = "assets/img/senzatetto/senzatetto_2.jpg">>
+<</if>>
+
+<<if $time >= 55>>
+
+<div class="fullscreen" @style="'background-image:url(' + JSON.stringify(_bg) + ')'">
+<div class="text-box">
+
+<p>
+Tiri fuori gli appunti e provi a rileggere gli ultimi argomenti.
+</p>
+
+<p>
+Il bus sobbalza ad ogni fermata.
+Le parole scorrono davanti agli occhi più lentamente del previsto.
+Alcuni concetti tornano subito alla mente, altri sembrano spariti durante la notte.
+</p>
+
+<p>
+Intorno a te le persone stanno andando al lavoro, a fare commissioni, a iniziare la propria giornata.
+Tu stai cercando di preparare un esame e lavorare nello stesso momento.
+</p>
+
+<p>
+Per qualche minuto riesci a concentrarti davvero.
+Non abbastanza da sentirti preparata, ma abbastanza da convincerti di non aver sprecato il viaggio.
+</p>
+
+<<update "control" 5>>
+<<update "attention" -5>>
+
+[[Chiudi gli appunti e continui il viaggio->Poste]]
+
+</div>
+
+<<else>>
+
+<div class="text-box">
+
+<p>
+Apri gli appunti ma le righe si confondono tra loro.
+</p>
+
+<p>
+Continui a leggere la stessa pagina senza riuscire a ricordare cosa hai appena visto.
+La mente torna continuamente alla videochiamata, al lavoro, agli orari, alle cose che potrebbero andare storte.
+</p>
+
+<p>
+Dopo qualche tentativo rimetti via tutto.
+In questo momento la preoccupazione occupa più spazio dello studio.
+</p>
+
+<<update "attention" -3>>
+
+[[Passi a pensare al lavoro->BusLavoro]]
+
+</div>
+
+<</if>>
+
+
+:: Epilogo {"position":"1800,1000","size":"200,200"}
+<div class="fullscreen" style="background-image:url('assets/img/banner.jpg')">
+<div class="text-box">
+
+<p>
+Hai attraversato la stessa città sei volte.
+</p>
+
+<p>
+Le strade erano le stesse.
+Gli autobus erano gli stessi.
+Le code, gli ostacoli, gli edifici, i passanti.
+</p>
+
+<p>
+Eppure ogni giornata è sembrata diversa.
+</p>
+
+<br>
+
+<p>
+Come turista, ti sei sentita fuori posto.
+</p>
+
+<p>
+Come studente lavoratore, non avevi abbastanza tempo.
+</p>
+
+<p>
+Come anziano, ogni spostamento richiedeva più energia.
+</p>
+
+<p>
+Come lavoratore precario, ogni imprevisto poteva trasformarsi in un problema economico.
+</p>
+
+<p>
+Come migrante, orientarsi era già una sfida.
+</p>
+
+<p>
+Come persona senza dimora, anche le scelte più semplici dipendevano da fattori fuori dal tuo controllo.
+</p>
+
+<br>
+
+<p>
+La città non è cambiata.
+</p>
+
+<p>
+Sono cambiate le condizioni da cui la osservavi.
+</p>
+
+<p>
+Sono cambiate le risorse disponibili.
+</p>
+
+<p>
+Sono cambiati i vincoli.
+</p>
+
+<br>
+
+<p>
+Per tutta la durata del percorso hai vissuto la stessa giornata.
+</p>
+
+<p>
+Sempre la stessa.
+</p>
+
+<p>
+Il <strong>13 novembre</strong>.
+</p>
+
+<br>
+
+<p>
+<strong>La Giornata Mondiale della Gentilezza.</strong>
+</p>
+
+<br>
+
+<p>
+Forse la gentilezza non consiste soltanto nell'essere educati.
+</p>
+
+<p>
+Forse consiste nel riconoscere che le persone che incontriamo stanno affrontando realtà che non possiamo vedere.
+</p>
+
+<p>
+Battaglie invisibili.
+Vincoli invisibili.
+Storie invisibili.
+</p>
+
+<br>
+
+<em>
+"Ogni persona che incontri sta combattendo una battaglia di cui non sai nulla.
+Sii gentile. Sempre."
+</em>- Platone
+
+<br>
+
+<p>
+Le città sono condivise.
+Le condizioni per attraversarle non lo sono.
+</p>
+
+<br>
+
+<p><strong>Fine.</strong></p>
+
+<br>
+
+[[Ricomincia->Start]]
+
+</div>
+</div>
+
+
+
+:: FineLoop {"position":"2750,900","size":"200,200"}
+<<if $loop == 1>>
+
+<div class="fullscreen" style="background-image:url('assets/img/turista/turista_0.jpg')">
+<div class="text-box">
+
+<p>
+La giornata finisce così come era iniziata: tra luoghi nuovi, indicazioni da seguire e scelte prese senza piena familiarità con la città.
+</p>
+
+<<if $control >= 75 && $control >= $attention>>
+<p>
+Hai costruito un senso di orientamento stabile.
+Le situazioni ti sono sembrate leggibili, quasi prevedibili.
+</p>
+
+<<elseif $attention >= 75 && $attention > $control>>
+<p>
+Sei rimasta in uno stato di osservazione costante.
+Hai visto molto, ma senza mai ridurre la soglia di vigilanza.
+</p>
+
+<<else>>
+<p>
+Hai attraversato la città seguendo più che guidando.
+Alcuni passaggi sono rimasti incerti.
+</p>
+<</if>>
+
+<p>
+Domani ripartirai.
+La città resterà la stessa — ma non per tutti allo stesso modo.
+</p>
+
+[[Continuare->Intermezzo]]
+
+</div>
+</div>
+
+
+<<elseif $loop == 2>>
+
+<div class="fullscreen" style="background-image:url('assets/img/studente_lavoratore/studente_lavoratore_0.jpg')">
+<div class="text-box">
+
+
+<p>
+La giornata si chiude senza una vera separazione tra ciò che hai fatto e ciò che resta da fare.
+</p>
+
+<<if $time < 50>>
+
+<p>
+Hai inseguito il tempo per tutto il giorno.
+Ogni scelta sembrava dover compensare un ritardo.
+</p>
+
+<<elseif $attention >= 70 && $attention > $control>>
+
+<p>
+Sei rimasto in uno stato di tensione costante.
+Ogni imprevisto sembrava potenzialmente critico.
+</p>
+
+<<else>>
+
+<p>
+Hai gestito i passaggi uno dopo l’altro.
+Ma senza mai davvero fermarti.
+</p>
+
+<</if>>
+
+<p>
+Domani ricomincerà lo stesso ciclo.
+Studio, lavoro, spostamenti, attese.
+</p>
+
+[[Continuare->Intermezzo]]
+
+</div>
+</div>
+
+
+<<elseif $loop == 3>>
+
+<div class="fullscreen" style="background-image:url('assets/img/anziano/anziano_0.jpg')">
+<div class="text-box">
+
+
+<p>
+La giornata si è sviluppata secondo un ritmo costante, fatto di pause e necessità.
+</p>
+
+<<if $energy < 45>>
+
+<p>
+Anche le azioni più semplici hanno richiesto sforzo.
+Il corpo ha definito i limiti del movimento.
+</p>
+
+<<elseif $control >= 70 && $control >= $attention>>
+
+<p>
+Hai mantenuto una struttura mentale stabile.
+Ogni passaggio è stato anticipato e controllato.
+</p>
+
+<<else>>
+
+<p>
+Hai seguito un ritmo conosciuto.
+Ogni passaggio era già in parte previsto.
+</p>
+
+<</if>>
+
+<p>
+Domani sarà simile.
+E proprio per questo richiederà ancora attenzione.
+</p>
+
+[[Continuare->Intermezzo]]
+
+</div>
+</div>
+
+
+<<elseif $loop == 4>>
+
+<div class="fullscreen" style="background-image:url('assets/img/lavoratore_precario/lavoratore_precario_0.jpg')">
+<div class="text-box">
+
+
+<p>
+La giornata si chiude, ma le variabili restano aperte.
+Tempo, energia, denaro: tutto continua a pesare.
+</p>
+
+<<if $money < 40>>
+
+<p>
+Ogni scelta ha avuto un costo diretto o indiretto.
+Il denaro è stato un vincolo continuo, non una risorsa stabile.
+</p>
+
+<<elseif $attention >= 70 && $attention > $control>>
+
+<p>
+Hai monitorato costantemente ogni perdita possibile.
+Ogni scelta era anche una previsione del rischio successivo.
+</p>
+
+<<else>>
+
+<p>
+Hai mantenuto un equilibrio fragile tra spese e necessità.
+Ma ogni equilibrio ha richiesto attenzione continua.
+</p>
+
+<</if>>
+
+<p>
+Domani sarà una nuova combinazione degli stessi vincoli.
+</p>
+
+[[Continuare->Intermezzo]]
+
+</div>
+</div>
+
+
+<<elseif $loop == 5>>
+
+<div class="fullscreen" style="background-image:url('assets/img/migrante/migrante_0.jpg')">
+<div class="text-box">
+
+
+<p>
+La giornata è stata una sequenza di passaggi da interpretare.
+</p>
+
+<<if $attention < 40>>
+
+<p>
+Hai dovuto osservare prima di agire.
+Seguire prima di scegliere.
+</p>
+
+<<elseif $control >= 70 && $control >= $attention>>
+
+<p>
+Hai cercato di costruire un sistema stabile di riferimento.
+Ogni segnale è stato letto come parte di una struttura.
+</p>
+
+<<else>>
+
+<p>
+Hai costruito riferimenti passo dopo passo.
+Ogni ambiente è diventato leggermente più leggibile.
+</p>
+
+<</if>>
+
+<p>
+Domani alcuni segnali saranno ancora difficili.
+Ma non completamente sconosciuti.
+</p>
+
+[[Continuare->Intermezzo]]
+
+</div>
+</div>
+
+
+<<elseif $loop == 6>>
+
+<div class="fullscreen" style="background-image:url('assets/img/senzatetto/senzatetto_0.jpg')">
+<div class="text-box">
+
+
+<p>
+La giornata si chiude senza una vera struttura di inizio o fine.
+</p>
+
+<<if $control < 30>>
+
+<p>
+Hai attraversato la città reagendo più che scegliendo.
+Le decisioni non si sono consolidate in un percorso stabile.
+</p>
+
+<<elseif $attention >= 70 && $attention > $control>>
+
+<p>
+Hai vissuto in uno stato di vigilanza continua.
+Ogni cambiamento poteva diventare immediatamente rilevante.
+</p>
+
+<<else>>
+
+<p>
+Hai cercato di mantenere una direzione anche con poche risorse disponibili.
+</p>
+
+<</if>>
+
+<p>
+Domani arriverà comunque.
+Indipendentemente da come finisce oggi.
+</p>
+
+[[Continuare->Intermezzo]]
+
+</div>
+</div>
+
+<</if>>
+
+
+:: InitLoop {"position":"1850,850","size":"100,100"}
+<<if $loop == 1>>
+
+<<set $identity = "turista">>
+<<set $energy = 90>>
+<<set $time = 90>>
+<<set $money = 90>>
+<<set $attention = 70>>
+<<set $control = 85>>
+
+<<elseif $loop == 2>>
+
+<<set $identity = "studente lavoratore">>
+<<set $energy = 55>>
+<<set $time = 60>>
+<<set $money = 70>>
+<<set $attention = 75>>
+<<set $control = 65>>
+
+<<elseif $loop == 3>>
+
+<<set $identity = "anziano">>
+<<set $energy = 50>>
+<<set $time = 70>>
+<<set $money = 90>>
+<<set $attention = 55>>
+<<set $control = 50>>
+
+<<elseif $loop == 4>>
+
+<<set $identity = "lavoratore precario">>
+<<set $energy = 50>>
+<<set $time = 55>>
+<<set $money = 70>>
+<<set $attention = 60>>
+<<set $control = 45>>
+
+<<elseif $loop == 5>>
+
+<<set $identity = "migrante">>
+<<set $energy = 55>>
+<<set $time = 65>>
+<<set $money = 40>>
+<<set $attention = 40>>
+<<set $control = 30>>
+
+<<elseif $loop == 6>>
+
+<<set $identity = "senzatetto">>
+<<set $energy = 25>>
+<<set $time = 45>>
+<<set $money = 20>>
+<<set $attention = 60>>
+<<set $control = 20>>
+
+<</if>>
+
+<<goto "Risveglio">>
+
+
+:: Intermezzo {"position":"2300,900","size":"200,200"}
+<div class="fullscreen intermezzo-cover" style="background-image:url('assets/img/banner.jpg')">
+<div class="text-box">
+
+<<if $loop == 1>>
+
+<p>Hai appena vissuto la giornata di una turista in una città italiana.</p>
+
+<p>
+Secondo un'indagine Osservatorio Turismo, il 56% dei cittadini italiani segnala effetti negativi legati all'overtourism su accessibilità, costi abitativi e qualità della vita urbana.
+A Bologna, Firenze, Venezia e Roma le tensioni tra residenti e visitatori sono già reali — e visibili.
+</p>
+
+<p style="font-size:0.75em; opacity:0.7;">
+<b>Fonti:</b>
+<a href="https://www.repubblica.it/economia/rapporti/osserva-italia/osserva-viaggi/2025/07/07/news/overtourism_per_il_56_degli_italiani_e_un_problema-424715697/" target="_blank">Repubblica</a>,
+<a href="https://www.assoutenti.it/come-lovertourism-sta-ridisegnando-il-rapporto-tra-turisti-e-residenti-in-italia/" target="_blank">Assoutenti</a>
+</p>
+
+<<elseif $loop == 2>>
+
+<p>Hai appena vissuto la giornata di una studentessa lavoratrice.</p>
+
+<p>
+In Italia ci sono circa 365.000 studenti universitari che lavorano. Il 78% di loro riferisce stress cronico, il 64% ansia, il 56% difficoltà a sostenere gli esami con regolarità.
+Per la maggioranza non è una scelta: è una necessità dettata da carenze nel diritto allo studio.
+</p>
+
+<p style="font-size:0.75em; opacity:0.7;">
+<b>Fonti:</b>
+<a href="https://www.ansa.it/sito/notizie/cronaca/2024/04/30/quasi-400mila-studenti-lavoratori-ma-non-e-una-libera-scelta_90aea494-7574-45ea-b9cf-973dcb92abc3.html" target="_blank">ANSA</a>,
+<a href="https://www.cgil.it/ufficio-stampa/udu-cgil-e-fdv-presentano-indagine-su-studenti-lavoratori-spesso-scelta-obbligata-per-carenze-diritto-allo-studio-condizioni-di-lavoro-terribili-e-precarie-governo-intervenga-lf7565xi" target="_blank">CGIL / UDU</a>
+</p>
+
+<<elseif $loop == 3>>
+
+<p>Hai appena vissuto la giornata di un anziano.</p>
+
+<p>
+In Italia il 14% delle persone over 65 vive in condizioni di rischio di isolamento sociale: in una settimana normale non ha contatti con nessun'altra persona, nemmeno al telefono.
+La condizione peggiora con l'età, con il basso reddito e nelle regioni del Sud.
+</p>
+
+<p style="font-size:0.75em; opacity:0.7;">
+<b>Fonti:</b>
+<a href="https://www.iss.it/-/il-14-degli-over-65-in-italia-a-rischio-isolamento-e-meno-del-30-sono-una-risorsa-per-la-comunita" target="_blank">ISS</a>,
+<a href="https://www.pensionati.cisl.it/notizie/isolamento-e-partecipazione-sociale-degli-anziani-i-dati-di-passi-d_argento" target="_blank">CISL Pensionati</a>
+</p>
+
+<<elseif $loop == 4>>
+
+<p>Hai appena vissuto la giornata di un lavoratore precario.</p>
+
+<p>
+In Italia il 57% dei lavoratori under 25 ha un contratto a termine. Il 46% di loro non riesce a trovare un lavoro stabile pur cercandolo attivamente.
+Il lavoro precario non è solo un problema economico: è una condizione che erode il senso di controllo sulla propria vita.
+</p>
+
+<p style="font-size:0.75em; opacity:0.7;">
+<b>Fonte:</b>
+<a href="https://www.etuc.org/en/young-people-and-precarious-work" target="_blank">ETUC</a>
+</p>
+
+<<elseif $loop == 5>>
+
+<p>Hai appena vissuto la giornata di una migrante.</p>
+
+<p>
+Secondo i dati Caritas, il 73% dei migranti seguiti dai servizi sociali in Italia riporta gravi difficoltà quotidiane.
+Oltre il 10% soffre di disturbo post-traumatico da stress. Per ogni difficoltà post-migratoria in più, il rischio aumenta di quasi il 20%.
+</p>
+
+<p style="font-size:0.75em; opacity:0.7;">
+<b>Fonti:</b>
+<a href="https://www.9colonne.it/39892/immigrati-73-in-condizione-di-fragilita-sociale" target="_blank">9Colonne</a>,
+<a href="https://www.sciencedirect.com/science/article/pii/S0147176722001663" target="_blank">ScienceDirect</a>
+</p>
+
+<<elseif $loop == 6>>
+
+<p>Hai appena vissuto la giornata di un senzatetto.</p>
+
+<p>
+In Italia ci sono 96.197 persone senza dimora registrate, secondo i dati ISTAT.
+Il 50% di questa popolazione si concentra in sei città: Roma, Milano, Napoli, Torino, Genova e Foggia.
+Bologna è una delle città con il maggior numero di persone in condizione di esclusione abitativa grave.
+</p>
+
+<p style="font-size:0.75em; opacity:0.7;">
+<b>Fonti:</b>
+<a href="https://www.9colonne.it/446780/more-than-96-000-homeless-people-in-italy" target="_blank">9Colonne</a>,
+<a href="https://www.ansa.it/english/news/2023/01/05/nearly-100000-homeless-in-italy-says-istat_a1baa637-9451-448d-9697-5b4811a9ae6e.html" target="_blank">ANSA</a>
+</p>
+
+<</if>>
+
+<<if $loop < 6>>
+<<set $loop += 1>>
+[[Continua->InitLoop]]
+<<else>>
+[[Continua->Epilogo]]
+<</if>>
+
+</div>
+
+</div>
+
+
+
+:: MigranteAttesa {"position":"1850,225","size":"100,100"}
+<<update "energy" 5>>
+<<update "time" -8>>
+<<update "attention" -8>>
+<<update "control" -8>>
+
+<div class="fullscreen" style="background-image:url('assets/img/migrante/migrante_1.jpg')">
+<div class="text-box">
+
+<p>
+Resti ferma un momento, cercando di capire se hai fatto la scelta giusta.
+</p>
+
+<p>
+Il silenzio non aiuta a orientarsi.
+Non ci sono segnali chiari, solo indicazioni frammentate che devi ricomporre da sola.
+</p>
+
+<p>
+La decisione resta sospesa per qualche secondo in più del necessario.
+Poi il tempo riprende senza chiedere conferma.
+</p>
+
+<p>
+Riparti senza una certezza piena.
+Solo con ciò che sei riuscita a trattenere nella memoria del percorso.
+</p>
+
+[[Decidi di uscire->Bus]]
+
+</div>
+</div>
+
+
+:: Poste {"position":"2750,575","size":"200,200"}
+<<if $loop is 1>>
+
+<div class="fullscreen" style="background-image:url('assets/img/turista/turista_3.jpg')">
+<div class="text-box">
+
+<<update "time" -5>>
+<<update "money" -5>>
+
+<p>
+Vuoi spedire un piccolo pacco prima della partenza.
+Cartoline, souvenir e alcuni oggetti che non entrano più in valigia.
+</p>
+
+<p>
+Davanti allo sportello automatico esiti per qualche secondo.
+Le opzioni sullo schermo non sono immediate e la fila dietro di te continua a crescere.
+</p>
+
+<p>
+Quando chiedi informazioni, una persona sbuffa e guarda l'orologio.
+Un'altra ti indica rapidamente il pulsante da premere prima di allontanarsi.
+</p>
+
+<p>
+Per te è una delle ultime attività del viaggio.
+Per gli altri sembra soltanto una mattina qualsiasi.
+</p>
+
+[[Insistere e cercare di capire tutto->PosteControllo]]
+[[Ringraziare e seguire le indicazioni ricevute->PosteAdattivo]]
+
+<<if $attention < 50>>
+[[Osservare le persone prima di muoverti->PosteAllerta]]
+<</if>>
+
+</div>
+</div>
+
+<<elseif $loop is 2>>
+
+<div class="fullscreen" style="background-image:url('assets/img/studente_lavoratore/studente_lavoratore_3.jpg')">
+<div class="text-box">
+
+<<update "time" -8>>
+
+<p>
+Manca meno di un'ora all'esame.
+Prima di entrare in aula devi risolvere un problema con una carta prepagata necessaria per ricevere il pagamento del lavoro.
+</p>
+
+<p>
+Il numero che hai preso è molto distante da quello visualizzato sul monitor.
+Ogni persona davanti a te sembra sottrarre minuti alla giornata.
+</p>
+
+<p>
+Continui a controllare l'orologio.
+L'esame si avvicina.
+L'attesa continua.
+</p>
+
+[[Aspettare il proprio turno->PosteTempo]]
+[[Andarsene rischiando di non ricevere il pagamento->PosteControllo]]
+
+</div>
+</div>
+
+<<elseif $loop is 3>>
+
+<div class="fullscreen" style="background-image:url('assets/img/anziano/anziano_3.jpg')">
+<div class="text-box">
+
+<<update "time" -5>>
+
+<p>
+Sei venuto per ritirare la pensione.
+</p>
+
+<p>
+Le procedure sono cambiate rispetto a qualche anno fa.
+Numeri elettronici, schermi, notifiche e indicazioni poco chiare si sovrappongono.
+</p>
+
+<p>
+Per qualche istante non sei sicuro di aver preso il numero corretto.
+Le persone intorno a te sembrano sapere esattamente cosa fare.
+</p>
+
+[[Chiedere aiuto a qualcuno->PosteAdattivo]]
+[[Provare a capire tutto da solo->PosteControllo]]
+
+<<if $attention < 50>>
+[[Osservare gli altri prima di agire->PosteAllerta]]
+<</if>>
+
+</div>
+</div>
+
+<<elseif $loop is 4>>
+
+<div class="fullscreen" style="background-image:url('assets/img/lavoratore_precario/lavoratore_precario_3.jpg')">
+<div class="text-box">
+
+<<update "time" -8>>
+
+<p>
+Hai finito un turno da poco e devi risolvere una pratica prima che l'ufficio chiuda.
+</p>
+
+<p>
+Ogni minuto trascorso in fila aumenta il rischio di arrivare in ritardo al lavoro successivo.
+</p>
+
+<p>
+Controlli continuamente telefono, orario e notifiche.
+L'attesa sembra trasformarsi in una perdita economica.
+</p>
+
+[[Accettare la situazione e aspettare->PosteAdattivo]]
+[[Protestare e cercare una soluzione->PosteControllo]]
+[[Continuare a controllare il tempo che passa->PosteTempo]]
+
+</div>
+</div>
+
+<<elseif $loop is 5>>
+
+<div class="fullscreen" style="background-image:url('assets/img/migrante/migrante_3.jpg')">
+<div class="text-box">
+
+<<update "time" -5>>
+
+<p>
+Hai bisogno di completare una pratica importante.
+</p>
+
+<p>
+Le spiegazioni sono rapide e alcune parole ti sfuggono.
+Le persone dietro lo sportello parlano velocemente e la fila continua a muoversi.
+</p>
+
+<p>
+Per qualche secondo non sei sicura di aver capito cosa ti viene richiesto.
+</p>
+
+[[Fidarti delle indicazioni ricevute->PosteAdattivo]]
+[[Mostrare i documenti e chiedere ulteriori spiegazioni->PosteControllo]]
+[[Osservare gli altri per capire come comportarti->PosteAllerta]]
+
+</div>
+</div>
+
+<<elseif $loop is 6>>
+
+<div class="fullscreen" style="background-image:url('assets/img/senzatetto/senzatetto_3.jpg')">
+<div class="text-box">
+
+<<update "time" -5>>
+
+<p>
+Devi recuperare una comunicazione necessaria per confermare il posto al dormitorio.
+</p>
+
+<p>
+Resti in disparte mentre osservi le persone entrare e uscire.
+Cerchi di attirare meno attenzione possibile.
+</p>
+
+<p>
+Non sai se riuscirai a risolvere tutto in tempo.
+Se qualcosa va storto, questa sera potresti non avere un posto dove dormire.
+</p>
+
+[[Restare fermo e aspettare->PosteTempo]]
+[[Affrontare la situazione direttamente->PosteControllo]]
+[[Osservare l'ambiente prima di muoverti->PosteAllerta]]
+
+</div>
+</div>
+
+<</if>>
+
+
+
+:: PosteAdattivo {"position":"3150,200","size":"100,100"}
+<<if $loop is 1>>
+    <<set _bg = "assets/img/turista/turista_3.jpg">>
+
+<<elseif $loop is 2>>
+    <<set _bg = "assets/img/studente_lavoratore/studente_lavoratore_3.jpg">>
+
+<<elseif $loop is 3>>
+    <<set _bg = "assets/img/anziano/anziano_3.jpg">>
+
+<<elseif $loop is 4>>
+    <<set _bg = "assets/img/lavoratore_precario/lavoratore_precario_3.jpg">>
+
+<<elseif $loop is 5>>
+    <<set _bg = "assets/img/migrante/migrante_3.jpg">>
+
+<<elseif $loop is 6>>
+    <<set _bg = "assets/img/senzatetto/senzatetto_3.jpg">>
+<</if>>
+
+<<update "control" -5>>
+<<update "attention" 5>>
+
+<div class="fullscreen" @style="'background-image:url(' + JSON.stringify(_bg) + ')'">
+<div class="text-box">
+
+<p>
+Smetti di cercare di capire ogni dettaglio.
+Per il momento basta seguire il ritmo della fila.
+</p>
+
+<p>
+Osservi chi ti sta davanti, chi si alza, chi prende un numero, chi si avvicina agli sportelli.
+Le persone diventano più facili da leggere delle procedure.
+</p>
+
+<<if $loop is 1>>
+
+<p>
+Non conosci bene le regole del luogo.
+Quando qualcuno si sposta, lo segui con lo sguardo per capire cosa fare dopo.
+</p>
+
+<<elseif $loop is 2>>
+
+<p>
+Per qualche minuto smetti di controllare l'orologio.
+L'esame e il lavoro restano sullo sfondo, ma non riescono a occupare tutto lo spazio mentale.
+</p>
+
+<<elseif $loop is 3>>
+
+<p>
+Ti affidi ai movimenti degli altri clienti.
+Quando qualcuno si alza con decisione, controlli che non sia arrivato anche il tuo turno.
+</p>
+
+<<elseif $loop is 4>>
+
+<p>
+Continui a pensare al lavoro, ma senza cercare soluzioni immediate.
+Almeno per qualche minuto non puoi fare altro che aspettare.
+</p>
+
+<<elseif $loop is 5>>
+
+<p>
+Le parole sui cartelli non sono sempre chiare.
+Osservare gli altri diventa il modo più semplice per capire come funziona il sistema.
+</p>
+
+<<elseif $loop is 6>>
+
+<p>
+Cerchi di passare inosservato.
+Restare tranquillo e non attirare attenzione sembra la scelta più sicura.
+</p>
+
+<</if>>
+
+<<update "time" -5>>
+<<update "energy" -3>>
+
+<p>
+Quando la fila finalmente avanza, ti accorgi che il tempo è passato comunque.
+Hai consumato meno attenzione nel cercare di controllare tutto, ma hai lasciato che fossero gli altri a guidare parte delle tue scelte.
+</p>
+
+[[Continuare->Supermercato]]
+
+</div>
+</div>
+
+
+:: PosteAllerta {"position":"3575,425","size":"100,100"}
+<<if $loop is 1>>
+    <<set _bg = "assets/img/turista/turista_3.jpg">>
+
+<<elseif $loop is 2>>
+    <<set _bg = "assets/img/studente_lavoratore/studente_lavoratore_3.jpg">>
+
+<<elseif $loop is 3>>
+    <<set _bg = "assets/img/anziano/anziano_3.jpg">>
+
+<<elseif $loop is 4>>
+    <<set _bg = "assets/img/lavoratore_precario/lavoratore_precario_3.jpg">>
+
+<<elseif $loop is 5>>
+    <<set _bg = "assets/img/migrante/migrante_3.jpg">>
+
+<<elseif $loop is 6>>
+    <<set _bg = "assets/img/senzatetto/senzatetto_3.jpg">>
+<</if>>
+
+<<update "energy" -8>>
+<<update "attention" 8>>
+<<update "control" -5>>
+
+<div class="fullscreen" @style="'background-image:url(' + JSON.stringify(_bg) + ')'">
+<div class="text-box">
+
+<p>
+Resti in silenzio osservando ciò che succede intorno a te.
+Ogni persona che si alza, cambia fila o si avvicina a uno sportello cattura immediatamente la tua attenzione.
+</p>
+
+<p>
+Non stai cercando soltanto di aspettare il tuo turno.
+Stai cercando di capire se ti sei perso qualcosa.
+</p>
+
+<<if $loop is 3>>
+
+<p>
+I numeri scorrono sullo schermo più velocemente di quanto riesci a seguirli.
+Per un attimo temi di non aver sentito la chiamata corretta.
+</p>
+
+<<elseif $loop is 5>>
+
+<p>
+Le conversazioni attorno a te si intrecciano con parole che non sempre riesci a comprendere.
+Osservare gli altri diventa più affidabile che interpretare ogni informazione.
+</p>
+
+<<elseif $loop is 6>>
+
+<p>
+Cerchi di attirare il meno possibile l'attenzione.
+Ogni sguardo nella tua direzione ti fa domandare se qualcuno si stia chiedendo perché sei lì.
+</p>
+
+<<else>>
+
+<p>
+Ogni piccolo cambiamento nell'ambiente sembra importante.
+Continui a controllare dettagli che forse non hanno alcun significato.
+</p>
+
+<</if>>
+
+<p>
+L'attenzione cresce.
+Ma invece di renderti più sicuro, moltiplica le cose che senti di dover controllare.
+</p>
+
+<p>
+Quando finalmente arriva il tuo turno, hai la sensazione di aver trascorso più tempo a monitorare il contesto che a occuparti del motivo per cui sei venuto qui.
+</p>
+
+[[Terminare e uscire->Supermercato]]
+
+</div>
+</div>
+
+
+:: PosteControllo {"position":"3325,225","size":"100,100"}
+<<if $loop is 1>>
+    <<set _bg = "assets/img/turista/turista_3.jpg">>
+
+<<elseif $loop is 2>>
+    <<set _bg = "assets/img/studente_lavoratore/studente_lavoratore_3.jpg">>
+
+<<elseif $loop is 3>>
+    <<set _bg = "assets/img/anziano/anziano_3.jpg">>
+
+<<elseif $loop is 4>>
+    <<set _bg = "assets/img/lavoratore_precario/lavoratore_precario_3.jpg">>
+
+<<elseif $loop is 5>>
+    <<set _bg = "assets/img/migrante/migrante_3.jpg">>
+
+<<elseif $loop is 6>>
+    <<set _bg = "assets/img/senzatetto/senzatetto_3.jpg">>
+<</if>>
+
+<<update "control" 8>>
+<<update "energy" -6>>
+<<update "attention" -5>>
+
+<div class="fullscreen" @style="'background-image:url(' + JSON.stringify(_bg) + ')'">
+<div class="text-box">
+
+<p>
+Cerchi di capire come funziona il sistema invece di limitarti ad aspettare.
+</p>
+
+<p>
+Osservi lo schermo dei numeri, gli sportelli, le procedure e i movimenti delle persone.
+Provi a ricostruire una logica a partire da dettagli che nessuno sembra spiegare.
+</p>
+
+<<if $loop is 1>>
+
+<p>
+Controlli più volte le istruzioni per la spedizione.
+Non vuoi sbagliare proprio ora che il viaggio sta finendo.
+</p>
+
+<<elseif $loop is 2>>
+
+<p>
+Continui a confrontare il numero sul display con l'orario dell'esame.
+Ogni passaggio della procedura sembra entrare in competizione con il resto della giornata.
+</p>
+
+<<elseif $loop is 3>>
+
+<p>
+Leggi con attenzione i monitor e i cartelli.
+Perdere il turno significherebbe ricominciare da capo uno sforzo che senti già pesare.
+</p>
+
+<<elseif $loop is 4>>
+
+<p>
+Calcoli continuamente quanto tempo manca al prossimo impegno.
+L'attesa non è solo un disagio: può trasformarsi in una perdita concreta.
+</p>
+
+<<elseif $loop is 5>>
+
+<p>
+Cerchi di capire le procedure senza dipendere dagli altri.
+Ogni informazione compresa da sola restituisce una piccola sensazione di autonomia.
+</p>
+
+<<elseif $loop is 6>>
+
+<p>
+Osservi attentamente l'ambiente.
+Capire come funziona il sistema significa ridurre il rischio di essere ignorato o rimandato.
+</p>
+
+<</if>>
+
+<<if $time < 50>>
+
+<p>
+Il tempo di attesa smette di essere neutrale.
+Ogni minuto aggiunge pressione alla situazione.
+</p>
+
+<<update "attention" -3>>
+<<update "energy" -2>>
+
+<</if>>
+
+<p>
+Capire cosa sta succedendo non accelera il processo.
+Ma ti permette di sentirti meno trascinato dagli eventi.
+</p>
+
+[[Continuare->Supermercato]]
+
+</div>
+</div>
+
+
+:: PosteTempo {"position":"3475,300","size":"100,100"}
+<<if $loop is 1>>
+    <<set _bg = "assets/img/turista/turista_3.jpg">>
+
+<<elseif $loop is 2>>
+    <<set _bg = "assets/img/studente_lavoratore/studente_lavoratore_3.jpg">>
+
+<<elseif $loop is 3>>
+    <<set _bg = "assets/img/anziano/anziano_3.jpg">>
+
+<<elseif $loop is 4>>
+    <<set _bg = "assets/img/lavoratore_precario/lavoratore_precario_3.jpg">>
+
+<<elseif $loop is 5>>
+    <<set _bg = "assets/img/migrante/migrante_3.jpg">>
+
+<<elseif $loop is 6>>
+    <<set _bg = "assets/img/senzatetto/senzatetto_3.jpg">>
+<</if>>
+
+<<update "time" -10>>
+<<update "attention" -8>>
+<<update "energy" -5>>
+
+<div class="fullscreen" @style="'background-image:url(' + JSON.stringify(_bg) + ')'">
+<div class="text-box">
+
+<p>
+L’attesa si allunga più di quanto avresti previsto.
+Le persone davanti a te avanzano lentamente, una alla volta, senza che il ritmo possa essere influenzato.
+</p>
+
+<p>
+Ogni numero chiamato sembra ricordarti che non è ancora il tuo turno.
+Ogni movimento nello spazio rende più reale il tempo che passa.
+</p>
+
+<<if $loop is 1>>
+
+<p>
+La spedizione del pacco è una piccola cosa, ma continua a occupare una parte della giornata.
+Ti chiedi quante altre ore ti restino prima della partenza.
+</p>
+
+<<elseif $loop is 2>>
+
+<p>
+L'orario dell'esame si avvicina.
+Più aspetti, più diventa difficile smettere di fare calcoli mentali.
+</p>
+
+<<elseif $loop is 3>>
+
+<p>
+Restare in piedi o seduto troppo a lungo finisce per farsi sentire.
+L'attesa sembra pesare anche sul corpo.
+</p>
+
+<<elseif $loop is 4>>
+
+<p>
+Ogni minuto trascorso qui è un minuto sottratto al lavoro, agli spostamenti o a qualcos'altro che non puoi rimandare.
+</p>
+
+<<elseif $loop is 5>>
+
+<p>
+Non sei sempre sicura di aver capito cosa succederà dopo.
+L'incertezza rende l'attesa ancora più lunga.
+</p>
+
+<<elseif $loop is 6>>
+
+<p>
+Continui a pensare alla sera.
+Se qualcosa va storto, le conseguenze non finiranno quando uscirai da qui.
+</p>
+
+<</if>>
+
+<p>
+Controlli l’orologio sul telefono, poi lo ricontrolli poco dopo.
+Non cambia quasi nulla, ma lo fai comunque.
+</p>
+
+<p>
+Rimanere qui significa restare dentro un tempo che non puoi accelerare, ma che continua comunque a consumare attenzione ed energie.
+</p>
+
+[[Terminare e uscire->Supermercato]]
+
+</div>
+</div>
+
+
+
+:: PrecarioRiposo {"position":"1675,275","size":"100,100"}
+<<update "energy" 5>>
+<<update "time" -12>>
+<<update "attention" -8>>
+<<update "control" -8>>
+
+<div class="fullscreen" style="background-image:url('assets/img/lavoratore_precario/lavoratore_precario_1.jpg')">
+<div class="text-box">
+
+<p>
+Ti concedi pochi minuti di pausa, ma il corpo non riconosce davvero il riposo.
+</p>
+
+<p>
+Anche a occhi chiusi, la giornata resta attiva da qualche parte nella mente:
+scadenze, messaggi, possibilità che svaniscono se non rispondi in tempo.
+</p>
+
+<p>
+Non è quiete.
+È una sospensione breve tra due richieste.
+</p>
+
+<p>
+Quando ti rialzi, il tempo sembra già essersi spostato più avanti senza aspettarti.
+</p>
+
+[[Corri fuori->Bus]]
+
+</div>
+</div>
+
+
+:: Risveglio {"position":"1800,600","size":"200,200"}
+<<if $loop is 1>>
+
+<div class="fullscreen" style="background-image:url('assets/img/turista/turista_1.jpg')">
+<div class="text-box">
+
+<p class="identity-title"><strong>I. La Turista</strong></p>
+
+<p>
+La sveglia suona alle 7:00.
+Per un attimo non ricordi dove sei.
+Poi riconosci il soffitto della camera d'albergo e le Due Torri che spuntano dalla finestra.
+</p>
+
+<p>
+La valigia è aperta sul pavimento.
+Alcuni souvenir sono ancora sparsi sulla scrivania.
+Sul telefono compare una notifica: ultimo giorno di viaggio in Italia.
+</p>
+
+<p>
+Nei giorni scorsi hai camminato per ore sotto i portici, fotografato edifici di cui non ricordavi il nome, seguito itinerari suggeriti da guide e social network.
+Hai la sensazione di conoscere già la città.
+</p>
+
+<p>
+Eppure basta guardare dalla finestra per accorgerti che Bologna sta iniziando una giornata che non ha nulla a che fare con la tua.
+</p>
+
+<p>
+Resti sdraiata ancora qualche secondo.
+Hai davanti un'intera giornata.
+Ma è anche l'ultima.
+</p>
+
+[[Restare a letto ancora un po'->TuristaDormire]]
+[[Alzarsi subito->Bus]]
+
+</div>
+</div>
+
+<<elseif $loop is 2>>
+
+<div class="fullscreen" style="background-image:url('assets/img/studente_lavoratore/studente_lavoratore_1.jpg')">
+<div class="text-box">
+
+<p class="identity-title"><strong>II. Lo Studente Lavoratore</strong></p>
+
+<p>
+La sveglia delle 7:00 interrompe un sonno leggero e frammentato.
+Ti eri addormentata sugli appunti.
+Le pagine sono ancora aperte accanto al letto.
+</p>
+
+<p>
+Sul telefono trovi due notifiche.
+La prima ti ricorda l'esame di questa mattina.
+La seconda è una richiesta di disponibilità per un turno di lavoro arrivata durante la notte.
+</p>
+
+<p>
+Hai bisogno di superare l'esame.
+Ti servono quei crediti per mantenere la borsa di studio.
+</p>
+
+<p>
+Hai bisogno anche di lavorare.
+L'affitto, i trasporti e le spese quotidiane non aspettano la sessione d'esami.
+</p>
+
+<p>
+Da settimane le giornate sembrano troppo corte.
+Ogni ora dedicata a una cosa viene sottratta a qualcos'altro.
+</p>
+
+<p>
+Qualunque scelta farai oggi, qualcosa resterà indietro.
+</p>
+
+[[Ripassare->StudenteRipassare]]
+[[Cercare di lavorare subito->Bus]]
+
+</div>
+</div>
+
+<<elseif $loop is 3>>
+
+<div class="fullscreen" style="background-image:url('assets/img/anziano/anziano_1.jpg')">
+<div class="text-box">
+
+<p class="identity-title"><strong>III. L'Anziano</strong></p>
+
+<p>
+Sono le sette.
+Prima di aprire completamente gli occhi ascolti il silenzio dell'appartamento.
+</p>
+
+<p>
+La casa è la stessa da anni.
+Conosci ogni mobile, ogni rumore, ogni oggetto.
+</p>
+
+<p>
+Sul comodino ci sono i farmaci della mattina.
+Accanto, un bicchiere d'acqua preparato la sera prima.
+</p>
+
+<p>
+Ti metti seduto lentamente sul bordo del letto.
+Le gambe rispondono con ritardo.
+La schiena protesta.
+</p>
+
+<p>
+Sul calendario appeso alla parete un cerchio rosso ricorda che oggi devi ritirare la pensione.
+</p>
+
+<p>
+Fuori la città è già in movimento.
+Tu stai ancora cercando il ritmo giusto per iniziare.
+</p>
+
+[[Forzarsi a uscire->Bus]]
+[[Muoversi lentamente->AnzianoLento]]
+
+</div>
+</div>
+
+<<elseif $loop is 4>>
+
+<div class="fullscreen" style="background-image:url('assets/img/lavoratore_precario/lavoratore_precario_1.jpg')">
+<div class="text-box">
+
+<p class="identity-title"><strong>IV. Il Lavoratore Precario</strong></p>
+
+<p>
+Il telefono vibra ancora prima che suoni la sveglia.
+Apri gli occhi con fatica.
+</p>
+
+<p>
+Sei rientrato poche ore fa da un turno notturno e hai dormito appena abbastanza per smettere di sentirti in piedi.
+</p>
+
+<p>
+Sul telefono si accumulano messaggi del lavoro.
+Un collega si è dato malato.
+Serve qualcuno che copra il turno.
+</p>
+
+<p>
+Se accetti lavorerai più ore del previsto.
+Se rifiuti non succederà nulla.
+Almeno ufficialmente.
+</p>
+
+<p>
+Sai come funziona.
+Le persone che si rendono disponibili vengono richiamate.
+Le altre, un po' meno.
+</p>
+
+<p>
+Richiudi gli occhi per qualche secondo.
+Il sonno ti tira da una parte.
+Le necessità dall'altra.
+</p>
+
+[[Alzarsi subito->Bus]]
+[[Restare a letto qualche minuto->PrecarioRiposo]]
+
+</div>
+</div>
+
+<<elseif $loop is 5>>
+
+<div class="fullscreen" style="background-image:url('assets/img/migrante/migrante_1.jpg')">
+<div class="text-box">
+
+<p class="identity-title"><strong>V. La Migrante</strong></p>
+
+<p>
+La stanza è piccola, ma ordinata.
+Condividi lo spazio con altre persone.
+Ognuna ha pochi oggetti.
+Ognuna cerca di costruire una normalità dentro una situazione provvisoria.
+</p>
+
+<p>
+Oggi dovresti andare alle Poste per richiedere una carta prepagata.
+Ti servirà per ricevere il primo stipendio del lavoro che hai trovato da poco.
+</p>
+
+<p>
+La responsabile del centro ti aveva detto che vi sareste andate insieme.
+Poi ha dovuto accompagnare un'altra ragazza dal medico.
+</p>
+
+<p>
+Ti ha chiesto se riuscirai ad andarci da sola.
+Hai risposto di sì quasi senza pensarci.
+</p>
+
+<p>
+Ora non ne sei più così sicura.
+Controlli più volte l'indirizzo sul telefono.
+Speri di riuscire a trovare la strada giusta.
+</p>
+
+[[Aspettare ancora un attimo->MigranteAttesa]]
+[[Prepararsi subito->Bus]]
+
+</div>
+</div>
+
+<<elseif $loop is 6>>
+
+<div class="fullscreen" style="background-image:url('assets/img/senzatetto/senzatetto_1.jpg')">
+<div class="text-box">
+
+<p class="identity-title"><strong>VI. Il Senzatetto</strong></p>
+
+<p>
+A svegliarti non è una sveglia.
+È il rumore della città.
+</p>
+
+<p>
+Un autobus che frena.
+Una moto che accelera.
+Qualcuno che apre una serranda metallica.
+</p>
+
+<p>
+Apri gli occhi.
+Il cartone sotto di te è umido.
+L'aria del mattino è fredda.
+</p>
+
+<p>
+Osservi le persone passare senza guardarti.
+Molti hanno una destinazione.
+Un appuntamento.
+Un posto dove tornare.
+</p>
+
+<p>
+Tu stai ancora decidendo come affrontare la giornata.
+Non sai esattamente che giorno sia.
+Sai però che l'inverno si avvicina.
+</p>
+
+<p>
+L'anno scorso alcuni volontari ti avevano parlato di un dormitorio.
+Per accedervi servivano dei documenti.
+Ricordi vagamente che le Poste non sono lontane.
+</p>
+
+[[Alzarsi->Bus]]
+[[Restare fermo->SenzatettoRestare]]
+
+</div>
+</div>
+
+<</if>>
+
+
+
+:: SenzatettoRestare {"position":"2000,200","size":"100,100"}
+<<update "energy" 5>>
+<<update "attention" -12>>
+<<update "time" -8>>
+<<update "control" -8>>
+
+<div class="fullscreen" style="background-image:url('assets/img/senzatetto/senzatetto_1.jpg')">
+<div class="text-box">
+
+<p>
+Resti fermo.
+Il freddo non cala: si stabilizza nel corpo, diventando una condizione invece che una sensazione momentanea.
+</p>
+
+<p>
+La città continua a muoversi a pochi metri da te, con un ritmo che non prevede interruzioni.
+</p>
+
+<p>
+Per un po’ non succede nulla.
+Poi anche l’immobilità smette di essere una scelta e diventa solo uno stato tra due movimenti.
+</p>
+
+[[Alzati più tardi->Bus]]
+
+</div>
+</div>
+
+
+:: Start {"position":"1625,850","size":"100,100"}
+<div class="fullscreen start-cover" style="background-image:url('assets/img/banner.jpg')">
+<div class="text-box">
+
+<p class="start-cover-title"><strong>[One Day Different Me]</strong></p>
+
+<p>
+Fuori le strade si stanno già riempiendo.
+</p>
+
+<p>
+C'è chi corre verso il lavoro, chi sta tornando a casa, chi cerca semplicemente di arrivare a fine giornata.
+</p>
+
+<p>
+È mattina, un nuovo giorno. Ancora.
+</p>
+
+<p class="start-cover-link">[[Inizia->InitLoop]]</p>
+
+</div>
+</div>
+
+
+
+:: StoryInit {"position":"1450,850","size":"100,100"}
+<<set $loop = 1>>
+<<set $identity = "">>
+<<set $energy = 0>>
+<<set $time = 0>>
+<<set $money = 0>>
+<<set $attention = 0>>
+<<set $control = 0>>
+
+
+<<widget "update">>
+  <<set _k = _args[0]>>
+  <<set _d = _args[1]>>
+  <<set _prev = State.variables[_k]>>
+  <<run State.variables[_k] += _d>>
+  <<run $(document).trigger('odd:update', [_k, _d, _prev])>>
+<</widget>>
+
+<<run (function(){
+  var VARS   = ['time','energy','money','attention','control'];
+  var LABELS = ['tempo','energia','denaro','attenzione','controllo'];
+  var COLORS = ['#378ADD','#1D9E75','#EF9F27','#7F77DD','#D85A30'];
+  var CRIT   = 35;
+  var SIZE   = 44;
+  var R      = 18;
+
+  function clamp(v){ return Math.max(0, Math.min(100, v)); }
+
+  function buildHUD(){
+    if(document.getElementById('odd-hud')) return;
+    if(!document.getElementById('odd-hud-style')){
+      var style = document.createElement('style');
+      style.id = 'odd-hud-style';
+      style.textContent = '#odd-hud{position:fixed;top:12px;right:12px;z-index:2147483647;pointer-events:none;}#odd-hud-inner{display:flex;flex-direction:row;align-items:center;gap:14px;padding:10px 18px;background:rgba(255,255,255,0.06);border:1px solid rgba(255,255,255,0.14);border-radius:999px;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);box-shadow:0 8px 30px rgba(0,0,0,0.25);} .odd-cell{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;width:48px;position:relative;} .odd-lbl{font-size:9px;color:rgba(255,255,255,0.55);letter-spacing:0.05em;text-align:center;} .odd-lbl-low{color:#ff8a8a;} .odd-delta{position:absolute;top:-10px;right:0;font-size:11px;font-weight:700;color:#fff;animation:odd-pop 0.9s ease forwards;}@keyframes odd-pop{0%{opacity:0;transform:translateY(0) scale(0.7)}40%{opacity:1;transform:translateY(-8px) scale(1.1)}100%{opacity:0;transform:translateY(-18px) scale(1)}}.odd-shake{animation:odd-shake 0.45s ease;}@keyframes odd-shake{0%,100%{transform:translateX(0)}20%{transform:translateX(-4px)}40%{transform:translateX(4px)}60%{transform:translateX(-2px)}80%{transform:translateX(2px)}}';
+      document.head.appendChild(style);
+    }
+    var hud = document.createElement('div');
+    hud.id = 'odd-hud';
+    var inner = document.createElement('div');
+    inner.id = 'odd-hud-inner';
+    VARS.forEach(function(k, i){
+      var cell = document.createElement('div');
+      cell.id = 'cell-' + k;
+      cell.className = 'odd-cell';
+      var cvs = document.createElement('canvas');
+      cvs.id = 'orb-' + k;
+      cvs.width = SIZE;
+      cvs.height = SIZE;
+      var lbl = document.createElement('span');
+      lbl.id = 'lbl-' + k;
+      lbl.className = 'odd-lbl';
+      lbl.textContent = LABELS[i];
+      cell.appendChild(cvs);
+      cell.appendChild(lbl);
+      inner.appendChild(cell);
+    });
+    hud.appendChild(inner);
+    document.body.appendChild(hud);
+  }
+
+  function drawOrb(k, flashDir){
+    var i   = VARS.indexOf(k);
+    var cvs = document.getElementById('orb-' + k);
+    if(!cvs) return;
+    var ctx = cvs.getContext('2d');
+    var cx  = SIZE/2, cy = SIZE/2;
+    var val = clamp(State.variables[k] || 0);
+    var low = val <= CRIT;
+    var col = COLORS[i];
+    ctx.clearRect(0, 0, SIZE, SIZE);
+    ctx.beginPath();
+    ctx.arc(cx, cy, R, 0, Math.PI*2);
+    ctx.fillStyle = col + '22';
+    ctx.fill();
+    var innerR = Math.max(2, R * (val/100));
+    ctx.beginPath();
+    ctx.arc(cx, cy, innerR, 0, Math.PI*2);
+    ctx.fillStyle = col + (low ? 'ee' : '88');
+    ctx.fill();
+    if(flashDir){
+      ctx.beginPath();
+      ctx.arc(cx, cy, R-1, 0, Math.PI*2);
+      ctx.strokeStyle = flashDir > 0 ? col + 'cc' : col + '33';
+      ctx.lineWidth   = flashDir > 0 ? 2.5 : 1;
+      ctx.stroke();
+    }
+    var lbl = document.getElementById('lbl-' + k);
+    if(lbl) lbl.className = 'odd-lbl' + (low ? ' odd-lbl-low' : '');
+  }
+
+  function drawAll(){
+    VARS.forEach(function(k){ drawOrb(k, null); });
+  }
+
+  function showDelta(k, delta){
+    var cell = document.getElementById('cell-' + k);
+    if(!cell) return;
+    var old = cell.querySelector('.odd-delta');
+    if(old) old.remove();
+    var tag = document.createElement('span');
+    tag.className = 'odd-delta';
+    tag.textContent = (delta > 0 ? '+' : '') + delta;
+    tag.style.color = delta > 0 ? '#0F6E56' : '#993C1D';
+    cell.appendChild(tag);
+    setTimeout(function(){ tag.remove(); }, 900);
+  }
+
+  function shakeCell(k){
+    var cell = document.getElementById('cell-' + k);
+    if(!cell) return;
+    cell.classList.add('odd-shake');
+    setTimeout(function(){ cell.classList.remove('odd-shake'); }, 500);
+  }
+
+  buildHUD();
+
+  $(document).on(':passageend', function(){
+    buildHUD();
+    drawAll();
+  });
+
+  $(document).on('odd:update', function(ev, k, delta, prevVal){
+    var newVal = clamp(State.variables[k] || 0);
+    drawOrb(k, delta > 0 ? 1 : -1);
+    showDelta(k, delta);
+    if(newVal <= CRIT && prevVal > CRIT) shakeCell(k);
+  });
+
+})()>>
+
+
+:: StradaAdattiva {"position":"2825,1150","size":"100,100"}
+<<if $loop is 1>>
+    <<set _bg = "assets/img/turista/turista_5.jpg">>
+
+<<elseif $loop is 2>>
+    <<set _bg = "assets/img/studente_lavoratore/studente_lavoratore_5.jpg">>
+
+<<elseif $loop is 3>>
+    <<set _bg = "assets/img/anziano/anziano_5.jpg">>
+
+<<elseif $loop is 4>>
+    <<set _bg = "assets/img/lavoratore_precario/lavoratore_precario_5.jpg">>
+
+<<elseif $loop is 5>>
+    <<set _bg = "assets/img/migrante/migrante_5.jpg">>
+
+<<elseif $loop is 6>>
+    <<set _bg = "assets/img/senzatetto/senzatetto_5.jpg">>
+<</if>>
+
+<<update "control" -8>>
+<<update "energy" 5>>
+<<update "attention" -5>>
+<<update "time" 5>>
+
+<div class="fullscreen" @style="'background-image:url(' + JSON.stringify(_bg) + ')'">
+<div class="text-box">
+
+<p>
+Non cerchi di opporre resistenza alla deviazione.
+Ti lasci guidare dal flusso delle persone e della città, inserendoti nel movimento già in corso.
+</p>
+
+<p>
+Il percorso non coincide con quello che avevi immaginato, ma continui comunque ad avanzare.
+Adattarsi significa ridurre il numero di decisioni attive, anche a costo di perdere parte della direzione personale.
+</p>
+
+<<if $attention < 50>>
+<p>
+Solo in un secondo momento ti accorgi di aver seguito il flusso senza averlo davvero interpretato.
+Le scelte si sono già stabilizzate mentre tu le attraversavi.
+</p>
+<</if>>
+
+<p>
+Quando la strada torna a essere familiare, il cambiamento di direzione appare naturale.
+Non c’è un momento preciso in cui hai deciso: è semplicemente accaduto.
+</p>
+
+[[Continuare->FineLoop]]
+
+</div>
+</div>
+
+
+:: StradaAllerta {"position":"3025,1150","size":"100,100"}
+<<if $loop is 1>>
+    <<set _bg = "assets/img/turista/turista_5.jpg">>
+
+<<elseif $loop is 2>>
+    <<set _bg = "assets/img/studente_lavoratore/studente_lavoratore_5.jpg">>
+
+<<elseif $loop is 3>>
+    <<set _bg = "assets/img/anziano/anziano_5.jpg">>
+
+<<elseif $loop is 4>>
+    <<set _bg = "assets/img/lavoratore_precario/lavoratore_precario_5.jpg">>
+
+<<elseif $loop is 5>>
+    <<set _bg = "assets/img/migrante/migrante_5.jpg">>
+
+<<elseif $loop is 6>>
+    <<set _bg = "assets/img/senzatetto/senzatetto_5.jpg">>
+<</if>>
+
+<<update "attention" 10>>
+<<update "energy" -8>>
+<<update "control" -5>>
+<<update "time" -5>>
+
+<div class="fullscreen" @style="'background-image:url(' + JSON.stringify(_bg) + ')'">
+<div class="text-box">
+
+<p>
+Ti fermi, ma non c’è mai un vero arresto.
+Lo sguardo continua a muoversi tra cartelli, persone, deviazioni possibili.
+</p>
+
+<p>
+Non stai solo cercando la direzione giusta.
+Stai cercando di anticipare l’errore prima che accada.
+</p>
+
+<p>
+Ogni dettaglio può diventare rilevante: un passo che cambia ritmo, una persona che esita, un flusso che si interrompe.
+</p>
+
+<<if $attention >= 70>>
+<p>
+L’attenzione si espande fino a occupare tutto lo spazio disponibile.
+Più osservi, più aumentano gli elementi da monitorare.
+</p>
+
+<p>
+Non esiste un punto fermo da cui orientarsi: solo variazioni continue da tenere sotto controllo.
+</p>
+<</if>>
+
+<<if $attention < 70>>
+<p>
+Cerchi di mantenere il controllo del contesto, ma gli stimoli superano la capacità di ordinamento.
+Alcuni segnali si amplificano, altri si perdono.
+</p>
+<</if>>
+
+<p>
+La deviazione smette di essere un evento isolato.
+Diventa uno stato di vigilanza continua.
+</p>
+
+<p>
+Quando riprendi a muoverti, non hai più certezze aggiuntive.
+Hai solo una maggiore consapevolezza del rischio di sbagliare.
+</p>
+
+[[Continuare->FineLoop]]
+
+</div>
+</div>
+
+
+:: StradaChiusa {"position":"3200,900","size":"200,200"}
+<<if $loop is 1>>
+<div class="fullscreen" style="background-image:url('assets/img/turista/turista_5.jpg')">
+<div class="text-box">
+
+<p>
+La strada che seguivi fino a questo momento è interrotta da una barriera temporanea.
+Un cartello indica una deviazione obbligata.
+Per un attimo resti ferma: telefono, strada, persone che passano senza esitazione.
+</p>
+
+<<if $attention < 60>>
+<p>
+L’incertezza ti rallenta.
+Non è la deviazione in sé, ma il rischio di sbagliare direzione.
+</p>
+<<update "control" -6>>
+<<update "attention" 3>>
+<<else>>
+<p>
+Individui subito il percorso alternativo.
+La deviazione diventa solo un cambio di direzione.
+</p>
+<</if>>
+
+<<update "time" -8>>
+
+<p>Come reagisci?</p>
+
+[[Seguire il flusso senza opporre resistenza->StradaAdattiva]]
+[[Fermarti e verificare il percorso->StradaControllo]]
+[[Restare in stato di allerta e monitorare ogni segnale->StradaAllerta]]
+
+</div>
+</div>
+
+
+<<elseif $loop is 2>>
+<div class="fullscreen" style="background-image:url('assets/img/studente_lavoratore/studente_lavoratore_5.jpg')">
+<div class="text-box">
+
+
+<p>
+La strada è chiusa.
+Un altro imprevisto dentro una giornata già saturata.
+</p>
+
+<<if $time < 50>>
+<p>
+Ogni deviazione sembra sottrarre spazio a ciò che devi ancora fare.
+</p>
+<<update "attention" -6>>
+<<update "energy" -8>>
+<<else>>
+<p>
+Ricalcoli il percorso senza fermarti troppo.
+Non puoi permetterti rallentamenti.
+</p>
+<</if>>
+
+<<update "time" -8>>
+
+<p>Come reagisci?</p>
+
+[[Accettare la deviazione->StradaAdattiva]]
+[[Ricalcolare il percorso->StradaControllo]]
+[[Tenere tutto sotto controllo per prevenire altri imprevisti->StradaAllerta]]
+
+</div>
+</div>
+
+
+<<elseif $loop is 3>>
+<div class="fullscreen" style="background-image:url('assets/img/anziano/anziano_5.jpg')">
+<div class="text-box">
+
+
+<p>
+La strada è bloccata.
+Devi cambiare direzione.
+</p>
+
+<<if $energy < 50>>
+<p>
+Ti fermi un momento in più.
+Il corpo anticipa la necessità di rallentare.
+</p>
+<<update "energy" -6>>
+<<update "attention" -5>>
+<<else>>
+<p>
+Osservi il cartello e cambi direzione con calma.
+Senza fretta, senza esitazione.
+</p>
+<</if>>
+
+<<update "time" -8>>
+
+<p>Come procedi?</p>
+
+[[Seguire il nuovo percorso->StradaAdattiva]]
+[[Controllare ogni indicazione->StradaControllo]]
+[[Restare vigile per prevenire errori->StradaAllerta]]
+
+</div>
+</div>
+
+
+<<elseif $loop is 4>>
+<div class="fullscreen" style="background-image:url('assets/img/lavoratore_precario/lavoratore_precario_5.jpg')">
+<div class="text-box">
+
+
+<p>
+La deviazione significa tempo in più.
+E il tempo in più ha sempre un costo.
+</p>
+
+<<if $money < 40>>
+<p>
+Ogni deviazione è una perdita potenziale.
+Non hai margine per errori.
+</p>
+<<update "control" -6>>
+<<update "attention" -5>>
+<<else>>
+<p>
+Accetti la deviazione come unica opzione disponibile.
+</p>
+<</if>>
+
+<<update "time" -8>>
+
+<p>Come reagisci?</p>
+
+[[Accettare la deviazione->StradaAdattiva]]
+[[Mantenere il controllo del percorso->StradaControllo]]
+[[Monitorare tutto per evitare perdite->StradaAllerta]]
+
+</div>
+</div>
+
+
+<<elseif $loop is 5>>
+<div class="fullscreen" style="background-image:url('assets/img/migrante/migrante_5.jpg')">
+<div class="text-box">
+
+
+<p>
+Il percorso cambia improvvisamente.
+Le indicazioni non sono immediatamente leggibili.
+</p>
+
+<<if $attention < 40>>
+<p>
+Osservi gli altri per capire la direzione.
+Il sistema si decifra attraverso i movimenti esterni.
+</p>
+<<update "control" -8>>
+<<update "attention" -6>>
+<<else>>
+<p>
+Ti concentri sulle indicazioni.
+Cerchi un orientamento diretto.
+</p>
+<</if>>
+
+<<update "time" -8>>
+
+<p>Come reagisci?</p>
+
+[[Seguire il flusso delle persone->StradaAdattiva]]
+[[Interpretare le indicazioni->StradaControllo]]
+[[Restare in allerta e leggere ogni segnale sociale->StradaAllerta]]
+
+</div>
+</div>
+
+
+<<elseif $loop is 6>>
+<div class="fullscreen" style="background-image:url('assets/img/senzatetto/senzatetto_5.jpg')">
+<div class="text-box">
+
+
+<p>
+La strada è chiusa.
+Non è un’eccezione.
+È una condizione che ritorna.
+</p>
+
+<<update "attention" -8>>
+<<update "control" -8>>
+<<update "energy" -8>>
+<<update "time" -8>>
+
+<p>Come reagisci?</p>
+
+[[Continuare nel flusso->StradaAdattiva]]
+[[Mantenere il controllo->StradaControllo]]
+[[Restare in allerta continua->StradaAllerta]]
+
+</div>
+</div>
+
+<</if>>
+
+
+:: StradaControllo {"position":"3200,1150","size":"100,100"}
+<<if $loop is 1>>
+    <<set _bg = "assets/img/turista/turista_5.jpg">>
+
+<<elseif $loop is 2>>
+    <<set _bg = "assets/img/studente_lavoratore/studente_lavoratore_5.jpg">>
+
+<<elseif $loop is 3>>
+    <<set _bg = "assets/img/anziano/anziano_5.jpg">>
+
+<<elseif $loop is 4>>
+    <<set _bg = "assets/img/lavoratore_precario/lavoratore_precario_5.jpg">>
+
+<<elseif $loop is 5>>
+    <<set _bg = "assets/img/migrante/migrante_5.jpg">>
+
+<<elseif $loop is 6>>
+    <<set _bg = "assets/img/senzatetto/senzatetto_5.jpg">>
+<</if>>
+
+<<update "control" 10>>
+<<update "attention" 5>>
+<<update "energy" -5>>
+<<update "time" -5>>
+
+<div class="fullscreen" @style="'background-image:url(' + JSON.stringify(_bg) + ')'">
+<div class="text-box">
+
+<p>
+Ti fermi un istante prima di proseguire.
+Osservi i cartelli, confronti le indicazioni, ricostruisci una mappa mentale del percorso.
+</p>
+
+<p>
+La deviazione non scompare, ma viene tradotta in struttura.
+Ogni elemento serve a mantenere una direzione coerente mentre ti muovi.
+</p>
+
+<<if $control >= 70>>
+<p>
+La chiarezza non è stabile: va mantenuta.
+Ogni passo richiede un aggiornamento della mappa che stai usando per orientarti.
+</p>
+
+<p>
+La comprensione diventa un lavoro continuo di verifica.
+</p>
+<<update "energy" -3>>
+<</if>>
+
+<<if $control < 70>>
+<p>
+La mappa mentale funziona, ma è incompleta.
+Ogni nuova informazione può correggere o spostare la direzione.
+</p>
+
+<p>
+Avanzi comunque, basandoti su una struttura provvisoria ma sufficiente.
+</p>
+<</if>>
+
+<p>
+Riprendi il cammino con un percorso definito, costruito mentre lo attraversi.
+Non segui la città: la stai continuamente ricalcolando.
+</p>
+
+[[Continuare->FineLoop]]
+
+</div>
+</div>
+
+
+:: StudenteRipassare {"position":"1425,450","size":"100,100"}
+<<update "energy" -8>>
+<<update "attention" 12>>
+<<update "time" -8>>
+<<update "control" 5>>
+
+<div class="fullscreen" style="background-image:url('assets/img/studente_lavoratore/studente_lavoratore_1.jpg')">
+<div class="text-box">
+
+<p>
+Rivedi gli appunti mentre la mente è ancora appesantita dal sonno.
+</p>
+
+<p>
+Le frasi ti risultano familiari, ma non tutte si agganciano subito.
+Alcune scorrono con naturalezza, altre restano sospese, come se non appartenessero del tutto a questa mattina.
+</p>
+
+<p>
+L’orologio è presente anche quando non lo guardi.
+Ogni minuto sottratto allo studio è un minuto che si sposta verso l’esame senza di te.
+</p>
+
+<p>
+Il pensiero dell’esame non si spegne.
+Resta sullo sfondo anche quando provi a chiudere tutto e andare via.
+</p>
+
+[[Chiudi tutto e vai->Bus]]
+
+</div>
+</div>
+
+
+
+:: Supermercato {"position":"3200,600","size":"200,200"}
+<<if $loop is 1>>
+
+<div class="fullscreen" style="background-image:url('assets/img/turista/turista_4.jpg')">
+<div class="text-box">
+
+<p>
+Entri nel supermercato per comprare qualcosa da portare a casa.
+</p>
+
+<p>
+Davanti agli scaffali resti ferma più del previsto.
+Ci sono snack locali, biscotti, conserve e piccoli souvenir alimentari che potrebbero diventare un ricordo del viaggio.
+</p>
+
+<p>
+Attorno a te le persone fanno la spesa con sicurezza, prendendo prodotti senza nemmeno leggere le etichette.
+Per loro è una routine. Per te è una delle ultime esperienze in una città che stai per lasciare.
+</p>
+
+<<update "time" -5>>
+<<update "money" -5>>
+
+<p>
+Più osservi gli scaffali, meno riesci a capire cosa valga davvero la pena portare con te.
+</p>
+
+<p>
+Come scegli?
+</p>
+
+[[Comprare qualcosa per ricordare il viaggio->SupermercatoControllo]]
+[[Scegliere rapidamente ciò che ti ispira->SupermercatoAdattivo]]
+[[Rinunciare al ricordo e conservare i soldi->SupermercatoRisparmio]]
+
+</div>
+</div>
+
+<<elseif $loop is 2>>
+
+<div class="fullscreen" style="background-image:url('assets/img/studente_lavoratore/studente_lavoratore_4.jpg')">
+<div class="text-box">
+
+<p>
+Hai fame.
+Non mangi da diverse ore e l'esame continua ad avvicinarsi.
+</p>
+
+<p>
+Passi davanti ai panini pronti, agli snack e alle bevande energetiche.
+Ogni scelta sembra sottrarre qualcosa a qualcos'altro: denaro, tempo o concentrazione.
+</p>
+
+<<if $money < 45>>
+
+<p>
+Controlli più volte il saldo disponibile.
+Anche una spesa piccola sembra richiedere una giustificazione.
+</p>
+<<update "attention" -8>>
+<</if>>
+
+<<update "time" -5>>
+
+<p>
+Come affronti questo momento?
+</p>
+
+[[Mangiare velocemente e andare avanti->SupermercatoAdattivo]]
+[[Valutare attentamente cosa comprare->SupermercatoControllo]]
+[[Spendere il meno possibile->SupermercatoRisparmio]]
+
+</div>
+</div>
+
+<<elseif $loop is 3>>
+
+<div class="fullscreen" style="background-image:url('assets/img/anziano/anziano_4.jpg')">
+<div class="text-box">
+
+<p>
+Conosci bene il supermercato.
+Sai già dove si trovano quasi tutti i prodotti che ti servono.
+</p>
+
+<p>
+Oggi però il percorso sembra più lungo del solito.
+Il cestino pesa più di quanto ricordassi e le gambe iniziano a rallentare.
+</p>
+
+<<if $energy < 50>>
+
+<p>
+Ti fermi qualche secondo vicino a uno scaffale fingendo di osservare i prodotti.
+In realtà stai recuperando energie.
+</p>
+<<update "energy" -8>>
+<</if>>
+
+<<update "time" -5>>
+
+<p>
+Come procedi?
+</p>
+
+[[Lasciarti guidare dall'abitudine->SupermercatoAdattivo]]
+[[Controllare attentamente ogni acquisto->SupermercatoControllo]]
+[[Comprare meno del previsto->SupermercatoRisparmio]]
+
+</div>
+</div>
+
+<<elseif $loop is 4>>
+
+<div class="fullscreen" style="background-image:url('assets/img/lavoratore_precario/lavoratore_precario_4.jpg')">
+<div class="text-box">
+
+<p>
+La spesa è un calcolo.
+Non stai scegliendo cosa desideri, ma cosa puoi permetterti.
+</p>
+
+<p>
+Confronti prezzi, quantità e offerte.
+Ogni prodotto nel carrello significa rinunciare a qualcos'altro.
+</p>
+
+<<if $money < 40>>
+
+<p>
+Controlli più volte il totale stimato.
+L'errore di pochi euro potrebbe pesare per diversi giorni.
+</p>
+
+<<update "control" -8>>
+<<update "attention" -8>>
+<</if>>
+
+<<update "time" -5>>
+
+<p>
+Come affronti la spesa?
+</p>
+
+[[Prendere ciò che serve e andare avanti->SupermercatoAdattivo]]
+[[Valutare attentamente ogni acquisto->SupermercatoControllo]]
+[[Ridurre tutto all'essenziale->SupermercatoRisparmio]]
+
+</div>
+</div>
+
+<<elseif $loop is 5>>
+
+<div class="fullscreen" style="background-image:url('assets/img/migrante/migrante_4.jpg')">
+<div class="text-box">
+
+<p>
+Le corsie sono piene di prodotti che non conosci.
+Molte etichette contengono parole che riesci a comprendere solo in parte.
+</p>
+
+<p>
+Per scegliere devi osservare, confrontare e interpretare continuamente ciò che hai davanti.
+</p>
+
+<<if $attention < 40>>
+
+<p>
+Ti ritrovi spesso a guardare cosa mettono nel carrello gli altri clienti.
+A volte sembra il modo più semplice per orientarti.
+</p>
+
+<<update "control" -8>>
+<</if>>
+
+<<update "time" -5>>
+
+<p>
+Come decidi cosa comprare?
+</p>
+
+[[Seguire l'esempio degli altri clienti->SupermercatoAdattivo]]
+[[Affidarti solo a ciò che riesci a capire->SupermercatoControllo]]
+[[Comprare soltanto l'indispensabile->SupermercatoRisparmio]]
+
+</div>
+</div>
+
+<<elseif $loop is 6>>
+
+<div class="fullscreen" style="background-image:url('assets/img/senzatetto/senzatetto_4.jpg')">
+<div class="text-box">
+
+<p>
+Il supermercato è caldo, illuminato e pieno di persone.
+Per qualche minuto puoi stare al chiuso senza che nessuno ti chieda nulla.
+</p>
+
+<p>
+Cerchi di non attirare attenzione.
+Ti muovi lentamente tra le corsie osservando ciò che accade attorno a te.
+</p>
+
+<p>
+Sai che la tua presenza qui è tollerata solo finché sembri un cliente come tutti gli altri.
+</p>
+
+<<update "attention" -5>>
+<<update "energy" 5>>
+
+<p>
+Come vivi questo momento?
+</p>
+
+[[Confonderti tra gli altri clienti->SupermercatoAdattivo]]
+[[Restare vigile e osservare tutto->SupermercatoControllo]]
+[[Pensare soltanto a ciò che serve per oggi->SupermercatoRisparmio]]
+
+</div>
+</div>
+
+<</if>>
+
+
+
+:: SupermercatoAdattivo {"position":"3600,800","size":"100,100"}
+<<if $loop is 1>>
+    <<set _bg = "assets/img/turista/turista_4.jpg">>
+
+<<elseif $loop is 2>>
+    <<set _bg = "assets/img/studente_lavoratore/studente_lavoratore_4.jpg">>
+
+<<elseif $loop is 3>>
+    <<set _bg = "assets/img/anziano/anziano_4.jpg">>
+
+<<elseif $loop is 4>>
+    <<set _bg = "assets/img/lavoratore_precario/lavoratore_precario_4.jpg">>
+
+<<elseif $loop is 5>>
+    <<set _bg = "assets/img/migrante/migrante_4.jpg">>
+
+<<elseif $loop is 6>>
+    <<set _bg = "assets/img/senzatetto/senzatetto_4.jpg">>
+<</if>>
+
+<<update "control" -8>>
+<<update "attention" -8>>
+<<update "energy" 5>>
+
+<div class="fullscreen" @style="'background-image:url(' + JSON.stringify(_bg) + ')'">
+<div class="text-box">
+
+<p>
+Ti lasci guidare dal ritmo del supermercato.
+Segui il flusso delle persone tra le corsie e prendi decisioni rapide, senza soffermarti troppo su ogni scelta.
+</p>
+
+<p>
+Riduci il numero di decisioni attive.
+Non cerchi di ottimizzare, ma di procedere.
+</p>
+
+<<if $loop is 1>>
+
+<p>
+Scegli prodotti che attirano la tua attenzione senza pensarci troppo, come possibili ricordi del viaggio.
+</p>
+
+<<elseif $loop is 2>>
+
+<p>
+Prendi qualcosa di veloce da mangiare, più per necessità immediata che per scelta ragionata.
+</p>
+
+<<elseif $loop is 3>>
+
+<p>
+Segui il percorso più familiare tra gli scaffali, evitando sforzi inutili o deviazioni.
+</p>
+
+<<elseif $loop is 4>>
+
+<p>
+Ti attieni a ciò che è più economico e immediato, evitando ogni decisione complessa.
+</p>
+
+<<elseif $loop is 5>>
+
+<p>
+Osservi gli altri clienti e imiti le loro scelte per orientarti più facilmente.
+</p>
+
+<<elseif $loop is 6>>
+
+<p>
+Cerchi di muoverti senza attirare attenzione, restando il più possibile “uno tra gli altri”.
+</p>
+
+<</if>>
+
+<p>
+Per un momento smetti di analizzare ogni cosa.
+Il supermercato diventa solo un percorso da attraversare fino all’uscita.
+</p>
+
+[[Andare verso l’uscita->StradaChiusa]]
+
+</div>
+</div>
+
+
+
+:: SupermercatoControllo {"position":"3575,675","size":"100,100"}
+<<if $loop is 1>>
+    <<set _bg = "assets/img/turista/turista_4.jpg">>
+
+<<elseif $loop is 2>>
+    <<set _bg = "assets/img/studente_lavoratore/studente_lavoratore_4.jpg">>
+
+<<elseif $loop is 3>>
+    <<set _bg = "assets/img/anziano/anziano_4.jpg">>
+
+<<elseif $loop is 4>>
+    <<set _bg = "assets/img/lavoratore_precario/lavoratore_precario_4.jpg">>
+
+<<elseif $loop is 5>>
+    <<set _bg = "assets/img/migrante/migrante_4.jpg">>
+
+<<elseif $loop is 6>>
+    <<set _bg = "assets/img/senzatetto/senzatetto_4.jpg">>
+<</if>>
+
+<<update "control" 8>>
+<<update "attention" 8>>
+<<update "energy" -8>>
+
+<div class="fullscreen" @style="'background-image:url(' + JSON.stringify(_bg) + ')'">
+<div class="text-box">
+
+<p>
+Ti fermi qualche istante prima di prendere una decisione.us
+Controlli prezzi, confezioni, quantità e dettagli che altre persone sembrano ignorare.
+</p>
+
+<p>
+Cerchi di ridurre l'incertezza confrontando ogni alternativa.
+Più osservi, più emergono nuove informazioni da valutare.
+</p>
+
+<<if $loop is 1>>
+
+<p>
+Vuoi essere sicura che ciò che compri rappresenti davvero il viaggio che hai vissuto.
+Scegliere un semplice souvenir richiede più tempo del previsto.
+</p>
+
+<<elseif $loop is 2>>
+
+<p>
+Controlli il costo di ogni prodotto cercando qualcosa che possa darti energia senza compromettere il budget della giornata.
+</p>
+
+<<elseif $loop is 3>>
+
+<p>
+Verifichi più volte di non aver dimenticato nulla per evitare un altro viaggio nei prossimi giorni.
+</p>
+
+<<elseif $loop is 4>>
+
+<p>
+Ogni euro speso viene confrontato mentalmente con le spese che arriveranno dopo.
+Nessun acquisto sembra davvero neutrale.
+</p>
+
+<<elseif $loop is 5>>
+
+<p>
+Leggi attentamente etichette e indicazioni.
+Capire da sola cosa stai acquistando diventa parte della scelta.
+</p>
+
+<<elseif $loop is 6>>
+
+<p>
+Controllare ciò che accade attorno a te ti aiuta a sentirti meno esposto.
+Sapere dove sono le persone e come si muovono richiede però attenzione continua.
+</p>
+
+<</if>>
+
+<p>
+Per un momento hai la sensazione di mantenere il controllo della situazione.
+Quando finalmente prendi una decisione, ti accorgi però che lo sforzo ha consumato più energie di quanto sembrasse.
+</p>
+
+[[Andare verso l’uscita->StradaChiusa]]
+
+</div>
+</div>
+
+
+
+:: SupermercatoRisparmio {"position":"3575,925","size":"100,100"}
+<<if $loop is 1>>
+    <<set _bg = "assets/img/turista/turista_4.jpg">>
+
+<<elseif $loop is 2>>
+    <<set _bg = "assets/img/studente_lavoratore/studente_lavoratore_4.jpg">>
+
+<<elseif $loop is 3>>
+    <<set _bg = "assets/img/anziano/anziano_4.jpg">>
+
+<<elseif $loop is 4>>
+    <<set _bg = "assets/img/lavoratore_precario/lavoratore_precario_4.jpg">>
+
+<<elseif $loop is 5>>
+    <<set _bg = "assets/img/migrante/migrante_4.jpg">>
+
+<<elseif $loop is 6>>
+    <<set _bg = "assets/img/senzatetto/senzatetto_4.jpg">>
+<</if>>
+
+<<update "money" -8>>
+<<update "control" 5>>
+<<update "energy" -8>>
+<<update "attention" 5>>
+
+<div class="fullscreen" @style="'background-image:url(' + JSON.stringify(_bg) + ')'">
+<div class="text-box">
+
+<p>
+Calcoli mentalmente ogni acquisto.
+Non scegli solo cosa prendere, ma cosa puoi permetterti di lasciare.
+</p>
+
+<p>
+Ti fermi più volte davanti agli scaffali.
+Alcuni prodotti restano nel carrello per qualche secondo prima di essere rimessi a posto.
+Ogni rinuncia è rapida, ma lascia comunque una traccia nel processo di scelta.
+</p>
+
+<<if $loop is 1>>
+
+<p>
+Cerchi piccoli oggetti che possano diventare un ricordo del viaggio, ma il prezzo ti costringe a ridurre la scelta.
+</p>
+
+<<elseif $loop is 2>>
+
+<p>
+Pensi soprattutto a ciò che ti serve per arrivare alla fine della giornata senza spendere troppo prima dell’esame o del lavoro.
+</p>
+
+<<elseif $loop is 3>>
+
+<p>
+Valuti con attenzione ciò che è davvero necessario, cercando di evitare peso e fatica inutile.
+</p>
+
+<<elseif $loop is 4>>
+
+<p>
+Ogni prodotto viene confrontato con le ore di lavoro necessarie per permettertelo.
+Il carrello diventa una traduzione diretta del tempo che stai vendendo.
+</p>
+
+<<elseif $loop is 5>>
+
+<p>
+Non sempre è immediato capire cosa convenga davvero.
+Leggere prezzi e quantità richiede più attenzione del previsto.
+</p>
+
+<<elseif $loop is 6>>
+
+<p>
+Ti concentri solo sull’essenziale, evitando qualsiasi cosa che non sia immediatamente necessaria.
+</p>
+
+<</if>>
+
+<p>
+Alla fine spendi meno.
+Non perché hai di più, ma perché hai escluso di più.
+</p>
+
+<p>
+La sensazione non è di libertà, ma di selezione forzata.
+</p>
+
+[[Andare verso l’uscita->StradaChiusa]]
+
+</div>
+</div>
+
+
+
+:: TuristaDormire {"position":"1400,575","size":"100,100"}
+<<update "energy" 15>>
+<<update "time" -15>>
+<<update "attention" -8>>
+
+<div class="fullscreen" style="background-image:url('assets/img/turista/turista_1.jpg')">
+<div class="text-box">
+
+<p>
+Ti rigiri dall'altra parte e chiudi gli occhi.
+Per una volta non hai appuntamenti, orari di lavoro o scadenze che ti obbligano ad alzarti.
+</p>
+
+<p>
+Da qualche parte, sotto la finestra dell'albergo, senti il rumore di una serranda che si apre e il passaggio distante di un autobus.
+La città è già sveglia.
+</p>
+
+<p>
+Quando riapri gli occhi, la luce nella stanza è diversa.
+Perdi qualche minuto a osservare il soffitto, poi il profilo delle Due Torri oltre il vetro.
+</p>
+
+<p>
+Hai consumato una parte della mattina senza accorgertene.
+Per te è tempo di vacanza.
+Per qualcun altro la giornata è iniziata da un pezzo.
+</p>
+
+[[Esci in fretta->Bus]]
+
+</div>
+</div>
+
+
+
+:: StoryScript [script]
+$(document).on(':passageend', function () {
+    $(".fullscreen .text-box br").replaceWith(" ");
+
+    // OPTIONAL SAFE CLEANUP ONLY
+    // removes empty text nodes that sometimes appear
+    $("#passage").contents().filter(function () {
+        return this.nodeType === 3 && !this.nodeValue.trim();
+    }).remove();
+});
+
+:: StoryStylesheet [stylesheet]
+@import url('https://fonts.googleapis.com/css2?family=Handlee&display=swap');
+
+/* ======================================
+   RESET SUGARCUBE (SAFE VERSION)
+   ====================================== */
+
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+body {
+    font-family: "Handlee", cursive;
+}
+
+/* remove default SugarCube constraints */
+#passages, .passage {
+    margin: 0;
+    padding: 0;
+    max-width: none;
+}
+
+/* ======================================
+   CUSTOM PRELOADER
+   ====================================== */
+
+#init-screen {
+    background: #000 !important;
+}
+
+#init-loading {
+    border: none !important;
+    width: 120px !important;
+    height: 120px !important;
+
+    background-image: url("assets/img/favicon.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+
+    animation: logoSpin 2s linear infinite;
+
+    color: transparent !important;
+    font-size: 0 !important;
+}
+
+#init-loading::before,
+#init-loading::after {
+    display: none !important;
+}
+
+@keyframes logoSpin {
+    0%   { transform: rotate(0deg) scale(1); }
+    50%  { transform: rotate(180deg) scale(1.05); }
+    100% { transform: rotate(360deg) scale(1); }
+}
+
+/* ======================================
+   FULLSCREEN BACKGROUND SYSTEM
+   ====================================== */
+
+.fullscreen {
+    width: 100vw;
+    height: 100vh;
+
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box;
+    padding: clamp(1rem, 3vw, 3rem);
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+
+    background-color: black; /* important for letterboxing */
+    background-size: 0 0 !important;
+    background-repeat: no-repeat !important;
+    background-position: center center !important;
+}
+
+/* TRUE BACKGROUND LAYER */
+.fullscreen::before {
+    content: "";
+    position: absolute;
+    inset: 0 0 0 clamp(430px, 42vw, 620px);
+
+    background-size: contain;        /* 👈 KEY FIX (no cropping) */
+    background-color: black;
+    background-repeat: no-repeat;
+    background-position: center center;     /* centered image */
+
+    z-index: 0;
+
+    /* image is injected via inline style, so we "inherit" it */
+    background-image: inherit;
+}
+
+/* Hide SugarCube line breaks generated from passage formatting. */
+#passage > br,
+.passage > br,
+.fullscreen > br {
+    display: none;
+}
+
+/* ======================================
+   TEXT BOX (MAIN UI)
+   ====================================== */
+
+.fullscreen .text-box {
+    position: relative;
+    z-index: 1;
+
+    background: rgba(10, 12, 15, 0.85);
+    color: white;
+
+    padding: 1.2rem 1.6rem;
+    border-radius: 10px;
+
+    width: min(560px, 44vw);
+    max-height: 86vh;
+    overflow-y: auto;
+
+    font-size: 24px;
+    line-height: 1.6;
+
+    border: 1px solid rgba(255,255,255,0.08);
+    backdrop-filter: blur(6px);
+}
+
+@media screen and (max-width: 780px) {
+    .fullscreen {
+        align-items: flex-end;
+        justify-content: center;
+        padding: 1rem;
+    }
+
+    .fullscreen::before {
+        inset: 0;
+    }
+
+    .fullscreen .text-box {
+        width: min(900px, 92vw);
+        max-height: 52vh;
+    }
+}
+
+/* ======================================
+   PARAGRAPHS (FIX SPACING ISSUE)
+   ====================================== */
+
+.fullscreen .text-box p {
+    margin: 0.9em 0;
+}
+
+.fullscreen .identity-title {
+    font-size: 1.15em;
+}
+
+/* ======================================
+   CHOICES (IMPORTANT FIX)
+   ====================================== */
+
+a.link-internal {
+    display: block;
+    margin: 0.6em 0;
+}
+
+.start-cover {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.start-cover::before {
+    inset: -10px;
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px) brightness(0.35) saturate(0.9);
+    transform: scale(1.04);
+}
+
+.start-cover .text-box {
+    width: min(500px, 92vw);
+    font-size: 18px;
+    text-align: center;
+    background: rgba(8, 10, 13, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.35);
+}
+
+.start-cover .text-box::before {
+    content: "";
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    margin-bottom: 1rem;
+    border-radius: 18px;
+    background:
+        linear-gradient(rgba(0, 0, 0, 0.10), rgba(0, 0, 0, 0.18)),
+        url('assets/img/banner.jpg') center/cover no-repeat;
+    box-shadow: 0 14px 30px rgba(0, 0, 0, 0.35);
+}
+
+.start-cover .start-cover-title {
+    margin-top: 0;
+    margin-bottom: 0.35em;
+    font-size: 1.2em;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.start-cover .start-cover-link {
+    display: inline-block;
+    margin-top: 0.6em;
+    padding: 0.55em 0.9em;
+    border-radius: 999px;
+    background: rgba(255, 255, 255, 0.12);
+    border: 1px solid rgba(255, 255, 255, 0.18);
+}
+
+.start-cover .start-cover-link:hover {
+    background: rgba(255, 255, 255, 0.18);
+}
+
+.intermezzo-cover {
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.intermezzo-cover::before {
+    inset: -10px;
+    background-size: cover;
+    background-position: center;
+    filter: blur(6px) brightness(0.35) saturate(0.9);
+    transform: scale(1.04);
+}
+
+.intermezzo-cover .text-box {
+    width: min(860px, 92vw);
+    max-width: 860px;
+    margin: 0 auto;
+    text-align: center;
+    background: rgba(8, 10, 13, 0.78);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    box-shadow: 0 18px 42px rgba(0, 0, 0, 0.35);
+}
+
+.intermezzo-cover .text-box p,
+.intermezzo-cover .text-box a {
+    text-align: center;
+}
+
+/* ======================================
+   FLOATING TEXT BOX
+   ====================================== */
+
+@keyframes floatBox {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(-8px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.fullscreen .text-box {
+    animation: floatBox 5s ease-in-out infinite;
+}

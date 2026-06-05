@@ -2480,8 +2480,28 @@ Anche se mantenere quel controllo richiede energia.
 [[Continuare-&gt;Poste]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="BusStudio" tags="" position="2575,175" size="100,100">  &lt;&lt;if $time &gt;= 55&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="20" name="BusStudio" tags="" position="2575,175" size="100,100">&lt;&lt;if $loop is 1&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/turista/turista_2.jpg&quot;&gt;&gt;
 
+&lt;&lt;elseif $loop is 2&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/studente_lavoratore/studente_lavoratore_2.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 3&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/anziano/anziano_2.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 4&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/lavoratore_precario/lavoratore_precario_2.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 5&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/migrante/migrante_2.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 6&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/senzatetto/senzatetto_2.jpg&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;if $time &gt;= 55&gt;&gt;
+
+&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -2535,15 +2555,34 @@ In questo momento la preoccupazione occupa più spazio dello studio.
 
 &lt;/div&gt;
 
-&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="BusLavoro" tags="" position="2725,200" size="100,100">&lt;div class=&quot;fullscreen derived-scene&quot;&gt;
-&lt;div class=&quot;text-box&quot;gt;
+&lt;&lt;/if&gt;&gt;</tw-passagedata><tw-passagedata pid="21" name="BusLavoro" tags="" position="2725,200" size="100,100">&lt;&lt;if $loop is 1&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/turista/turista_2.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 2&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/studente_lavoratore/studente_lavoratore_2.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 3&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/anziano/anziano_2.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 4&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/lavoratore_precario/lavoratore_precario_2.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 5&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/migrante/migrante_2.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 6&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/senzatetto/senzatetto_2.jpg&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
+&lt;&lt;update &quot;control&quot; -5&gt;&gt;
+
+&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
 Appena trovi un momento di silenzio, la mente torna al lavoro.
 &lt;/p&gt;
-
-&lt;&lt;update &quot;attention&quot; -8&gt;&gt;
-&lt;&lt;update &quot;control&quot; -5&gt;&gt;
 
 &lt;p&gt;
 Controlli notifiche, orari, possibili imprevisti.
@@ -2583,12 +2622,31 @@ Ma la sensazione di essere in ritardo è rimasta.
 
 &lt;/div&gt;
 &lt;aside class=&quot;image-placeholder&quot;&gt;Immagine del passaggio a destra&lt;/aside&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="BusDisconnessione" tags="" position="2875,250" size="100,100">&lt;div class=&quot;fullscreen derived-scene&quot;&gt;
-&lt;div class=&quot;text-box&quot;gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="22" name="BusDisconnessione" tags="" position="2875,250" size="100,100">&lt;&lt;if $loop is 1&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/turista/turista_2.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 2&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/studente_lavoratore/studente_lavoratore_2.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 3&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/anziano/anziano_2.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 4&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/lavoratore_precario/lavoratore_precario_2.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 5&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/migrante/migrante_2.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 6&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/senzatetto/senzatetto_2.jpg&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
 
 &lt;&lt;update &quot;energy&quot; 8&gt;&gt;
 &lt;&lt;update &quot;attention&quot; -8&gt;&gt;
 &lt;&lt;update &quot;time&quot; -5&gt;&gt;
+
+&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
+&lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
 Decidi di smettere, almeno per qualche minuto, di pensare a ciò che ti aspetta dopo.
@@ -2638,17 +2696,16 @@ Ma per un breve momento hai smesso di rincorrerle.
     &lt;&lt;set _bg = &quot;assets/img/senzatetto/senzatetto_3.jpg&quot;&gt;&gt;
 &lt;&lt;/if&gt;&gt;
 
-&lt;p&gt;
-Smetti di cercare di capire ogni dettaglio.
-Per il momento basta seguire il ritmo della fila.
-&lt;/p&gt;
-
 &lt;&lt;update &quot;control&quot; -5&gt;&gt;
 &lt;&lt;update &quot;attention&quot; 5&gt;&gt;
 
 &lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
+&lt;p&gt;
+Smetti di cercare di capire ogni dettaglio.
+Per il momento basta seguire il ritmo della fila.
+&lt;/p&gt;
 
 &lt;p&gt;
 Osservi chi ti sta davanti, chi si alza, chi prende un numero, chi si avvicina agli sportelli.
@@ -2809,11 +2866,30 @@ Ma ti permette di sentirti meno trascinato dagli eventi.
 [[Continuare-&gt;Supermercato]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="PosteTempo" tags="" position="3475,300" size="100,100">&lt;&lt;update &quot;time&quot; -10&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="25" name="PosteTempo" tags="" position="3475,300" size="100,100">&lt;&lt;if $loop is 1&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/turista/turista_3.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 2&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/studente_lavoratore/studente_lavoratore_3.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 3&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/anziano/anziano_3.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 4&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/lavoratore_precario/lavoratore_precario_3.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 5&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/migrante/migrante_3.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 6&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/senzatetto/senzatetto_3.jpg&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;update &quot;time&quot; -10&gt;&gt;
 &lt;&lt;update &quot;attention&quot; -8&gt;&gt;
 &lt;&lt;update &quot;energy&quot; -5&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -2882,11 +2958,30 @@ Rimanere qui significa restare dentro un tempo che non puoi accelerare, ma che c
 
 &lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="26" name="PosteAllerta" tags="" position="3575,425" size="100,100">&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
+</tw-passagedata><tw-passagedata pid="26" name="PosteAllerta" tags="" position="3575,425" size="100,100">&lt;&lt;if $loop is 1&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/turista/turista_3.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 2&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/studente_lavoratore/studente_lavoratore_3.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 3&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/anziano/anziano_3.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 4&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/lavoratore_precario/lavoratore_precario_3.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 5&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/migrante/migrante_3.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 6&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/senzatetto/senzatetto_3.jpg&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;update &quot;energy&quot; -8&gt;&gt;
 &lt;&lt;update &quot;attention&quot; 8&gt;&gt;
 &lt;&lt;update &quot;control&quot; -5&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -2941,12 +3036,31 @@ Quando finalmente arriva il tuo turno, hai la sensazione di aver trascorso più 
 [[Terminare e uscire-&gt;Supermercato]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="SupermercatoRisparmio" tags="" position="3575,925" size="100,100">&lt;&lt;update &quot;money&quot; -8&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="27" name="SupermercatoRisparmio" tags="" position="3575,925" size="100,100">&lt;&lt;if $loop is 1&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/turista/turista_4.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 2&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/studente_lavoratore/studente_lavoratore_4.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 3&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/anziano/anziano_4.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 4&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/lavoratore_precario/lavoratore_precario_4.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 5&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/migrante/migrante_4.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 6&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/senzatetto/senzatetto_4.jpg&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;update &quot;money&quot; -8&gt;&gt;
 &lt;&lt;update &quot;control&quot; 5&gt;&gt;
 &lt;&lt;update &quot;energy&quot; -8&gt;&gt;
 &lt;&lt;update &quot;attention&quot; 5&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -3013,11 +3127,30 @@ La sensazione non è di libertà, ma di selezione forzata.
 
 &lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="28" name="SupermercatoAdattivo" tags="" position="3600,800" size="100,100">&lt;&lt;update &quot;control&quot; -8&gt;&gt;
+</tw-passagedata><tw-passagedata pid="28" name="SupermercatoAdattivo" tags="" position="3600,800" size="100,100">&lt;&lt;if $loop is 1&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/turista/turista_4.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 2&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/studente_lavoratore/studente_lavoratore_4.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 3&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/anziano/anziano_4.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 4&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/lavoratore_precario/lavoratore_precario_4.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 5&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/migrante/migrante_4.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 6&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/senzatetto/senzatetto_4.jpg&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;update &quot;control&quot; -8&gt;&gt;
 &lt;&lt;update &quot;attention&quot; -8&gt;&gt;
 &lt;&lt;update &quot;energy&quot; 5&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -3164,12 +3297,31 @@ Quando finalmente prendi una decisione, ti accorgi però che lo sforzo ha consum
 
 &lt;/div&gt;
 &lt;/div&gt;
-</tw-passagedata><tw-passagedata pid="30" name="StradaAdattiva" tags="" position="2825,1150" size="100,100">&lt;&lt;update &quot;control&quot; -8&gt;&gt;
+</tw-passagedata><tw-passagedata pid="30" name="StradaAdattiva" tags="" position="2825,1150" size="100,100">&lt;&lt;if $loop is 1&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/turista/turista_5.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 2&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/studente_lavoratore/studente_lavoratore_5.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 3&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/anziano/anziano_5.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 4&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/lavoratore_precario/lavoratore_precario_5.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 5&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/migrante/migrante_5.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 6&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/senzatetto/senzatetto_5.jpg&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;update &quot;control&quot; -8&gt;&gt;
 &lt;&lt;update &quot;energy&quot; 5&gt;&gt;
 &lt;&lt;update &quot;attention&quot; -5&gt;&gt;
 &lt;&lt;update &quot;time&quot; 5&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -3197,12 +3349,31 @@ Non c’è un momento preciso in cui hai deciso: è semplicemente accaduto.
 [[Continuare-&gt;FineLoop]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="StradaControllo" tags="" position="3200,1150" size="100,100">&lt;&lt;update &quot;control&quot; 10&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="31" name="StradaControllo" tags="" position="3200,1150" size="100,100">&lt;&lt;if $loop is 1&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/turista/turista_5.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 2&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/studente_lavoratore/studente_lavoratore_5.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 3&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/anziano/anziano_5.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 4&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/lavoratore_precario/lavoratore_precario_5.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 5&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/migrante/migrante_5.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 6&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/senzatetto/senzatetto_5.jpg&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;update &quot;control&quot; 10&gt;&gt;
 &lt;&lt;update &quot;attention&quot; 5&gt;&gt;
 &lt;&lt;update &quot;energy&quot; -5&gt;&gt;
 &lt;&lt;update &quot;time&quot; -5&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
@@ -3246,12 +3417,31 @@ Non segui la città: la stai continuamente ricalcolando.
 [[Continuare-&gt;FineLoop]]
 
 &lt;/div&gt;
-&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="StradaAllerta" tags="" position="3025,1150" size="100,100">&lt;&lt;update &quot;attention&quot; 10&gt;&gt;
+&lt;/div&gt;</tw-passagedata><tw-passagedata pid="32" name="StradaAllerta" tags="" position="3025,1150" size="100,100">&lt;&lt;if $loop is 1&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/turista/turista_5.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 2&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/studente_lavoratore/studente_lavoratore_5.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 3&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/anziano/anziano_5.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 4&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/lavoratore_precario/lavoratore_precario_5.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 5&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/migrante/migrante_5.jpg&quot;&gt;&gt;
+
+&lt;&lt;elseif $loop is 6&gt;&gt;
+    &lt;&lt;set _bg = &quot;assets/img/senzatetto/senzatetto_5.jpg&quot;&gt;&gt;
+&lt;&lt;/if&gt;&gt;
+
+&lt;&lt;update &quot;attention&quot; 10&gt;&gt;
 &lt;&lt;update &quot;energy&quot; -8&gt;&gt;
 &lt;&lt;update &quot;control&quot; -5&gt;&gt;
 &lt;&lt;update &quot;time&quot; -5&gt;&gt;
 
-&lt;div class=&quot;fullscreen&quot;&gt;
+&lt;div class=&quot;fullscreen&quot; @style=&quot;'background-image:url(' + JSON.stringify(_bg) + ')'&quot;&gt;
 &lt;div class=&quot;text-box&quot;&gt;
 
 &lt;p&gt;
